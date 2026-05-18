@@ -6,9 +6,8 @@ AI 相关主题研究资料库。
 
 | 主题 | 说明 | 文档数 |
 |------|------|--------|
-| [multi-agent/](multi-agent/) | 多智能体协作系统研究 | 7 |
+| [agent-platform/](agent-platform/) | Agent 平台与基础设施：Runtime / Multi-agent / Harness / 工具定义 | 8 |
 | [claude-code-skills/](claude-code-skills/) | Claude Code Skill 开发 | 3 |
-| [agent-runtime/](agent-runtime/) | Agent 执行层：Runtime / Harness / 工具定义 | 1 |
 
 ## 外部参考仓库
 
@@ -18,4 +17,4 @@ AI 相关主题研究资料库。
 
 ## 当前研究方向
 
-**多 Agent 协作** — 核心问题：单 AI 在长程任务上的结构性缺陷，以及多 AI 协作的架构模式（对抗循环、orchestrator-worker、共享任务列表）。
+**Agent 平台与基础设施层** — 比模型层高一级、比应用层低一级的整个执行平台面。核心问题：单 AI 在长程任务上的结构性缺陷，以及多 AI 协作的架构模式（Runtime、Worker/Verifier 对抗循环、Orchestrator/Specialist、Team Engine）。
