@@ -8,6 +8,7 @@ AI 相关主题研究资料库。
 |------|------|--------|
 | [multi-agent/](multi-agent/) | 多智能体协作系统研究 | 7 |
 | [claude-code-skills/](claude-code-skills/) | Claude Code Skill 开发 | 3 |
+| [agent-runtime/](agent-runtime/) | Agent 执行层：Runtime / Harness / 工具定义 | 1 |
 
 ## 外部参考仓库
 
