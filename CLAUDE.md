@@ -61,7 +61,8 @@ tags: [relevant tags]
 - Agent-Secure-Runtime — Agent 安全运行时（三层安全检查 + 沙箱隔离）
 - Multi-Agent-协作模式 — 三种核心协作模式
 - Worker-Verifier-对抗循环 — Mavis 核心架构机制
-- Claude-Code-Subagent — Subagent：独立上下文工作者（内置类型、自定义定义、调用方式）
+- Claude-Code-Subagent/index — Subagent：独立上下文工作者（内置类型、自定义定义、Fork 模式、持久内存、Hooks）
+- Claude-Code-Skills/index — Skills 扩展机制（SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品

@@ -74,4 +74,4 @@ Cline 把 provider 逻辑隔离在 `@cline/llms` 层，agent loop 本身不感�
 ## Related concepts
 
 - [[Agent-Secure-Runtime]] — Agent Runtime 的安全增强模式，增加沙箱和护栏层
-- [[Claude-Code-Subagent]] — Subagent 的执行环境属于 Runtime 层的一部分
+- [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] — Subagent 的执行环境属于 Runtime 层的一部分

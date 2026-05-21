@@ -2,7 +2,7 @@
 
 > Agent 平台与基础设施层研究资料库。涵盖 Runtime、Multi-agent 架构、行业实践。
 
-## 🔖 Navigation
+## Navigation
 - [[#Concepts]] · [[#Entities]] · [[#Summaries]] · [[#Open Questions]]
 
 ## Concepts
@@ -14,7 +14,8 @@
 - [[concepts/Agent-Secure-Runtime]] — Agent 安全运行时：三层安全检查（Policy/Network/Privacy）+ 沙箱隔离
 
 ### Claude Code
-- [[concepts/Claude-Code-Subagent]] — Subagent：独立上下文工作者，保护主对话、并行执行、权限隔离
+- [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] — Subagent：独立上下文工作者，内置类型、自定义定义、Fork 模式、持久内存、Hooks
+- [[concepts/Claude-Code-Skills/index|Claude Code Skills]] — Skills 扩展机制：SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制
 
 ## Entities
 - [[entities/MiniMax-Mavis]] — MiniMax 的 Agent 产品，MiniMax as a Jarvis
