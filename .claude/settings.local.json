@@ -6,7 +6,27 @@
       "Bash(ls:*)",
       "Bash(gh auth:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "Read(//c/Users/13516/AppData/Roaming/claude/**)",
+      "Read(//c/Users/13516/.claude/**)",
+      "Bash(claude agents:*)",
+      "Bash(mv C:/Users/13516/.claude/agents/wiki/*.md C:/Users/13516/.claude/agents/)",
+      "Bash(rmdir C:/Users/13516/.claude/agents/wiki)",
+      "Bash(claude --agent wiki-Manager --print \"test\")",
+      "Bash(claude:*)",
+      "Bash(mkdir -p D:/AI-resource/.claude/agents)",
+      "Bash(mv C:/Users/13516/.claude/agents/wiki-*.md D:/AI-resource/.claude/agents/)",
+      "Bash(mmx quota:*)",
+      "Bash(python3:*)",
+      "Bash(/c/Users/13516/AppData/Local/Programs/Python/Python313/python:*)",
+      "Bash(xxd -l 200 \"D:/AI-resource/.claude/agents/wiki-Manager.md\")",
+      "mcp__MiniMax__understand_image",
+      "Bash(mkdir -p \"D:\\\\AI-resource\\\\.claude\\\\skills\\\\llm-wiki\")",
+      "Bash(mv \"D:\\\\AI-resource\\\\.claude\\\\skills\\\\SKILL.md\" \"D:\\\\AI-resource\\\\.claude\\\\skills\\\\llm-wiki\\\\SKILL.md\")",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

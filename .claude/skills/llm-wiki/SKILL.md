@@ -1,25 +1,39 @@
 ---
 name: llm-wiki
-description: >-
+description: |
   Build and maintain a Karpathy-style LLM knowledge base — a self-compiling
   Obsidian markdown wiki where an Agent ingests raw sources, compiles
   cross-linked concept/entity/summary pages, answers queries against the
-  corpus, lints the graph for health, and audits in-context human feedback
-  filed from Obsidian or the local web viewer. Use when (1) scaffolding a
-  new knowledge base for any research topic, (2) ingesting
-  articles/papers/PDFs/web pages into raw/, (3) compiling or restructuring
-  wiki articles from existing raw material, (4) answering questions
-  against the wiki and filing durable answers back, (5) running lint
-  passes for dead links / orphan pages / coverage gaps / audit shape,
-  (6) processing human feedback from the audit/ directory and applying
-  corrections. Not for general note-taking, daily journals, or non-wiki
-  Obsidian use.
+  corpus, lints the graph for health, and audits in-context human feedback.
+  Use when scaffolding a new knowledge base, ingesting articles/papers/PDFs
+  into raw/, compiling wiki articles, answering questions against the corpus,
+  running lint passes, or processing human feedback from audit/.
+argument-hint: "<operation> [target]  # compile|ingest|query|lint|audit"
+metadata:
+  author: Lewis Liu
+  version: 1.0.0
+  title: LLM Wiki 知识库
+  description_zh: 构建和维护 Karpathy 风格的 LLM 知识库 — 自编译的 Obsidian Markdown Wiki，支持 ingest/compile/query/lint/audit 五种操作。
 ---
 
 # LLM Wiki — Karpathy Knowledge Base Pattern
 
-> **Experimental skill — iterating.**
 > Authored by Lewis Liu (lylewis@outlook.com) · Inspired by [Karpathy's llm-wiki Gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
+
+## When to Use
+
+- Scaffolding a new knowledge base for any research topic
+- Ingesting articles / papers / PDFs / web pages into `raw/`
+- Compiling or restructuring wiki articles from existing raw material
+- Answering questions against the wiki and filing durable answers back
+- Running lint passes for dead links / orphan pages / coverage gaps
+- Processing human feedback from the `audit/` directory
+
+## When NOT to Use
+
+- General note-taking or daily journals
+- Non-wiki Obsidian usage
+- One-off Q&A that doesn't need persistence
 
 ## Core idea
 
