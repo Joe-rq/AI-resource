@@ -3,7 +3,7 @@ title: "Agent Runtime"
 type: concept
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["08-agent-runtime-battlefield-20260516"]
+sources: ["08-agent-runtime-battlefield-20260516", "nvidia-agent-toolkit"]
 tags: [agent-runtime, harness, prompt, tool-definition]
 ---
 
@@ -66,3 +66,12 @@ Cline 把 provider 逻辑隔离在 `@cline/llms` 层，agent loop 本身不感�
 行业正在从"**写 prompt**"转向"**维护控制面**"。
 
 > "Harness 不是万能的 — 如果你的模型选错了（用 haiku 跑复杂重构），harness 再强也救不回来。但它也不是可有可无的 — 75% 的失败都可以在 runtime 层修复。"
+
+## 行业实现
+
+- [[entities/NVIDIA-Agent-Toolkit]] 的 **OpenShell** — 在 Runtime 基础上增加三层安全检查（Policy Engine → Network Guardrail → Privacy Router），参见 [[Agent-Secure-Runtime]]
+
+## Related concepts
+
+- [[Agent-Secure-Runtime]] — Agent Runtime 的安全增强模式，增加沙箱和护栏层
+- [[Claude-Code-Subagent]] — Subagent 的执行环境属于 Runtime 层的一部分

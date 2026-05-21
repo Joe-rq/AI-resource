@@ -9,7 +9,7 @@ What this wiki covers:
 - **Agent 平台与基础设施层** — Runtime / Multi-agent / Harness / 工具定义
 - **Claude Code Skill 开发** — Skill 编写流程、SKILL.md 规范
 - **多 Agent 协作架构** — Orchestrator/Specialist、Worker/Verifier 对抗循环、Team Engine
-- **行业研究** — MiniMax、Anthropic、Cline、OpenAI 等公司的 Agent 平台实践
+- **行业研究** — MiniMax、Anthropic、NVIDIA、Cline、OpenAI 等公司的 Agent 平台实践
 
 What this wiki deliberately excludes:
 - 模型训练/微调细节
@@ -57,19 +57,35 @@ tags: [relevant tags]
 ## Current articles
 
 ### Concepts
-*(none yet — run compile after ingest)*
+- Agent-Runtime — 单 Agent 执行环境
+- Agent-Secure-Runtime — Agent 安全运行时（三层安全检查 + 沙箱隔离）
+- Multi-Agent-协作模式 — 三种核心协作模式
+- Worker-Verifier-对抗循环 — Mavis 核心架构机制
+- Claude-Code-Subagent — Subagent：独立上下文工作者（内置类型、自定义定义、调用方式）
 
 ### Entities
-*(none yet)*
+- MiniMax-Mavis — MiniMax 的 Agent 产品
+- NVIDIA-Agent-Toolkit — NVIDIA Agent 开发工具包
 
 ### Summaries
-*(none yet)*
+- 09-claude-subagent-tutorial — Claude Code Subagent 小白入门教程
+- nvidia-agent-toolkit — NVIDIA Agent Toolkit 架构图
+- 08-agent-runtime-battlefield — Agent Runtime 主战场
+- 01-minimax-single-ai-not-enough — 单 AI 的四个结构性缺陷
+- 04-anthropic-multi-agent-research-system — Anthropic Orchestrator-Worker 架构
+- 05-anthropic-managed-agents-api — Anthropic 共享容器 + Session Thread 隔离
+- 06-claude-code-agent-teams — Claude Code Team Lead + Teammates
+- 01-building-skill-for-claude — Claude Code Skill 开发流程
+- 02-minimax-agent-team-tech-report — Mavis 详细技术报告
+- 01-building-skill-for-claude-zh — Skill 开发指南（中文）
+- readme — AI Resource 项目介绍
 
 ## Open research questions
 
 - Agent Runtime 的具体实现差异（Prompt 设计/工具定义/上下文管理/错误处理）具体怎么影响性能？
 - Worker/Verifier 对抗循环的收敛条件是什么？何时终止对抗？
 - Claude Code Agent Teams 和 Anthropic Managed Agents 的架构有何本质区别？
+- Agent Secure Runtime 的三层安全检查（Policy/Network/Privacy）性能开销有多大？
 
 ## Research gaps
 
