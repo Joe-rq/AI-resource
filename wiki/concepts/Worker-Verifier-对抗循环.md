@@ -2,8 +2,8 @@
 title: "Worker Verifier 对抗循环"
 type: concept
 created: 2026-05-19
-updated: 2026-05-19
-sources: ["03-minimax-harness-strategy", "02-minimax-agent-team-tech-report"]
+updated: 2026-05-22
+sources: ["03-minimax-harness-strategy", "02-minimax-agent-team-tech-report", "hermes-agent-harness-engineering"]
 tags: [multi-agent, worker-verifier, adversarial, mavis]
 ---
 
@@ -46,8 +46,16 @@ flowchart LR
 
 ## 对比：其他验证方案
 
-| 方案 | 验证方式 |
-|------|----------|
-| MiniMax Mavis | Worker/Verifier 直接对抗 |
-| Anthropic Multi-Agent | Lead Agent 评审 Subagent 结果 |
-| OpenAI Agents SDK | 接力式 Handoff，A→B→C 每棒不回头 |
+| 方案 | 验证方式 | 权限控制 | 拦截方式 |
+|------|----------|----------|----------|
+| MiniMax Mavis Worker/Verifier | 直接对抗 | 角色分离 | 状态机流转 |
+| wow-harness v3 双层验证 | 交叉验证 | Schema 级限制（无写权限） | 物理拦截提交检查点 |
+| Anthropic Multi-Agent | Lead Agent 评审 | 无特殊限制 | 无物理拦截 |
+| Superpowers 强制 TDD | prompt 层面约束 | 无 | 无物理拦截，agent 可"合理化"跳过 |
+
+wow-harness v3 的双层验证与 Worker/Verifier 的本质区别在于：验证 agent 的工具列表里**没有写权限**（schema 级限制，不是提示词约束），且自检通过物理检查点拦截而非 prompt 建议。详见 [[Agent-Harness-治理协议]]。
+
+## Related concepts
+
+- [[concepts/Multi-Agent-协作模式]] -- 多 Agent 协作的整体模式图谱
+- [[Agent-Harness-治理协议]] -- 双层验证的另一种实现方式

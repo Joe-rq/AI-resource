@@ -2,7 +2,7 @@
 title: "Agent Runtime"
 type: concept
 created: 2026-05-19
-updated: 2026-05-19
+updated: 2026-05-22
 sources: ["08-agent-runtime-battlefield-20260516", "nvidia-agent-toolkit"]
 tags: [agent-runtime, harness, prompt, tool-definition]
 ---
@@ -67,11 +67,16 @@ Cline 把 provider 逻辑隔离在 `@cline/llms` 层，agent loop 本身不感�
 
 > "Harness 不是万能的 — 如果你的模型选错了（用 haiku 跑复杂重构），harness 再强也救不回来。但它也不是可有可无的 — 75% 的失败都可以在 runtime 层修复。"
 
+"Dive into Claude Code"论文（[[entities/Dive-into-Claude-Code]]）通过源码级逆向工程分析印证了这一点：整个代码库中 98.4% 是运行基础设施，只有 1.6% 是 AI 决策逻辑。论文进一步揭示了 7 组件高层结构和 5 层子系统架构，确认 Claude Code 的设计哲学是 **minimal scaffolding + maximal operational harness**。
+
 ## 行业实现
 
 - [[entities/NVIDIA-Agent-Toolkit]] 的 **OpenShell** — 在 Runtime 基础上增加三层安全检查（Policy Engine → Network Guardrail → Privacy Router），参见 [[Agent-Secure-Runtime]]
+- [[entities/wow-harness]] — 在 Runtime 之上构建跨 session、跨 agent 的治理协议，参见 [[Agent-Harness-治理协议]]
 
 ## Related concepts
 
 - [[Agent-Secure-Runtime]] — Agent Runtime 的安全增强模式，增加沙箱和护栏层
 - [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] — Subagent 的执行环境属于 Runtime 层的一部分
+- [[Agent-Harness-治理协议]] — Runtime 之上的治理层，解决跨 session 长期一致性
+- [[entities/Dive-into-Claude-Code]] — Claude Code 源码级逆向分析，98.4% 基础设施数据的来源
