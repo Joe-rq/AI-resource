@@ -7,7 +7,8 @@
 
 ## Concepts
 
-### Multi-Agent Architecture
+### Agent Platform
+- [[concepts/Agent-Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（NanoClaw/Hermes 对比）
 - [[concepts/Multi-Agent-协作模式]] — 四种核心协作模式：Orchestrator/Specialist、Worker/Verifier、Team Engine、自动扩张任务图
 - [[concepts/Worker-Verifier-对抗循环]] — Worker/Verifier 对抗循环是 Mavis 的核心架构机制
 - [[concepts/Agent-Runtime]] — 单 Agent 执行环境，包含 Prompt/工具定义/上下文管理/错误处理
@@ -24,8 +25,12 @@
 - [[entities/wow-harness]] — wow-harness v3 治理协议（事件溯源 + 概念演化 + 双层验证 + 自动扩张任务图）
 - [[entities/Dive-into-Claude-Code]] — Claude Code 源码级逆向工程分析论文（5 设计价值、13 设计原则、7 组件结构、5 层子系统）
 - [[entities/ESAA]] — ESAA: Event Sourcing for Autonomous Agents（Event Sourcing + CQRS 应用于 agent 生命周期管理，immutable audit trail + deterministic replay）
+- [[entities/NanoClaw]] — NanoClaw：~500行代码的轻量级 Agent 框架，建在 Claude Agent SDK 上
+- [[entities/Nous-Research]] — Nous Research：硅谷 AI 实验室，Hermes Agent（11万星）
 
 ## Summaries (chronological)
+- 2026-05-22 — [[summaries/10-singapore-fm-nanoclaws-second-brain]] — 新加坡外長的 AI 第二大腦（NanoClaw + Raspberry Pi）
+- 2026-05-22 — [[summaries/11-hermes-agent-nous-research]] — Hermes Agent / Nous Research（长期记忆 + 自我进化）
 - 2026-05-22 — [[summaries/esaa-paper]] — ESAA 论文：Event Sourcing + CQRS 应用于 LLM agent 生命周期（两个 case study 验证）
 - 2026-05-22 — [[summaries/dive-into-claude-code]] — Claude Code 源码级逆向工程分析（98.4% 基础设施、5 设计价值、与 OpenClaw 对比）
 - 2026-05-22 — [[summaries/hermes-agent-harness-engineering]] — wow-harness v3 治理协议设计（事件溯源、概念演化、双层验证、自动扩张任务图）

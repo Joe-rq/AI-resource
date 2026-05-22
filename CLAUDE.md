@@ -63,6 +63,7 @@ tags: [relevant tags]
 - Agent-Harness-治理协议 — 跨 session、跨 agent 的长期一致性治理（事件溯源、概念演化、双层验证、自动扩张任务图、人机决策分层）
 - Multi-Agent-协作模式 — 四种核心协作模式
 - Worker-Verifier-对抗循环 — Mavis 核心架构机制
+- Agent-Memory — Agent 长期记忆（图谱结构、向量检索、自我进化）
 - Claude-Code-Subagent/index — Subagent：独立上下文工作者（内置类型、自定义定义、Fork 模式、持久内存、Hooks）
 - Claude-Code-Skills/index — Skills 扩展机制（SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制）
 
@@ -72,11 +73,12 @@ tags: [relevant tags]
 - wow-harness — wow-harness v3 治理协议（事件溯源 + 概念演化 + 双层验证 + 自动扩张任务图）
 - Dive-into-Claude-Code — Claude Code 源码级逆向工程分析论文（5 设计价值、13 设计原则、7 组件结构、5 层子系统）
 - ESAA — ESAA: Event Sourcing for Autonomous Agents（Event Sourcing + CQRS、immutable audit trail、deterministic replay、两个 case study 验证）
+- NanoClaw — ~500行代码的轻量级 Agent 框架（Claude Agent SDK）
+- Nous-Research — 硅谷 AI 实验室，Hermes Agent（11万星）
 
 ### Summaries
-- esaa-paper — ESAA 论文：Event Sourcing + CQRS 应用于 LLM agent 生命周期管理
-- dive-into-claude-code — Claude Code 源码级逆向工程分析（98.4% 基础设施、5 设计价值、与 OpenClaw 对比）
-- hermes-agent-harness-engineering — wow-harness v3 治理协议设计
+- 10-singapore-fm-nanoclaws-second-brain — 新加坡外長的 AI 第二大腦（NanoClaw + Raspberry Pi）
+- 11-hermes-agent-nous-research — Hermes Agent / Nous Research（长期记忆 + 自我进化）
 - 09-claude-subagent-tutorial — Claude Code Subagent 小白入门教程
 - nvidia-agent-toolkit — NVIDIA Agent Toolkit 架构图
 - 08-agent-runtime-battlefield — Agent Runtime 主战场
@@ -101,6 +103,9 @@ tags: [relevant tags]
 - "Dive into Claude Code" 论文识别的 5 层 compaction pipeline 在实际使用中的各层触发频率和效果如何？
 - Claude Code 的 deny-first 权限系统在 50+ 子命令 fallback 场景下的安全退化程度如何量化？
 - ESAA 的 boundary contracts 在企业级 monorepo 场景下是否可扩展？CS2 仅 50 tasks / 86 events
+- NanoClaw 的容器化隔離在多租戶場景下的實際安全性如何？
+- Hermes 的自我進化機制在醫療監管框架下的合規路徑是什麼？
+- Agent Memory 的「遺忘機制」如何設計？全量保留導致上下文膨脹的實際代價
 
 ## Research gaps
 

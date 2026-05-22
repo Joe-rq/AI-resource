@@ -28,7 +28,7 @@ tags: [harness, governance, agent-organization, wow-harness]
 
 | 工具 | 关系 |
 |------|------|
-| [[concepts/Agent-Runtime\|Claude Code]] | **地基**，v3 跑在 Claude Code 上面，不竞争 |
+| [[entities/Dive-into-Claude-Code|Claude Code]] | **地基**，v3 跑在 Claude Code 上面，不竞争 |
 | Superpowers | **同层分歧** -- 把 agent 当需要管教的执行者，v3 让 agent 从系统理解推导行为 |
 | Hermes Agent | **同层分歧** -- 一个人的助手，v3 假设多 agent 并行 |
 | OpenHands | **同层分歧** -- EventStream 是 session 内临时消息总线，v3 事件时间线是永久的 |
