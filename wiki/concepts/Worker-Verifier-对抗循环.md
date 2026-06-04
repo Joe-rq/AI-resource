@@ -3,7 +3,7 @@ title: "Worker Verifier 对抗循环"
 type: concept
 created: 2026-05-19
 updated: 2026-05-22
-sources: ["03-minimax-harness-strategy", "02-minimax-agent-team-tech-report", "hermes-agent-harness-engineering"]
+sources: ["02-minimax-agent-team-tech-report", "hermes-agent-harness-engineering"]
 tags: [multi-agent, worker-verifier, adversarial, mavis]
 ---
 

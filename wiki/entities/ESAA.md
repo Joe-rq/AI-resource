@@ -3,7 +3,7 @@ title: "ESAA"
 type: entity
 created: 2026-05-22
 updated: 2026-05-22
-sources: ["raw/papers/ESAA-Event-Sourcing-for-Autonomous-Agents"]
+sources: ["esaa-paper"]
 tags: [event-sourcing, CQRS, agent-governance, audit-trail, paper, multi-agent]
 ---
 

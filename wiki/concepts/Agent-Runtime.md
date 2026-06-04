@@ -3,7 +3,7 @@ title: "Agent Runtime"
 type: concept
 created: 2026-05-19
 updated: 2026-05-22
-sources: ["08-agent-runtime-battlefield-20260516", "nvidia-agent-toolkit"]
+sources: ["08-agent-runtime-battlefield", "nvidia-agent-toolkit"]
 tags: [agent-runtime, harness, prompt, tool-definition]
 ---
 
@@ -67,7 +67,7 @@ Cline 把 provider 逻辑隔离在 `@cline/llms` 层，agent loop 本身不感�
 
 > "Harness 不是万能的 — 如果你的模型选错了（用 haiku 跑复杂重构），harness 再强也救不回来。但它也不是可有可无的 — 75% 的失败都可以在 runtime 层修复。"
 
-"Dive into Claude Code"论文（[[entities/Dive-into-Claude-Code]]）通过源码级逆向工程分析印证了这一点：整个代码库中 98.4% 是运行基础设施，只有 1.6% 是 AI 决策逻辑。论文进一步揭示了 7 组件高层结构和 5 层子系统架构，确认 Claude Code 的设计哲学是 **minimal scaffolding + maximal operational harness**。
+"Dive into Claude Code"论文（[[entities/Dive-into-Claude-Code|Dive into Claude Code]]）通过源码级逆向工程分析印证了这一点：整个代码库中 98.4% 是运行基础设施，只有 1.6% 是 AI 决策逻辑。论文进一步揭示了 7 组件高层结构和 5 层子系统架构，确认 Claude Code 的设计哲学是 **minimal scaffolding + maximal operational harness**。
 
 ## 行业实现
 

@@ -3,7 +3,7 @@ title: "09-Claude Subagent 小白入门教程"
 type: summary
 created: 2026-05-21
 updated: 2026-05-21
-sources: ["09-Claude Subagent 小白入门教程"]
+sources: ["09-claude-subagent-tutorial"]
 tags: [claude-code, subagent, agent-definition, context-isolation]
 ---
 

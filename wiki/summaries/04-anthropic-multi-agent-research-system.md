@@ -13,8 +13,16 @@ tags: [multi-agent, orchestrator, parallel-search, anthropic]
 
 Lead Agent（规划者）协调，多个 Subagent（并行执行者）搜索。
 
-```
-用户查询 → Lead Agent 分析 → 并行 Subagent 搜索 → Lead 汇总答案
+```mermaid
+flowchart LR
+    Q[用户查询] --> L[Lead Agent<br/>分析任务]
+    L --> S1[Subagent 1<br/>独立方向]
+    L --> S2[Subagent 2<br/>独立方向]
+    L --> S3[Subagent 3<br/>独立方向]
+    S1 --> L
+    S2 --> L
+    S3 --> L
+    L --> A[Lead 汇总答案]
 ```
 
 ## 关键数据

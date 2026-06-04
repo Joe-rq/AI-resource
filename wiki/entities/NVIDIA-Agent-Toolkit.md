@@ -1,7 +1,6 @@
 ---
-title: NVIDIA Agent Toolkit
+title: "NVIDIA Agent Toolkit"
 type: entity
-entity_type: tool
 created: 2026-05-19
 updated: 2026-05-19
 sources: [nvidia-agent-toolkit]
@@ -19,7 +18,7 @@ NVIDIA 的 Agent 开发与部署工具包，以自身 GPU/CUDA 生态为基础�
 - **LLM 引擎** — Nemotron / NeMo / Dynamo / NIM，覆盖本地高性能模型与云端大模型
 - **Sub Agents** — AI-Q Research Agent，支持多 Agent 协作编排
 - **Skills** — cuOpt 优化引擎等可调用能力模块
-- **Tools** — 通过 CLI 和 [[concepts/Agent-Runtime|MCP]] 协议连接外部资源
+- **Tools** — 通过 CLI 和 MCP（Model Context Protocol）协议连接外部资源
 
 ## 关键特性
 

@@ -42,3 +42,5 @@ tags: [minimax, mavis, agent-team, single-agent-defects]
 > "很多框架里的验证环节是可选的附加步骤，在我们这里它是架构的核心。"
 
 验证不是事后的质量检查，而是嵌入在生产状态机里的核心机制。
+
+参见 [[entities/MiniMax-Mavis|MiniMax Mavis]] 产品。
