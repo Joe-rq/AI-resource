@@ -26,7 +26,11 @@
       "Bash(mkdir -p \"D:\\\\AI-resource\\\\.claude\\\\skills\\\\llm-wiki\")",
       "Bash(mv \"D:\\\\AI-resource\\\\.claude\\\\skills\\\\SKILL.md\" \"D:\\\\AI-resource\\\\.claude\\\\skills\\\\llm-wiki\\\\SKILL.md\")",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(python scripts/lint_wiki.py .)",
+      "Bash(PYTHONIOENCODING=utf-8 python scripts/lint_wiki.py .)",
+      "Bash(sed:*)",
+      "Bash(git status:*)"
     ]
   }
 }

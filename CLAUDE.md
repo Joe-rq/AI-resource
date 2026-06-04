@@ -21,12 +21,26 @@ What this wiki deliberately excludes:
 This wiki follows the llm-wiki skill's five operations: `compile`, `ingest`, `query`, `lint`, `audit`.
 Every operation appends an entry to `log/YYYYMMDD.md`.
 
+### Log entry template (from 2026-06-04)
+
+```
+## [operation] title
+- Source: 源路径
+- 主题: 1-2 句
+- New pages: 列表
+- Updated pages: 列表
+- Wikilink: 概念列表
+- Lint: pass/fail
+```
+
+> Legacy files (`log/20260519.md`, `log/20260521.md`) 保留旧格式，不追溯重写。新增条目一律使用上述模板。
+
 ## Naming conventions
 
 ### Pages
 - **Concept pages** (`wiki/concepts/`): Title Case noun phrases. E.g., "Agent Runtime", "Multi-Agent Architecture".
 - **Folder-split concepts** (`wiki/concepts/<topic>/`): used when a topic would exceed ~1200 words as a single page. Contains `index.md` + one file per aspect.
-- **Entity pages** (`wiki/entities/`): Proper names. E.g., "MiniMax Mavis", "Claude Code", "Cline".
+- **Entity pages** (`wiki/entities/`): Proper names. E.g., "MiniMax Mavis", "Claude Code", "Cline". Entity 文件名**优先使用品牌官方写法**（如 `MiniMax-Mavis` 保持现状，不简写为 `mavis`），便于与外部引用对齐。
 - **Summary pages** (`wiki/summaries/`): kebab-case source slug. E.g., "08-agent-runtime-battlefield".
 
 ### Wikilinks
@@ -44,8 +58,11 @@ created: YYYY-MM-DD
 updated: YYYY-MM-DD
 sources: [list of raw/ slugs this page draws from]
 tags: [relevant tags]
+parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 ---
 ```
+
+> Entity 页面**不**需要 `entity_type` 字段；分类信息通过 `tags` 表达（如 `tags: [company, agent-platform, anthropic]`），保持 frontmatter 简洁。
 
 ### Diagrams and formulas
 - All diagrams are **mermaid**. No ASCII art.
@@ -86,10 +103,10 @@ tags: [relevant tags]
 - 04-anthropic-multi-agent-research-system — Anthropic Orchestrator-Worker 架构
 - 05-anthropic-managed-agents-api — Anthropic 共享容器 + Session Thread 隔离
 - 06-claude-code-agent-teams — Claude Code Team Lead + Teammates
-- 01-building-skill-for-claude — Claude Code Skill 开发流程
+- 14-building-skill-for-claude — Claude Code Skill 开发流程
 - 02-minimax-agent-team-tech-report — Mavis 详细技术报告
-- 01-building-skill-for-claude-zh — Skill 开发指南（中文）
-- readme — AI Resource 项目介绍
+- 14-building-skill-for-claude-zh — Skill 开发指南（中文）
+- project-overview — AI Resource 项目介绍
 
 ## Open research questions
 
@@ -106,6 +123,9 @@ tags: [relevant tags]
 - NanoClaw 的容器化隔離在多租戶場景下的實際安全性如何？
 - Hermes 的自我進化機制在醫療監管框架下的合規路徑是什麼？
 - Agent Memory 的「遺忘機制」如何設計？全量保留導致上下文膨脹的實際代價
+- 分布式 Harness 附着点 vs 独立上下文窗口与现有 Worker/Verifier 概念有何同构/包含关系?
+- CGP/IEL 9 件工具组成熟度评估: 哪些工程化已就绪, 哪些仍 PoC?
+- 四层维护存储 vs 事件时间线: 分布式 Harness 存储抽象是否可由 wow-harness v3 事件时间线统一表达?
 
 ## Research gaps
 
