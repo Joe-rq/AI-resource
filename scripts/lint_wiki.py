@@ -48,7 +48,7 @@ def load_pages(wiki_dir: Path) -> dict[str, Path]:
     for p in wiki_dir.rglob("*.md"):
         pages[p.stem] = p
         rel = p.relative_to(wiki_dir)
-        pages[str(rel.with_suffix(""))] = p
+        pages[rel.with_suffix("").as_posix()] = p
     return pages
 
 
@@ -163,7 +163,7 @@ def lint(root: str) -> int:
             p for p in all_wiki_files
             if p != index_path
             and f"[[{p.stem}]]" not in index_text
-            and str(p.relative_to(wiki_path).with_suffix("")) not in index_text
+            and p.relative_to(wiki_path).with_suffix("").as_posix() not in index_text
         ]
         if not_in_index:
             print(f"\n🟡 Pages missing from index.md ({len(not_in_index)}):")
