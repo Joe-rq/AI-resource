@@ -83,6 +83,9 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Agent-Memory — Agent 长期记忆（图谱结构、向量检索、自我进化）
 - Claude-Code-Subagent/index — Subagent：独立上下文工作者（内置类型、自定义定义、Fork 模式、持久内存、Hooks）
 - Claude-Code-Skills/index — Skills 扩展机制（SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制）
+- Thin-Harness-Fat-Skills — 套具要瘦、技能要胖（5 定义 + 3 反模式 + 三层架构 + Self-rewriting skill 循环）
+- Meta-Reflection-Techniques — 阳志平 12 个元反思技巧（行动之环 × 4 象限：意图/实施/反馈/情境）
+- Autonomous-AI-System — AI 自主系统 4 组 12 技巧（任务编排/实际开工/自检评审/自动续航；与 harness 视角互补）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
@@ -94,11 +97,23 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Nous-Research — 硅谷 AI 实验室，Hermes Agent（11万星）
 
 ### Summaries
+- 12-a-harness-for-every-task-dynamic-workflows — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）
+- 10-claude-code-dynamic-workflows — Claude Code 动态工作流官方中文功能文档（v2.1.154+ / ultracode / /deep-research / 触发与运行管理）
 - 10-singapore-fm-nanoclaws-second-brain — 新加坡外長的 AI 第二大腦（NanoClaw + Raspberry Pi）
 - 11-hermes-agent-nous-research — Hermes Agent / Nous Research（长期记忆 + 自我进化）
+- 18-agent-harness-12-components — Agent Harness 12 组件 + 7 决策 + TAO 循环 + Ralph Loop + 8 框架对比
+- 15-wow-harness-v3-governance — wow-harness v3 一手分享（事件溯源 + 概念演化 + 双层验证 + 自动扩张任务图 + 人机决策分层）
+- 13-thin-harness-fat-skills — Thin Harness, Fat Skills（5 定义 + 3 反模式 + 三层架构 + YC Startup School 实证）
+- 16-distributed-harness — 分布式 Harness 哲学（Agent = 显形 / 附着点 / CGP-IEL / 9 件工具组 / 智流网络）
+- 12-harness-engineering-survey — Harness Engineering 综述（14 篇文献 / 15 个月 / 三层结构 / 补偿面）
+- hermes-agent-harness-engineering — (stub) 已合并至 15-wow-harness-v3-governance
+- 17-ai-autonomous-system-tips — 阳志平 AI 自主系统 12 技巧（任务编排 / 实际开工 / 自检评审 / 自动续航）
+- 11-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）
 - 09-claude-subagent-tutorial — Claude Code Subagent 小白入门教程
 - nvidia-agent-toolkit — NVIDIA Agent Toolkit 架构图
 - 08-agent-runtime-battlefield — Agent Runtime 主战场
+- dive-into-claude-code — Dive into Claude Code 论文（arxiv 2604.14228 / 5 价值 + 13 原则 + 7 组件 + 5 层子系统）
+- esaa-paper — ESAA: Event Sourcing for Autonomous Agents 论文（arxiv 2602.23193 / Event Sourcing + CQRS / 两个 case study）
 - 01-minimax-single-ai-not-enough — 单 AI 的四个结构性缺陷
 - 04-anthropic-multi-agent-research-system — Anthropic Orchestrator-Worker 架构
 - 05-anthropic-managed-agents-api — Anthropic 共享容器 + Session Thread 隔离
@@ -126,6 +141,9 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 分布式 Harness 附着点 vs 独立上下文窗口与现有 Worker/Verifier 概念有何同构/包含关系?
 - CGP/IEL 9 件工具组成熟度评估: 哪些工程化已就绪, 哪些仍 PoC?
 - 四层维护存储 vs 事件时间线: 分布式 Harness 存储抽象是否可由 wow-harness v3 事件时间线统一表达?
+- Dynamic Workflows 三种失效模式（Agentic laziness / Self-preferential bias / Goal drift）在不同模型规模与任务长度上的发生率如何量化？这三个概念应否提升为独立 concept 页？
+- Tournament 模式中 pairwise 比较的 transitivity 假设何时崩溃？(A>B, B>C 但 C>A 的循环判断如何处理？)
+- Quarantine 模式（读未受信内容 agent ↮ 高权限动作 agent 结构隔离）在 prompt injection 实际防御中的效果如何？读 agent 能否诱导写 agent 执行隐性指令？
 
 ## Research gaps
 

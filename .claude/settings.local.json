@@ -30,7 +30,8 @@
       "Bash(python scripts/lint_wiki.py .)",
       "Bash(PYTHONIOENCODING=utf-8 python scripts/lint_wiki.py .)",
       "Bash(sed:*)",
-      "Bash(git status:*)"
+      "Bash(git status:*)",
+      "Bash(git pull *)"
     ]
   }
 }
