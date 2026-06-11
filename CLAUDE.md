@@ -101,6 +101,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 10-claude-code-dynamic-workflows — Claude Code 动态工作流官方中文功能文档（v2.1.154+ / ultracode / /deep-research / 触发与运行管理）
 - 10-singapore-fm-nanoclaws-second-brain — 新加坡外長的 AI 第二大腦（NanoClaw + Raspberry Pi）
 - 11-hermes-agent-nous-research — Hermes Agent / Nous Research（长期记忆 + 自我进化）
+- 19-addyosmani-loop-engineering — Loop Engineering：从 Prompt 到系统设计（Addy Osmani，5 模块 + 1 记忆，Claude Code / Codex 通用 loop 架构）
 - 18-agent-harness-12-components — Agent Harness 12 组件 + 7 决策 + TAO 循环 + Ralph Loop + 8 框架对比
 - 15-wow-harness-v3-governance — wow-harness v3 一手分享（事件溯源 + 概念演化 + 双层验证 + 自动扩张任务图 + 人机决策分层）
 - 13-thin-harness-fat-skills — Thin Harness, Fat Skills（5 定义 + 3 反模式 + 三层架构 + YC Startup School 实证）

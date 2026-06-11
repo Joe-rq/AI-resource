@@ -38,6 +38,7 @@
 - [[entities/Nous-Research]] — Nous Research：硅谷 AI 实验室，Hermes Agent（11万星）
 
 ## Summaries (chronological)
+- 2026-06-11 — [[summaries/19-addyosmani-loop-engineering]] — Loop Engineering：从 Prompt 到系统设计（Addy Osmani，5 模块 + 1 记忆，Claude Code / Codex 通用 loop 架构）
 - 2026-06-04 — [[summaries/18-agent-harness-12-components]] — Agent Harness 12 组件 + 7 决策（TAO 循环、上下文腐烂、脚手架隐喻、TerminalBench 30→5 名实证）
 - 2026-06-04 — [[summaries/17-ai-autonomous-system-tips]] — 如何实现一个好的 AI 自主干活系统（阳志平）：12 技巧 × 4 组（任务编排/实际开工/自检评审/自动续航）+ 永不停摆 + 飞轮
 - 2026-06-04 — [[summaries/16-distributed-harness]] — 分布式 Harness 哲学：Agent 显形条件 + 维度循环 + 智流网络（CGP/IEL、四层循环、四种显形条件）
