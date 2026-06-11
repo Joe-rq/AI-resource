@@ -18,6 +18,7 @@
 ### Claude Code
 - [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] — Subagent：独立上下文工作者，内置类型、自定义定义、Fork 模式、持久内存、Hooks
 - [[concepts/Claude-Code-Skills/index|Claude Code Skills]] — Skills 扩展机制：SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制
+- [[concepts/Claude-Code-Dynamic-Workflows-Practical-Guide|Claude Code Dynamic Workflows 实践指南]] — 场景选择决策树、命令速查、14 个推荐场景与最佳实践
 
 ### Meta Reflection
 - [[concepts/Meta-Reflection-Techniques]] — 12 个元反思技巧（按"行动之环"四象限组织：意图/实施/反馈/情境）+ 对齐=补全 + 看门狗模式 + 实体数约束 ≤ 4

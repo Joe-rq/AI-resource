@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code 动态工作流使用指南</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f0f11;
+            --bg-secondary: #18181b;
+            --bg-tertiary: #232329;
+            --bg-code: #141416;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #d4a574;
+            --accent-light: #e8c9a0;
+            --accent-glow: rgba(212, 165, 116, 0.15);
+            --border: #2e2e35;
+            --border-light: #3f3f46;
+            --success: #86efac;
+            --warning: #fde68a;
+            --info: #93c5fd;
+            --danger: #fca5a5;
+            --gradient-start: #d4a574;
+            --gradient-end: #c49a6c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--border-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 120px 24px 80px;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(212, 165, 116, 0.04) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: var(--accent-glow);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 32px;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--gradient-start), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-meta .dot {
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .main-layout {
+            display: flex;
+            gap: 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 40px 0;
+            border-left: 1px solid var(--border);
+            padding-left: 32px;
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 2px;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 8px 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            border-left: 2px solid transparent;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-left-color: var(--accent);
+        }
+
+        .sidebar-nav a.active {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border-left-color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            padding: 64px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent-glow);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 40px 0 16px;
+            color: var(--text-primary);
+        }
+
+        h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 28px 0 12px;
+            color: var(--text-secondary);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Note/Warning Boxes */
+        .note {
+            background: linear-gradient(135deg, rgba(147, 197, 253, 0.08), rgba(147, 197, 253, 0.03));
+            border: 1px solid rgba(147, 197, 253, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .note::before {
+            content: 'ⓘ';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.2rem;
+            color: var(--info);
+        }
+
+        .note p:first-child {
+            font-weight: 600;
+            color: var(--info);
+            margin-bottom: 8px;
+            padding-left: 32px;
+        }
+
+        .note p {
+            margin-bottom: 8px;
+        }
+
+        .note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .warning {
+            background: linear-gradient(135deg, rgba(253, 230, 138, 0.08), rgba(253, 230, 138, 0.03));
+            border: 1px solid rgba(253, 230, 138, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .warning-title {
+            color: var(--warning);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 28px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        thead {
+            background: var(--bg-secondary);
+        }
+
+        th {
+            padding: 14px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 14px 20px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: var(--bg-code);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .code-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .code-copy {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .code-copy:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border-color: var(--border-light);
+        }
+
+        .code-copy.copied {
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        pre {
+            padding: 20px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        code {
+            font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        :not(pre) > code {
+            background: var(--bg-tertiary);
+            padding: 3px 8px;
+            border-radius: 5px;
+            color: var(--accent-light);
+            font-size: 0.85em;
+        }
+
+        /* Steps */
+        .steps {
+            counter-reset: step;
+            margin: 32px 0;
+        }
+
+        .step {
+            position: relative;
+            padding-left: 56px;
+            padding-bottom: 32px;
+            border-left: 2px solid var(--border);
+            margin-left: 19px;
+        }
+
+        .step:last-child {
+            border-left-color: transparent;
+            padding-bottom: 0;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            padding-top: 8px;
+        }
+
+        .step-content {
+            color: var(--text-secondary);
+        }
+
+        .step-content p {
+            margin-bottom: 12px;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        /* Keyboard Keys */
+        kbd {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82em;
+            color: var(--text-primary);
+            box-shadow: 0 2px 0 var(--border);
+        }
+
+        /* Comparison Cards */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .comparison-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .comparison-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .comparison-card .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .comparison-card h4 {
+            margin: 0 0 8px;
+            color: var(--accent);
+        }
+
+        .comparison-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Reusable Patterns */
+        .pattern-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .pattern-item {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .pattern-item:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .pattern-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            flex-shrink: 0;
+            width: 48px;
+            text-align: center;
+            line-height: 1;
+            padding-top: 2px;
+        }
+
+        .pattern-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pattern-content h4 {
+            margin: 0 0 10px;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pattern-en {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 400;
+            background: var(--accent-glow);
+            padding: 2px 10px;
+            border-radius: 100px;
+        }
+
+        .pattern-content p {
+            margin-bottom: 12px;
+            font-size: 0.92rem;
+        }
+
+        .pattern-example {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-left: 2px solid var(--accent);
+            padding-left: 14px;
+            line-height: 1.7;
+        }
+
+        .pattern-example strong {
+            color: var(--accent-light);
+        }
+
+        /* Failure Modes */
+        .failure-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 28px 0;
+        }
+
+        .failure-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .failure-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            opacity: 0.6;
+        }
+
+        .failure-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        .failure-card h4 {
+            margin: 0 0 10px;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .failure-card p {
+            font-size: 0.88rem;
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Scenario Cards */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .scenario-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .scenario-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .scenario-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .scenario-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .scenario-header h4 {
+            margin: 0 0 4px;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+        }
+
+        .scenario-tag {
+            font-size: 0.75rem;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 2px 10px;
+            border-radius: 100px;
+            display: inline-block;
+        }
+
+        .scenario-card p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .scenario-tip {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            border-left: 2px solid var(--accent);
+            padding-left: 12px;
+            margin-top: 12px;
+        }
+
+        .scenario-tip strong {
+            color: var(--accent-light);
+        }
+
+        /* Feature Tags */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 4px;
+        }
+
+        .tag-highlight {
+            background: var(--accent-glow);
+            border-color: rgba(212, 165, 116, 0.3);
+            color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 48px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 80px 20px 60px;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .step {
+                padding-left: 44px;
+            }
+            th, td {
+                padding: 10px 14px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
+
+        /* Selection */
+        ::selection {
+            background: rgba(212, 165, 116, 0.3);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                Claude Code 文档
+            </div>
+            <h1>使用<span class="gradient-text">动态工作流</span><br>大规模编排子代理</h1>
+            <p class="hero-description">
+                动态工作流从 Claude 编写的 JavaScript 脚本中编排许多子代理，您可以重新运行。
+                适用于代码库审计、大型迁移和交叉检查研究。
+            </p>
+            <div class="hero-meta">
+                <span><span class="dot"></span> Claude Code v2.1.154+</span>
+                <span><span class="dot"></span> 所有付费计划可用</span>
+                <span><span class="dot"></span> 研究预览阶段</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-title">目录</div>
+            <ul class="sidebar-nav">
+                <li><a href="#intro" class="active">工作流简介</a></li>
+                <li><a href="#use-cases">★ 实际工作场景</a></li>
+                <li><a href="#patterns">P 六种可复用模式</a></li>
+                <li><a href="#commands-compare">📋 命令详细对比</a></li>
+                <li><a href="#when-to-use">何时使用工作流</a></li>
+                <li><a href="#bundled">运行捆绑工作流</a></li>
+                <li><a href="#watch">观看运行</a></li>
+                <li><a href="#write">让 Claude 编写工作流</a></li>
+                <li><a href="#ultracode-prompt">使用 ultracode 关键字</a></li>
+                <li><a href="#ultracode-effort">Ultracode 模式</a></li>
+                <li><a href="#approve">运行前批准</a></li>
+                <li><a href="#save">保存工作流</a></li>
+                <li><a href="#args">传递参数</a></li>
+                <li><a href="#how-it-works">工作流如何运行</a></li>
+                <li><a href="#limits">行为与限制</a></li>
+                <li><a href="#manage">管理运行</a></li>
+                <li><a href="#resume">暂停后恢复</a></li>
+                <li><a href="#cost">成本控制</a></li>
+                <li><a href="#disable">关闭工作流</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <!-- Section: Use Cases -->
+            <section class="section" id="use-cases">
+                <div class="section-header">
+                    <div class="section-number">★</div>
+                    <h2>实际工作场景与最佳实践</h2>
+                </div>
+                <p>以下是社区和官方文档中验证过的、效果较好的工作流使用场景。每个场景都标注了推荐的触发方式和预期效果。</p>
+
+                <h3>🚀 标杆案例：Bun 从 Zig 迁移到 Rust</h3>
+                <div class="note">
+                    <p>真实案例数据</p>
+                    <p>Jarred Sumner 使用动态工作流将 Bun 从 Zig 移植到 Rust：</p>
+                    <ul style="margin-top:8px">
+                        <li>约 <strong>750,000 行</strong> Rust 代码生成</li>
+                        <li><strong>99.8%</strong> 测试套件通过</li>
+                        <li>从首次提交到合并仅 <strong>11 天</strong></li>
+                        <li><strong>数百个代理</strong>并行工作</li>
+                    </ul>
+                </div>
+                <p>该案例使用了四个工作流阶段：生命周期映射 → 逐文件移植（双评审员） → 构建修复循环 → 夜间优化提 PR。</p>
+
+                <h3>效果出色的场景推荐</h3>
+
+                <div class="scenario-grid">
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🔍</span>
+                            <div>
+                                <h4>代码库范围安全审计</h4>
+                                <span class="scenario-tag">推荐：ultracode: / /deep-research</span>
+                            </div>
+                        </div>
+                        <p>扫描整个代码库查找安全漏洞：硬编码密钥、不安全反序列化、废弃 API 调用、缺失的认证检查。</p>
+                        <div class="scenario-tip">
+                            <strong>最佳实践：</strong>先只读扫描确认问题，再分组按严重程度处理。让独立代理验证每个发现。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🏗️</span>
+                            <div>
+                                <h4>大规模代码迁移</h4>
+                                <span class="scenario-tag">推荐：ultracode: / /effort ultracode</span>
+                            </div>
+                        </div>
+                        <p>框架升级、语言移植（如 Zig → Rust）、数据库迁移、API 版本升级。涉及数百文件的一致逻辑变更。</p>
+                        <div class="scenario-tip">
+                            <strong>最佳实践：</strong>先在子目录上试运行，确认模式后再全量执行。要求 Claude 为每个变更生成测试验证。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🧪</span>
+                            <div>
+                                <h4>测试覆盖率生成</h4>
+                                <span class="scenario-tag">推荐：ultracode: / 保存的工作流</span>
+                            </div>
+                        </div>
+                        <p>为现有代码生成有意义的测试。每个模块可独立处理，天然适合并行。</p>
+                        <div class="scenario-tip">
+                            <strong>最佳实践：</strong>按模块拆分代理，每个代理负责一个目录。最后汇总覆盖率报告。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">📊</span>
+                            <div>
+                                <h4>技术尽职调查 / 深度研究</h4>
+                                <span class="scenario-tag">推荐：/deep-research</span>
+                            </div>
+                        </div>
+                        <p>竞品分析、技术选型调研、文献综述。多角度扇出搜索，交叉验证来源，投票过滤不可信声明。</p>
+                        <div class="scenario-tip">
+                            <strong>最佳实践：</strong>问题要足够复杂才值得用 /deep。简单问题直接用普通对话更快。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🔧</span>
+                            <div>
+                                <h4>复杂重构规划</h4>
+                                <span class="scenario-tag">推荐：ultracode: 只读分析</span>
+                            </div>
+                        </div>
+                        <p>分析膨胀的类/模块，提出拆分方案。多个代理分别从架构、测试影响、API 兼容性、回滚风险角度评审。</p>
+                        <div class="scenario-tip">
+                            <strong>最佳实践：</strong>第一阶段只分析不修改，让多代理评审方案后再执行。类似真实的技术设计评审。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">⚔️</span>
+                            <div>
+                                <h4>多轮对抗性验证</h4>
+                                <span class="scenario-tag">推荐：ultracode: / 保存的工作流</span>
+                            </div>
+                        </div>
+                        <p>第1组找问题 → 第2组验证证据 → 第3组尝试推翻结论 → 第4组给出修复建议。</p>
+                        <div class="scenario-tip">
+                            <strong>适用：</strong>安全审计、线上事故复盘、性能瓶颈定位、重要 PR 风险检查、架构方案评审。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🧹</span>
+                            <div>
+                                <h4>技术债务系统清理</h4>
+                                <span class="scenario-tag">推荐：/effort ultracode / 保存的工作流</span>
+                            </div>
+                        </div>
+                        <p>清理遗留模式、未使用导入、废弃依赖、不一致的格式、重复代码。可按目录并行处理。</p>
+                        <div class="scenario-tip">
+                            <strong>最佳实践：</strong>保存为工作流后可在每次迭代前定期运行，保持代码库整洁。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">📋</span>
+                            <div>
+                                <h4>PR 批量审查</h4>
+                                <span class="scenario-tag">推荐：保存的工作流 + gh CLI</span>
+                            </div>
+                        </div>
+                        <p>自动审查 PR 中的 bug、安全问题、风格不一致。可批量处理多个 PR 或对一个大型 PR 分模块审查。</p>
+                        <div class="scenario-tip">
+                            <strong>最佳实践：</strong>与 gh CLI 配合：gh pr diff 123 | claude -p "Review this PR..."
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">✅</span>
+                            <div>
+                                <h4>深度验证（逐条溯源）</h4>
+                                <span class="scenario-tag">推荐：ultracode: / 保存的工作流</span>
+                            </div>
+                        </div>
+                        <p>对每条事实都要标注出处的报告，由一个代理识别各项论断，子代理逐一详细核查，再由验证代理确保来源质量。</p>
+                        <div class="scenario-tip">
+                            <strong>适用：</strong>技术白皮书审核、事故复盘报告、合规性文档、对外发布的技术博客。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🏆</span>
+                            <div>
+                                <h4>排序与锦标赛筛选</h4>
+                                <span class="scenario-tag">推荐：ultracode: / 保存的工作流</span>
+                            </div>
+                        </div>
+                        <p>定性衡量大型条目列表（如按缺陷严重程度给工单排序）。用锦标赛、成对比较或先并行分桶再合并，每次比较都是一个独立代理。</p>
+                        <div class="scenario-tip">
+                            <strong>适用：</strong>工单优先级排序、简历筛选、命名竞赛、方案比选。避免 1000+ 行内容撑爆上下文。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🧠</span>
+                            <div>
+                                <h4>记忆与规则遵循</h4>
+                                <span class="scenario-tag">推荐：ultracode: / 保存的工作流</span>
+                            </div>
+                        </div>
+                        <p>当 Claude 即便把规则写进 CLAUDE.md 仍会漏掉规则时，创建带规则验证器的 workflow。也可反向挖掘：从近期会话中找出反复出现的纠正，聚类提炼为新规则。</p>
+                        <div class="scenario-tip">
+                            <strong>模式：</strong>一条规则配一个验证器 + 怀疑者角色审查 → 对抗式验证 → 幸存规则写回 CLAUDE.md。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🎯</span>
+                            <div>
+                                <h4>大规模分类处理（Triage）</h4>
+                                <span class="scenario-tag">推荐：保存的工作流 + /loop</span>
+                            </div>
+                        </div>
+                        <p>对条目分类、与现有记录去重、然后采取行动。配合 <code>/loop</code> 可持续运行。一个实用模式是"隔离区"：读取不受信任内容的代理被禁止执行高权限操作。</p>
+                        <div class="scenario-tip">
+                            <strong>适用：</strong>工单分类、用户反馈处理、漏洞分级、内容审核。配合 /loop 做持续值守。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">🎨</span>
+                            <div>
+                                <h4>探索与品味决策</h4>
+                                <span class="scenario-tag">推荐：ultracode: / 保存的工作流</span>
+                            </div>
+                        </div>
+                        <p>设计或命名这类依赖品味的决策，能从评分标准中受益。让 Claude 探索解法，同时让一个评审代理依据 rubric 评判，满足标准时即告完成。</p>
+                        <div class="scenario-tip">
+                            <strong>适用：</strong>CLI 工具命名、UI 组件设计、API 命名、Logo/品牌方案比选。用锦标赛模式选出最佳。
+                        </div>
+                    </div>
+
+                    <div class="scenario-card">
+                        <div class="scenario-header">
+                            <span class="scenario-icon">⚖️</span>
+                            <div>
+                                <h4>评估与智能路由</h4>
+                                <span class="scenario-tag">推荐：保存的工作流 / ultracode:</span>
+                            </div>
+                        </div>
+                        <p>跑轻量级 eval：在 worktree 里生成独立 agent，再生成 comparison agent 对照 rubric 打分。也可创建 classifier agent 根据任务复杂度自动路由到 Sonnet 或 Opus。</p>
+                        <div class="scenario-tip">
+                            <strong>适用：</strong>技能质量评估、模型选型、任务复杂度预估。大量工具调用时智能路由最有价值。
+                        </div>
+                    </div>
+                </div>
+
+                <h3>场景选择决策树</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:25%">如果你的任务是...</th>
+                                <th style="width:25%">推荐命令</th>
+                                <th style="width:25%">不推荐的情况</th>
+                                <th style="width:25%">预估效果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>调研类问题（技术选型、竞品分析）</td>
+                                <td><code>/deep-research</code></td>
+                                <td>问题太简单或需要快速迭代探索</td>
+                                <td>⭐⭐⭐⭐⭐ 交叉验证质量高</td>
+                            </tr>
+                            <tr>
+                                <td>一次性大规模任务（审计、迁移）</td>
+                                <td><code>ultracode: &lt;task&gt;</code></td>
+                                <td>单文件修改或小范围编辑</td>
+                                <td>⭐⭐⭐⭐⭐ 远超单代理能力</td>
+                            </tr>
+                            <tr>
+                                <td>会话内多个复杂任务</td>
+                                <td><code>/effort ultracode</code></td>
+                                <td>日常小修改、需要快速响应</td>
+                                <td>⭐⭐⭐⭐☆ 自动但耗 token</td>
+                            </tr>
+                            <tr>
+                                <td>重复执行的流程</td>
+                                <td>保存后 <code>/&lt;name&gt;</code></td>
+                                <td>一次性任务</td>
+                                <td>⭐⭐⭐⭐⭐ 可复用、可参数化</td>
+                            </tr>
+                            <tr>
+                                <td>需要多视角评审的决策</td>
+                                <td><code>ultracode:</code> + 对抗模式</td>
+                                <td>明显简单的修改</td>
+                                <td>⭐⭐⭐⭐⭐ 结论更可靠</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>⚠️ 不适合使用工作流的场景</h3>
+                <div class="warning">
+                    <div class="warning-title">这些情况用普通对话更好</div>
+                    <ul>
+                        <li><strong>单文件修改</strong>：写函数、修 bug、解释代码片段 → 用标准对话更快</li>
+                        <li><strong>交互式开发</strong>：结对编程、需求探索、原型迭代 → 工作流延迟太高</li>
+                        <li><strong>紧密耦合的变更</strong>：模块间依赖极强，并行反而增加协调成本 → 用大上下文窗口顺序处理</li>
+                        <li><strong>成本敏感的小任务</strong>：token 消耗是单代理的 10-100 倍 → 确认值得再投入</li>
+                        <li><strong>需要中途人工介入</strong>：工作流运行中无法输入，只能暂停或停止</li>
+                        <li><strong>常规编码任务</strong>：大多数传统编码并不需要五个 reviewer → 掂量一下是否真的需要额外算力</li>
+                    </ul>
+                </div>
+
+                <h3>💡 最佳实践总结</h3>
+                <ol>
+                    <li><strong>先小范围试运行</strong>：一个目录而不是整个仓库，评估 token 消耗和效果后再扩大</li>
+                    <li><strong>给足上下文</strong>：与其说"修复认证模块"，不如说"认证模块有三个已知问题：[列表]。下季度还要加 OAuth，请一并考虑"</li>
+                    <li><strong>分离思考与执行</strong>：先用工作流做分析和规划，审查方案后再启动执行工作流</li>
+                    <li><strong>保持干净的 git 状态</strong>：每次工作流前提交当前代码，方便审查完整 diff</li>
+                    <li><strong>定期保存工作流</strong>：完成的工作流按 <kbd>s</kbd> 保存，变成可复用的团队资产</li>
+                    <li><strong>搭配 Auto 权限模式</strong>：长时间无人值守运行时开启，避免每次批准中断</li>
+                </ol>
+            </section>
+
+            <!-- Section: Intro -->
+            <section class="section" id="intro">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2>工作流简介</h2>
+                </div>
+                <p>动态工作流是一个 JavaScript 脚本，可大规模编排<a href="https://code.claude.com/docs/zh-CN/sub-agents" target="_blank">子代理</a>。Claude 为您描述的任务编写脚本，运行时在后台执行它，同时您的会话保持响应。</p>
+
+                <div class="note">
+                    <p>版本要求</p>
+                    <p>动态工作流处于研究预览阶段。它们需要 Claude Code <strong>v2.1.154</strong> 或更高版本，在所有付费计划上可用。在 Pro 上，从 <code>/config</code> 中的"Dynamic workflows"行启用它们。</p>
+                </div>
+
+                <p><strong>何时使用工作流：</strong></p>
+                <ul>
+                    <li>代码库范围的错误扫描</li>
+                    <li>500+ 文件的大型迁移</li>
+                    <li>需要相互交叉检查来源的研究问题</li>
+                    <li>在提交前需要从多个独立角度起草的困难计划</li>
+                </ul>
+
+                <h3>为什么需要工作流：三种失效模式</h3>
+                <p>默认的 Claude Code 在单个上下文窗口内完成规划与执行，这对编码任务很有效，但面对长时间运行、大规模并行或带对抗性质的任务会出现三种失效模式：</p>
+
+                <div class="failure-modes">
+                    <div class="failure-card">
+                        <div class="failure-num">01</div>
+                        <h4>智能体偷懒</h4>
+                        <p>面对复杂的多部分任务，Claude 会过早停止。比如 50 项安全审查只处理了 35 项就宣布完成。</p>
+                    </div>
+                    <div class="failure-card">
+                        <div class="failure-num">02</div>
+                        <h4>自我偏好偏差</h4>
+                        <p>当被要求对照评分标准验证或评判结果时，Claude 会偏袒自己得出的结论，缺乏客观性。</p>
+                    </div>
+                    <div class="failure-card">
+                        <div class="failure-num">03</div>
+                        <h4>目标漂移</h4>
+                        <p>在多轮交互中保真度逐渐流失，每一次总结都会丢掉细节，包括边缘情况和各种约束。</p>
+                    </div>
+                </div>
+
+                <p><strong>工作流的对策：</strong>编排一批彼此独立、各自拥有独立上下文窗口、目标聚焦又互相隔离的子代理。每个代理只负责一小块任务，结果汇总到脚本变量中，避免了上述三种失效。</p>
+            </section>
+
+            <!-- Section: Reusable Patterns -->
+            <section class="section" id="patterns">
+                <div class="section-header">
+                    <div class="section-number">P</div>
+                    <h2>6 种可复用模式</h2>
+                </div>
+                <p>触发工作流后，Claude 会根据任务自动选择或组合以下模式。你也可以在提示中明确要求使用某种模式。</p>
+
+                <div class="pattern-list">
+                    <div class="pattern-item">
+                        <div class="pattern-num">01</div>
+                        <div class="pattern-content">
+                            <h4>分类并执行 <span class="pattern-en">Classify & Execute</span></h4>
+                            <p>由一个分类器代理判断任务类型，据此路由到不同的代理或行为。也可以在任务完成时确定输出的分类。</p>
+                            <div class="pattern-example">
+                                <strong>示例：</strong> incoming bug 报告 → 分类为"前端/UI"、"后端/API"、"基础设施" → 分别路由给对应领域的专家代理处理。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-item">
+                        <div class="pattern-num">02</div>
+                        <div class="pattern-content">
+                            <h4>扇出并综合 <span class="pattern-en">Fan-out & Synthesize</span></h4>
+                            <p>把任务拆成许多更小的步骤，每个步骤跑一个代理，再综合所有结果。综合这一步充当一个<strong>屏障</strong>，它会等所有扇出的代理完成后，再合并它们的结构化输出。</p>
+                            <div class="pattern-example">
+                                <strong>示例：</strong>代码库审计 → 50 个代理各负责一个目录 → 屏障等全部完成后 → 汇总为一份统一报告。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-item">
+                        <div class="pattern-num">03</div>
+                        <div class="pattern-content">
+                            <h4>对抗式验证 <span class="pattern-en">Adversarial Verification</span></h4>
+                            <p>每生成一个代理，就再跑一个单独的代理以对抗的姿态对照 rubric 或判定准则来验证它的输出。这是对抗性偏差最直接的解药。</p>
+                            <div class="pattern-example">
+                                <strong>示例：</strong>代理 A 得出结论"此函数存在 SQL 注入" → 验证代理 B 必须找到证据推翻或确认该结论 → 只有通过交叉检查的才保留。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-item">
+                        <div class="pattern-num">04</div>
+                        <div class="pattern-content">
+                            <h4>生成并筛选 <span class="pattern-en">Generate & Filter</span></h4>
+                            <p>先就某个主题生成多个想法，再按 rubric 或验证来筛选，去重后只留下质量最高、经过检验的那些。</p>
+                            <div class="pattern-example">
+                                <strong>示例：</strong>为 CLI 工具生成 20 个候选名称 → 按 rubric（简洁、可发音、无歧义、域名可用）筛选 → 去重 → 保留 Top 5。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-item">
+                        <div class="pattern-num">05</div>
+                        <div class="pattern-content">
+                            <h4>锦标赛 <span class="pattern-en">Tournament</span></h4>
+                            <p>让 N 个代理用<strong>不同方法</strong>在同一个任务上互相竞争，而不是把工作分摊下去。由成对评判的代理决出胜者，直到只剩一个。</p>
+                            <div class="pattern-example">
+                                <strong>示例：</strong>3 个代理用不同算法解决同一优化问题 → 评判代理两两比较 → 胜者进入下一轮 → 最终选出最优方案。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pattern-item">
+                        <div class="pattern-num">06</div>
+                        <div class="pattern-content">
+                            <h4>循环至完成 <span class="pattern-en">Loop to Completion</span></h4>
+                            <p>对工作量未知的任务，持续生成代理，直到满足停止条件为止（比如不再有新发现、日志里不再有错误），而不是采用固定的遍数。</p>
+                            <div class="pattern-example">
+                                <strong>示例：</strong>持续扫描构建日志修复错误 → 每轮修复后重新构建 → 直到构建成功且测试全过 → 自动停止。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note">
+                    <p>模式组合</p>
+                    <p>实际工作流中，这些模式经常组合使用。比如"扇出并综合"+"对抗式验证"是审计和研究类任务的经典组合；"生成并筛选"+"锦标赛"是设计决策的强力搭配。你可以在提示中要求 Claude 采用特定模式。</p>
+                </div>
+            </section>
+
+            <!-- Section: Commands Comparison -->
+            <section class="section" id="commands-compare">
+                <div class="section-header">
+                    <div class="section-number">!</div>
+                    <h2>调用工作流命令详细对比</h2>
+                </div>
+                <p>以下是所有与动态工作流相关的命令的完整对比，涵盖触发方式、适用场景、可复用性等维度。</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:20%">命令</th>
+                                <th style="width:15%">类型</th>
+                                <th style="width:35%">功能</th>
+                                <th style="width:30%">适用场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>/deep-research &lt;question&gt;</code></td>
+                                <td><span class="tag tag-highlight">内置捆绑</span></td>
+                                <td>多角度网络搜索，获取并交叉检查来源，对声明投票，返回引用报告</td>
+                                <td>调查研究、技术调研、事实核查</td>
+                            </tr>
+                            <tr>
+                                <td><code>ultracode: &lt;task&gt;</code></td>
+                                <td><span class="tag tag-highlight">单次触发</span></td>
+                                <td>在提示中用关键字触发，Claude 为当前任务编写并执行工作流脚本</td>
+                                <td>一次性的大规模任务（如审计、迁移）</td>
+                            </tr>
+                            <tr>
+                                <td><code>/effort ultracode</code></td>
+                                <td><span class="tag tag-highlight">模式切换</span></td>
+                                <td>启用自动工作流模式，所有实质性任务自动规划为工作流</td>
+                                <td>需要高强度自动化处理的会话</td>
+                            </tr>
+                            <tr>
+                                <td><code>/workflows</code></td>
+                                <td><span class="tag">管理</span></td>
+                                <td>列出所有运行中和已完成的工作流，查看进度、暂停/恢复/停止</td>
+                                <td>监控运行状态、管理后台任务</td>
+                            </tr>
+                            <tr>
+                                <td><code>/&lt;name&gt;</code></td>
+                                <td><span class="tag">自定义</span></td>
+                                <td>运行已保存的工作流脚本，支持自动补全</td>
+                                <td>重复执行的流程（如代码审查、问题分类）</td>
+                            </tr>
+                            <tr>
+                                <td><code>Run /&lt;name&gt; on &lt;args&gt;</code></td>
+                                <td><span class="tag">自定义</span></td>
+                                <td>带参数运行已保存的工作流，args 作为全局变量传入脚本</td>
+                                <td>需要不同输入的相同流程</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>命令特性对比</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:16%">对比维度</th>
+                                <th style="width:14%"><code>/deep-research</code></th>
+                                <th style="width:14%"><code>ultracode:</code></th>
+                                <th style="width:14%"><code>/effort ultracode</code></th>
+                                <th style="width:14%"><code>/workflows</code></th>
+                                <th style="width:14%"><code>/&lt;name&gt;</code></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>触发方式</strong></td>
+                                <td>斜杠命令</td>
+                                <td>提示关键字</td>
+                                <td>斜杠命令设置</td>
+                                <td>斜杠命令</td>
+                                <td>斜杠命令</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Claude 写脚本</strong></td>
+                                <td>✅ 内置</td>
+                                <td>✅ 自动编写</td>
+                                <td>✅ 自动编写</td>
+                                <td>❌ 仅管理</td>
+                                <td>❌ 已保存</td>
+                            </tr>
+                            <tr>
+                                <td><strong>可复用</strong></td>
+                                <td>✅ 随时可用</td>
+                                <td>❌ 单次</td>
+                                <td>❌ 会话级</td>
+                                <td>✅ 管理工具</td>
+                                <td>✅ 永久保存</td>
+                            </tr>
+                            <tr>
+                                <td><strong>接受参数</strong></td>
+                                <td>✅ 研究问题</td>
+                                <td>❌ 内嵌描述</td>
+                                <td>❌</td>
+                                <td>❌</td>
+                                <td>✅ args 变量</td>
+                            </tr>
+                            <tr>
+                                <td><strong>需要批准</strong></td>
+                                <td>✅ 首次</td>
+                                <td>✅ 首次</td>
+                                <td>✅ 每次</td>
+                                <td>❌ 仅管理</td>
+                                <td>✅ 首次</td>
+                            </tr>
+                            <tr>
+                                <td><strong>适用模型</strong></td>
+                                <td>会话模型</td>
+                                <td>会话模型</td>
+                                <td>需 xhigh 支持</td>
+                                <td>任意</td>
+                                <td>会话模型</td>
+                            </tr>
+                            <tr>
+                                <td><strong>成本级别</strong></td>
+                                <td>中高（多代理搜索）</td>
+                                <td>高（依任务）</td>
+                                <td>最高（全自动化）</td>
+                                <td>无（仅查看）</td>
+                                <td>中（依脚本）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>使用建议速查</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <div class="card-icon">🔍</div>
+                        <h4>快速调研</h4>
+                        <p>用 <code>/deep-research &lt;问题&gt;</code>，无需编写脚本，直接获得多来源引用报告</p>
+                    </div>
+                    <div class="comparison-card">
+                        <div class="card-icon">⚡</div>
+                        <h4>单次大规模任务</h4>
+                        <p>用 <code>ultracode: &lt;任务描述&gt;</code>，Claude 自动编写脚本并执行</p>
+                    </div>
+                    <div class="comparison-card">
+                        <div class="card-icon">🤖</div>
+                        <h4>全自动化会话</h4>
+                        <p>运行 <code>/effort ultracode</code>，之后所有实质性任务自动走工作流</p>
+                    </div>
+                    <div class="comparison-card">
+                        <div class="card-icon">💾</div>
+                        <h4>重复执行流程</h4>
+                        <p>先跑一次工作流，完成后按 <kbd>s</kbd> 保存，以后用 <code>/&lt;name&gt;</code> 直接调用</p>
+                    </div>
+                    <div class="comparison-card">
+                        <div class="card-icon">📊</div>
+                        <h4>监控进度</h4>
+                        <p>随时运行 <code>/workflows</code> 查看所有运行中/已完成的任务状态</p>
+                    </div>
+                    <div class="comparison-card">
+                        <div class="card-icon">🔧</div>
+                        <h4>带参数复用</h4>
+                        <p>保存后用 <code>Run /&lt;name&gt; on &lt;参数&gt;</code> 传入不同输入数据</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: When to Use -->
+            <section class="section" id="when-to-use">
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h2>何时使用工作流</h2>
+                </div>
+                <p>子代理、skills、agent teams 和工作流都可以运行多步骤任务。区别在于<strong>谁掌握计划</strong>：</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:18%">特性</th>
+                                <th style="width:20%">子代理</th>
+                                <th style="width:20%">Skills</th>
+                                <th style="width:20%">Agent Teams</th>
+                                <th style="width:22%">工作流</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>它是什么</strong></td>
+                                <td>Claude 生成的工作者</td>
+                                <td>Claude 遵循的指令</td>
+                                <td>监督对等会话的主导代理</td>
+                                <td style="color: var(--accent);">运行时执行的脚本</td>
+                            </tr>
+                            <tr>
+                                <td><strong>谁决定接下来运行什么</strong></td>
+                                <td>Claude，逐轮</td>
+                                <td>Claude，遵循提示</td>
+                                <td>主导代理，逐轮</td>
+                                <td style="color: var(--accent);">脚本</td>
+                            </tr>
+                            <tr>
+                                <td><strong>中间结果在哪里</strong></td>
+                                <td>Claude 的上下文窗口</td>
+                                <td>Claude 的上下文窗口</td>
+                                <td>共享任务列表</td>
+                                <td style="color: var(--accent);">脚本变量</td>
+                            </tr>
+                            <tr>
+                                <td><strong>什么是可重复的</strong></td>
+                                <td>工作者定义</td>
+                                <td>指令</td>
+                                <td>团队定义</td>
+                                <td style="color: var(--accent);">编排本身</td>
+                            </tr>
+                            <tr>
+                                <td><strong>规模</strong></td>
+                                <td>每轮几个委派任务</td>
+                                <td>与子代理相同</td>
+                                <td>少数几个长期运行的对等体</td>
+                                <td style="color: var(--accent);">每次运行数十到数百个代理</td>
+                            </tr>
+                            <tr>
+                                <td><strong>中断</strong></td>
+                                <td>重启轮次</td>
+                                <td>重启轮次</td>
+                                <td>队友继续运行</td>
+                                <td style="color: var(--accent);">在同一会话中可恢复</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>工作流将计划移入代码。脚本持有循环、分支和中间结果本身，所以 Claude 的上下文只持有最终答案。这也让工作流可以应用可重复的质量模式：让独立代理在报告之前对彼此的发现进行对抗性审查，或从多个角度起草计划并相互权衡。</p>
+            </section>
+
+            <!-- Section: Bundled Workflows -->
+            <section class="section" id="bundled">
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h2>运行捆绑工作流</h2>
+                </div>
+
+                <p>查看工作流运行的最快方式是运行 <code>/deep-research</code>，这是 Claude Code 包含的内置工作流，用于跨许多来源调查问题。</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">运行工作流</div>
+                        <div class="step-content">
+                            <p>使用您想要调查的问题运行 <code>/deep-research</code>。它在多个角度上扇出网络搜索，获取并交叉检查来源，并综合一份引用的报告。</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-label">输入</span>
+                                    <button class="code-copy" onclick="copyCode(this)">复制</button>
+                                </div>
+                                <pre>/deep-research What changed in the Node.js permission model between v20 and v22?</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-title">允许工作流</div>
+                        <div class="step-content">
+                            <p>Claude Code 询问是否允许工作流。选择<strong>是</strong>继续。确切的提示取决于您的权限模式。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-title">观看进度</div>
+                        <div class="step-content">
+                            <p>运行在后台启动。运行 <code>/workflows</code>，使用箭头键选择运行，然后按 <kbd>Enter</kbd> 打开其进度视图：</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-label">输入</span>
+                                    <button class="code-copy" onclick="copyCode(this)">复制</button>
+                                </div>
+                                <pre>/workflows</pre>
+                            </div>
+                            <p>该视图显示每个阶段及其代理计数、令牌总数和经过的时间。深入任何阶段以查看其代理及每个代理发现的内容。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-title">阅读报告</div>
+                        <div class="step-content">
+                            <p>运行完成后，报告进入您的会话。它引用每个声明来自的来源，未通过交叉检查的声明已被过滤掉。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>捆绑工作流</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:30%">命令</th>
+                                <th style="width:70%">功能</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>/deep-research &lt;question&gt;</code></td>
+                                <td>在多个角度上扇出网络搜索问题，获取并交叉检查来源，对每个声明投票，并返回一份引用的报告。需要 WebSearch 工具可用。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>您自己保存的工作流以相同方式成为命令，并在 <code>/</code> 自动完成中与捆绑的工作流一起出现。</p>
+            </section>
+
+            <!-- Section: Watch -->
+            <section class="section" id="watch">
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h2>观看运行</h2>
+                </div>
+                <p>工作流在后台运行，会话在代理工作时保持响应。随时运行 <code>/workflows</code> 列出运行中和已完成的工作流，然后选择一个打开其进度视图。</p>
+
+                <h3>进度视图快捷键</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:25%">按键</th>
+                                <th style="width:75%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><kbd>↑</kbd> / <kbd>↓</kbd></td>
+                                <td>选择一个阶段或代理</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Enter</kbd> 或 <kbd>→</kbd></td>
+                                <td>深入选定的阶段，然后进入代理以读取其提示、最近的工具调用和结果</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>Esc</kbd></td>
+                                <td>返回一个级别</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>j</kbd> / <kbd>k</kbd></td>
+                                <td>当代理详情溢出时在其中滚动</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>p</kbd></td>
+                                <td>暂停或恢复运行</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>x</kbd></td>
+                                <td>停止选定的代理，或当焦点在运行上时停止整个工作流</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>r</kbd></td>
+                                <td>重启选定的运行中代理</td>
+                            </tr>
+                            <tr>
+                                <td><kbd>s</kbd></td>
+                                <td>保存运行的脚本作为命令</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Write -->
+            <section class="section" id="write">
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h2>让 Claude 编写工作流</h2>
+                </div>
+                <p>您可以通过以下两种方式让 Claude 为您的任务编写工作流：</p>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <div class="card-icon">📝</div>
+                        <h4>提示中请求</h4>
+                        <p>在提示中包含关键字 <code>ultracode</code>，Claude 为单个任务编写工作流</p>
+                    </div>
+                    <div class="comparison-card">
+                        <div class="card-icon">⚡</div>
+                        <h4>Ultracode 模式</h4>
+                        <p>设置 <code>/effort ultracode</code>，Claude 为每个实质性任务自动规划工作流</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Ultracode Prompt -->
+            <section class="section" id="ultracode-prompt">
+                <div class="section-header">
+                    <div class="section-number">6</div>
+                    <h2>在提示中请求工作流</h2>
+                </div>
+                <p>要在不改变会话的努力级别的情况下将单个任务作为工作流运行，在您的提示中包含关键字 <code>ultracode</code>。用您自己的话提问（如"使用工作流"或"运行工作流"）也可以工作。</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-label">示例</span>
+                        <button class="code-copy" onclick="copyCode(this)">复制</button>
+                    </div>
+                    <pre>ultracode: audit every API endpoint under src/routes/ for missing auth checks</pre>
+                </div>
+
+                <div class="note">
+                    <p>提示</p>
+                    <p>Claude Code 会在您的输入中高亮该关键字。如果不打算启动工作流，在 macOS 上按 <kbd>Option+W</kbd> 或在 Windows/Linux 上按 <kbd>Alt+W</kbd> 来忽略高亮。要完全停止关键字触发，请在 <code>/config</code> 中关闭 Ultracode 关键字触发。</p>
+                </div>
+            </section>
+
+            <!-- Section: Ultracode Effort -->
+            <section class="section" id="ultracode-effort">
+                <div class="section-header">
+                    <div class="section-number">7</div>
+                    <h2>Ultracode 模式</h2>
+                </div>
+                <p>Ultracode 是一个 Claude Code 设置，它结合了 <code>xhigh</code> 推理努力与自动工作流编排。启用后，Claude 为每个实质性任务规划工作流，而不是等待您要求。</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-label">启用命令</span>
+                        <button class="code-copy" onclick="copyCode(this)">复制</button>
+                    </div>
+                    <pre>/effort ultracode</pre>
+                </div>
+
+                <p>启用后，Claude 决定任务何时值得工作流。单个请求可以变成一系列工作流：一个理解代码，一个进行更改，一个验证它。适用于会话中的每个任务，但会使用更多令牌并花费更长时间。</p>
+
+                <div class="warning">
+                    <div class="warning-title">⚠️ 注意</div>
+                    <p>Ultracode 持续当前会话，启动新会话时重置。当您返回日常工作时，使用 <code>/effort high</code> 下降。它在支持 <code>xhigh</code> 努力的模型上可用。</p>
+                </div>
+            </section>
+
+            <!-- Section: Approve -->
+            <section class="section" id="approve">
+                <div class="section-header">
+                    <div class="section-number">8</div>
+                    <h2>在运行前批准计划</h2>
+                </div>
+                <p>在 CLI 中，每次运行的提示显示计划的阶段和以下选项：</p>
+                <ul>
+                    <li><strong>是，运行它</strong>：启动运行</li>
+                    <li><strong>是，不再询问</strong>：启动，并跳过此项目中此工作流的后续提示</li>
+                    <li><strong>查看原始脚本</strong>：在决定前读取脚本</li>
+                    <li><strong>否</strong>：取消</li>
+                </ul>
+                <p><kbd>Ctrl+G</kbd> 在您的编辑器中打开脚本。<kbd>Tab</kbd> 让您在运行启动前调整提示。</p>
+
+                <h3>权限模式与提示行为</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:30%">权限模式</th>
+                                <th style="width:70%">何时提示</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>默认，接受编辑</td>
+                                <td>每次运行，除非已为此项目中的该工作流选择"是，不再询问"</td>
+                            </tr>
+                            <tr>
+                                <td>自动</td>
+                                <td>仅首次启动。任何"是"在用户设置中记录同意，之后无需提示。Ultracode 启用时完全跳过</td>
+                            </tr>
+                            <tr>
+                                <td>绕过权限，<code>claude -p</code>，Agent SDK</td>
+                                <td>从不。运行立即启动</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>工作流生成的子代理始终在 <code>acceptEdits</code> 模式下运行，并继承您的工具允许列表。文件编辑自动批准，但 Shell 命令和网络获取仍可能提示您。</p>
+            </section>
+
+            <!-- Section: Save -->
+            <section class="section" id="save">
+                <div class="section-header">
+                    <div class="section-number">9</div>
+                    <h2>保存工作流以供重用</h2>
+                </div>
+                <p>当 Claude 为您编写了好用的工作流时，您可以将该运行的脚本保存为命令，以便重复运行相同的编排。</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-title">选择运行</div>
+                        <div class="step-content">
+                            <p>运行 <code>/workflows</code>，选择您想保留的运行，然后按 <kbd>s</kbd>。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-title">选择保存位置</div>
+                        <div class="step-content">
+                            <p>按 <kbd>Tab</kbd> 在两个保存位置之间切换：</p>
+                            <ul>
+                                <li><code>.claude/workflows/</code> 在项目中：<strong>与团队共享</strong>，克隆仓库的每个人都可用</li>
+                                <li><code>~/.claude/workflows/</code> 在主目录中：<strong>仅对您可见</strong>，在每个项目中可用</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-title">保存并使用</div>
+                        <div class="step-content">
+                            <p>按 <kbd>Enter</kbd> 保存。工作流在未来会话中从任一位置作为 <code>/&lt;name&gt;</code> 运行。如果项目工作流和个人工作流共享名称，项目工作流优先运行。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>💡 构建工作流的进阶技巧</h3>
+
+                <h4>结合 /goal 和 /loop</h4>
+                <p>对可重复的工作流（如分类、研究、验证），用 <code>/loop</code> 按固定间隔运行，用 <code>/goal</code> 设一个硬性的完成要求。这样工作流会持续运行直到目标达成。</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-label">示例</span>
+                        <button class="code-copy" onclick="copyCode(this)">复制</button>
+                    </div>
+                    <pre>/goal 修复所有构建错误
+/loop 每 5 分钟运行一次修复工作流，直到构建成功</pre>
+                </div>
+
+                <h4>设置 Token 预算</h4>
+                <p>在提示中写明上限，让 Claude 在预算内完成任务。这对控制成本非常有效。</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-label">示例</span>
+                        <button class="code-copy" onclick="copyCode(this)">复制</button>
+                    </div>
+                    <pre>ultracode: 审计 src/ 目录下的认证问题，token 预算 10000，超出时暂停并报告</pre>
+                </div>
+
+                <h4>通过 Skills 分发工作流</h4>
+                <p>把 JavaScript 工作流文件放进技能文件夹，并在 <code>SKILL.md</code> 里引用。这样团队成员安装技能后即可使用。也可以提示 Claude 把技能里的工作流当成模板，而不是逐字照搬的脚本。</p>
+
+                <h4>提示词要写详细</h4>
+                <p>运用上面讲的那些具体技巧、把提示写详细，效果最好。工作流不只用于大型任务，你也可以提示一个快速工作流，比如对某个假设做一次快速的对抗式审查。</p>
+            </section>
+
+            <!-- Section: Args -->
+            <section class="section" id="args">
+                <div class="section-header">
+                    <div class="section-number">10</div>
+                    <h2>将输入传递给保存的工作流</h2>
+                </div>
+                <p>保存的工作流可以通过 <code>args</code> 参数接受输入。脚本将其读取为名为 <code>args</code> 的全局变量。使用此功能在调用时提供研究问题、目标路径列表或配置对象，而不是为每次运行编辑脚本。</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-label">示例</span>
+                        <button class="code-copy" onclick="copyCode(this)">复制</button>
+                    </div>
+                    <pre>> Run /triage-issues on issues 1024, 1025, and 1030</pre>
+                </div>
+
+                <p>Claude 将列表作为结构化数据传递，所以脚本可以直接在 <code>args</code> 上调用数组和对象方法，无需先解析。如果省略 <code>args</code>，脚本内的全局变量为 <code>undefined</code>。</p>
+            </section>
+
+            <!-- Section: How It Works -->
+            <section class="section" id="how-it-works">
+                <div class="section-header">
+                    <div class="section-number">11</div>
+                    <h2>工作流如何运行</h2>
+                </div>
+                <p>工作流运行时在隔离环境中执行脚本，与您的对话分开。中间结果保留在脚本变量中，而不是进入 Claude 的上下文。</p>
+                <ul>
+                    <li>每次运行将其脚本写入会话目录下 <code>~/.claude/projects/</code> 中的文件</li>
+                    <li>运行开始时 Claude 会收到该路径，您可以要求它提供</li>
+                    <li>您可以打开该文件来读取编排脚本，与之前运行对比，或编辑它并从编辑后的版本重新启动</li>
+                    <li>运行时跟踪每个代理的结果，使运行在同一会话中可恢复</li>
+                </ul>
+            </section>
+
+            <!-- Section: Limits -->
+            <section class="section" id="limits">
+                <div class="section-header">
+                    <div class="section-number">12</div>
+                    <h2>行为与限制</h2>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:40%">约束</th>
+                                <th style="width:60%">原因</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>无中途用户输入</td>
+                                <td>仅代理权限提示可以暂停运行。阶段之间的签署，将每个阶段作为其自己的工作流运行</td>
+                            </tr>
+                            <tr>
+                                <td>无来自工作流本身的直接文件系统或 shell 访问</td>
+                                <td>代理读取、写入和运行命令。脚本协调代理</td>
+                            </tr>
+                            <tr>
+                                <td>最多 16 个并发代理（CPU 核心有限的机器上更少）</td>
+                                <td>限制本地资源使用</td>
+                            </tr>
+                            <tr>
+                                <td>每次运行 1,000 个代理总数</td>
+                                <td>防止失控循环</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section: Manage -->
+            <section class="section" id="manage">
+                <div class="section-header">
+                    <div class="section-number">13</div>
+                    <h2>管理运行</h2>
+                </div>
+                <p>运行启动后，您可以从 <code>/workflows</code> 视图管理它，或通过展开输入框下方任务面板中的其进度行来管理。</p>
+            </section>
+
+            <!-- Section: Resume -->
+            <section class="section" id="resume">
+                <div class="section-header">
+                    <div class="section-number">14</div>
+                    <h2>暂停后恢复</h2>
+                </div>
+                <p>如果您停止运行，您可以恢复它：已完成的代理返回其缓存结果，其余的实时运行。恢复方式：</p>
+                <ul>
+                    <li>从 <code>/workflows</code> 恢复暂停的运行，选择它并按 <kbd>p</kbd></li>
+                    <li>或要求 Claude 使用相同脚本重新启动工作流</li>
+                </ul>
+                <div class="warning">
+                    <div class="warning-title">⚠️ 注意</div>
+                    <p>恢复在同一 Claude Code 会话中工作。如果您在工作流运行时退出 Claude Code，下一个会话将从头启动工作流。</p>
+                </div>
+            </section>
+
+            <!-- Section: Cost -->
+            <section class="section" id="cost">
+                <div class="section-header">
+                    <div class="section-number">15</div>
+                    <h2>成本控制</h2>
+                </div>
+                <p>工作流生成许多代理，单次运行可以使用比在对话中处理相同任务更多的令牌。运行计入您的计划使用和速率限制。</p>
+
+                <h3>成本优化建议</h3>
+                <ul>
+                    <li>在提交大型任务前，先在小范围上运行工作流：一个目录而不是整个仓库，或一个狭窄的问题而不是宽泛的问题</li>
+                    <li><code>/workflows</code> 视图显示每个代理的令牌使用情况，您可以随时停止运行而不会丢失已完成的工作</li>
+                    <li>在大型运行前检查 <code>/model</code>，如果您通常为日常工作切换到较小的模型</li>
+                    <li>描述任务时，要求 Claude 为不需要最强模型的阶段使用较小的模型</li>
+                    <li>每次运行 1,000 个代理的上限限制了失控脚本的成本</li>
+                </ul>
+            </section>
+
+            <!-- Section: Disable -->
+            <section class="section" id="disable">
+                <div class="section-header">
+                    <div class="section-number">16</div>
+                    <h2>关闭工作流</h2>
+                </div>
+                <p>工作流在 CLI、桌面应用、IDE 扩展、非交互模式与 <code>claude -p</code> 和 Agent SDK 中可用。相同的禁用设置在每个表面上应用。</p>
+
+                <h3>为自己关闭</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width:40%">方法</th>
+                                <th style="width:60%">效果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>/config</code> 中切换 "Dynamic workflows" 关闭</td>
+                                <td>在会话中持续</td>
+                            </tr>
+                            <tr>
+                                <td><code>~/.claude/settings.json</code> 中设置 <code>"disableWorkflows": true</code></td>
+                                <td>在会话中持续</td>
+                            </tr>
+                            <tr>
+                                <td>设置环境变量 <code>CLAUDE_CODE_DISABLE_WORKFLOWS=1</code></td>
+                                <td>在启动时读取，在任何设置的地方应用</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>为整个组织关闭</h3>
+                <p>在<a href="https://code.claude.com/docs/zh-CN/server-managed-settings" target="_blank">托管设置</a>中设置 <code>"disableWorkflows": true</code>，或使用 <a href="https://claude.ai/admin-settings/claude-code" target="_blank">Claude Code 管理员设置</a>页面上的切换。</p>
+
+                <div class="note">
+                    <p>关闭后的效果</p>
+                    <p>当工作流被禁用时，捆绑工作流命令不可用，<code>ultracode</code> 关键字不再触发运行，<code>ultracode</code> 从 <code>/effort</code> 菜单中移除。</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>原始文档来自 <a href="https://code.claude.com/docs/zh-CN/workflows" target="_blank">Claude Code 文档</a> · 中文翻译仅供参考</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;">动态工作流处于研究预览阶段 · 需要 Claude Code v2.1.154+</p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy code function
+        function copyCode(btn) {
+            const code = btn.closest('.code-block').querySelector('pre').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const original = btn.innerText;
+                btn.innerText = '已复制';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerText = original;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Active sidebar link on scroll
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+        function onScroll() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', onScroll);
+    </script>
+</body>
+</html>
