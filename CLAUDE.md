@@ -86,6 +86,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Thin-Harness-Fat-Skills — 套具要瘦、技能要胖（5 定义 + 3 反模式 + 三层架构 + Self-rewriting skill 循环）
 - Meta-Reflection-Techniques — 阳志平 12 个元反思技巧（行动之环 × 4 象限：意图/实施/反馈/情境）
 - Autonomous-AI-System — AI 自主系统 4 组 12 技巧（任务编排/实际开工/自检评审/自动续航；与 harness 视角互补）
+- Agent-Macro-Evaluation — Agent 宏观评估方法论（4 层标签 + BERTopic 风格聚类 + AgentTrace 风格诊断 + 3 个核心公式）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
@@ -98,6 +99,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 
 ### Summaries
 - 12-a-harness-for-every-task-dynamic-workflows — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）
+- 20-macro-evals-for-agentic-systems — OpenAI Cookbook 宏观评估教程（EV 订单 multi-agent + 1000 次合成运行 + Promptfoo + BERTopic + AgentTrace）
 - 10-claude-code-dynamic-workflows — Claude Code 动态工作流官方中文功能文档（v2.1.154+ / ultracode / /deep-research / 触发与运行管理）
 - 10-singapore-fm-nanoclaws-second-brain — 新加坡外長的 AI 第二大腦（NanoClaw + Raspberry Pi）
 - 11-hermes-agent-nous-research — Hermes Agent / Nous Research（长期记忆 + 自我进化）
@@ -145,6 +147,9 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Dynamic Workflows 三种失效模式（Agentic laziness / Self-preferential bias / Goal drift）在不同模型规模与任务长度上的发生率如何量化？这三个概念应否提升为独立 concept 页？
 - Tournament 模式中 pairwise 比较的 transitivity 假设何时崩溃？(A>B, B>C 但 C>A 的循环判断如何处理？)
 - Quarantine 模式（读未受信内容 agent ↮ 高权限动作 agent 结构隔离）在 prompt injection 实际防御中的效果如何？读 agent 能否诱导写 agent 执行隐性指令？
+- 宏观评估的 `MACRO_EVALS_DISCOVERY_MIN_CLUSTER_SIZE` 超参数在不同任务规模下如何确定最优值？粒度过粗丢失小众重要模式，过细噪声爆炸
+- `suspect_score = 0.4·proximity + 0.3·frequency + 0.2·bridge + 0.1·role` 的权重是 OpenAI 经验值，能否在其他 agent 系统上重新校准的方法论
+- 宏观评估发现的 `behavior_pattern` 与 wow-harness v3 概念节点演化结合，能否实现"系统级自我反思循环"？
 
 ## Research gaps
 
@@ -154,6 +159,7 @@ Sources to ingest:
 - [ ] LangChain Deep Agents benchmark 原始数据
 - [x] ESAA 论文 (Event Sourcing for Autonomous Agents, arxiv 2602.23193) 原文
 - [x] "Dive into Claude Code" 论文 (arxiv 2604.14228) 原文
+- [x] OpenAI Cookbook — Macro Evals for Agentic Systems (2026-05-19)
 
 ## Audit backlog
 

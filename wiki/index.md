@@ -29,6 +29,9 @@
 ### Architecture Principles
 - [[concepts/Thin-Harness-Fat-Skills]] — Thin Harness, Fat Skills：套具极薄、技能极胖，90% 价值在 markdown 流程文件（skill-as-method-call、resolver、latent vs deterministic、diarization、self-rewriting skill）
 
+### Evaluation
+- [[concepts/Agent-Macro-Evaluation]] — Agent 宏观评估方法论：4 层标签（case_type → run_outcome → eval_finding → behavior_pattern）+ BERTopic 风格聚类 + AgentTrace 风格诊断 + 三个核心公式（impact_score / lift / suspect_score）
+
 ## Entities
 - [[entities/MiniMax-Mavis]] — MiniMax 的 Agent 产品，MiniMax as a Jarvis
 - [[entities/NVIDIA-Agent-Toolkit]] — NVIDIA Agent 开发工具包，含 OpenShell 安全运行时
@@ -39,6 +42,7 @@
 - [[entities/Nous-Research]] — Nous Research：硅谷 AI 实验室，Hermes Agent（11万星）
 
 ## Summaries (chronological)
+- 2026-06-13 — [[summaries/20-macro-evals-for-agentic-systems]] — Macro Evals for Agentic Systems：从单次评分到群体行为模式（OpenAI Cookbook，1000 次合成 EV 订单运行 + Promptfoo + BERTopic 风格聚类 + AgentTrace 风格诊断）
 - 2026-06-11 — [[summaries/19-addyosmani-loop-engineering]] — Loop Engineering：从 Prompt 到系统设计（Addy Osmani，5 模块 + 1 记忆，Claude Code / Codex 通用 loop 架构）
 - 2026-06-04 — [[summaries/18-agent-harness-12-components]] — Agent Harness 12 组件 + 7 决策（TAO 循环、上下文腐烂、脚手架隐喻、TerminalBench 30→5 名实证）
 - 2026-06-04 — [[summaries/17-ai-autonomous-system-tips]] — 如何实现一个好的 AI 自主干活系统（阳志平）：12 技巧 × 4 组（任务编排/实际开工/自检评审/自动续航）+ 永不停摆 + 飞轮
@@ -80,3 +84,6 @@
 - CGP/IEL 的 9 件工具组中，ConOps / SDM / CDM / Influence Diagram 在现有 AI 开发工具中有无成熟实现？
 - "四层维护存储"（归档/摘要/投影/切片）与 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] 的"事件时间线 + 快照压缩"是同一思想的不同表述还是不同实现路径？
 - "Fork 与胶囊"返回"结构化判断而不是全部细节"与 [[entities/ESAA|ESAA]] 的 boundary contracts 在数据契约层面是否同源？
+- 宏观评估的 `behavior_pattern` 能否反向自动生成新的底层评估 rubric（self-extending eval）？
+- BERTopic 风格 vs 直接 LLM 主题归纳在 agent trace 上的稳定性差异如何量化？
+- `suspect_score` 的 `0.4/0.3/0.2/0.1` 权重在不同 agent 系统上是否需要重新校准？
