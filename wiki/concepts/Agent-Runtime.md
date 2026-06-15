@@ -58,7 +58,7 @@ Cline 把 provider 逻辑隔离在 `@cline/llms` 层，agent loop 本身不感�
 **Compaction 策略**：
 
 - **Prefix 稳定性优先**：LLM API 的 prompt caching 基于 prefix 匹配。删除头部（system prompt、早期对话）会导致整个 cache 失效，而删除尾部只影响最近几轮。因此 compaction 顺序应为：尾部冗余内容 → 中间低价值轮次 → 头部仅在极端情况下裁剪。
-- **Entity 数量上限**：来自 [[Meta-Reflection-Techniques]] 的经验法则 — 单 session 中涉及的实体（概念、文件、函数）不超过 4 个。超过此上限时，模型容易混淆实体间的映射关系。compaction 时可将超出的实体引用替换为摘要。
+- **Entity 数量上限**：来自 [[Meta Reflection Techniques]] 的经验法则 — 单 session 中涉及的实体（概念、文件、函数）不超过 4 个。超过此上限时，模型容易混淆实体间的映射关系。compaction 时可将超出的实体引用替换为摘要。
 - **Compaction 触发条件**：不只在 token 阈值触发（如达到 80% 上下文窗口时），还应结合**任务阶段边界**触发 — 在子任务完成后立即 compact 中间推理过程，保留结论和决策，既释放空间又不丢失关键信息。
 
 ### 4. 错误处理
@@ -102,7 +102,7 @@ flowchart TD
 关键设计原则：
 
 - **Cache 经济性**：每次删除头部内容都会导致 prompt cache 完全失效，相当于额外支付一次完整的 prompt token 费用。因此头部删除是最后手段。
-- **Entity 边界约束**：[[Meta-Reflection-Techniques]] 指出，当 session 涉及超过 4 个核心实体时，模型的实体追踪能力显著下降。compaction 时应将超限实体的具体引用替换为高层摘要，保留语义而不保留细节。
+- **Entity 边界约束**：[[Meta Reflection Techniques]] 指出，当 session 涉及超过 4 个核心实体时，模型的实体追踪能力显著下降。compaction 时应将超限实体的具体引用替换为高层摘要，保留语义而不保留细节。
 - **任务阶段感知**：在子任务边界触发 compaction 优于在任务执行中途触发 — 此时模型的中间推理已完成其使命，可以安全压缩，只保留结论和决策链。
 
 与 Subagent 的协同：[[Claude Code Subagent]] 通过为每个 subagent 提供独立上下文窗口，天然缓解了主 session 的上下文膨胀问题。将大型任务拆分为 subagent 后，每个 subagent 的上下文窗口只包含该子任务的上下文，compaction 压力大幅降低。这是一种"用并行窗口换 compaction 频率"的策略。
@@ -122,13 +122,13 @@ flowchart TD
 
 ## 行业实现
 
-- [[NVIDIA Agent Toolkit]] 的 **OpenShell** — 在 Runtime 基础上增加三层安全检查（Policy Engine → Network Guardrail → Privacy Router），参见 [[Agent-Secure-Runtime]]
-- [[wow-harness]] — 在 Runtime 之上构建跨 session、跨 agent 的治理协议，参见 [[Agent-Harness-治理协议]]
+- [[NVIDIA Agent Toolkit]] 的 **OpenShell** — 在 Runtime 基础上增加三层安全检查（Policy Engine → Network Guardrail → Privacy Router），参见 [[Agent Secure Runtime]]
+- [[wow-harness]] — 在 Runtime 之上构建跨 session、跨 agent 的治理协议，参见 [[Agent Harness 治理协议]]
 
 ## Related concepts
 
-- [[Agent-Secure-Runtime]] — Agent Runtime 的安全增强模式，增加沙箱和护栏层
+- [[Agent Secure Runtime]] — Agent Runtime 的安全增强模式，增加沙箱和护栏层
 - [[Claude Code Subagent]] — Subagent 的执行环境属于 Runtime 层的一部分；独立上下文窗口缓解 compaction 压力
-- [[Agent-Harness-治理协议]] — Runtime 之上的治理层，解决跨 session 长期一致性
+- [[Agent Harness 治理协议]] — Runtime 之上的治理层，解决跨 session 长期一致性
 - [[Dive into Claude Code（论文）]] — Claude Code 源码级逆向分析，98.4% 基础设施数据的来源
-- [[Meta-Reflection-Techniques]] — 元反思技巧，提供了 Entity 数量上限（≤4）等 Runtime 设计约束
+- [[Meta Reflection Techniques]] — 元反思技巧，提供了 Entity 数量上限（≤4）等 Runtime 设计约束

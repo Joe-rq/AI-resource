@@ -79,7 +79,7 @@ Agent 可直接操控计算机而不仅限于对话交互。通过 Terminal 容�
 - [[Agent Runtime]] — OpenShell 是 Agent Runtime 的安全运行时实现
 - [[Agent Secure Runtime]] — Agent 安全运行时的设计模式，OpenShell 是其工业级参考实现
 - [[Multi-Agent 协作模式]] — Sub Agents 体现 Orchestrator/Specialist 模式与 Mixture-of-Agents 层次化编排
-- [[Thin Harness Fat Skills]] — ClawHub + Sandbox Guardrail 的 Skills 生态体现了 Thin Harness 理念
+- [[Thin Harness, Fat Skills]] — ClawHub + Sandbox Guardrail 的 Skills 生态体现了 Thin Harness 理念
 
 ## Sources
 

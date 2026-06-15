@@ -142,4 +142,4 @@ Fork 的第一个请求重用父级的 prompt cache，比生成新 subagent 更�
 ## Related concepts
 
 - [[Claude Code Skills]] — Skill 可通过 `context: fork` 在 Subagent 中运行；Subagent 可通过 `skills` 字段预加载 Skills
-- [[Agent-Runtime]] — Subagent 的执行环境属于 Runtime 层的一部分
+- [[Agent Runtime]] — Subagent 的执行环境属于 Runtime 层的一部分

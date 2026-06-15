@@ -85,9 +85,9 @@ Rob 总结：好的 FDE 需要**增长（Growth）**和**执行（Execution）**
 
 本文是 FDE 角色的招聘和职业发展讨论，与 Agent 基础设施的直接关联很弱：
 
-- T-shaped 能力模型与 [[Thin-Harness-Fat-Skills]] 中"平台团队维护 thin harness + skill 作者贡献 fat skills"的分工在抽象层面相似，但这是任何技术生态中都存在的通用分工模式，并非 FDE 特有的洞察。
-- FDE 入门路径（技术深度 → 客户暴露 → 独立负责）与 [[Claude-Code-Subagent/index|Claude Code Subagent]] 的渐进式授权模式的类比是表面的——前者的"授权"是组织管理概念（给人更多责任），后者的"授权"是安全技术概念（给 subagent 更多工具和权限）。
-- 招聘信号（创业经历、开源贡献）与 [[Agent-Macro-Evaluation]] 的关联过于间接——任何技术角色的评估都可以类比到 Agent 评估，这不构成有意义的交叉。
+- T-shaped 能力模型与 [[Thin Harness, Fat Skills]] 中"平台团队维护 thin harness + skill 作者贡献 fat skills"的分工在抽象层面相似，但这是任何技术生态中都存在的通用分工模式，并非 FDE 特有的洞察。
+- FDE 入门路径（技术深度 → 客户暴露 → 独立负责）与 [[Claude Code Subagent|Claude Code Subagent]] 的渐进式授权模式的类比是表面的——前者的"授权"是组织管理概念（给人更多责任），后者的"授权"是安全技术概念（给 subagent 更多工具和权限）。
+- 招聘信号（创业经历、开源贡献）与 [[Agent Macro Evaluation]] 的关联过于间接——任何技术角色的评估都可以类比到 Agent 评估，这不构成有意义的交叉。
 
 总体评估：本文的实质内容（FDE 的 T-shaped 能力、招聘标准、职业路径、常见误区）与 Agent 平台基础设施技术无交集。保留的唯一理由是作为 FDE 概念体系的完整性补充，但技术关联价值极低。建议归档。
 

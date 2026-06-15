@@ -74,9 +74,9 @@ FDE 模式要求构建的是**学习型公司（learning company）**。大公�
 
 FDE 方法论与 Agent 平台开发存在类比层面的关联，而非直接技术重叠：
 
-- **[[Thin-Harness-Fat-Skills]]**：FDE 的"碎石路→柏油路→高速公路"飞轮与 skill 生态演化路径有结构相似性。FDE 在客户现场定制的解决方案相当于 fat skills，平台提供的通用能力相当于 thin harness。但 FDE 飞轮描述的是人类组织的产品化过程，skill 生态描述的是代码模块的复用机制——两者在"定制→抽象→平台化"的抽象模式上一致，具体运作机制不同。
-- **[[Agent-Macro-Evaluation]]**：FDE 的 TTFV（Time to First Value）指标为 Agent 部署效果评估提供了可借鉴的思路——从部署到价值实现的时间同样是衡量 Agent 系统实际效用的关键维度。但 Expansion Rate 和 Productization Rate 是组织级指标，在 Agent 系统评估中缺乏直接对应物。
-- **[[Claude-Code-Skills/index|Claude Code Skills]]**：FDE 的"教会客户自己使用，最终让自己变得不必要"与 skill 的自服务设计理念一致——好的 skill 应降低对开发者的依赖。这是 FDE 方法论中与 Agent 平台实践最直接的连接点。
+- **[[Thin Harness, Fat Skills]]**：FDE 的"碎石路→柏油路→高速公路"飞轮与 skill 生态演化路径有结构相似性。FDE 在客户现场定制的解决方案相当于 fat skills，平台提供的通用能力相当于 thin harness。但 FDE 飞轮描述的是人类组织的产品化过程，skill 生态描述的是代码模块的复用机制——两者在"定制→抽象→平台化"的抽象模式上一致，具体运作机制不同。
+- **[[Agent Macro Evaluation]]**：FDE 的 TTFV（Time to First Value）指标为 Agent 部署效果评估提供了可借鉴的思路——从部署到价值实现的时间同样是衡量 Agent 系统实际效用的关键维度。但 Expansion Rate 和 Productization Rate 是组织级指标，在 Agent 系统评估中缺乏直接对应物。
+- **[[Claude Code Skills|Claude Code Skills]]**：FDE 的"教会客户自己使用，最终让自己变得不必要"与 skill 的自服务设计理念一致——好的 skill 应降低对开发者的依赖。这是 FDE 方法论中与 Agent 平台实践最直接的连接点。
 
 总体评估：FDE 飞轮与 skill 生态演化之间存在有价值的类比关系，但 Bob McGrew 的实战手册本身是纯 FDE 方法论，不直接涉及 Agent 基础设施技术。
 

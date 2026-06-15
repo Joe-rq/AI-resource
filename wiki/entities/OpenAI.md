@@ -29,7 +29,7 @@ Agents SDK 在此基础上增加了 Agent 间 Handoff 原语：每个 Agent 可�
 
 ### Codex 与 Loop Engineering
 
-Codex 在 Addy Osmani 的 [[19-addyosmani-loop-engineering|Loop Engineering]] 框架中被视为与 Claude Code 能力等价的终端 Agent 工具——两者共享相同的 5+1 模块形状（Automations、Worktrees、Skills、MCP、Sub-agents、Memory）。Codex 通过 `.codex/agents/` 下 TOML 文件定义 Sub-agent，内置 `/goal` 条件循环原语（由独立小模型检查停止条件），支持多 worktree 并行操作同一 repo。Codex 的 Automation 功能支持定时触发、Triage inbox 分流和自动归档，OpenAI 内部将其用于 issue 分类、CI 失败摘要、commit briefing 等日常自动化场景。
+Codex 在 Addy Osmani 的 [[Loop Engineering：从 Prompt 到系统设计|Loop Engineering]] 框架中被视为与 Claude Code 能力等价的终端 Agent 工具——两者共享相同的 5+1 模块形状（Automations、Worktrees、Skills、MCP、Sub-agents、Memory）。Codex 通过 `.codex/agents/` 下 TOML 文件定义 Sub-agent，内置 `/goal` 条件循环原语（由独立小模型检查停止条件），支持多 worktree 并行操作同一 repo。Codex 的 Automation 功能支持定时触发、Triage inbox 分流和自动归档，OpenAI 内部将其用于 issue 分类、CI 失败摘要、commit briefing 等日常自动化场景。
 
 ## 宏观评估方法论
 

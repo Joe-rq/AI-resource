@@ -49,7 +49,7 @@ NanoClaw 不是从零实现 agent 循环，而是作为 Claude Agent SDK 的精�
 - **Provider 可替换**：默认使用 Claude Agent SDK，也支持 `/add-codex`（OpenAI）、`/add-opencode`（OpenRouter/Google/DeepSeek）、`/add-ollama-provider`（本地开源模型）。Provider 按 agent group 配置
 - **Session 管理**：v2 使用 SDK 的 `unstable_v2_createSession` API，通过 `AsyncIterable` 保持 CLI 进程存活，支持 agent teams 的长时间运行和消息流式注入
 
-约 500 LOC 与 SDK 的关系：最初的 NanoClaw 约 500 行是编排层的代码量。Agent 推理、工具调用、多轮对话这些复杂逻辑都在 SDK 内部，NanoClaw 不需要重复实现。这种"瘦编排 + 胖 SDK"的分工正是 [[Thin Harness Fat Skills]] 理念在框架层面的体现。
+约 500 LOC 与 SDK 的关系：最初的 NanoClaw 约 500 行是编排层的代码量。Agent 推理、工具调用、多轮对话这些复杂逻辑都在 SDK 内部，NanoClaw 不需要重复实现。这种"瘦编排 + 胖 SDK"的分工正是 [[Thin Harness, Fat Skills]] 理念在框架层面的体现。
 
 ## Mnemon 图谱记忆机制
 
@@ -156,7 +156,7 @@ flowchart TB
 - [[Agent Secure Runtime]] — 容器化隔离对应其安全设计思路，OS 级沙箱而非应用层权限
 - [[Dive into Claude Code（论文）]] — 同为 Claude SDK 上的框架，对比参考
 - [[Agent Memory]] — Mnemon 图谱记忆是 NanoClaw 的记忆后端，LLM 监督 + 四图谱架构
-- [[Thin Harness Fat Skills]] — NanoClaw 的"瘦编排 + 胖 SDK"设计是其框架层体现
+- [[Thin Harness, Fat Skills]] — NanoClaw 的"瘦编排 + 胖 SDK"设计是其框架层体现
 
 ## Sources
 

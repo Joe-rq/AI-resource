@@ -8,7 +8,7 @@
 ## Concepts
 
 ### Agent Platform
-- [[Agent Memory/index|Agent Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（folder-split: Architecture / Forgetting & Compaction / Self-Evolving Memory）
+- [[Agent Memory|Agent Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（folder-split: Architecture / Forgetting & Compaction / Self-Evolving Memory）
 - [[Multi-Agent 协作模式]] — 四种核心协作模式：Orchestrator/Specialist、Worker/Verifier、Team Engine、自动扩张任务图
 - [[Worker Verifier 对抗循环]] — Worker/Verifier 对抗循环是 Mavis 的核心架构机制（收敛模型、死锁检测、升级与降级）
 - [[Agent Runtime]] — 单 Agent 执行环境，包含 Prompt/工具定义/上下文管理/错误处理

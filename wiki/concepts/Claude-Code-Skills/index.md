@@ -135,4 +135,4 @@ then list any risks such as missing error handling or hardcoded values.
 ## Related concepts
 
 - [[Claude Code Subagent]] — Skill 可通过 `context: fork` 在 Subagent 中运行
-- [[Agent-Runtime]] — Skill 的执行依赖 Runtime 层的工具调用和上下文管理
+- [[Agent Runtime]] — Skill 的执行依赖 Runtime 层的工具调用和上下文管理

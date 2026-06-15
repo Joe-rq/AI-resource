@@ -11,7 +11,7 @@ tags: [agent-runtime, security, sandbox, guardrail, privacy]
 
 ## 定义
 
-**Agent Secure Runtime** = 在 [[Agent-Runtime]] 基础上增加安全层的执行环境，确保自主 Agent 在安全边界内运行。
+**Agent Secure Runtime** = 在 [[Agent Runtime]] 基础上增加安全层的执行环境，确保自主 Agent 在安全边界内运行。
 
 核心问题：Agent 需要访问文件系统、网络、外部 API、甚至直接操控计算机（Computer Use），但这些能力也带来了数据泄露、越权操作、不可控行为等风险。Secure Runtime 通过多层护栏在"能力"和"安全"之间取得平衡。
 
@@ -65,7 +65,7 @@ Agent 命令的入口关卡。基于预定义规则决定 Agent 可以执行哪�
 
 ## 与其他概念的关系
 
-- [[Agent-Runtime]] — Secure Runtime 是 Agent Runtime 的超集，增加了安全约束层
+- [[Agent Runtime]] — Secure Runtime 是 Agent Runtime 的超集，增加了安全约束层
 - [[NVIDIA Agent Toolkit]] — OpenShell 是目前最完整的 Secure Runtime 实现之一
 - MCP 协议 — 作为工具连接的统一接口，天然适合接入安全检查点
 

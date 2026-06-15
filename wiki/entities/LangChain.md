@@ -36,7 +36,7 @@ LangChain 的架构围绕以下设计决策：
 ## Related Concepts
 
 - [[Agent Runtime]] — LangChain harness profile 的性能差异数据支撑了 runtime 设计的重要性论述
-- [[Thin Harness Fat Skills]] — LangChain 的 chain 抽象与"瘦套具、胖技能"哲学存在架构张力
+- [[Thin Harness, Fat Skills]] — LangChain 的 chain 抽象与"瘦套具、胖技能"哲学存在架构张力
 - [[Agent Harness 治理协议]] — LangChain 作为 harness 实现之一，其设计取舍可与 wow-harness v3 的事件溯源范式对照
 
 ## Sources

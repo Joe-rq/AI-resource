@@ -73,10 +73,10 @@ Colin 的预测：Agent 基础设施（编排、tracing、标注、评测、护�
 
 本文是 7 篇 FDE 总结中与 Agent 基础设施关联最强的，因为 Colin Jarvis 明确讨论了 AI Agent 在 FDE 工作流中的应用：
 
-- **[[Claude-Code-Skills/index|Claude Code Skills]]**：Colin 提出的"AI-native FDE"概念——用 AI Agent 处理重复性部署工作，让 FDE 聚焦高判断力任务——直接对应 skill 机制的核心应用场景。Skills 封装可复用的部署、监控、告警能力，与 Colin 描述的 Agent 辅助部署模式一致。这是从 FDE 实践中直接推导出的 Agent 平台需求。
-- **[[Multi-Agent-协作模式]]**：OpenAI 的"产品 FDE + 研究 FDE"双轨制为 Agent 协作模式提供了真实世界的组织类比——产品 FDE 类似 Orchestrator（协调已知需求与产品能力），研究 FDE 类似 Peer 协作（与客户共同探索未知问题空间）。这种组织模式可以反向启发 Agent 系统中何时使用 Orchestrator-Specialist 模式、何时使用 Peer 模式。
-- **[[Agent-Harness-治理协议]]**：信任建设作为 FDE 第一能力，与 Agent 系统在企业部署中的信任问题直接相关——不仅是技术安全（沙箱、权限），更是组织信任（用户愿意将关键任务交给 Agent）。治理协议中的人机决策分层正是为了建立这种信任。
-- **[[Agent-Macro-Evaluation]]**："知道做什么比知道怎么做更重要"对应宏观评估中任务难度的多维度分级——评估 Agent 系统时不应只看技术执行质量，还要看判断力质量。
+- **[[Claude Code Skills|Claude Code Skills]]**：Colin 提出的"AI-native FDE"概念——用 AI Agent 处理重复性部署工作，让 FDE 聚焦高判断力任务——直接对应 skill 机制的核心应用场景。Skills 封装可复用的部署、监控、告警能力，与 Colin 描述的 Agent 辅助部署模式一致。这是从 FDE 实践中直接推导出的 Agent 平台需求。
+- **[[Multi-Agent 协作模式]]**：OpenAI 的"产品 FDE + 研究 FDE"双轨制为 Agent 协作模式提供了真实世界的组织类比——产品 FDE 类似 Orchestrator（协调已知需求与产品能力），研究 FDE 类似 Peer 协作（与客户共同探索未知问题空间）。这种组织模式可以反向启发 Agent 系统中何时使用 Orchestrator-Specialist 模式、何时使用 Peer 模式。
+- **[[Agent Harness 治理协议]]**：信任建设作为 FDE 第一能力，与 Agent 系统在企业部署中的信任问题直接相关——不仅是技术安全（沙箱、权限），更是组织信任（用户愿意将关键任务交给 Agent）。治理协议中的人机决策分层正是为了建立这种信任。
+- **[[Agent Macro Evaluation]]**："知道做什么比知道怎么做更重要"对应宏观评估中任务难度的多维度分级——评估 Agent 系统时不应只看技术执行质量，还要看判断力质量。
 
 总体评估：本文有实质性的 Agent 基础设施连接，特别是"AI-native FDE"概念直接涉及 Agent 平台在真实部署场景中的应用。保留价值高。
 

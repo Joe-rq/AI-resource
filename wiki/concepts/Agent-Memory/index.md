@@ -23,9 +23,9 @@ Agent Memory 是指 AI Agent 在多轮对话和跨会话场景中保持上下文
 
 ## 子页面
 
-- [[Agent-Memory/architecture|Architecture]] — 记忆系统的技术架构：向量检索、知识图谱、混合模式、更新循环
-- [[Agent-Memory/forgetting-and-compaction|Forgetting & Compaction]] — 遗忘机制与压缩策略：为什么需要遗忘、当前方法、开放问题
-- [[Agent-Memory/self-evolving-memory|Self-Evolving Memory]] — 自我进化型记忆：Hermes 与 NanoClaw 的实现路径对比
+- [[Agent Memory Architecture|Architecture]] — 记忆系统的技术架构：向量检索、知识图谱、混合模式、更新循环
+- [[Forgetting & Compaction|Forgetting & Compaction]] — 遗忘机制与压缩策略：为什么需要遗忘、当前方法、开放问题
+- [[Self-Evolving Memory|Self-Evolving Memory]] — 自我进化型记忆：Hermes 与 NanoClaw 的实现路径对比
 
 ## 核心属性
 
@@ -41,9 +41,9 @@ Agent Memory 是指 AI Agent 在多轮对话和跨会话场景中保持上下文
 - [[Agent Runtime]] — Memory 是 Runtime 的关键能力缺口，Hermes 和 NanoClaw 都把记忆作为核心卖点
 - [[NanoClaw]] — Mnemon 图谱记忆 + Ollama 嵌入的本地实现
 - [[Nous Research]] — Hermes 的自我进化是记忆演化的极端形式
-- [[Multi-Agent-协作模式]] — 跨 Agent 信息传递依赖共享记忆基础设施
+- [[Multi-Agent 协作模式]] — 跨 Agent 信息传递依赖共享记忆基础设施
 
 ## Sources
 
-- [[11-hermes-agent-nous-research]] — Hermes 自我进化型记忆系统
-- [[10-singapore-fm-nanoclaws-second-brain]] — Mnemon 图谱记忆 + 边缘部署案例
+- [[Hermes Agent：Nous Research 的开源 Agent 框架]] — Hermes 自我进化型记忆系统
+- [[新加坡外长的 AI 第二大脑]] — Mnemon 图谱记忆 + 边缘部署案例

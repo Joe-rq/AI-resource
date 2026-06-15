@@ -59,17 +59,17 @@ Anthropic 的 Agent 设计贯穿三条原则：
 
 1. **Safety-first** — deny-first 权限系统、Quarantine 模式（读不可信内容的 agent 与执行高权限操作的 agent 结构隔离）、三层安全护栏，安全是架构约束而非事后补丁。Anthropic 的安全哲学不仅体现在产品层面，也深刻影响了其 Agent 架构设计：Managed Agents 的 Session Thread 隔离本质上是一种安全边界，Dynamic Workflows 的 Quarantine 模式将不可信输入的处理与高权限操作强制分离在两个 agent 中执行。
 2. **Minimal scaffolding** — 与 [[Thin Harness, Fat Skills]] 理念高度一致。Anthropic 倾向于让 Agent 自身判断何时委派、如何协作，而非用繁重的编排框架预设所有交互路径。Dynamic Workflows 将这一原则推到极致：harness 按任务即时生成，不预设任何固定工作流模板。这与 [[MiniMax Mavis]] 的"多 Agent 系统是 runtime"形成有趣的张力——Anthropic 选择让 Agent 自己写 harness，Mavis 选择用确定性状态机管理 Agent 生命周期。
-3. **Token as key resource** — 将 token 视为核心资源来设计架构。并行 Subagent 的上下文隔离既保护了主对话的精简性，又让每个子任务有足够的 token 预算深入探索。[[Claude Code Dynamic Workflows]] 中识别的三种失效模式（Agentic laziness、Self-preferential bias、Goal drift）本质上都是 token 分配不当导致的结构性问题。
+3. **Token as key resource** — 将 token 视为核心资源来设计架构。并行 Subagent 的上下文隔离既保护了主对话的精简性，又让每个子任务有足够的 token 预算深入探索。[[Claude Code Dynamic Workflows 实践指南]] 中识别的三种失效模式（Agentic laziness、Self-preferential bias、Goal drift）本质上都是 token 分配不当导致的结构性问题。
 
 ## Related concepts
 
 - [[Claude Code Subagent]] — Claude Code 的独立上下文工作者机制
 - [[Claude Code Skills]] — Skills 扩展机制，可与 Subagent 组合使用
 - [[Claude Code Agent Teams]] — Claude Code 内置的多 Agent 协作模式
-- [[Claude Code Dynamic Workflows]] — 按任务即时生成定制 harness
+- [[Claude Code Dynamic Workflows 实践指南]] — 按任务即时生成定制 harness
 - [[Anthropic Managed Agents API]] — Session Thread 隔离的托管 Agent 服务
 - [[Multi-Agent 协作模式]] — Orchestrator-Worker 等通用协作模式
-- [[Thin Harness Fat Skills]] — 与 Anthropic minimal scaffolding 哲学同源
+- [[Thin Harness, Fat Skills]] — 与 Anthropic minimal scaffolding 哲学同源
 - [[Worker Verifier 对抗循环]] — 与 Anthropic 方案的对比参照（Mavis 方案）
 
 ## Sources
@@ -77,4 +77,4 @@ Anthropic 的 Agent 设计贯穿三条原则：
 - [[Anthropic 多 Agent 研究系统]] — (2026-05-19) Orchestrator-Worker 架构与 BrowseComp 基准数据
 - [[Anthropic Managed Agents API]] — (2026-05-19) Session Thread 隔离模型与模式对比
 - [[Claude Code Agent Teams]] — (2026-05-19) Team Lead + Teammates 架构与 token 消耗分析
-- [[A harness for every task]] — (2026-06-05) Dynamic Workflows 三种失效模式与 6 种编排模式
+- [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]] — (2026-06-05) Dynamic Workflows 三种失效模式与 6 种编排模式

@@ -102,7 +102,7 @@ flowchart TB
 
 - [[Agent Memory]]：Hermes 的长期记忆与 Agent Memory 的图谱结构是互补视角——前者侧重会话连续性，后者侧重知识结构化和向量检索
 - [[Thin Harness, Fat Skills]]：Hermes 的 auto-encapsulation 机制与"技能要胖"原则高度一致——Agent 通过自我进化将操作沉淀为技能，使 harness 保持精简
-- [[Worker-Verifier 对抗循环]]：Hermes 的自我进化是否可引入 Verifier 角色来审查自动生成的技能文件质量？这是开放研究问题
+- [[Worker Verifier 对抗循环]]：Hermes 的自我进化是否可引入 Verifier 角色来审查自动生成的技能文件质量？这是开放研究问题
 
 ## Open questions
 

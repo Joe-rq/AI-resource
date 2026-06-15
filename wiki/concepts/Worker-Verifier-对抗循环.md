@@ -125,9 +125,9 @@ stateDiagram-v2
 | OpenAI Handoff | 接力式——每棒不回头 | 无 | 无验证环节；上一棒输出即为下一棒输入 |
 | Superpowers 强制 TDD | prompt 层面约束 | 无 | 无物理拦截，agent 可"合理化"跳过 |
 
-wow-harness v3 的双层验证与 Worker/Verifier 的本质区别在于：验证 agent 的工具列表里**没有写权限**（schema 级限制，不是提示词约束），且自检通过物理检查点拦截而非 prompt 建议。详见 [[Agent-Harness-治理协议]]。
+wow-harness v3 的双层验证与 Worker/Verifier 的本质区别在于：验证 agent 的工具列表里**没有写权限**（schema 级限制，不是提示词约束），且自检通过物理检查点拦截而非 prompt 建议。详见 [[Agent Harness 治理协议]]。
 
 ## Related concepts
 
 - [[Multi-Agent 协作模式]] -- 多 Agent 协作的整体模式图谱
-- [[Agent-Harness-治理协议]] -- 双层验证的另一种实现方式
+- [[Agent Harness 治理协议]] -- 双层验证的另一种实现方式

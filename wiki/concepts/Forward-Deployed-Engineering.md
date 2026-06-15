@@ -197,7 +197,7 @@ Colin Jarvis 总结的三层过滤：
 2. **它必须独立成产品吗？**（对一致性要求极高的场景）
 3. **模型能不能自己变聪明搞定？**（推动模型能力边界）
 
-## 与 [[Thin-Harness-Fat-Skills]] 的关系
+## 与 [[Thin Harness, Fat Skills]] 的关系
 
 FDE 模式和 Thin Harness 哲学有深层同构：
 - FDE 是"把痛苦消化掉、把产品排泄出来"——Thin Harness 是"套具极薄、技能极胖"
@@ -208,9 +208,9 @@ FDE 模式和 Thin Harness 哲学有深层同构：
 
 FDE 是 Palantir 发明的**商业方法论**，不是 Agent 平台基础设施技术。本 Wiki 收录 FDE 内容的原因是其与 Agent 平台概念存在结构性类比：
 
-- **[[Thin-Harness-Fat-Skills]]**：FDE 飞轮（碎石路→柏油路→高速公路）与 skill 生态演化路径在抽象模式上一致，但前者描述人类组织过程，后者描述软件架构。
-- **[[Agent-Harness-治理协议]]**：概念演化机制（观察模式→抽象→编码）与 FDE 产品化飞轮在"实例→抽象→复用"的循环上有类比关系，但治理协议是 Agent 系统自动化的知识管理，FDE 产品化是多年人工过程。
-- **[[Agent-Macro-Evaluation]]**：FDE 指标（TTFV、Rosita 使用深度、真假 FDE 判断维度）为 Agent 部署评估提供了启发性的思考框架。
+- **[[Thin Harness, Fat Skills]]**：FDE 飞轮（碎石路→柏油路→高速公路）与 skill 生态演化路径在抽象模式上一致，但前者描述人类组织过程，后者描述软件架构。
+- **[[Agent Harness 治理协议]]**：概念演化机制（观察模式→抽象→编码）与 FDE 产品化飞轮在"实例→抽象→复用"的循环上有类比关系，但治理协议是 Agent 系统自动化的知识管理，FDE 产品化是多年人工过程。
+- **[[Agent Macro Evaluation]]**：FDE 指标（TTFV、Rosita 使用深度、真假 FDE 判断维度）为 Agent 部署评估提供了启发性的思考框架。
 
 在 7 篇 FDE 总结中，仅 [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]] 有实质性的 Agent 基础设施技术关联（通过"AI-native FDE"概念）。其余 6 篇是 FDE 方法论内容，关联主要为类比层面。每篇总结的"与 Agent 基础设施的关系"节提供了详细评估。
 
