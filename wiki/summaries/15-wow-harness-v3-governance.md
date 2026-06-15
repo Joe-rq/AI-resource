@@ -3,7 +3,7 @@ title: "Hermes Agent 之后：AI 开发需要一层治理协议"
 type: summary
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["15-wow-harness-v3-governance"]
+sources: ["raw/articles/2026-05-20-hermes-agent-harness.md"]
 tags: [harness, governance, wow-harness, event-sourcing, multi-agent, concept-evolution]
 ---
 

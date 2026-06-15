@@ -3,7 +3,7 @@ title: "如何实现一个好的 AI 自主干活系统"
 type: summary
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["17-ai-autonomous-system-tips"]
+sources: ["raw/articles/2026-06-02-ai-autonomous-system-tips.md"]
 tags: [autonomous-ai-system, agent-runtime, harness, watchdog, worktree, self-review, state-persistence, yang-zhiping]
 ---
 

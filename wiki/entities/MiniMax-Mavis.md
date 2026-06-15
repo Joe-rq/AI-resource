@@ -3,7 +3,7 @@ title: "MiniMax Mavis"
 type: entity
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["02-minimax-agent-team-tech-report"]
+sources: ["raw/articles/2026-05-19-minimax-agent-team-tech-report.md"]
 tags: [minimax, mavis, agent-team, worker-verifier]
 ---
 

@@ -3,7 +3,7 @@ title: "Macro Evals for Agentic Systems：从单次评分到群体行为模式"
 type: summary
 created: 2026-06-13
 updated: 2026-06-13
-sources: ["20-macro-evals-for-agentic-systems-zh"]
+sources: ["raw/articles/2026-06-13-macro-evals-for-agentic-systems.md"]
 tags: [evaluation, macro-evals, openai-cookbook, bertopic, hdbscan, agenttrace, promptfoo, multi-agent, ev-orders]
 ---
 
@@ -13,7 +13,7 @@ tags: [evaluation, macro-evals, openai-cookbook, bertopic, hdbscan, agenttrace, 
 > **作者**：Shikhar Kwatra (OpenAI) / Will Thieme / Bradley Strauss
 > **发表**：2026-05-19，OpenAI Cookbook (Partners)
 > **本 wiki 摄取**：2026-06-13
-> **中文改写源文件**：`raw/articles/20-macro-evals-for-agentic-systems-zh.md`
+> **中文改写源文件**：`raw/articles/2026-06-13-macro-evals-for-agentic-systems.md`
 
 ## 核心论断
 

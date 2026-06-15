@@ -3,7 +3,7 @@ title: "Anthropic Managed Agents API"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["05-anthropic-managed-agents-api"]
+sources: ["raw/articles/2026-05-18-anthropic-managed-agents-api.md"]
 tags: [multi-agent, session-thread, anthropic, managed-agents]
 ---
 

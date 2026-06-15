@@ -3,7 +3,7 @@ title: "A harness for every task: Anthropic 官方 Dynamic Workflows 深度解�
 type: summary
 created: 2026-06-05
 updated: 2026-06-05
-sources: ["12-a-harness-for-every-task-dynamic-workflows"]
+sources: ["raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md"]
 tags: [claude-code, workflows, harness, orchestration, anthropic, failure-modes, ultracode]
 ---
 
@@ -120,7 +120,7 @@ flowchart TB
 
 ## 相关资源
 
-- 原始来源：`raw/articles/12-a-harness-for-every-task-dynamic-workflows.md`
+- 原始来源：`raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md`
 - 互补 summary：[[summaries/10-claude-code-dynamic-workflows|10-claude-code-dynamic-workflows]] —— 产品功能文档
 - 上位概念：[[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]]、[[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]]、[[concepts/Agent-Runtime|Agent Runtime]]
 - 同构概念：[[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]]、[[concepts/Agent-Secure-Runtime|Agent Secure Runtime]]、[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]

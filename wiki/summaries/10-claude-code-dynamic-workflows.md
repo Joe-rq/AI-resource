@@ -3,7 +3,7 @@ title: "Claude Code 动态工作流（Dynamic Workflows）"
 type: summary
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["10-claude-code-dynamic-workflows"]
+sources: ["raw/articles/2026-06-04-claude-code-dynamic-workflows.md"]
 tags: [claude-code, workflows, subagent, orchestration, ultracode, deep-research]
 ---
 
@@ -161,5 +161,5 @@ Claude 将结构化数据直接传给脚本，无需解析。省略 `args` 时�
 
 ## 相关资源
 
-- 原始来源：`raw/articles/10-claude-code-dynamic-workflows.md`（Claude Code 官方中文文档）
+- 原始来源：`raw/articles/2026-06-04-claude-code-dynamic-workflows.md`（Claude Code 官方中文文档）
 - 关联概念：[[concepts/Claude-Code-Subagent/index|Claude Code Subagent]]、[[concepts/Claude-Code-Skills/index|Claude Code Skills]]、[[concepts/Agent-Runtime|Agent Runtime]]、[[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]]、[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]

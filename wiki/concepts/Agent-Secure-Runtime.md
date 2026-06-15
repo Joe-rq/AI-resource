@@ -3,7 +3,7 @@ title: "Agent Secure Runtime"
 type: concept
 created: 2026-05-19
 updated: 2026-05-19
-sources: [nvidia-agent-toolkit]
+sources: [raw/articles/nvidia-agent-toolkit.md]
 tags: [agent-runtime, security, sandbox, guardrail, privacy]
 ---
 
@@ -77,4 +77,4 @@ Agent 命令的入口关卡。基于预定义规则决定 Agent 可以执行哪�
 
 ## Sources
 
-- [[summaries/nvidia-agent-toolkit]] — (2026-05-19) OpenShell 架构图分析
+- [[summaries/raw/articles/nvidia-agent-toolkit.md]] — (2026-05-19) OpenShell 架构图分析

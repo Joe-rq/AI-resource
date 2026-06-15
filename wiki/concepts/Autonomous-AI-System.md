@@ -3,7 +3,7 @@ title: "Autonomous AI System"
 type: concept
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["17-ai-autonomous-system-tips"]
+sources: ["raw/articles/2026-06-02-ai-autonomous-system-tips.md"]
 tags: [autonomous-ai-system, harness, runtime, watchdog, worktree, state-persistence, yang-zhiping]
 ---
 

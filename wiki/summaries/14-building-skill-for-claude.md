@@ -3,7 +3,7 @@ title: "Claude Code Skill 开发"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["01-building-skill-for-claude"]
+sources: ["raw/articles/2026-05-18-building-skill-for-claude.md"]
 tags: [claude-code, skill, skill-md, workflow]
 ---
 

@@ -3,7 +3,7 @@ title: "AI Resource 项目介绍"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["readme"]
+sources: ["raw/articles/readme.md"]
 tags: [project, overview, agent-platform]
 ---
 

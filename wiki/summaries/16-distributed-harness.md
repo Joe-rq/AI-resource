@@ -4,7 +4,7 @@ type: summary
 created: 2026-06-04
 updated: 2026-06-04
 sources:
-  - "16-distributed-harness"
+  - "raw/articles/2026-05-31-distributed-harness.md"
 tags: [harness, distributed-harness, context-generation, dimension-loop, intent-extraction, attachment-point]
 ---
 

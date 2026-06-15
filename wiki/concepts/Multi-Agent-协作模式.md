@@ -3,7 +3,7 @@ title: "Multi-Agent 协作模式"
 type: concept
 created: 2026-05-19
 updated: 2026-05-22
-sources: ["02-minimax-agent-team-tech-report", "04-anthropic-multi-agent-research-system", "05-anthropic-managed-agents-api", "06-claude-code-agent-teams", "hermes-agent-harness-engineering"]
+sources: ["raw/articles/2026-05-19-minimax-agent-team-tech-report.md", "raw/articles/2026-05-18-anthropic-multi-agent-research-system.md", "raw/articles/2026-05-18-anthropic-managed-agents-api.md", "raw/articles/2026-05-18-claude-code-agent-teams.md", "raw/articles/2026-05-20-hermes-agent-harness"]
 tags: [multi-agent, orchestration, patterns, coordination]
 ---
 

@@ -3,7 +3,7 @@ title: "wow-harness"
 type: entity
 created: 2026-05-22
 updated: 2026-05-22
-sources: ["hermes-agent-harness-engineering"]
+sources: ["raw/articles/2026-05-20-hermes-agent-harness"]
 tags: [harness, governance, agent-organization, wow-harness]
 ---
 

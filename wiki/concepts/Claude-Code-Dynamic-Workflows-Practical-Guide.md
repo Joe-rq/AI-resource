@@ -3,7 +3,7 @@ title: "Claude Code Dynamic Workflows 实践指南"
 type: concept
 created: 2026-06-11
 updated: 2026-06-11
-sources: ["index.html"]
+sources: ["raw/articles/index.html"]
 tags: [claude-code, workflows, ultracode, deep-research, practical-guide, best-practices]
 ---
 

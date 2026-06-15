@@ -3,7 +3,7 @@ title: "Thin Harness, Fat Skills：套具要瘦，技能要胖"
 type: summary
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["13-thin-harness-fat-skills"]
+sources: ["raw/articles/2026-04-18-thin-harness-fat-skills.md"]
 tags: [harness, skill, architecture, judgment, latent-deterministic, diarization, resolver, yegge, yc]
 ---
 

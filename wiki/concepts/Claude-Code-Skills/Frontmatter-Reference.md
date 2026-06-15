@@ -3,7 +3,7 @@ title: "Claude Code Skills — Frontmatter 参考"
 type: concept
 created: 2026-05-21
 updated: 2026-05-21
-sources: ["claude-code-skills"]
+sources: ["raw/articles/2026-05-21-claude-code-skills.md"]
 tags: [claude-code, skills, frontmatter, configuration]
 parent: "Claude Code Skills"
 ---

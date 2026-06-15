@@ -3,7 +3,7 @@ title: "Loop Engineering：从 Prompt 到系统设计"
 type: summary
 created: 2026-06-11
 updated: 2026-06-11
-sources: ["19-addyosmani-loop-engineering"]
+sources: ["raw/articles/2026-06-08-addyosmani-loop-engineering"]
 tags: [loop-engineering, claude-code, codex, agent-orchestration, automation, subagent, skill, worktree, mcp, token-cost]
 ---
 

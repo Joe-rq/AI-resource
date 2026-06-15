@@ -29,6 +29,9 @@
 ### Architecture Principles
 - [[concepts/Thin-Harness-Fat-Skills]] — Thin Harness, Fat Skills：套具极薄、技能极胖，90% 价值在 markdown 流程文件（skill-as-method-call、resolver、latent vs deterministic、diarization、self-rewriting skill）
 
+### Go-to-Market & Product Discovery
+- [[concepts/Forward-Deployed-Engineering]] — FDE 前置部署工程：四要素精确定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、与咨询的本质区别、AI 时代复兴的结构性原因
+
 ### Evaluation
 - [[concepts/Agent-Macro-Evaluation]] — Agent 宏观评估方法论：4 层标签（case_type → run_outcome → eval_finding → behavior_pattern）+ BERTopic 风格聚类 + AgentTrace 风格诊断 + 三个核心公式（impact_score / lift / suspect_score）
 
@@ -40,8 +43,16 @@
 - [[entities/ESAA]] — ESAA: Event Sourcing for Autonomous Agents（Event Sourcing + CQRS 应用于 agent 生命周期管理，immutable audit trail + deterministic replay）
 - [[entities/NanoClaw]] — NanoClaw：~500行代码的轻量级 Agent 框架，建在 Claude Agent SDK 上
 - [[entities/Nous-Research]] — Nous Research：硅谷 AI 实验室，Hermes Agent（11万星）
+- [[entities/Palantir]] — Palantir Technologies：FDE 模式发明者、Gotham/Foundry/AIP 产品矩阵、Ontology 本体论、反 SaaS 产品哲学
 
 ## Summaries (chronological)
+- 2026-06-15 — [[summaries/27-what-we-talk-about-fde]] — 当我们谈论 FDE 时：四要素精确定义、Echo/Delta/Dev 三角循环、三种"穿新衣的旧角色"、AI 时代 FDE 复兴的结构性原因
+- 2026-06-15 — [[summaries/26-shyam-sankar-mobilize]] — Shyam Sankar《Mobilize》对谈：美国工业基础危机、FDE 哲学、"异端与英雄"创新史
+- 2026-06-15 — [[summaries/25-fde-future-roundtable]] — FDE 未来圆桌：OpenAI/Ramp/Nominal/Dataland 四家公司如何定义和运作 FDE
+- 2026-06-15 — [[summaries/24-fde-role-definition]] — FDE 角色定义与入门路径（Dex Sessions 圆桌）
+- 2026-06-15 — [[summaries/23-colin-jarvis-openai-fde]] — OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）
+- 2026-06-15 — [[summaries/22-alex-karp-palantir-ceo]] — Alex Karp 访谈精译：怪人秀、美国精神、反 SaaS 哲学与 AIP 押注
+- 2026-06-15 — [[summaries/21-fde-playbook-bob-mcgrew]] — FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）
 - 2026-06-13 — [[summaries/20-macro-evals-for-agentic-systems]] — Macro Evals for Agentic Systems：从单次评分到群体行为模式（OpenAI Cookbook，1000 次合成 EV 订单运行 + Promptfoo + BERTopic 风格聚类 + AgentTrace 风格诊断）
 - 2026-06-11 — [[summaries/19-addyosmani-loop-engineering]] — Loop Engineering：从 Prompt 到系统设计（Addy Osmani，5 模块 + 1 记忆，Claude Code / Codex 通用 loop 架构）
 - 2026-06-04 — [[summaries/18-agent-harness-12-components]] — Agent Harness 12 组件 + 7 决策（TAO 循环、上下文腐烂、脚手架隐喻、TerminalBench 30→5 名实证）

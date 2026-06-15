@@ -1,5 +1,5 @@
 ---
-title: summaries/11-hermes-agent-nous-research
+title: summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md
 type: summary
 source_url: https://mp.weixin.qq.com/s/wX7pMuK1rizqjmJqwNbGBQ
 source_type: article

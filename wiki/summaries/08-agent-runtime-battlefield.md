@@ -3,7 +3,7 @@ title: "08 - Agent Runtime 主战场"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["08-agent-runtime-battlefield"]
+sources: ["raw/articles/2026-05-19-agent-runtime-battlefield.md"]
 tags: [agent-runtime, benchmark, harness, cline]
 ---
 

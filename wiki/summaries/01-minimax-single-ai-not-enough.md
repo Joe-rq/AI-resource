@@ -3,7 +3,7 @@ title: "单 AI 的四个结构性缺陷"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["01-minimax-single-ai-not-enough"]
+sources: ["raw/articles/2026-05-19-minimax-single-ai-not-enough.md"]
 tags: [single-agent, limitations, agent-team]
 ---
 

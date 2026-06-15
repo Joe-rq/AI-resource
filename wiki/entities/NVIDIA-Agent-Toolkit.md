@@ -3,7 +3,7 @@ title: "NVIDIA Agent Toolkit"
 type: entity
 created: 2026-05-19
 updated: 2026-05-19
-sources: [nvidia-agent-toolkit]
+sources: [raw/articles/nvidia-agent-toolkit.md]
 tags: [nvidia, agent-platform, toolkit, security]
 ---
 
@@ -35,4 +35,4 @@ NVIDIA 的 Agent 开发与部署工具包，以自身 GPU/CUDA 生态为基础�
 
 ## Sources
 
-- [[summaries/nvidia-agent-toolkit]] — (2026-05-19) 架构图分析
+- [[summaries/raw/articles/nvidia-agent-toolkit.md]] — (2026-05-19) 架构图分析

@@ -4,7 +4,7 @@ type: entity
 entity_type: organization
 created: 2026-05-22
 updated: 2026-05-22
-sources: [11-hermes-agent-nous-research]
+sources: [raw/articles/2026-05-02-hermes-agent-nous-research.md]
 tags: [ai-lab, open-source, hermes-agent, long-term-memory]
 ---
 
@@ -22,8 +22,8 @@ Nous Research 是硅谷 AI 研究实验室，开发了开源 Agent 框架 Hermes
 ## Related concepts
 
 - [[concepts/Agent-Runtime]] — Hermes 的长期记忆能力填补了 Runtime 的关键缺口
-- [[summaries/11-hermes-agent-nous-research]] — Hermes Agent 完整摘要
+- [[summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md]] — Hermes Agent 完整摘要
 
 ## Sources
 
-- [[summaries/11-hermes-agent-nous-research]] — 动脉网报道
+- [[summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md]] — 动脉网报道

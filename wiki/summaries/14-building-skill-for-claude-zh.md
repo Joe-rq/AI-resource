@@ -3,7 +3,7 @@ title: "构建 Claude 技能完整指南（中文）"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["01-building-skill-for-claude-zh"]
+sources: ["raw/articles/2026-05-18-building-skill-for-claude-zh.md"]
 tags: [claude-code, skill, skill-md, guide-zh]
 ---
 

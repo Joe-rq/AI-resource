@@ -3,7 +3,7 @@ title: "Claude Code Agent Teams"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["06-claude-code-agent-teams"]
+sources: ["raw/articles/2026-05-18-claude-code-agent-teams.md"]
 tags: [claude-code, agent-teams, task-queue, parallel-work]
 ---
 

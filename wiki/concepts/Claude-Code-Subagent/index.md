@@ -3,7 +3,7 @@ title: "Claude Code Subagent"
 type: concept
 created: 2026-05-21
 updated: 2026-05-21
-sources: ["claude-code-sub-agents", "09-claude-subagent-tutorial", "06-claude-code-agent-teams"]
+sources: ["raw/articles/2026-05-21-claude-code-sub-agents.md", "raw/articles/2026-05-21-claude-subagent-tutorial-zh.md", "raw/articles/2026-05-18-claude-code-agent-teams.md"]
 tags: [claude-code, subagent, context-isolation, agent-definition, parallel-execution, fork]
 ---
 

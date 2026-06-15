@@ -3,7 +3,7 @@ title: "Harness Engineering 综述：14 篇工程文章里的 15 个月"
 type: summary
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["12-harness-engineering-survey"]
+sources: ["raw/articles/2026-04-02-harness-engineering-survey.md"]
 tags: [harness, compensation-surface, claude-code, anthropic, openai, cursor, langchain, governance, bitter-lesson]
 ---
 

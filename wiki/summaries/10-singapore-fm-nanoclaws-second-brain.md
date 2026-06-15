@@ -1,5 +1,5 @@
 ---
-title: summaries/10-singapore-fm-nanoclaws-second-brain
+title: summaries/raw/articles/2026-05-17-nanoclaws-second-brain.md
 type: summary
 source_url: https://www.anduril.tw/second-brain/
 source_type: article

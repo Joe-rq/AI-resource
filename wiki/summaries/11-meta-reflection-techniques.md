@@ -3,7 +3,7 @@ title: "12 个元反思技巧"
 type: summary
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["11-meta-reflection-techniques"]
+sources: ["raw/articles/2026-03-17-meta-reflection-techniques.md"]
 tags: [meta-reflection, harness, agent-quality, prompt-engineering, dev-loop, action-loop]
 ---
 

@@ -87,6 +87,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Meta-Reflection-Techniques — 阳志平 12 个元反思技巧（行动之环 × 4 象限：意图/实施/反馈/情境）
 - Autonomous-AI-System — AI 自主系统 4 组 12 技巧（任务编排/实际开工/自检评审/自动续航；与 harness 视角互补）
 - Agent-Macro-Evaluation — Agent 宏观评估方法论（4 层标签 + BERTopic 风格聚类 + AgentTrace 风格诊断 + 3 个核心公式）
+- Forward-Deployed-Engineering — FDE 前置部署工程（四要素定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、AI 时代复兴原因）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
@@ -96,6 +97,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - ESAA — ESAA: Event Sourcing for Autonomous Agents（Event Sourcing + CQRS、immutable audit trail、deterministic replay、两个 case study 验证）
 - NanoClaw — ~500行代码的轻量级 Agent 框架（Claude Agent SDK）
 - Nous-Research — 硅谷 AI 实验室，Hermes Agent（11万星）
+- Palantir — Palantir Technologies：FDE 模式发明者、Gotham/Foundry/AIP 产品矩阵、Ontology 本体论、反 SaaS 产品哲学
 
 ### Summaries
 - 12-a-harness-for-every-task-dynamic-workflows — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）
@@ -125,6 +127,13 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 02-minimax-agent-team-tech-report — Mavis 详细技术报告
 - 14-building-skill-for-claude-zh — Skill 开发指南（中文）
 - project-overview — AI Resource 项目介绍
+- 21-fde-playbook-bob-mcgrew — Bob McGrew FDE 实战手册（Lightcone Podcast）
+- 22-alex-karp-palantir-ceo — Alex Karp 访谈精译（怪人秀、美国精神、反 SaaS、AIP、Rosita）
+- 23-colin-jarvis-openai-fde — OpenAI FDE 访谈录（Colin Jarvis：信任、产品、影响）
+- 24-fde-role-definition — FDE 角色定义与入门路径（Dex Sessions 圆桌）
+- 25-fde-future-roundtable — FDE 未来圆桌（OpenAI/Ramp/Nominal/Dataland）
+- 26-shyam-sankar-mobilize — Shyam Sankar《Mobilize》对谈（国防工业基础、FDE 哲学）
+- 27-what-we-talk-about-fde — 当我们谈论 FDE 时（中文深度分析：四要素定义、真假 FDE）
 
 ## Open research questions
 

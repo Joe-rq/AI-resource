@@ -3,7 +3,7 @@ title: Agent Memory
 type: concept
 created: 2026-05-22
 updated: 2026-05-22
-sources: [11-hermes-agent-nous-research, 10-singapore-fm-nanoclaws-second-brain]
+sources: [raw/articles/2026-05-02-hermes-agent-nous-research.md, raw/articles/2026-05-17-nanoclaws-second-brain.md]
 tags: [agent-memory, long-term-memory, knowledge-graph, agent-runtime]
 ---
 
@@ -58,5 +58,5 @@ flowchart TB
 
 ## Sources
 
-- [[summaries/10-singapore-fm-nanoclaws-second-brain]] — Mnemon 图谱记忆 + 边缘部署案例
-- [[summaries/11-hermes-agent-nous-research]] — Hermes 自我进化型记忆系统
+- [[summaries/raw/articles/2026-05-17-nanoclaws-second-brain.md]] — Mnemon 图谱记忆 + 边缘部署案例
+- [[summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md]] — Hermes 自我进化型记忆系统

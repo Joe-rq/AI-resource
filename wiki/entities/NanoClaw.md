@@ -4,7 +4,7 @@ type: entity
 entity_type: tool
 created: 2026-05-22
 updated: 2026-05-22
-sources: [10-singapore-fm-nanoclaws-second-brain]
+sources: [raw/articles/2026-05-17-nanoclaws-second-brain.md]
 tags: [agent-framework, claude-agent-sdk, edge-runtime, open-source]
 ---
 
@@ -50,4 +50,4 @@ flowchart TB
 
 ## Sources
 
-- [[summaries/10-singapore-fm-nanoclaws-second-brain]] — 新加坡外長使用 NanoClaw 的完整案例
+- [[summaries/raw/articles/2026-05-17-nanoclaws-second-brain.md]] — 新加坡外長使用 NanoClaw 的完整案例

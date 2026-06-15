@@ -3,7 +3,7 @@ title: "Agent Harness：让 AI 从聊天机器人变成真正的智能体（12 �
 type: summary
 created: 2026-06-04
 updated: 2026-06-04
-sources: ["18-agent-harness-12-components"]
+sources: ["raw/articles/2026-04-20-agent-harness-12-components.md"]
 tags: [harness, agent-runtime, claude-code, openai, langchain, orchestration, verification]
 ---
 

@@ -3,7 +3,7 @@ title: "Claude Code Skills — 动态上下文与 Subagent 执行"
 type: concept
 created: 2026-05-21
 updated: 2026-05-21
-sources: ["claude-code-skills"]
+sources: ["raw/articles/2026-05-21-claude-code-skills.md"]
 tags: [claude-code, skills, dynamic-context, subagent, fork, sharing]
 parent: "Claude Code Skills"
 ---

@@ -3,7 +3,7 @@ title: "Claude Code Subagent — 调用与上下文管理"
 type: concept
 created: 2026-05-21
 updated: 2026-05-21
-sources: ["claude-code-sub-agents"]
+sources: ["raw/articles/2026-05-21-claude-code-sub-agents.md"]
 tags: [claude-code, subagent, invocation, context, memory, hooks, fork, resume]
 parent: "Claude Code Subagent"
 ---

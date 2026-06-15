@@ -3,7 +3,7 @@ title: "Hermes Agent 之后：AI 开发需要一层治理协议（合并至 15-�
 type: summary
 created: 2026-05-22
 updated: 2026-06-04
-sources: ["hermes-agent-harness-engineering"]
+sources: ["raw/articles/2026-05-20-hermes-agent-harness"]
 tags: [harness, governance, wow-harness, event-sourcing, multi-agent, stub]
 ---
 

@@ -3,7 +3,7 @@ title: "Anthropic 多 Agent 研究系统"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["04-anthropic-multi-agent-research-system"]
+sources: ["raw/articles/2026-05-18-anthropic-multi-agent-research-system.md"]
 tags: [multi-agent, orchestrator, parallel-search, anthropic]
 ---
 

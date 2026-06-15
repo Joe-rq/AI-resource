@@ -3,7 +3,7 @@ title: "Agent Harness 治理协议"
 type: concept
 created: 2026-05-22
 updated: 2026-05-22
-sources: ["hermes-agent-harness-engineering"]
+sources: ["raw/articles/2026-05-20-hermes-agent-harness"]
 tags: [harness, governance, event-sourcing, agent-organization, multi-agent]
 ---
 

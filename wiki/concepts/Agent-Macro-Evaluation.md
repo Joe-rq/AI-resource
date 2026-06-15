@@ -3,7 +3,7 @@ title: "Agent Macro Evaluation"
 type: concept
 created: 2026-06-13
 updated: 2026-06-13
-sources: ["20-macro-evals-for-agentic-systems-zh"]
+sources: ["raw/articles/2026-06-13-macro-evals-for-agentic-systems.md"]
 tags: [evaluation, macro-evals, agentic-systems, bertopic, hdbscan, umap, agenttrace, promptfoo, openai-cookbook]
 ---
 
