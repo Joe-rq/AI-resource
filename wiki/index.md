@@ -67,7 +67,6 @@
 - 2026-05-22 — [[Hermes Agent：Nous Research 的开源 Agent 框架]] — Hermes Agent / Nous Research（长期记忆 + 自我进化）
 - 2026-05-22 — [[ESAA: Event Sourcing for Autonomous Agents]] — ESAA 论文：Event Sourcing + CQRS 应用于 LLM agent 生命周期（两个 case study 验证）
 - 2026-05-22 — [[Dive into Claude Code 论文解读]] — Claude Code 源码级逆向工程分析（98.4% 基础设施、5 设计价值、与 OpenClaw 对比）
-- 2026-05-22 — [[Hermes Agent 之后：AI 开发需要一层治理协议（合并至 15-）]] — wow-harness v3 治理协议设计（**已合并至 15-**，见 stub 提示）
 - 2026-05-21 — [[09-Claude Subagent 小白入门教程]] — Claude Code Subagent 小白入门教程（内置类型、自定义定义、调用方式）
 - 2026-05-19 — [[NVIDIA Agent Toolkit 架构]] — NVIDIA Agent Toolkit 架构图（OpenShell 安全运行时 + 全栈 Agent 平台）
 - 2026-05-19 — [[08 - Agent Runtime 主战场]] — Agent Runtime 主战场（4.8pp ≈ 一次模型版本迭代）
@@ -75,9 +74,8 @@
 - 2026-05-19 — [[Anthropic 多 Agent 研究系统]] — Anthropic Orchestrator-Worker 架构
 - 2026-05-19 — [[Anthropic Managed Agents API]] — Anthropic 共享容器 + Session Thread 隔离
 - 2026-05-19 — [[Claude Code Agent Teams]] — Claude Code Team Lead + Teammates 独立工作
-- 2026-05-19 — [[Claude Code Skill 开发]] — Claude Code Skill 开发流程
+- 2026-05-19 — [[构建 Claude 技能完整指南（中文）]] — Claude Code Skill 开发流程
 - 2026-05-19 — [[MiniMax Mavis 技术报告]] — Mavis 详细技术报告
-- 2026-05-19 — [[构建 Claude 技能完整指南（中文）]] — Skill 开发指南（中文）
 - 2026-05-19 — [[AI Resource 项目介绍]] — AI Resource 项目介绍
 
 ## Open Research Questions
