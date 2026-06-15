@@ -3,7 +3,7 @@ title: "Dive into Claude Code（论文）"
 type: entity
 created: 2026-05-22
 updated: 2026-05-22
-sources: ["raw/articles/dive-into-claude-code.md"]
+sources: ["raw/refs/dive-into-claude-code.md"]
 tags: [claude-code, reverse-engineering, architecture, design-space, paper]
 ---
 

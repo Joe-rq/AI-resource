@@ -3,7 +3,7 @@ title: "NVIDIA Agent Toolkit 架构"
 type: summary
 created: 2026-05-19
 updated: 2026-05-19
-sources: ["raw/articles/nvidia-agent-toolkit.md"]
+sources: ["raw/notes/nvidia-agent-toolkit.md"]
 tags: [nvidia, agent-runtime, security, multi-agent, toolkit]
 ---
 

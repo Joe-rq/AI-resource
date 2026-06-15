@@ -3,7 +3,7 @@ title: "Agent Runtime"
 type: concept
 created: 2026-05-19
 updated: 2026-05-22
-sources: ["raw/articles/2026-05-19-agent-runtime-battlefield.md", "raw/articles/nvidia-agent-toolkit.md"]
+sources: ["raw/articles/2026-05-19-agent-runtime-battlefield.md", "raw/notes/nvidia-agent-toolkit.md"]
 tags: [agent-runtime, harness, prompt, tool-definition]
 ---
 

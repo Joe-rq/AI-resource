@@ -3,7 +3,7 @@ title: "ESAA: Event Sourcing for Autonomous Agents"
 type: summary
 created: 2026-05-22
 updated: 2026-05-22
-sources: ["raw/articles/esaa-paper.md"]
+sources: ["raw/papers/ESAA-Event-Sourcing-for-Autonomous-Agents.md"]
 tags: [event-sourcing, CQRS, agent-governance, audit-trail, paper]
 ---
 

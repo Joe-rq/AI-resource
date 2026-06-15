@@ -3,7 +3,7 @@ title: "Dive into Claude Code 论文解读"
 type: summary
 created: 2026-05-22
 updated: 2026-05-22
-sources: ["raw/articles/dive-into-claude-code.md"]
+sources: ["raw/refs/dive-into-claude-code.md"]
 tags: [claude-code, architecture, design-space, reverse-engineering, paper]
 ---
 
