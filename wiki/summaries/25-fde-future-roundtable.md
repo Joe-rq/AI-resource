@@ -77,6 +77,16 @@ Dataland 则在尝试 AI 带来的新可能：**radical ownership（彻底的端
 
 > "客户其实比公司自己更'上瘾'FDE。你真要把人撤走，他们就甩了你——这是最糟的。" — Howard
 
+## 与 Agent 基础设施的关系
+
+圆桌讨论的核心议题与 Agent 平台演进存在中等程度的关联：
+
+- **[[Thin-Harness-Fat-Skills]]**："AI 不会取代 FDE，会放大 FDE"的核心结论与 thin harness + fat skills 架构有一致的哲学基础——AI 工具承担 thin harness 层面的重复性工作（部署脚本、监控配置），FDE 聚焦 fat skills 层面的判断力和信任建设。但这个类比是组织层面的，不涉及具体架构设计。
+- **[[Agent-Harness-治理协议]]**：FDE 团队汇报线之争（工程 vs 销售）映射到 Agent 平台治理中的一个真实问题——Agent 行为策略应由技术团队还是业务团队主导制定？治理协议的人机决策分层框架为这个问题提供了参考思路，但本文并未讨论 Agent 治理本身。
+- **[[Multi-Agent-协作模式]]**：FDE 从"部署工程师"到"变革管理者"的角色演变，与 Agent 架构中从执行层到编排层的层级跃迁有类比关系。低层 Agent 处理执行，高层 Orchestrator 处理策略和变革。
+
+总体评估：本文有 FDE 和 AI 交叉的讨论（AI 放大 FDE 能力），但核心内容是 FDE 团队管理和组织设计，与 Agent 基础设施技术的直接关联有限。保留价值中等。
+
 ## 参考
 
 - [[Forward-Deployed-Engineering]]

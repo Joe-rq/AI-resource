@@ -2,7 +2,7 @@
 title: "Meta Reflection Techniques"
 type: concept
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-15
 sources: ["raw/articles/2026-03-17-meta-reflection-techniques.md"]
 tags: [meta-reflection, prompt-engineering, action-loop, harness, dev-loop, agent-quality]
 ---

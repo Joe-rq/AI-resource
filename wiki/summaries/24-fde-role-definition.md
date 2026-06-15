@@ -79,6 +79,18 @@ Rob 总结：好的 FDE 需要**增长（Growth）**和**执行（Execution）**
 2. **"你们为什么要招 FDE？"**（Ando）——如果创始人讲不清，就是强信号：这个岗位可能混乱、缺自主权、接触不到真正有价值的问题。
 3. **"FDE 跟核心产品团队的耦合度有多高？"**（Francis）——如果能随便 clone repo 直接提贡献，说明闭环跑得通；如果跟内部工程团队完全没接触，那这个岗位就有点"sauce"了。
 
+<!-- SCOPE: weak connection to agent infrastructure. Consider archiving. -->
+
+## 与 Agent 基础设施的关系
+
+本文是 FDE 角色的招聘和职业发展讨论，与 Agent 基础设施的直接关联很弱：
+
+- T-shaped 能力模型与 [[Thin-Harness-Fat-Skills]] 中"平台团队维护 thin harness + skill 作者贡献 fat skills"的分工在抽象层面相似，但这是任何技术生态中都存在的通用分工模式，并非 FDE 特有的洞察。
+- FDE 入门路径（技术深度 → 客户暴露 → 独立负责）与 [[Claude-Code-Subagent/index|Claude Code Subagent]] 的渐进式授权模式的类比是表面的——前者的"授权"是组织管理概念（给人更多责任），后者的"授权"是安全技术概念（给 subagent 更多工具和权限）。
+- 招聘信号（创业经历、开源贡献）与 [[Agent-Macro-Evaluation]] 的关联过于间接——任何技术角色的评估都可以类比到 Agent 评估，这不构成有意义的交叉。
+
+总体评估：本文的实质内容（FDE 的 T-shaped 能力、招聘标准、职业路径、常见误区）与 Agent 平台基础设施技术无交集。保留的唯一理由是作为 FDE 概念体系的完整性补充，但技术关联价值极低。建议归档。
+
 ## 参考
 
 - [[Forward-Deployed-Engineering]] — FDE 核心概念页，涵盖定义、历史渊源与在 AI Agent 时代的复兴

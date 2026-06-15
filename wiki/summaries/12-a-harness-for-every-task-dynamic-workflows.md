@@ -24,7 +24,7 @@ Anthropic 官方（Thariq Shihipar / Sid Bidasaria, Claude Code 技术团队）2
 | 失效模式 | 表现 | Workflow 如何防止 |
 | :--- | :--- | :--- |
 | **Agentic laziness** | 50 项安全审查只做完 35 项就宣布完成 | 把每项拆给独立 subagent，结构上无法跳过 |
-| **Self-preferential bias** | 让 Claude 用 rubric 评判自己结果时偏向自己 | adversarial verification —— 让另一个 agent 独立验证 |
+| **[[Self-Preferential Bias]]** | 让 Claude 用 rubric 评判自己结果时偏向自己 | adversarial verification —— 让另一个 agent 独立验证 |
 | **Goal drift** | 多轮 compaction 后丢失"don't do X"约束 | 每个 subagent 有独立、聚焦的目标，不受主对话漂移影响 |
 
 这三种失效模式**首次在 wiki 中被记录**，与 [[Worker Verifier 对抗循环]]在动机层面同源——都是为了破除"单 agent 自我验证"的认识论困境。

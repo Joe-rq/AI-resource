@@ -55,7 +55,7 @@ tags: [claude-code, workflows, ultracode, deep-research, practical-guide, best-p
 | **技术债务系统清理** | `/effort ultracode` / 保存的工作流 | Fan-out per directory | 保存为工作流后定期运行，保持代码库整洁 |
 | **PR 批量审查** | 保存的工作流 + gh CLI | Fan-out per PR / per module | 与 `gh pr diff` 配合批量处理 |
 | **深度验证（逐条溯源）** | `ultracode:` / 保存的工作流 | 提取声明 → 每条 spin off 验证 agent → 来源质量审查 | 适用于技术白皮书、事故复盘报告、合规文档 |
-| **排序与锦标赛筛选** | `ultracode:` / 保存的工作流 | Tournament / pairwise pipeline / bucket-rank merge | pairwise 比 absolute scoring 更可靠；避免 1000+ 行撑爆上下文 |
+| **排序与锦标赛筛选** | `ultracode:` / 保存的工作流 | [[Tournament Mode]] / pairwise pipeline / bucket-rank merge | pairwise 比 absolute scoring 更可靠；避免 1000+ 行撑爆上下文 |
 | **记忆与规则遵循** | `ultracode:` / 保存的工作流 | 每条规则配 verifier agent + skeptic 反向审查 | 也可反向挖掘：从会话历史提炼规则写回 `CLAUDE.md` |
 | **大规模分类处理（Triage）** | 保存的工作流 + `/loop` | 分类 + 去重 + 行动 + **quarantine 模式** | 配合 `/loop` 可持续运行；quarantine 隔离读不可信内容的 agent |
 | **探索与品味决策** | `ultracode:` / 保存的工作流 | Generate + rubric review，由 review agent 判定完成 | 适用于 CLI 命名、UI 设计、API 命名、Logo 比选 |
@@ -120,8 +120,13 @@ ultracode: 审计 src/ 目录下的认证问题，token 预算 10000，超出时
 
 - [[Claude Code 动态工作流（Dynamic Workflows）]] — 产品功能文档（"怎么用"的基础）
 - [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]] — 官方博客深度解读（"为什么"+ 六种模式 + 十个用例）
+- [[Agentic Laziness]] — 单 Agent 在执行复杂多步骤任务时提前终止，三类结构性失效模式之一
+- [[Goal Drift]] — 多轮 compaction 导致目标偏离，三类结构性失效模式之一
+- [[Self-Preferential Bias]] — 单 Agent 偏好自己的结果，三类结构性失效模式之一
 - [[Claude Code Subagent]] — 工作流编排的工作者原语
 - [[Claude Code Skills]] — 工作流可通过 skill 分发
 - [[Thin Harness, Fat Skills]] — "harness on the fly" 的极致推论
 - [[Worker Verifier 对抗循环]] — 对抗验证模式的同构概念
 - [[Agent Secure Runtime]] — Quarantine 模式的权限隔离延伸
+- [[Tournament Mode]] — pairwise 比较 vs absolute scoring 的判断学说
+- [[Quarantine Mode]] — 读不可信内容的 agent 与高权限 agent 的结构性隔离

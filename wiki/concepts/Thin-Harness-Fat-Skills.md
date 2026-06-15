@@ -2,7 +2,7 @@
 title: "Thin Harness, Fat Skills"
 type: concept
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-15
 sources: ["raw/articles/2026-04-18-thin-harness-fat-skills.md"]
 tags: [harness, skill, architecture, judgment, resolver, latent-deterministic, diarization]
 ---

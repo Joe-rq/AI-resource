@@ -89,21 +89,30 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Agent-Macro-Evaluation — Agent 宏观评估方法论（4 层标签 + BERTopic 风格聚类 + AgentTrace 风格诊断 + 3 个核心公式）
 - Forward-Deployed-Engineering — FDE 前置部署工程（四要素定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、AI 时代复兴原因）
 - Claude-Code-Dynamic-Workflows-Practical-Guide — Claude Code 动态工作流实践指南（场景选择决策树、命令速查、14 个推荐场景与最佳实践）
+- Agentic-Laziness — 智能体偷懒（Dynamic Workflows 失效模式之一：Agent 走捷径、过早宣布完成）
+- Self-Preferential-Bias — 自我偏好偏差（Dynamic Workflows 失效模式之一：坚持自己输出、拒绝有效反馈）
+- Goal-Drift — 目标漂移（Dynamic Workflows 失效模式之一：逐步偏离原始目标而不自知）
+- Quarantine-Mode — 隔离模式（Dynamic Workflows 安全模式：读未受信内容 agent 与高权限动作 agent 结构隔离）
+- Tournament-Mode — 锦标赛模式（Dynamic Workflows 评估模式：pairwise 比较与 transitivity 假设）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
 - NVIDIA-Agent-Toolkit — NVIDIA Agent 开发工具包
-- wow-harness — wow-harness v3 治理协议（事件溯源 + 概念演化 + 双层验证 + 自动扩张任务图）
+- wow-harness — wow-harness v3 治理协议（品牌官方全小写，保持不变）
 - Dive-into-Claude-Code — Claude Code 源码级逆向工程分析论文（5 设计价值、13 设计原则、7 组件结构、5 层子系统）（标题：Dive into Claude Code（论文））
 - ESAA — ESAA: Event Sourcing for Autonomous Agents（Event Sourcing + CQRS、immutable audit trail、deterministic replay、两个 case study 验证）
 - NanoClaw — ~500行代码的轻量级 Agent 框架（Claude Agent SDK）
 - Nous-Research — 硅谷 AI 实验室，Hermes Agent（11万星）
 - Palantir — Palantir Technologies：FDE 模式发明者、Gotham/Foundry/AIP 产品矩阵、Ontology 本体论、反 SaaS 产品哲学
+- Cline — 开源 AI coding agent（VS Code 扩展），Runtime benchmark 实证来源（74.2% vs 69.4%）
+- Anthropic — Claude 模型族、Claude Code/Agent SDK/Managed Agents 产品矩阵、Orchestrator-Worker 架构
+- OpenAI — GPT 模型族、Codex CLI、Handoff 模式、宏观评估方法论（OpenAI Cookbook）
+- LangChain — 开源 LLM 框架（chain-based composition + LangGraph），Agent Runtime benchmark 参考点
 
 ### Summaries
 - 12-a-harness-for-every-task-dynamic-workflows — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）
 - 20-macro-evals-for-agentic-systems — OpenAI Cookbook 宏观评估教程（EV 订单 multi-agent + 1000 次合成运行 + Promptfoo + BERTopic + AgentTrace）
-- 10-claude-code-dynamic-workflows — Claude Code 动态工作流官方中文功能文档（v2.1.154+ / ultracode / /deep-research / 触发与运行管理）
+- 28-claude-code-dynamic-workflows — Claude Code 动态工作流官方中文功能文档（v2.1.154+ / ultracode / /deep-research / 触发与运行管理）
 - 10-singapore-fm-nanoclaws-second-brain — 新加坡外長的 AI 第二大腦（NanoClaw + Raspberry Pi）
 - 11-hermes-agent-nous-research — Hermes Agent / Nous Research（长期记忆 + 自我进化）
 - 19-addyosmani-loop-engineering — Loop Engineering：从 Prompt 到系统设计（Addy Osmani，5 模块 + 1 记忆，Claude Code / Codex 通用 loop 架构）
@@ -111,10 +120,10 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 15-wow-harness-v3-governance — wow-harness v3 一手分享（事件溯源 + 概念演化 + 双层验证 + 自动扩张任务图 + 人机决策分层）
 - 13-thin-harness-fat-skills — Thin Harness, Fat Skills（5 定义 + 3 反模式 + 三层架构 + YC Startup School 实证）
 - 16-distributed-harness — 分布式 Harness 哲学（Agent = 显形 / 附着点 / CGP-IEL / 9 件工具组 / 智流网络）
-- 12-harness-engineering-survey — Harness Engineering 综述（14 篇文献 / 15 个月 / 三层结构 / 补偿面）
+- 30-harness-engineering-survey — Harness Engineering 综述（14 篇文献 / 15 个月 / 三层结构 / 补偿面）
 - hermes-agent-harness-engineering — (stub) 已合并至 15-wow-harness-v3-governance
 - 17-ai-autonomous-system-tips — 阳志平 AI 自主系统 12 技巧（任务编排 / 实际开工 / 自检评审 / 自动续航）
-- 11-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）
+- 29-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）
 - 09-claude-subagent-tutorial — Claude Code Subagent 小白入门教程
 - nvidia-agent-toolkit — NVIDIA Agent Toolkit 架构图
 - 08-agent-runtime-battlefield — Agent Runtime 主战场
@@ -138,35 +147,72 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 
 ## Open research questions
 
-- Agent Runtime 的具体实现差异（Prompt 设计/工具定义/上下文管理/错误处理）具体怎么影响性能？
-- Worker/Verifier 对抗循环的收敛条件是什么？何时终止对抗？
-- Claude Code Agent Teams 和 Anthropic Managed Agents 的架构有何本质区别？
-- Agent Secure Runtime 的三层安全检查（Policy/Network/Privacy）性能开销有多大？
-- 自动扩张任务图的收敛和终止条件是什么？事件驱动的 agent spawn 如何避免无限扩张？
-- 概念节点的新颖性检查在实践中如何判定？"引入了什么新信息"的边界在哪？
-- ESAA 论文的事件溯源 vs wow-harness v3 的事件时间线，在工程实现上有何具体差异？
-- "Dive into Claude Code" 论文识别的 5 层 compaction pipeline 在实际使用中的各层触发频率和效果如何？
-- Claude Code 的 deny-first 权限系统在 50+ 子命令 fallback 场景下的安全退化程度如何量化？
-- ESAA 的 boundary contracts 在企业级 monorepo 场景下是否可扩展？CS2 仅 50 tasks / 86 events
-- NanoClaw 的容器化隔離在多租戶場景下的實際安全性如何？
-- Hermes 的自我進化機制在醫療監管框架下的合規路徑是什麼？
-- Agent Memory 的「遺忘機制」如何設計？全量保留導致上下文膨脹的實際代價
-- 分布式 Harness 附着点 vs 独立上下文窗口与现有 Worker/Verifier 概念有何同构/包含关系?
-- CGP/IEL 9 件工具组成熟度评估: 哪些工程化已就绪, 哪些仍 PoC?
-- 四层维护存储 vs 事件时间线: 分布式 Harness 存储抽象是否可由 wow-harness v3 事件时间线统一表达?
-- Dynamic Workflows 三种失效模式（Agentic laziness / Self-preferential bias / Goal drift）在不同模型规模与任务长度上的发生率如何量化？这三个概念应否提升为独立 concept 页？
-- Tournament 模式中 pairwise 比较的 transitivity 假设何时崩溃？(A>B, B>C 但 C>A 的循环判断如何处理？)
-- Quarantine 模式（读未受信内容 agent ↮ 高权限动作 agent 结构隔离）在 prompt injection 实际防御中的效果如何？读 agent 能否诱导写 agent 执行隐性指令？
-- 宏观评估的 `MACRO_EVALS_DISCOVERY_MIN_CLUSTER_SIZE` 超参数在不同任务规模下如何确定最优值？粒度过粗丢失小众重要模式，过细噪声爆炸
-- `suspect_score = 0.4·proximity + 0.3·frequency + 0.2·bridge + 0.1·role` 的权重是 OpenAI 经验值，能否在其他 agent 系统上重新校准的方法论
-- 宏观评估发现的 `behavior_pattern` 与 wow-harness v3 概念节点演化结合，能否实现"系统级自我反思循环"？
+### Runtime
+
+- [ ] Agent Runtime 的具体实现差异（Prompt 设计/工具定义/上下文管理/错误处理）具体怎么影响性能？ — blocked by: none
+- [ ] "Dive into Claude Code" 论文识别的 5 层 compaction pipeline 在实际使用中的各层触发频率和效果如何？ — blocked by: none
+
+### Multi-Agent
+
+- [ ] Worker/Verifier 对抗循环的收敛条件是什么？何时终止对抗？ — blocked by: none
+- [ ] Claude Code Agent Teams 和 Anthropic Managed Agents 的架构有何本质区别？ — blocked by: none
+
+### Security
+
+- [ ] Agent Secure Runtime 的三层安全检查（Policy/Network/Privacy）性能开销有多大？ — blocked by: none
+- [ ] Claude Code 的 deny-first 权限系统在 50+ 子命令 fallback 场景下的安全退化程度如何量化？ — blocked by: none
+- [ ] NanoClaw 的容器化隔離在多租戶場景下的實際安全性如何？ — blocked by: none
+
+### Governance
+
+- [ ] 自动扩张任务图的收敛和终止条件是什么？事件驱动的 agent spawn 如何避免无限扩张？ — blocked by: none
+- [ ] 概念节点的新颖性检查在实践中如何判定？"引入了什么新信息"的边界在哪？ — blocked by: none
+- [ ] ESAA 论文的事件溯源 vs wow-harness v3 的事件时间线，在工程实现上有何具体差异？ — blocked by: none
+- [ ] ESAA 的 boundary contracts 在企业级 monorepo 场景下是否可扩展？CS2 仅 50 tasks / 86 events — blocked by: none
+
+### Memory
+
+- [ ] Hermes 的自我進化機制在醫療監管框架下的合規路徑是什麼？ — blocked by: none
+- [ ] Agent Memory 的「遺忘機制」如何設計？全量保留導致上下文膨脹的實際代價 — blocked by: [[Agent-Memory]] folder-split sub-pages
+
+### Architecture
+
+- [ ] 分布式 Harness 附着点 vs 独立上下文窗口与现有 Worker/Verifier 概念有何同构/包含关系? — blocked by: none
+- [ ] CGP/IEL 9 件工具组成熟度评估: 哪些工程化已就绪, 哪些仍 PoC? — blocked by: none
+- [ ] 四层维护存储 vs 事件时间线: 分布式 Harness 存储抽象是否可由 wow-harness v3 事件时间线统一表达? — blocked by: none
+
+### Dynamic Workflows
+
+- [ ] Dynamic Workflows 三种失效模式（Agentic laziness / Self-preferential bias / Goal drift）在不同模型规模与任务长度上的发生率如何量化？ — 概念页已建立（[[Agentic Laziness]], [[Self-Preferential Bias]], [[Goal Drift]]），待定量研究
+- [ ] Tournament 模式中 pairwise 比较的 transitivity 假设何时崩溃？(A>B, B>C 但 C>A 的循环判断如何处理？) — 概念页已建立（[[Tournament Mode]]），待定量研究
+- [ ] Quarantine 模式（读未受信内容 agent ↮ 高权限动作 agent 结构隔离）在 prompt injection 实际防御中的效果如何？读 agent 能否诱导写 agent 执行隐性指令？ — 概念页已建立（[[Quarantine Mode]]），待定量研究
+
+### Evaluation
+
+- [ ] 宏观评估的 `MACRO_EVALS_DISCOVERY_MIN_CLUSTER_SIZE` 超参数在不同任务规模下如何确定最优值？粒度过粗丢失小众重要模式，过细噪声爆炸 — blocked by: none
+- [ ] `suspect_score = 0.4·proximity + 0.3·frequency + 0.2·bridge + 0.1·role` 的权重是 OpenAI 经验值，能否在其他 agent 系统上重新校准的方法论 — blocked by: none
+- [ ] 宏观评估发现的 `behavior_pattern` 与 wow-harness v3 概念节点演化结合，能否实现"系统级自我反思循环"？ — blocked by: none
+
+### Summary
+
+| Domain | Count | Blocked | Unblocked |
+|--------|-------|---------|-----------|
+| Architecture | 3 | 0 | 3 |
+| Dynamic Workflows | 3 | 0 | 3 |
+| Evaluation | 3 | 0 | 3 |
+| Governance | 4 | 0 | 4 |
+| Memory | 2 | 1 | 1 |
+| Multi-Agent | 2 | 0 | 2 |
+| Runtime | 2 | 0 | 2 |
+| Security | 3 | 0 | 3 |
+| **Total** | **22** | **1** | **21** |
 
 ## Research gaps
 
-Sources to ingest:
-- [ ] Anthropic Claude Cowork 官方文档
-- [ ] Cline SDK 技术博客原文
-- [ ] LangChain Deep Agents benchmark 原始数据
+Sources to ingest (priority order):
+- [ ] **P1 — Cline SDK 技术博客原文** — Cline entity 页已建立，但缺少一手架构文档；Cline 是 wiki 中 Agent Runtime benchmark 的核心实证来源
+- [ ] **P2 — LangChain Deep Agents benchmark 原始数据** — LangChain entity 页已建立（stub），Deep Agents 方法论和结果数据对 Agent Runtime 性能差异论述有支撑价值
+- [ ] **P3 — Anthropic Claude Cowork 官方文档** — Anthropic entity 页已建立，Cowork 是 Anthropic 产品矩阵中唯一缺一手资料的组件
 - [x] ESAA 论文 (Event Sourcing for Autonomous Agents, arxiv 2602.23193) 原文
 - [x] "Dive into Claude Code" 论文 (arxiv 2604.14228) 原文
 - [x] OpenAI Cookbook — Macro Evals for Agentic Systems (2026-05-19)

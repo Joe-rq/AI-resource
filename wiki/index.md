@@ -8,9 +8,9 @@
 ## Concepts
 
 ### Agent Platform
-- [[Agent Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（NanoClaw/Hermes 对比）
+- [[Agent Memory/index|Agent Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（folder-split: Architecture / Forgetting & Compaction / Self-Evolving Memory）
 - [[Multi-Agent 协作模式]] — 四种核心协作模式：Orchestrator/Specialist、Worker/Verifier、Team Engine、自动扩张任务图
-- [[Worker Verifier 对抗循环]] — Worker/Verifier 对抗循环是 Mavis 的核心架构机制
+- [[Worker Verifier 对抗循环]] — Worker/Verifier 对抗循环是 Mavis 的核心架构机制（收敛模型、死锁检测、升级与降级）
 - [[Agent Runtime]] — 单 Agent 执行环境，包含 Prompt/工具定义/上下文管理/错误处理
 - [[Agent Secure Runtime]] — Agent 安全运行时：三层安全检查（Policy/Network/Privacy）+ 沙箱隔离
 - [[Agent Harness 治理协议]] — 跨 session、跨 agent 的长期一致性治理（事件溯源、概念演化、双层验证、自动扩张任务图）
@@ -19,6 +19,13 @@
 - [[Claude Code Subagent]] — Subagent：独立上下文工作者，内置类型、自定义定义、Fork 模式、持久内存、Hooks
 - [[Claude Code Skills]] — Skills 扩展机制：SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制
 - [[Claude Code Dynamic Workflows 实践指南]] — 场景选择决策树、命令速查、14 个推荐场景与最佳实践
+
+### Dynamic Workflows — 失效模式与安全模式
+- [[Agentic Laziness]] — 智能体偷懒：走捷径、跳过验证、过早宣布完成
+- [[Self-Preferential Bias]] — 自我偏好偏差：坚持自己输出、拒绝有效外部反馈
+- [[Goal Drift]] — 目标漂移：逐步偏离原始目标而不自知
+- [[Quarantine Mode]] — 隔离模式：读未受信内容 agent 与高权限动作 agent 结构隔离
+- [[Tournament Mode]] — 锦标赛模式：pairwise 比较与 transitivity 假设
 
 ### Meta Reflection
 - [[Meta Reflection Techniques]] — 12 个元反思技巧（按"行动之环"四象限组织：意图/实施/反馈/情境）+ 对齐=补全 + 看门狗模式 + 实体数约束 ≤ 4
@@ -44,6 +51,10 @@
 - [[NanoClaw]] — NanoClaw：~500行代码的轻量级 Agent 框架，建在 Claude Agent SDK 上
 - [[Nous Research]] — Nous Research：硅谷 AI 实验室，Hermes Agent（11万星）
 - [[Palantir]] — Palantir Technologies：FDE 模式发明者、Gotham/Foundry/AIP 产品矩阵、Ontology 本体论、反 SaaS 产品哲学
+- [[Cline]] — 开源 AI coding agent（VS Code 扩展），Runtime benchmark 核心实证来源（74.2% vs 69.4%, +10pp hill climbing）
+- [[Anthropic]] — Claude 模型族、Claude Code/Agent SDK/Managed Agents 产品矩阵、Orchestrator-Worker 架构
+- [[OpenAI]] — GPT 模型族、Codex CLI、Handoff 模式、宏观评估方法论
+- [[LangChain]] — 开源 LLM 框架（chain-based composition + LangGraph），Agent Runtime benchmark 参考点
 
 ## Summaries (chronological)
 - 2026-06-15 — [[当我们谈论 FDE 时，我们在谈论什么？]] — 当我们谈论 FDE 时：四要素精确定义、Echo/Delta/Dev 三角循环、三种"穿新衣的旧角色"、AI 时代 FDE 复兴的结构性原因

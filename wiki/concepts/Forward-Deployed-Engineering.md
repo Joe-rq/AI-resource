@@ -204,6 +204,16 @@ FDE 模式和 Thin Harness 哲学有深层同构：
 - 两者都强调**产品杠杆**：FDE 不应该每次都拉三个工程师过来；Skill 应该让用户自助
 - 两者都面临同样的退化风险：FDE 退化为咨询 ≈ Harness 退化为臃肿框架
 
+## Scope 说明：FDE 与本 Wiki 的关系
+
+FDE 是 Palantir 发明的**商业方法论**，不是 Agent 平台基础设施技术。本 Wiki 收录 FDE 内容的原因是其与 Agent 平台概念存在结构性类比：
+
+- **[[Thin-Harness-Fat-Skills]]**：FDE 飞轮（碎石路→柏油路→高速公路）与 skill 生态演化路径在抽象模式上一致，但前者描述人类组织过程，后者描述软件架构。
+- **[[Agent-Harness-治理协议]]**：概念演化机制（观察模式→抽象→编码）与 FDE 产品化飞轮在"实例→抽象→复用"的循环上有类比关系，但治理协议是 Agent 系统自动化的知识管理，FDE 产品化是多年人工过程。
+- **[[Agent-Macro-Evaluation]]**：FDE 指标（TTFV、Rosita 使用深度、真假 FDE 判断维度）为 Agent 部署评估提供了启发性的思考框架。
+
+在 7 篇 FDE 总结中，仅 [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]] 有实质性的 Agent 基础设施技术关联（通过"AI-native FDE"概念）。其余 6 篇是 FDE 方法论内容，关联主要为类比层面。每篇总结的"与 Agent 基础设施的关系"节提供了详细评估。
+
 ## 参考
 
 - [[Palantir]] — FDE 模式的发明者和标杆
