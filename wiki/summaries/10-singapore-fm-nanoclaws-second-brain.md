@@ -1,5 +1,5 @@
 ---
-title: summaries/raw/articles/2026-05-17-nanoclaws-second-brain.md
+title: "新加坡外长的 AI 第二大脑"
 type: summary
 source_url: https://www.anduril.tw/second-brain/
 source_type: article

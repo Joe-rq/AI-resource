@@ -1,5 +1,5 @@
 ---
-title: "Dive into Claude Code"
+title: "Dive into Claude Code 论文解读"
 type: summary
 created: 2026-05-22
 updated: 2026-05-22

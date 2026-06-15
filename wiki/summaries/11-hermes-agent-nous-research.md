@@ -1,5 +1,5 @@
 ---
-title: summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md
+title: "Hermes Agent：Nous Research 的开源 Agent 框架"
 type: summary
 source_url: https://mp.weixin.qq.com/s/wX7pMuK1rizqjmJqwNbGBQ
 source_type: article
