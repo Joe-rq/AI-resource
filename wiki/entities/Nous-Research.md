@@ -1,7 +1,6 @@
 ---
 title: Nous Research
 type: entity
-entity_type: organization
 created: 2026-05-22
 updated: 2026-05-22
 sources: [raw/articles/2026-05-02-hermes-agent-nous-research.md]

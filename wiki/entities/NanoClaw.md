@@ -1,7 +1,6 @@
 ---
 title: NanoClaw
 type: entity
-entity_type: tool
 created: 2026-05-22
 updated: 2026-05-22
 sources: [raw/articles/2026-05-17-nanoclaws-second-brain.md]
