@@ -22,7 +22,7 @@ tags: [claude-code, reverse-engineering, architecture, design-space, paper]
 
 ### 1.6% / 98.4% 法则
 
-Claude Code 代码库中仅约 **1.6%** 是 AI 决策逻辑，其余 **98.4%** 是运行基础设施（权限、工具路由、上下文管理、恢复逻辑）。这印证了 [[concepts/Agent-Runtime]] 的核心判断：**套具比模型重要**。
+Claude Code 代码库中仅约 **1.6%** 是 AI 决策逻辑，其余 **98.4%** 是运行基础设施（权限、工具路由、上下文管理、恢复逻辑）。这印证了 [[Agent Runtime]] 的核心判断：**套具比模型重要**。
 
 ### 5 个设计价值（Design Values）
 
@@ -96,8 +96,8 @@ flowchart LR
 
 ## 与本 Wiki 的关联
 
-- [[concepts/Agent-Runtime]] -- 98.4% 基础设施数据的直接来源
-- [[concepts/Agent-Harness-治理协议]] -- append-only 持久化、最小脚手架原则
-- [[entities/wow-harness]] -- 治理协议设计的学术验证基础
-- [[entities/ESAA]] -- ESAA 的 event sourcing 与 Claude Code 的 append-only JSONL 共享同一设计哲学
-- [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] -- subagent 隔离边界的源码级证据
+- [[Agent Runtime]] -- 98.4% 基础设施数据的直接来源
+- [[Agent Harness 治理协议]] -- append-only 持久化、最小脚手架原则
+- [[wow-harness]] -- 治理协议设计的学术验证基础
+- [[ESAA]] -- ESAA 的 event sourcing 与 Claude Code 的 append-only JSONL 共享同一设计哲学
+- [[Claude Code Subagent]] -- subagent 隔离边界的源码级证据

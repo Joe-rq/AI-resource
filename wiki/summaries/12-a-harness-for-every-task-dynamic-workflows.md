@@ -13,9 +13,9 @@ tags: [claude-code, workflows, harness, orchestration, anthropic, failure-modes,
 
 > "Claude can now write its own **harness on the fly**, custom-built for the task at hand."
 
-Anthropic 官方（Thariq Shihipar / Sid Bidasaria, Claude Code 技术团队）2026-06-02 博客的中心论断：**动态工作流 = 为每个任务即时生成的定制 harness**。这把 [[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]] 的"harness 极薄"原则推到了极致——薄到可以按任务即时生成。
+Anthropic 官方（Thariq Shihipar / Sid Bidasaria, Claude Code 技术团队）2026-06-02 博客的中心论断：**动态工作流 = 为每个任务即时生成的定制 harness**。这把 [[Thin Harness, Fat Skills]] 的"harness 极薄"原则推到了极致——薄到可以按任务即时生成。
 
-与功能文档 [[summaries/10-claude-code-dynamic-workflows|10-claude-code-dynamic-workflows]]（中文产品说明）互补：那篇讲**"怎么用"**，这篇讲**"为什么"+"用哪些模式"**。
+与功能文档 [[Claude Code 动态工作流（Dynamic Workflows）]]（中文产品说明）互补：那篇讲**"怎么用"**，这篇讲**"为什么"+"用哪些模式"**。
 
 ## 三种失效模式（why workflows）
 
@@ -27,7 +27,7 @@ Anthropic 官方（Thariq Shihipar / Sid Bidasaria, Claude Code 技术团队）2
 | **Self-preferential bias** | 让 Claude 用 rubric 评判自己结果时偏向自己 | adversarial verification —— 让另一个 agent 独立验证 |
 | **Goal drift** | 多轮 compaction 后丢失"don't do X"约束 | 每个 subagent 有独立、聚焦的目标，不受主对话漂移影响 |
 
-这三种失效模式**首次在 wiki 中被记录**，与 [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]]在动机层面同源——都是为了破除"单 agent 自我验证"的认识论困境。
+这三种失效模式**首次在 wiki 中被记录**，与 [[Worker Verifier 对抗循环]]在动机层面同源——都是为了破除"单 agent 自我验证"的认识论困境。
 
 ## Dynamic vs Static workflows
 
@@ -37,7 +37,7 @@ Anthropic 官方（Thariq Shihipar / Sid Bidasaria, Claude Code 技术团队）2
 | 覆盖范围 | 必须考虑所有 edge case → 通用但臃肿 | 任务定制 → 精准但单次性 |
 | 适用前提 | 模型能力固定 | **Claude Opus 4.8 智能足以为每个任务写定制 harness** |
 
-**关键拐点**：dynamic workflow 之所以现在才出现，是因为模型终于聪明到可以**自己写 orchestrator**——这是 Anthropic 把 [[concepts/Agent-Runtime|Agent Runtime]] 的"75% 失败可在 runtime 修复"再推一步：让 Claude 自己设计单次 runtime 的协调层。
+**关键拐点**：dynamic workflow 之所以现在才出现，是因为模型终于聪明到可以**自己写 orchestrator**——这是 Anthropic 把 [[Agent Runtime]] 的"75% 失败可在 runtime 修复"再推一步：让 Claude 自己设计单次 runtime 的协调层。
 
 ## 六种核心编排模式
 
@@ -82,7 +82,7 @@ flowchart TB
 
 > "Bar the agents that read untrusted public content from taking high-privilege actions, which are instead done by the agents in charge of acting on the information."
 
-**读未受信内容的 agent ↮ 执行高权限动作的 agent**，结构性隔离。这是 [[concepts/Agent-Secure-Runtime|Agent Secure Runtime]] 三层安全检查在 multi-agent 场景下的自然延伸——把权限边界从单 agent 内部前移到 agent 之间。
+**读未受信内容的 agent ↮ 执行高权限动作的 agent**，结构性隔离。这是 [[Agent Secure Runtime]] 三层安全检查在 multi-agent 场景下的自然延伸——把权限边界从单 agent 内部前移到 agent 之间。
 
 ## 操作技巧
 
@@ -97,10 +97,10 @@ flowchart TB
 | 本文新概念 | wiki 已有概念 | 关系 |
 | :--- | :--- | :--- |
 | Agentic laziness / Self-preferential bias / Goal drift | （新增） | **三种失效模式应该提升为独立 concept 页** |
-| "harness on the fly" | [[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]] | 极致推论：harness 不仅薄，且可按任务即时生成 |
-| Adversarial verification 模式 | [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]] | 同构 —— workflow 是其工程化实现 |
-| Quarantine 模式 | [[concepts/Agent-Secure-Runtime|Agent Secure Runtime]] | multi-agent 场景下的权限隔离延伸 |
-| Fan-out-and-synthesize | [[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]] | Orchestrator-Worker 模式的脚本化版本 |
+| "harness on the fly" | [[Thin Harness, Fat Skills]] | 极致推论：harness 不仅薄，且可按任务即时生成 |
+| Adversarial verification 模式 | [[Worker Verifier 对抗循环]] | 同构 —— workflow 是其工程化实现 |
+| Quarantine 模式 | [[Agent Secure Runtime]] | multi-agent 场景下的权限隔离延伸 |
+| Fan-out-and-synthesize | [[Multi-Agent 协作模式]] | Orchestrator-Worker 模式的脚本化版本 |
 | Tournament | （新增） | wiki 此前未记录 pairwise-vs-absolute 的判断学说 |
 
 ## 关键洞察
@@ -109,7 +109,7 @@ flowchart TB
 2. **三种失效模式是 multi-agent 架构的存在理由** — 不是"多 agent 更快"，而是"单 agent 在长任务上结构性失败"。这把 multi-agent 从效率论证升级为认识论必要性。
 3. **Pairwise > absolute scoring** — Tournament 用 pairwise 比较取代单点打分，是排序任务的关键 insight；评判稳定性来自相对判断而非绝对量纲。
 4. **Quarantine 把 prompt injection 防御从单 agent 转到 agent 间** — 这是 multi-agent 安全设计的一个范式新点。
-5. **Workflow + `/loop` + `/goal` 的组合** — 让原本一次性的 orchestration 具备持续性、有终止条件的特性，向 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] 的"长期一致性"靠拢。
+5. **Workflow + `/loop` + `/goal` 的组合** — 让原本一次性的 orchestration 具备持续性、有终止条件的特性，向 [[Agent Harness 治理协议]] 的"长期一致性"靠拢。
 
 ## 待研究问题（应加入 CLAUDE.md Open Research Questions）
 
@@ -121,7 +121,7 @@ flowchart TB
 ## 相关资源
 
 - 原始来源：`raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md`
-- 互补 summary：[[summaries/10-claude-code-dynamic-workflows|10-claude-code-dynamic-workflows]] —— 产品功能文档
-- 上位概念：[[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]]、[[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]]、[[concepts/Agent-Runtime|Agent Runtime]]
-- 同构概念：[[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]]、[[concepts/Agent-Secure-Runtime|Agent Secure Runtime]]、[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]
-- 子代理基础：[[concepts/Claude-Code-Subagent/index|Claude Code Subagent]]
+- 互补 summary：[[Claude Code 动态工作流（Dynamic Workflows）]] —— 产品功能文档
+- 上位概念：[[Thin Harness, Fat Skills]]、[[Multi-Agent 协作模式]]、[[Agent Runtime]]
+- 同构概念：[[Worker Verifier 对抗循环]]、[[Agent Secure Runtime]]、[[Agent Harness 治理协议]]
+- 子代理基础：[[Claude Code Subagent]]

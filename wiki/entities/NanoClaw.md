@@ -44,10 +44,10 @@ flowchart TB
 
 ## Related concepts
 
-- [[concepts/Agent-Runtime]] — NanoClaw 是边缘 Runtime 的典型实现
-- [[concepts/Agent-Secure-Runtime]] — 容器化隔离对应其安全设计思路
-- [[entities/Dive-into-Claude-Code]] — 同为 Claude SDK 上的框架，对比参考
+- [[Agent Runtime]] — NanoClaw 是边缘 Runtime 的典型实现
+- [[Agent Secure Runtime]] — 容器化隔离对应其安全设计思路
+- [[Dive into Claude Code（论文）]] — 同为 Claude SDK 上的框架，对比参考
 
 ## Sources
 
-- [[summaries/raw/articles/2026-05-17-nanoclaws-second-brain.md]] — 新加坡外長使用 NanoClaw 的完整案例
+- [[新加坡外长的 AI 第二大脑]] — 新加坡外長使用 NanoClaw 的完整案例

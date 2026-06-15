@@ -15,7 +15,7 @@ tags: [autonomous-ai-system, harness, runtime, watchdog, worktree, state-persist
 
 **Autonomous AI System**（AI 自主干活系统）= 一种在人类离场（跑步、睡觉、跨日）后，AI 仍能持续运行、按既定编排推进任务、并在卡住时**永不停摆**的系统。与业界通用的 "harness" 同义，但更强调"人 vs AI 双节奏协同"这一本源问题。
 
-来源文章：[[summaries/17-ai-autonomous-system-tips|如何实现一个好的 AI 自主干活系统]]（阳志平，2026-06-02）。
+来源文章：[[如何实现一个好的 AI 自主干活系统]]（阳志平，2026-06-02）。
 
 ## 关键判断标准
 
@@ -32,19 +32,19 @@ tags: [autonomous-ai-system, harness, runtime, watchdog, worktree, state-persist
 
 > **把人介入的点，前置到「开工前」，而不是「返工时」。**
 
-AI 在开工前先自我分流：高确定性任务一句话确认就放手；高不确定性任务先停下来，把关键决策点摆到人面前。这是 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] "人机决策分层"的执行版——人类只做语义判断类决策，工程实施类决策 AI 自己做。
+AI 在开工前先自我分流：高确定性任务一句话确认就放手；高不确定性任务先停下来，把关键决策点摆到人面前。这是 [[Agent Harness 治理协议]] "人机决策分层"的执行版——人类只做语义判断类决策，工程实施类决策 AI 自己做。
 
 ### 2. 反传统工程的"干了再说"
 
 > 计划永远不是唯一的真相，实际产出才是。
 
-复杂活也写计划，但计划只是一次性脚手架。**需求往往是「干」出来的，靠「想」想不全。** 这与 [Dive into Claude Code]([[entities/Dive-into-Claude-Code]]) 论文揭示的"minimal scaffolding + maximal operational harness"同源——harness 不是写一份完美的计划，而是让产出会说话。
+复杂活也写计划，但计划只是一次性脚手架。**需求往往是「干」出来的，靠「想」想不全。** 这与 [[Dive into Claude Code（论文）]] 论文揭示的"minimal scaffolding + maximal operational harness"同源——harness 不是写一份完美的计划，而是让产出会说话。
 
 ### 3. 多视角对抗式自检
 
 自检不是"再读一遍"。**有效的自检，是把自己分裂成几个互不相同、互相对抗的视角同时审。** 一个专挑冗余，一个专挑边界，一个专挑"为了实现新目标而破坏了旧功能"。视角越分化，越能逼出单一视角看不见的问题。
 
-与 [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]] 的"物理拦截 + 跨视角加权"同源。
+与 [[Worker Verifier 对抗循环]] 的"物理拦截 + 跨视角加权"同源。
 
 ### 4. 永不停摆（为失败预设绕行路径）
 
@@ -73,15 +73,15 @@ AI 在开工前先自我分流：高确定性任务一句话确认就放手；�
 
 | Autonomous AI System 元素 | 对应 wiki 概念 |
 |--------------------------|---------------|
-| 合并同类项、约束任务清单 | [[concepts/Agent-Runtime|Agent Runtime]] 上下文管理（"约束实体 ≤ 4" 经验值同源） |
+| 合并同类项、约束任务清单 | [[Agent Runtime]] 上下文管理（"约束实体 ≤ 4" 经验值同源） |
 | 干了再说、产出校准意图 | "事件意图 → 提交检查点验证"（参见 Agent Harness 治理协议） |
-| worktree 并行分身 | [[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]] 并行 Worker |
-| 对抗性自检、多视角审查 | [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]] |
+| worktree 并行分身 | [[Multi-Agent 协作模式]] 并行 Worker |
+| 对抗性自检、多视角审查 | [[Worker Verifier 对抗循环]] |
 | 跨模型评审 | "双层验证"（验证者与执行者不同上下文/不同模型，参见 Agent Harness 治理协议） |
-| 看门狗、定时执行 | [[concepts/Meta-Reflection-Techniques]] 技巧 7；自动扩张任务图（Agent Harness 治理协议） |
-| 状态持久化、唯一真相源 | [[entities/ESAA]] Event Sourcing + 当前状态视图 |
-| 意外处理矩阵、永不停摆 | [[entities/wow-harness]] "为失败预设绕行路径" 处处可见 |
-| 沉淀自检 Skill / 评审教训制度化 | [[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]] 90% 价值在 markdown 流程文件 |
+| 看门狗、定时执行 | [[Meta Reflection Techniques]] 技巧 7；自动扩张任务图（Agent Harness 治理协议） |
+| 状态持久化、唯一真相源 | [[ESAA]] Event Sourcing + 当前状态视图 |
+| 意外处理矩阵、永不停摆 | [[wow-harness]] "为失败预设绕行路径" 处处可见 |
+| 沉淀自检 Skill / 评审教训制度化 | [[Thin Harness, Fat Skills]] 90% 价值在 markdown 流程文件 |
 
 ## "harness" vs "Autonomous AI System" 视角对比
 
@@ -123,10 +123,10 @@ AI 在开工前先自我分流：高确定性任务一句话确认就放手；�
 
 ## Related concepts
 
-- [[concepts/Agent-Runtime|Agent Runtime]] — Autonomous AI System 的运行时底座
-- [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] — 跨 session 长期一致性的治理层
-- [[concepts/Meta-Reflection-Techniques|Meta-Reflection-Techniques]] — 元反思 = 让 AI 自主系统更聪明的飞轮核心
-- [[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]] — 12 技巧制度化为 Skill 文件的理论依据
-- [[entities/wow-harness]] — 治理协议工程实现参考
-- [[entities/ESAA]] — 状态持久化的事件溯源学术化版本
-- [[summaries/17-ai-autonomous-system-tips|如何实现一个好的 AI 自主干活系统]] — 原始来源
+- [[Agent Runtime]] — Autonomous AI System 的运行时底座
+- [[Agent Harness 治理协议]] — 跨 session 长期一致性的治理层
+- [[Meta Reflection Techniques]] — 元反思 = 让 AI 自主系统更聪明的飞轮核心
+- [[Thin Harness, Fat Skills]] — 12 技巧制度化为 Skill 文件的理论依据
+- [[wow-harness]] — 治理协议工程实现参考
+- [[ESAA]] — 状态持久化的事件溯源学术化版本
+- [[如何实现一个好的 AI 自主干活系统]] — 原始来源

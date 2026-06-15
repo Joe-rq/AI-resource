@@ -189,12 +189,12 @@ suspect_score = 0.4 × proximity + 0.3 × frequency + 0.2 × bridge + 0.1 × rol
 
 | 本概念 | 关联 Wiki |
 |--------|----------|
-| 宏观评估补充底层评估 | [[concepts/Worker-Verifier-对抗循环]]——Verifier 是单运行的对抗，宏观评估是跨运行的群体诊断；两者**正交互补** |
-| `behavior_pattern` 作为系统反馈 | [[concepts/Meta-Reflection-Techniques]]——4 象限中"反馈"象限的工程化实现 |
-| 完整 trace 是分析基础 | [[entities/ESAA]]——Event Sourcing 提供 immutable audit trail，宏观评估在其上做 OLAP 式分析 |
-| Multi-agent trace 来源 | [[concepts/Multi-Agent-协作模式]]——专家 swarm + Orchestrator 的执行轨迹 |
-| Trace 是治理协议的底层 | [[concepts/Agent-Harness-治理协议]]——事件时间线 + 双层验证为宏观评估提供数据 |
-| 自检评审组 | [[concepts/Autonomous-AI-System]]——阳志平 12 技巧中的"自检评审"在群体规模上的对应 |
+| 宏观评估补充底层评估 | [[Worker Verifier 对抗循环]]——Verifier 是单运行的对抗，宏观评估是跨运行的群体诊断；两者**正交互补** |
+| `behavior_pattern` 作为系统反馈 | [[Meta Reflection Techniques]]——4 象限中"反馈"象限的工程化实现 |
+| 完整 trace 是分析基础 | [[ESAA]]——Event Sourcing 提供 immutable audit trail，宏观评估在其上做 OLAP 式分析 |
+| Multi-agent trace 来源 | [[Multi-Agent 协作模式]]——专家 swarm + Orchestrator 的执行轨迹 |
+| Trace 是治理协议的底层 | [[Agent Harness 治理协议]]——事件时间线 + 双层验证为宏观评估提供数据 |
+| 自检评审组 | [[Autonomous AI System]]——阳志平 12 技巧中的"自检评审"在群体规模上的对应 |
 
 ## 落地清单
 
@@ -224,4 +224,4 @@ suspect_score = 0.4 × proximity + 0.3 × frequency + 0.2 × bridge + 0.1 × rol
 - BERTopic 风格 vs 直接用 LLM 做主题归纳，哪种在 agent trace 场景下更稳定？
 - `suspect_score` 的 `0.4 / 0.3 / 0.2 / 0.1` 权重在不同 agent 系统上是否需要重新校准？
 - 宏观评估能否反过来驱动**自动生成新的底层评估 rubric**（self-extending eval）？
-- 当 `behavior_pattern` 与 [[concepts/Agent-Harness-治理协议|事件时间线]] 的 concept node 演化结合，能否实现"系统级自我反思循环"？
+- 当 `behavior_pattern` 与 [[Agent Harness 治理协议]] 的 concept node 演化结合，能否实现"系统级自我反思循环"？

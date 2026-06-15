@@ -46,9 +46,9 @@ flowchart TB
 
 ## Relationship to other concepts
 
-- [[concepts/Agent-Runtime]] — Memory 是 Runtime 的关键能力缺口，Hermes 和 NanoClaw 都把记忆作为核心卖点
-- [[entities/NanoClaw]] — Mnemon 图谱记忆 + Ollama 嵌入的本地实现
-- [[entities/Nous-Research]] — Hermes 的自我进化是记忆演化的极端形式
+- [[Agent Runtime]] — Memory 是 Runtime 的关键能力缺口，Hermes 和 NanoClaw 都把记忆作为核心卖点
+- [[NanoClaw]] — Mnemon 图谱记忆 + Ollama 嵌入的本地实现
+- [[Nous Research]] — Hermes 的自我进化是记忆演化的极端形式
 
 ## Open questions
 
@@ -58,5 +58,5 @@ flowchart TB
 
 ## Sources
 
-- [[summaries/raw/articles/2026-05-17-nanoclaws-second-brain.md]] — Mnemon 图谱记忆 + 边缘部署案例
-- [[summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md]] — Hermes 自我进化型记忆系统
+- [[新加坡外长的 AI 第二大脑]] — Mnemon 图谱记忆 + 边缘部署案例
+- [[Hermes Agent：Nous Research 的开源 Agent 框架]] — Hermes 自我进化型记忆系统

@@ -25,5 +25,5 @@ Hermes 区别于传统 AI 无状态架构，具备跨会话长期记忆能力。
 
 ## Concepts introduced / referenced
 
-- [[concepts/Agent-Runtime]] — 长期记忆是当前 Runtime 的关键能力缺口
+- [[Agent Runtime]] — 长期记忆是当前 Runtime 的关键能力缺口
 - Memory Agent — Hermes 的长期记忆方向与 wiki 中 Memory Agents 分类相关

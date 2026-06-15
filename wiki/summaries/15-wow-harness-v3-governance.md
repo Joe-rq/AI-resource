@@ -21,7 +21,7 @@ tags: [harness, governance, wow-harness, event-sourcing, multi-agent, concept-ev
 
 文章指出当前 AI 开发工具（Claude Code、Superpowers、Hermes Agent、OpenHands）都只优化"一个人 + 一个 agent"的单次体验，**没有任何一套工具在管"一百次 session 之间不漂移"**。v3 是面向"跨 session、跨 agent 长期一致性治理"这个空白地带的设计。
 
-详见 [[entities/wow-harness]] 与 [[concepts/Agent-Harness-治理协议]]。
+详见 [[wow-harness]] 与 [[Agent Harness 治理协议]]。
 
 ## 关键论点
 
@@ -204,7 +204,7 @@ flowchart TB
 
 ### 四、学术验证
 
-2026 年 2 月，arxiv 出现 ESAA（[[entities/ESAA]]，arxiv 2602.23193）论文，核心命题与 v3 高度重合：
+2026 年 2 月，arxiv 出现 ESAA（[[ESAA]]，arxiv 2602.23193）论文，核心命题与 v3 高度重合：
 
 | ESAA 命题 | v3 对应机制 |
 |----------|------------|
@@ -245,4 +245,4 @@ ESAA 目前仍是论文阶段。v3 在多个维度超出论文范围：
 
 ## 相关概念
 
-- 关联概念：[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]、[[entities/wow-harness|wow-harness v3]]
+- 关联概念：[[Agent Harness 治理协议]]、[[wow-harness]]

@@ -117,5 +117,5 @@ Sequoia 的 Julien Bek 提出 Intelligence vs Judgement 框架：
 
 - [[Forward-Deployed-Engineering]] — FDE 概念系统阐述
 - [[Palantir]] — FDE 模式的发明者
-- [[summaries/21-fde-playbook-bob-mcgrew|FDE 实战手册（Bob McGrew）]]
-- [[summaries/25-fde-future-roundtable|FDE 未来圆桌]]
+- [[FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）]]
+- [[前沿部署工程的未来：OpenAI、Ramp、Nominal、Dataland 圆桌]]

@@ -358,7 +358,7 @@ graph LR
 
 # 与现有 wiki 概念的关联
 
-## 与 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] 的关系
+## 与 [[Agent Harness 治理协议]] 的关系
 
 两篇文章共同构成 "Harness" 的两个层面：
 
@@ -371,11 +371,11 @@ graph LR
 
 两文互补：治理协议提供工程骨架；分布式 Harness 提供存在论基础——为什么需要这些机制。
 
-## 与 [[entities/wow-harness|wow-harness v3]] 的关系
+## 与 [[wow-harness]] 的关系
 
 wow-harness v3 的**事件时间线**对应本文的"公共痕迹"；**概念节点生命周期**对应本文的"实体注册 + 关系切面"；**自动扩张任务图**对应本文的"横向并行 + 垂直串行"；**上下文胶囊**对应本文的"Fork 与胶囊"。
 
-## 与 [[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]] 的关系
+## 与 [[Multi-Agent 协作模式]] 的关系
 
 四种核心模式在本文中均有哲学对应：
 
@@ -384,15 +384,15 @@ wow-harness v3 的**事件时间线**对应本文的"公共痕迹"；**概念节
 - **Team Engine** ↔ 会话 → 队友 → 子会话的层级
 - **自动扩张任务图** ↔ 智流网络横向切面
 
-## 与 [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] 的关系
+## 与 [[Claude Code Subagent]] 的关系
 
 Subagent 的"独立上下文窗口 + summary-only 返回"是 **Fork 与胶囊** 模式的工程实现；持久内存、Hooks 是**接续机制**的 Claude Code 表述。
 
-## 与 [[concepts/Agent-Runtime|Agent Runtime]] 的关系
+## 与 [[Agent Runtime]] 的关系
 
 Agent Runtime 关注单 Agent 执行环境的工程细节（Prompt/工具/上下文/错误处理）。本文的"可见窗口"概念为其提供了**维度论**解释：单 Agent 看见的窗口由 Prompt/工具/规则/文件/任务/事实共同切出。
 
-## 与 [[entities/ESAA|ESAA 论文]] 的关系
+## 与 [[ESAA]] 的关系
 
 ESAA 的 **append-only immutable log** 对应本文的"公共痕迹"+"维护与升维存储"；**deterministic replay** 对应"状态"+"快照"的双承载继承；**boundary contracts** 对应"上下文包 / 胶囊"。
 

@@ -99,6 +99,6 @@ Shyam Sankar 的《Mobilize》系统阐述了 [[Palantir]] 背后的国防工业
 ## 参考
 
 - [[Forward-Deployed-Engineering]] — FDE 模式的系统阐述
-- [[summaries/21-fde-playbook-bob-mcgrew|FDE 实战手册（Bob McGrew）]]
-- [[summaries/22-alex-karp-palantir-ceo|Alex Karp 访谈精译]]
-- [[summaries/26-shyam-sankar-mobilize|Shyam Sankar《Mobilize》对谈]]
+- [[FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）]]
+- [[Alex Karp 访谈精译：怪人秀、美国精神、反 SaaS 哲学与 AIP 押注]]
+- [[Shyam Sankar《Mobilize》对谈：美国工业基础、FDE 哲学与国防创新]]

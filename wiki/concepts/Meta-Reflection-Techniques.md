@@ -121,13 +121,13 @@ AI 不完善，人类补全 AI
 
 | 关联概念 | 关联方式 |
 | :--- | :--- |
-| [[concepts/Agent-Harness-治理协议]] | "双层验证"是"自我校验"（技巧 6）的物理拦截实现；"事件驱动自动 spawn"是"看门狗"（技巧 7）的多 agent 化 |
-| [[concepts/Worker-Verifier-对抗循环]] | "强制元反思"（技巧 1）与 Worker/Verifier 对抗循环在目标层同构：多视角加权后的信任 |
-| [[concepts/Agent-Runtime]] | "约束实体 ≤ 4"（技巧 2）是 Agent Runtime 上下文窗口管理的具体经验值 |
-| [[concepts/Multi-Agent-协作模式]] | "重新定义问题"（技巧 3）与 Specialist 分工思想一致：跨域知识迁移 |
-| [[concepts/Claude-Code-Subagent/index\|Claude Code Subagent]] | "积累飞轮"（技巧 12）依赖 Subagent 的持久内存机制 |
-| [[concepts/Claude-Code-Skills/index\|Claude Code Skills]] | 12 技巧可被编排为 Skill / Command / Agent，让 AI 自主干活 |
-| [[summaries/11-meta-reflection-techniques]] | 本概念的源 summary |
+| [[Agent Harness 治理协议]] | "双层验证"是"自我校验"（技巧 6）的物理拦截实现；"事件驱动自动 spawn"是"看门狗"（技巧 7）的多 agent 化 |
+| [[Worker Verifier 对抗循环]] | "强制元反思"（技巧 1）与 Worker/Verifier 对抗循环在目标层同构：多视角加权后的信任 |
+| [[Agent Runtime]] | "约束实体 ≤ 4"（技巧 2）是 Agent Runtime 上下文窗口管理的具体经验值 |
+| [[Multi-Agent 协作模式]] | "重新定义问题"（技巧 3）与 Specialist 分工思想一致：跨域知识迁移 |
+| [[Claude Code Subagent]] | "积累飞轮"（技巧 12）依赖 Subagent 的持久内存机制 |
+| [[Claude Code Skills]] | 12 技巧可被编排为 Skill / Command / Agent，让 AI 自主干活 |
+| [[12 个元反思技巧]] | 本概念的源 summary |
 
 ## 实施指引
 
@@ -170,4 +170,4 @@ Skill: action-loop
 ## 相关资源
 
 - 原始来源：`D:\03resource\_Projects\work\harness-lab\context\references\2026-03-17-meta-reflection-techniques.md`（阳志平）
-- 源 summary：[[summaries/11-meta-reflection-techniques]]
+- 源 summary：[[12 个元反思技巧]]

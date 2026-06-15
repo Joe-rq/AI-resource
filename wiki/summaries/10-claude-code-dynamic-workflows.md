@@ -148,10 +148,10 @@ Claude 将结构化数据直接传给脚本，无需解析。省略 `args` 时�
 
 ## 与现有 wiki 概念的关联
 
-- **计划从上下文迁移到代码** — 与 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]的"事件时间线"思想同源：编排状态可被外部观察、可重放、可在受控条件下复现
-- **质量模式**（对抗审查、多角度草稿、交叉检查）— 与 [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]]在目标层同构：把"对单个输出的信任"换成"对多视角加权后的信任"
-- **隔离运行时 + 中间结果不污染主上下文** — 进一步推进了 [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] 的"独立上下文窗口"思想
-- **保存为命令 + 跨项目复用** — 与 [[concepts/Claude-Code-Skills/index|Claude Code Skills]] 的"可复用指令包"在分发模型上互补：Skills 是指令包、工作流是脚本
+- **计划从上下文迁移到代码** — 与 [[Agent Harness 治理协议]]的"事件时间线"思想同源：编排状态可被外部观察、可重放、可在受控条件下复现
+- **质量模式**（对抗审查、多角度草稿、交叉检查）— 与 [[Worker Verifier 对抗循环]]在目标层同构：把"对单个输出的信任"换成"对多视角加权后的信任"
+- **隔离运行时 + 中间结果不污染主上下文** — 进一步推进了 [[Claude Code Subagent]] 的"独立上下文窗口"思想
+- **保存为命令 + 跨项目复用** — 与 [[Claude Code Skills]] 的"可复用指令包"在分发模型上互补：Skills 是指令包、工作流是脚本
 
 ## 关键观察
 
@@ -162,4 +162,4 @@ Claude 将结构化数据直接传给脚本，无需解析。省略 `args` 时�
 ## 相关资源
 
 - 原始来源：`raw/articles/2026-06-04-claude-code-dynamic-workflows.md`（Claude Code 官方中文文档）
-- 关联概念：[[concepts/Claude-Code-Subagent/index|Claude Code Subagent]]、[[concepts/Claude-Code-Skills/index|Claude Code Skills]]、[[concepts/Agent-Runtime|Agent Runtime]]、[[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]]、[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]
+- 关联概念：[[Claude Code Subagent]]、[[Claude Code Skills]]、[[Agent Runtime]]、[[Multi-Agent 协作模式]]、[[Agent Harness 治理协议]]

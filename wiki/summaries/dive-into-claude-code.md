@@ -59,8 +59,8 @@ OpenClaw 是持久 WebSocket 网关（多通道个人助手），Claude Code 是
 
 ## 与本 Wiki 的关联
 
-- [[entities/Dive-into-Claude-Code]] -- 论文实体页
-- [[concepts/Agent-Runtime]] -- 98.4% 数据印证 runtime 重要性
-- [[concepts/Agent-Harness-治理协议]] -- append-only 持久化、最小脚手架
-- [[entities/wow-harness]] -- 治理协议设计的学术验证
-- [[entities/ESAA]] -- ESAA event sourcing 与 Claude Code append-only JSONL 共享设计哲学
+- [[Dive into Claude Code（论文）]] -- 论文实体页
+- [[Agent Runtime]] -- 98.4% 数据印证 runtime 重要性
+- [[Agent Harness 治理协议]] -- append-only 持久化、最小脚手架
+- [[wow-harness]] -- 治理协议设计的学术验证
+- [[ESAA]] -- ESAA event sourcing 与 Claude Code append-only JSONL 共享设计哲学

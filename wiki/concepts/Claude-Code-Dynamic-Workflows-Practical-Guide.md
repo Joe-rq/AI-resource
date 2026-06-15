@@ -9,7 +9,7 @@ tags: [claude-code, workflows, ultracode, deep-research, practical-guide, best-p
 
 # Claude Code Dynamic Workflows 实践指南
 
-> 基于 Claude Code 官方文档和社区实践的**使用场景、决策树与操作速查**。与 [[summaries/10-claude-code-dynamic-workflows|产品功能文档]] 和 [[summaries/12-a-harness-for-every-task-dynamic-workflows|官方博客深度解读]] 互补：那两篇讲"是什么"和"为什么"，这篇讲"什么时候用、用什么、怎么用"。
+> 基于 Claude Code 官方文档和社区实践的**使用场景、决策树与操作速查**。与 [[Claude Code 动态工作流（Dynamic Workflows）]] 和 [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]] 互补：那两篇讲"是什么"和"为什么"，这篇讲"什么时候用、用什么、怎么用"。
 
 ## 场景选择决策树
 
@@ -118,10 +118,10 @@ ultracode: 审计 src/ 目录下的认证问题，token 预算 10000，超出时
 
 ## 与现有 wiki 概念的关联
 
-- [[summaries/10-claude-code-dynamic-workflows|10-claude-code-dynamic-workflows]] — 产品功能文档（"怎么用"的基础）
-- [[summaries/12-a-harness-for-every-task-dynamic-workflows|12-a-harness-for-every-task-dynamic-workflows]] — 官方博客深度解读（"为什么"+ 六种模式 + 十个用例）
-- [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] — 工作流编排的工作者原语
-- [[concepts/Claude-Code-Skills/index|Claude Code Skills]] — 工作流可通过 skill 分发
-- [[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]] — "harness on the fly" 的极致推论
-- [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]] — 对抗验证模式的同构概念
-- [[concepts/Agent-Secure-Runtime|Agent Secure Runtime]] — Quarantine 模式的权限隔离延伸
+- [[Claude Code 动态工作流（Dynamic Workflows）]] — 产品功能文档（"怎么用"的基础）
+- [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]] — 官方博客深度解读（"为什么"+ 六种模式 + 十个用例）
+- [[Claude Code Subagent]] — 工作流编排的工作者原语
+- [[Claude Code Skills]] — 工作流可通过 skill 分发
+- [[Thin Harness, Fat Skills]] — "harness on the fly" 的极致推论
+- [[Worker Verifier 对抗循环]] — 对抗验证模式的同构概念
+- [[Agent Secure Runtime]] — Quarantine 模式的权限隔离延伸

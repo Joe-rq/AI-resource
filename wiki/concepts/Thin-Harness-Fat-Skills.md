@@ -128,12 +128,12 @@ flowchart LR
 
 ## 关联
 
-- [[concepts/Claude-Code-Skills/index|Claude Code Skills]] — 具体的 skill 文件格式与加载机制
-- [[concepts/Agent-Runtime|Agent Runtime]] — harness = runtime
-- [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] — 跨 session 一致性（与本概念的"一次 session 形状"互补）
-- [[entities/Dive-into-Claude-Code|Dive into Claude Code]] — 98.4% 基础设施数据印证
-- [[summaries/13-thin-harness-fat-skills|13-thin-harness-fat-skills]] — 全文摘要与 YC 案例
-- [[summaries/10-claude-code-dynamic-workflows|10-claude-code-dynamic-workflows]] — dynamic workflow 是 fat skills 的运行时形态
+- [[Claude Code Skills]] — 具体的 skill 文件格式与加载机制
+- [[Agent Runtime]] — harness = runtime
+- [[Agent Harness 治理协议]] — 跨 session 一致性（与本概念的"一次 session 形状"互补）
+- [[Dive into Claude Code（论文）]] — 98.4% 基础设施数据印证
+- [[Thin Harness, Fat Skills：套具要瘦，技能要胖]] — 全文摘要与 YC 案例
+- [[Claude Code 动态工作流（Dynamic Workflows）]] — dynamic workflow 是 fat skills 的运行时形态
 
 ## 待解决问题
 

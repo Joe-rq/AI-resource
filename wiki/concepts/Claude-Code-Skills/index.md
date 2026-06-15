@@ -129,10 +129,10 @@ then list any risks such as missing error handling or hardcoded values.
 
 ## 详细文档
 
-- [[concepts/Claude-Code-Skills/Frontmatter-Reference|Frontmatter 参考]] — 完整的 frontmatter 字段、字符串替换、参数传递
-- [[concepts/Claude-Code-Skills/Dynamic-Context-And-Subagents|动态上下文与 Subagent 执行]] — Shell 注入、Subagent 中运行、共享与分发
+- [[Claude Code Skills — Frontmatter 参考]] — 完整的 frontmatter 字段、字符串替换、参数传递
+- [[Claude Code Skills — 动态上下文与 Subagent 执行]] — Shell 注入、Subagent 中运行、共享与分发
 
 ## Related concepts
 
-- [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] — Skill 可通过 `context: fork` 在 Subagent 中运行
+- [[Claude Code Subagent]] — Skill 可通过 `context: fork` 在 Subagent 中运行
 - [[Agent-Runtime]] — Skill 的执行依赖 Runtime 层的工具调用和上下文管理

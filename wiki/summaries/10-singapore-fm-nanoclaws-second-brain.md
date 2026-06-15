@@ -32,6 +32,6 @@ NanoClaw 建在 Claude Agent SDK 上，500行程式碼，可容器化，隔離�
 
 ## Concepts introduced / referenced
 
-- [[concepts/Agent-Runtime]] — NanoClaw 是邊緣 Runtime 的典型：容器化隔離、極小程式碼量
-- [[concepts/Multi-Agent-协作模式]] — 他的助理是 Single-Agent + 多工具增強的邊緣部署
-- [[entities/MiniMax-Mavis]] — 同樣強調個人化 AI 助理，定位不同但方向一致
+- [[Agent Runtime]] — NanoClaw 是邊緣 Runtime 的典型：容器化隔離、極小程式碼量
+- [[Multi-Agent 协作模式]] — 他的助理是 Single-Agent + 多工具增強的邊緣部署
+- [[MiniMax Mavis]] — 同樣強調個人化 AI 助理，定位不同但方向一致

@@ -151,14 +151,14 @@ Loop 自己运行时，很容易停止有主见、接受 loop 给的一切。设
 
 | 本文概念 | Wiki 对应 |
 |---------|----------|
-| Sub-agents (maker/checker) | [[concepts/Worker-Verifier-对抗循环\|Worker/Verifier 对抗循环]] — Mavis 核心架构机制的同构实现 |
-| Skills 作为意图固化 | [[concepts/Claude-Code-Skills/index\|Claude Code Skills]] — SKILL.md 规范、动态上下文注入 |
-| Worktree 隔离 | [[concepts/Claude-Code-Subagent/index\|Claude Code Subagent]] — Fork 模式、独立上下文窗口 |
-| Loop 的跨 session 一致性 | [[concepts/Agent-Harness-治理协议\|Agent Harness 治理协议]] — 事件溯源 + 概念演化 + 双层验证 |
-| Skill 是方法调用 | [[concepts/Thin-Harness-Fat-Skills\|Thin Harness, Fat Skills]] — "套具要瘦、技能要胖"的架构原则 |
-| 自主运行 + 人工确认门 | [[concepts/Autonomous-AI-System\|Autonomous AI System]] — 阳志平 12 技巧 × 4 组（任务编排/实际开工/自检评审/自动续航） |
-| Claude Code 5 层 compaction | [[entities/Dive-into-Claude-Code\|Dive into Claude Code]] — 论文识别的 5 层 compaction pipeline 在 loop 长期运行中的触发频率 |
-| Memory 必须落盘 | [[entities/ESAA\|ESAA 论文]] — Event Sourcing + CQRS，immutable audit trail，跨会话 deterministic replay |
+| Sub-agents (maker/checker) | [[Worker Verifier 对抗循环]] — Mavis 核心架构机制的同构实现 |
+| Skills 作为意图固化 | [[Claude Code Skills]] — SKILL.md 规范、动态上下文注入 |
+| Worktree 隔离 | [[Claude Code Subagent]] — Fork 模式、独立上下文窗口 |
+| Loop 的跨 session 一致性 | [[Agent Harness 治理协议]] — 事件溯源 + 概念演化 + 双层验证 |
+| Skill 是方法调用 | [[Thin Harness, Fat Skills]] — "套具要瘦、技能要胖"的架构原则 |
+| 自主运行 + 人工确认门 | [[Autonomous AI System]] — 阳志平 12 技巧 × 4 组（任务编排/实际开工/自检评审/自动续航） |
+| Claude Code 5 层 compaction | [[Dive into Claude Code（论文）]] — 论文识别的 5 层 compaction pipeline 在 loop 长期运行中的触发频率 |
+| Memory 必须落盘 | [[ESAA]] — Event Sourcing + CQRS，immutable audit trail，跨会话 deterministic replay |
 
 ---
 

@@ -26,7 +26,7 @@ Team Lead 协调 + Teammates 独立工作 + 共享任务队列 + 直接互相通
 | 任务协调 | 共享任务列表，claim work | 主 agent 分发 |
 | 独立性 | Teammates 可独立交互 | 依赖主 agent |
 
-详见 [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]]。
+详见 [[Claude Code Subagent]]。
 
 ## 最佳场景
 

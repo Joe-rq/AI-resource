@@ -23,7 +23,7 @@ NVIDIA Agent Toolkit 展示了一个工业级 Agent 平台的完整形态：从�
 
 ## Concepts introduced / referenced
 
-- [[entities/NVIDIA-Agent-Toolkit]] — NVIDIA 的 Agent 开发工具包
-- [[concepts/Agent-Secure-Runtime]] — Agent 安全运行时设计模式
-- [[concepts/Agent-Runtime]] — 已有概念，本文提供了 NVIDIA 的实现案例
-- [[concepts/Multi-Agent-协作模式]] — Sub Agents 体现了 Orchestrator/Specialist 模式
+- [[NVIDIA Agent Toolkit]] — NVIDIA 的 Agent 开发工具包
+- [[Agent Secure Runtime]] — Agent 安全运行时设计模式
+- [[Agent Runtime]] — 已有概念，本文提供了 NVIDIA 的实现案例
+- [[Multi-Agent 协作模式]] — Sub Agents 体现了 Orchestrator/Specialist 模式

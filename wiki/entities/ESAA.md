@@ -114,7 +114,7 @@ Event cycle: `attempt.create` -> `orchestrator.dispatch` -> `agent.result` -> `o
 
 ## 与本 Wiki 的关联
 
-- [[concepts/Agent-Harness-治理协议]] -- 治理协议的事件溯源机制与 ESAA 高度对应
-- [[entities/wow-harness]] -- wow-harness v3 事件时间线是 ESAA 理念的工程实践
-- [[entities/Dive-into-Claude-Code]] -- Claude Code 的 append-only JSONL transcripts 与 ESAA 事件溯源共享同一设计哲学
-- [[concepts/Agent-Runtime]] -- ESAA 重新定义了 agent runtime 中的状态管理范式
+- [[Agent Harness 治理协议]] -- 治理协议的事件溯源机制与 ESAA 高度对应
+- [[wow-harness]] -- wow-harness v3 事件时间线是 ESAA 理念的工程实践
+- [[Dive into Claude Code（论文）]] -- Claude Code 的 append-only JSONL transcripts 与 ESAA 事件溯源共享同一设计哲学
+- [[Agent Runtime]] -- ESAA 重新定义了 agent runtime 中的状态管理范式

@@ -13,9 +13,9 @@ tags: [harness, governance, event-sourcing, agent-organization, multi-agent]
 
 Agent Harness 治理协议解决的核心问题是：**跨 session、跨 agent 的长期一致性**。
 
-现有工具（[[entities/wow-harness]]、Claude Code、Superpowers）都在优化单次体验。但真实项目跑几十次、几百次，不同的 session 和 agent 之间怎么保持一致？治理协议就是这个层面的工程方案。
+现有工具（[[wow-harness]]、Claude Code、Superpowers）都在优化单次体验。但真实项目跑几十次、几百次，不同的 session 和 agent 之间怎么保持一致？治理协议就是这个层面的工程方案。
 
-> "Dive into Claude Code"论文（[[entities/Dive-into-Claude-Code]]）源码级分析证实：Claude Code 98.4% 是运行基础设施，只有 1.6% 是 AI 决策逻辑。套具比模型重要。
+> "Dive into Claude Code"论文（[[Dive into Claude Code（论文）]]）源码级分析证实：Claude Code 98.4% 是运行基础设施，只有 1.6% 是 AI 决策逻辑。套具比模型重要。
 
 ## 五个核心机制
 
@@ -38,7 +38,7 @@ flowchart LR
 
 与 "Dive into Claude Code" 论文识别的 **append-only durable state** 设计原则一致：Claude Code 的 session transcripts 也是 mostly append-only JSONL。
 
-ESAA 论文（[[entities/ESAA]]）从学术角度验证了这一机制：ESAA 的 event store (`activity.jsonl`) 同样是 append-only immutable log，当前状态通过 deterministic projection 从日志推导，并通过 SHA-256 hash 验证投影一致性。
+ESAA 论文（[[ESAA]]）从学术角度验证了这一机制：ESAA 的 event store (`activity.jsonl`) 同样是 append-only immutable log，当前状态通过 deterministic projection 从日志推导，并通过 SHA-256 hash 验证投影一致性。
 
 ### 2. 概念节点生命周期（Concept Lifecycle）
 
@@ -71,7 +71,7 @@ flowchart TD
     D -->|通过| F[产出入库]
 ```
 
-与 [[concepts/Worker-Verifier-对抗循环]] 的区别：
+与 [[Worker Verifier 对抗循环]] 的区别：
 
 | 维度 | Worker/Verifier 对抗循环 | 双层验证 |
 |------|-------------------------|----------|
@@ -99,7 +99,7 @@ flowchart LR
 - **无状态 session** -- 每个 agent 不继承前一个 session 的偏见，拿到上下文胶囊独立判断
 - **上下文胶囊** -- 系统为每个 agent 精确组装的上下文（概念、约束、引用关系），从 artifact 出发工作
 
-与 [[concepts/Multi-Agent-协作模式]] 现有模式的区别：
+与 [[Multi-Agent 协作模式]] 现有模式的区别：
 
 | 维度 | Orchestrator/Specialist | Worker/Verifier | 自动扩张任务图 |
 |------|------------------------|-----------------|---------------|
@@ -119,9 +119,9 @@ flowchart LR
 
 ## Related concepts
 
-- [[concepts/Agent-Runtime]] -- 单 Agent 执行环境，治理协议的上层建筑
-- [[concepts/Multi-Agent-协作模式]] -- 多 Agent 协作的基础模式
-- [[concepts/Worker-Verifier-对抗循环]] -- 双层验证的对比参照
-- [[entities/wow-harness]] -- 治理协议的具体实现
-- [[entities/Dive-into-Claude-Code]] -- 源码级逆向分析，验证 append-only / minimal scaffolding 等设计原则
-- [[entities/ESAA]] -- Event Sourcing + CQRS 应用于 agent 生命周期的学术验证，与事件时间线和 boundary contracts 同构
+- [[Agent Runtime]] -- 单 Agent 执行环境，治理协议的上层建筑
+- [[Multi-Agent 协作模式]] -- 多 Agent 协作的基础模式
+- [[Worker Verifier 对抗循环]] -- 双层验证的对比参照
+- [[wow-harness]] -- 治理协议的具体实现
+- [[Dive into Claude Code（论文）]] -- 源码级逆向分析，验证 append-only / minimal scaffolding 等设计原则
+- [[ESAA]] -- Event Sourcing + CQRS 应用于 agent 生命周期的学术验证，与事件时间线和 boundary contracts 同构

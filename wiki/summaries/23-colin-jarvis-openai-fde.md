@@ -72,4 +72,4 @@ Colin 的预测：Agent 基础设施（编排、tracing、标注、评测、护�
 ## 参考
 
 - [[Forward-Deployed-Engineering]] — FDE 核心概念页（含 Palantir 起源、Echo/Delta 架构、产品杠杆率、人才画像）
-- [[summaries/21-fde-playbook-bob-mcgrew|FDE 实战手册（Bob McGrew）]]
+- [[FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）]]

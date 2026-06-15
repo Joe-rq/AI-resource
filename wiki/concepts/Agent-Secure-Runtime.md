@@ -17,7 +17,7 @@ tags: [agent-runtime, security, sandbox, guardrail, privacy]
 
 ## 三层安全架构
 
-以 [[entities/NVIDIA-Agent-Toolkit]] 的 OpenShell 为例：
+以 [[NVIDIA Agent Toolkit]] 的 OpenShell 为例：
 
 ```mermaid
 flowchart LR
@@ -66,7 +66,7 @@ Agent 命令的入口关卡。基于预定义规则决定 Agent 可以执行哪�
 ## 与其他概念的关系
 
 - [[Agent-Runtime]] — Secure Runtime 是 Agent Runtime 的超集，增加了安全约束层
-- [[entities/NVIDIA-Agent-Toolkit]] — OpenShell 是目前最完整的 Secure Runtime 实现之一
+- [[NVIDIA Agent Toolkit]] — OpenShell 是目前最完整的 Secure Runtime 实现之一
 - MCP 协议 — 作为工具连接的统一接口，天然适合接入安全检查点
 
 ## Open questions
@@ -77,4 +77,4 @@ Agent 命令的入口关卡。基于预定义规则决定 Agent 可以执行哪�
 
 ## Sources
 
-- [[summaries/raw/articles/nvidia-agent-toolkit.md]] — (2026-05-19) OpenShell 架构图分析
+- [[NVIDIA Agent Toolkit 架构]] — (2026-05-19) OpenShell 架构图分析

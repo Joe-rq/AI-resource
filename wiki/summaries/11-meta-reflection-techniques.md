@@ -87,13 +87,13 @@ flowchart LR
 
 ## 与现有 wiki 概念的关联
 
-- **强制元反思 = 独立验证节点** — 与 [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]] 同源：把"对单个输出的信任"换成"对多视角加权后的信任"。[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] 的"双层验证"是这一思想的物理拦截实现
-- **约束实体 ≤ 4 个** — 与 [[concepts/Agent-Runtime|Agent Runtime]] 的"上下文窗口"管理直接相关：单 session 的有效实体数受限于模型架构
+- **强制元反思 = 独立验证节点** — 与 [[Worker Verifier 对抗循环]] 同源：把"对单个输出的信任"换成"对多视角加权后的信任"。[[Agent Harness 治理协议]] 的"双层验证"是这一思想的物理拦截实现
+- **约束实体 ≤ 4 个** — 与 [[Agent Runtime]] 的"上下文窗口"管理直接相关：单 session 的有效实体数受限于模型架构
 - **看门狗 = 自动扩张任务图** — 周期性读取 memory 推进未完成步骤，与 Agent Harness 治理协议的"事件驱动自动 spawn"在调度哲学上同构：避免人作为状态机中心
-- **积累飞轮 = 模式沉淀** — 把发现的新模式写入 memory 文件，与 [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] 的"持久内存"机制对应
-- **重新定义问题 = 跨域知识迁移** — 与 [[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]] 中的"Specialist"分工思想一致：让擅长某领域的 agent 处理该领域问题
-- **行动之环 = 事件闭环** — 四要素循环（意图/实施/反馈/情境）与 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] 的"事件时间线"在"反馈形成闭环"上同构
-- **新概念节点**：本文触发的新概念 → [[concepts/Meta-Reflection-Techniques|Meta Reflection Techniques]]（12 技巧的完整定义与工程化指引）
+- **积累飞轮 = 模式沉淀** — 把发现的新模式写入 memory 文件，与 [[Claude Code Subagent]] 的"持久内存"机制对应
+- **重新定义问题 = 跨域知识迁移** — 与 [[Multi-Agent 协作模式]] 中的"Specialist"分工思想一致：让擅长某领域的 agent 处理该领域问题
+- **行动之环 = 事件闭环** — 四要素循环（意图/实施/反馈/情境）与 [[Agent Harness 治理协议]] 的"事件时间线"在"反馈形成闭环"上同构
+- **新概念节点**：本文触发的新概念 → [[Meta Reflection Techniques]]（12 技巧的完整定义与工程化指引）
 
 ## 关键观察
 
@@ -115,4 +115,4 @@ flowchart LR
 ## 相关资源
 
 - 原始来源：`D:\03resource\_Projects\work\harness-lab\context\references\2026-03-17-meta-reflection-techniques.md`（阳志平「让 AI 变得更聪明的 12 个元反思技巧」）
-- 关联概念：[[concepts/Meta-Reflection-Techniques]]（12 技巧的完整定义）、[[concepts/Worker-Verifier-对抗循环]]、[[concepts/Agent-Runtime]]、[[concepts/Multi-Agent-协作模式]]、[[concepts/Claude-Code-Subagent/index|Claude Code Subagent]]
+- 关联概念：[[Meta Reflection Techniques]]（12 技巧的完整定义）、[[Worker Verifier 对抗循环]]、[[Agent Runtime]]、[[Multi-Agent 协作模式]]、[[Claude Code Subagent]]

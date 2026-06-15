@@ -21,9 +21,9 @@ Nous Research 是硅谷 AI 研究实验室，开发了开源 Agent 框架 Hermes
 
 ## Related concepts
 
-- [[concepts/Agent-Runtime]] — Hermes 的长期记忆能力填补了 Runtime 的关键缺口
-- [[summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md]] — Hermes Agent 完整摘要
+- [[Agent Runtime]] — Hermes 的长期记忆能力填补了 Runtime 的关键缺口
+- [[Hermes Agent：Nous Research 的开源 Agent 框架]] — Hermes Agent 完整摘要
 
 ## Sources
 
-- [[summaries/raw/articles/2026-05-02-hermes-agent-nous-research.md]] — 动脉网报道
+- [[Hermes Agent：Nous Research 的开源 Agent 框架]] — 动脉网报道

@@ -256,16 +256,16 @@ flowchart LR
 
 ## 与 wiki 现有概念的关联
 
-- **[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]** — 跨 session/agent 的治理协议，**与本文 Harness 制度化有大量重叠**（事件时间线、概念节点、双层验证、自动扩张任务图）。本文提供一个**更上游的演化视角**：治理协议是 Harness 三层结构在多 session 跨度的延伸
-- **[[concepts/Agent-Runtime|Agent Runtime]]** — 98.4% 基础设施论文数据与本文"Prompt > Harness 结构 > 模型"的边际影响力排序同源，**都指向"基础设施决定上限"**
-- **[[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]]** — 与 Anthropic 的 Generator-Evaluator 对抗、Cursor 的 8 通道盲审、Claude Code 的 Verification Agent 同构；**Mavis 把对抗循环做成"嵌入架构"的工程方案**（批次执行 + 角色分离 + 重试上限 + 中转通讯）
-- **[[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]]** — Coordinator Mode（工头 + Worker）和 Team Mode（长期队友）是 Orchestrator/Specialist 和 Team Engine 两种模式的**源码级产品化实现**
-- **[[concepts/Claude-Code-Subagent/index|Claude Code Subagent]]** — 6 层记忆体系和 Team Mode 的「独立上下文窗口 + 独立 Git 工作区」是 Subagent 思想的**完整化与持久化**
-- **[[concepts/Claude-Code-Skills/index|Claude Code Skills]]** — Hooks 的 8 插槽是 Skills 的更激进形式——Skills 是指令包由 Claude 触发，Hooks 是检查点由外部脚本硬拦截
-- **[[concepts/Agent-Secure-Runtime|Agent Secure Runtime]]** — YOLO Classifier 的风险标签 + 自适应权限是 NVIDIA OpenShell 三层安全检查的**自适应版本**
-- **[[entities/wow-harness|wow-harness v3]]** — v3 的事件时间线 = Harness 第一层的「JSON 物理锁 + Git 存档 + Context Reset」的工程化；v3 的双层验证 = Harness 第三层的 Generator-Evaluator 对抗
-- **[[entities/Dive-into-Claude-Code|Dive into Claude Code]]** — 论文识别的 5 层 compaction pipeline、append-only durable state、minimal scaffolding maximal harness 在本文的源码对账章节得到**全面验证**
-- **[[entities/ESAA|ESAA]]** — 学术层面：append-only log + boundary contracts + deterministic replay 与 Harness 的 JSON 物理锁 + 沙箱隔离 + Context Reset 同源
+- **[[Agent Harness 治理协议]]** — 跨 session/agent 的治理协议，**与本文 Harness 制度化有大量重叠**（事件时间线、概念节点、双层验证、自动扩张任务图）。本文提供一个**更上游的演化视角**：治理协议是 Harness 三层结构在多 session 跨度的延伸
+- **[[Agent Runtime]]** — 98.4% 基础设施论文数据与本文"Prompt > Harness 结构 > 模型"的边际影响力排序同源，**都指向"基础设施决定上限"**
+- **[[Worker Verifier 对抗循环]]** — 与 Anthropic 的 Generator-Evaluator 对抗、Cursor 的 8 通道盲审、Claude Code 的 Verification Agent 同构；**Mavis 把对抗循环做成"嵌入架构"的工程方案**（批次执行 + 角色分离 + 重试上限 + 中转通讯）
+- **[[Multi-Agent 协作模式]]** — Coordinator Mode（工头 + Worker）和 Team Mode（长期队友）是 Orchestrator/Specialist 和 Team Engine 两种模式的**源码级产品化实现**
+- **[[Claude Code Subagent]]** — 6 层记忆体系和 Team Mode 的「独立上下文窗口 + 独立 Git 工作区」是 Subagent 思想的**完整化与持久化**
+- **[[Claude Code Skills]]** — Hooks 的 8 插槽是 Skills 的更激进形式——Skills 是指令包由 Claude 触发，Hooks 是检查点由外部脚本硬拦截
+- **[[Agent Secure Runtime]]** — YOLO Classifier 的风险标签 + 自适应权限是 NVIDIA OpenShell 三层安全检查的**自适应版本**
+- **[[wow-harness]]** — v3 的事件时间线 = Harness 第一层的「JSON 物理锁 + Git 存档 + Context Reset」的工程化；v3 的双层验证 = Harness 第三层的 Generator-Evaluator 对抗
+- **[[Dive into Claude Code（论文）]]** — 论文识别的 5 层 compaction pipeline、append-only durable state、minimal scaffolding maximal harness 在本文的源码对账章节得到**全面验证**
+- **[[ESAA]]** — 学术层面：append-only log + boundary contracts + deterministic replay 与 Harness 的 JSON 物理锁 + 沙箱隔离 + Context Reset 同源
 
 ## 关键术语
 

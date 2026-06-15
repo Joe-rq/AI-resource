@@ -43,4 +43,4 @@ tags: [minimax, mavis, agent-team, single-agent-defects]
 
 验证不是事后的质量检查，而是嵌入在生产状态机里的核心机制。
 
-参见 [[entities/MiniMax-Mavis|MiniMax Mavis]] 产品。
+参见 [[MiniMax Mavis]] 产品。

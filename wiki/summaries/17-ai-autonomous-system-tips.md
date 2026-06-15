@@ -26,7 +26,7 @@ tags: [autonomous-ai-system, agent-runtime, harness, watchdog, worktree, self-re
 3. **自检与评审** — 对抗性自检、跨模型评审、分级修复与通过信号
 4. **自动续航** — 看门狗、意外处理矩阵、状态持久化
 
-详见 [[Autonomous-AI-System]] 与 [[concepts/Agent-Runtime|Agent Runtime]]。
+详见 [[Autonomous-AI-System]] 与 [[Agent Runtime]]。
 
 ## 关键论点
 
@@ -96,7 +96,7 @@ flowchart TB
 
 > 计划永远不是唯一的真相，实际产出（比如代码）才是。
 
-复杂活也写计划，但计划只是一次性脚手架。**需求往往是「干」出来的，靠「想」想不全。** 这与 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] 的"事件意图 → 提交检查点验证 → 事件记录"思路同源——意图必须被实际产出验证，而不是被计划验证。
+复杂活也写计划，但计划只是一次性脚手架。**需求往往是「干」出来的，靠「想」想不全。** 这与 [[Agent Harness 治理协议]] 的"事件意图 → 提交检查点验证 → 事件记录"思路同源——意图必须被实际产出验证，而不是被计划验证。
 
 #### 3. worktree = "把并行约束在人类工作记忆以内"
 
@@ -128,15 +128,15 @@ worktree 早在 2015 年由 pclouds 主导开发，但一直不是 git 常用命
 
 | 本文技巧 | 对应 wiki 概念 |
 |---------|---------------|
-| 合并同类项、约束任务清单 | [[concepts/Agent-Runtime|Agent Runtime]] 上下文管理（"约束实体 ≤ 4" 经验值同源） |
-| 干了再说、产出校准意图 | [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] "事件意图 → 提交检查点验证" |
-| worktree 并行分身 | [[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]] 并行 Worker |
-| 对抗性自检、多视角审查 | [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]] 物理拦截 + 跨视角加权 |
+| 合并同类项、约束任务清单 | [[Agent Runtime]] 上下文管理（"约束实体 ≤ 4" 经验值同源） |
+| 干了再说、产出校准意图 | [[Agent Harness 治理协议]] "事件意图 → 提交检查点验证" |
+| worktree 并行分身 | [[Multi-Agent 协作模式]] 并行 Worker |
+| 对抗性自检、多视角审查 | [[Worker Verifier 对抗循环]] 物理拦截 + 跨视角加权 |
 | 跨模型评审 | 与 Agent Harness 治理协议的"双层验证"同构——验证者与执行者必须是不同上下文/不同模型 |
-| 看门狗、定时执行 | [[concepts/Meta-Reflection-Techniques]] 技巧 7 看门狗；Agent Harness 治理协议自动扩张任务图的事件驱动 |
-| 状态持久化、唯一真相源 | [[entities/ESAA]] Event Sourcing + 当前状态视图 |
-| 意外处理矩阵、永不停摆 | [[entities/wow-harness]] "为失败预设绕行路径" 处处可见 |
-| 沉淀自检 Skill / 评审教训制度化 | [[concepts/Thin-Harness-Fat-Skills|Thin Harness, Fat Skills]] 90% 价值在 markdown 流程文件 |
+| 看门狗、定时执行 | [[Meta Reflection Techniques]] 技巧 7 看门狗；Agent Harness 治理协议自动扩张任务图的事件驱动 |
+| 状态持久化、唯一真相源 | [[ESAA]] Event Sourcing + 当前状态视图 |
+| 意外处理矩阵、永不停摆 | [[wow-harness]] "为失败预设绕行路径" 处处可见 |
+| 沉淀自检 Skill / 评审教训制度化 | [[Thin Harness, Fat Skills]] 90% 价值在 markdown 流程文件 |
 
 ## 核心判断
 
@@ -146,7 +146,7 @@ worktree 早在 2015 年由 pclouds 主导开发，但一直不是 git 常用命
 
 ## 相关阅读
 
-- 关联概念：[[concepts/Autonomous-AI-System|Autonomous-AI-System]]、[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]
+- 关联概念：[[Autonomous AI System]]、[[Agent Harness 治理协议]]
 - [让 AI 变得更聪明的 12 个元反思技巧](https://mp.weixin.qq.com/s?__biz=MzA3MzM0MjUyMQ==&mid=2652154952&idx=1&sn=a1d6c7cc99eae8d5b18be4fcab5e100c&scene=21#wechat_redirect) — 与本文同源（技巧 7 看门狗、技巧 8 完整性、技巧 12 积累飞轮直接对应）
 - [我是谁？关于人生叙事的十个要点](https://mp.weixin.qq.com/s?__biz=MzA3MzM0MjUyMQ==&mid=2652154906&idx=1&sn=210122a226118c0df9f9a265a00f9efe&scene=21#wechat_redirect)
 - [读了这四本书，你更懂第三代认知科学](https://mp.weixin.qq.com/s?__biz=MzA3MzM0MjUyMQ==&mid=2652154796&idx=1&sn=847dfcbe1b63b55a08a883231d9d4d4a&scene=21#wechat_redirect)

@@ -31,7 +31,7 @@ FDE 是一个技术背景的工程师，驻场在客户那里，交付的不是"
 
 ## 精确判定：四个要素
 
-来自 [[summaries/27-what-we-talk-about-fde|当我们谈论 FDE 时]] 的精确定义——FDE 必须同时满足四个要素：
+来自 [[当我们谈论 FDE 时，我们在谈论什么？]] 的精确定义——FDE 必须同时满足四个要素：
 
 | 要素 | 含义 | 缺失则变成 |
 |------|------|-----------|
@@ -207,8 +207,8 @@ FDE 模式和 Thin Harness 哲学有深层同构：
 ## 参考
 
 - [[Palantir]] — FDE 模式的发明者和标杆
-- [[summaries/21-fde-playbook-bob-mcgrew|FDE 实战手册（Bob McGrew）]]
-- [[summaries/23-colin-jarvis-openai-fde|OpenAI FDE（Colin Jarvis）]]
-- [[summaries/24-fde-role-definition|FDE 角色定义与入门路径]]
-- [[summaries/25-fde-future-roundtable|FDE 未来圆桌（OpenAI/Ramp/Nominal/Dataland）]]
-- [[summaries/27-what-we-talk-about-fde|当我们谈论 FDE 时（中文深度分析）]]
+- [[FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）]]
+- [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]]
+- [[FDE 角色定义、入门路径与实战经验（Dex Sessions 圆桌）]]
+- [[前沿部署工程的未来：OpenAI、Ramp、Nominal、Dataland 圆桌]]
+- [[当我们谈论 FDE 时，我们在谈论什么？]]

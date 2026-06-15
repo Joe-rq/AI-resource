@@ -47,9 +47,9 @@ AI 在长任务中会不知不觉改变风格或把二手缓存当成一手来�
 
 | 方案 | 核心机制 | 代表 |
 |------|----------|------|
-| Worker/Verifier 对抗循环 | Worker 干活，Verifier 挑刺 | [[entities/MiniMax-Mavis]] |
+| Worker/Verifier 对抗循环 | Worker 干活，Verifier 挑刺 | [[MiniMax Mavis]] |
 | Orchestrator/Specialist | 中央协调者分发任务 | Anthropic Multi-Agent Research System |
-| Team Engine | 确定性状态机调度 | [[entities/MiniMax-Mavis]] |
+| Team Engine | 确定性状态机调度 | [[MiniMax Mavis]] |
 
 ## 关键洞察
 

@@ -28,7 +28,7 @@ tags: [harness, governance, agent-organization, wow-harness]
 
 | 工具 | 关系 |
 |------|------|
-| [[entities/Dive-into-Claude-Code|Claude Code]] | **地基**，v3 跑在 Claude Code 上面，不竞争 |
+| [[Dive into Claude Code（论文）]] | **地基**，v3 跑在 Claude Code 上面，不竞争 |
 | Superpowers | **同层分歧** -- 把 agent 当需要管教的执行者，v3 让 agent 从系统理解推导行为 |
 | Hermes Agent | **同层分歧** -- 一个人的助手，v3 假设多 agent 并行 |
 | OpenHands | **同层分歧** -- EventStream 是 session 内临时消息总线，v3 事件时间线是永久的 |
@@ -41,17 +41,17 @@ tags: [harness, governance, agent-organization, wow-harness]
 4. **自动扩张任务图** -- 事件触发驱动 agent spawn，无状态 session + 上下文胶囊
 5. **人机决策分层** -- 工程决策 AI 自做，语义判断升级到人，用产品语言描述
 
-详见 [[concepts/Agent-Harness-治理协议]]。
+详见 [[Agent Harness 治理协议]]。
 
 ## 学术验证
 
 ### "Dive into Claude Code" 论文
 
-**"Dive into Claude Code"论文**（[[entities/Dive-into-Claude-Code]]，arxiv 2604.14228）通过源码级逆向工程分析，验证了 Claude Code 98.4% 是运行基础设施、1.6% 是 AI 决策逻辑。论文提出的 5 个设计价值和 13 条设计原则（append-only durable state、minimal scaffolding maximal operational harness、isolated subagent boundaries 等）与 v3 治理协议的设计理念高度契合。
+**"Dive into Claude Code"论文**（[[Dive into Claude Code（论文）]]，arxiv 2604.14228）通过源码级逆向工程分析，验证了 Claude Code 98.4% 是运行基础设施、1.6% 是 AI 决策逻辑。论文提出的 5 个设计价值和 13 条设计原则（append-only durable state、minimal scaffolding maximal operational harness、isolated subagent boundaries 等）与 v3 治理协议的设计理念高度契合。
 
 ### ESAA 论文
 
-**ESAA 论文**（[[entities/ESAA]]，arxiv 2602.23193）将 Event Sourcing + CQRS 原则应用于 LLM agent 生命周期管理，从学术角度验证了 v3 事件时间线的核心理念：
+**ESAA 论文**（[[ESAA]]，arxiv 2602.23193）将 Event Sourcing + CQRS 原则应用于 LLM agent 生命周期管理，从学术角度验证了 v3 事件时间线的核心理念：
 
 - **Immutable audit trail** -- 与 v3 事件时间线的"只追加、不可篡改"设计一致
 - **Deterministic replay** -- v3 增量状态推导 + 定期快照压缩的学术对应

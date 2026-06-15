@@ -69,7 +69,7 @@ Event store 作为天然协调机制，三个涌现属性：
 
 ## 与本 Wiki 的关联
 
-- [[entities/ESAA]] -- 论文实体页
-- [[concepts/Agent-Harness-治理协议]] -- 治理协议与 ESAA 架构高度对应
-- [[entities/wow-harness]] -- v3 事件时间线是 ESAA 理念的工程实践
-- [[entities/Dive-into-Claude-Code]] -- Claude Code append-only JSONL 与 ESAA 共享设计哲学
+- [[ESAA]] -- 论文实体页
+- [[Agent Harness 治理协议]] -- 治理协议与 ESAA 架构高度对应
+- [[wow-harness]] -- v3 事件时间线是 ESAA 理念的工程实践
+- [[Dive into Claude Code（论文）]] -- Claude Code append-only JSONL 与 ESAA 共享设计哲学

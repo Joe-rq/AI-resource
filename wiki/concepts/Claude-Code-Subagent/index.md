@@ -136,10 +136,10 @@ Fork 的第一个请求重用父级的 prompt cache，比生成新 subagent 更�
 
 ## 详细文档
 
-- [[concepts/Claude-Code-Subagent/Configuration|配置参考]] — 完整 frontmatter 字段、模型选择、工具限制、MCP 服务器、权限模式
-- [[concepts/Claude-Code-Subagent/Invocation-And-Context|调用与上下文管理]] — 调用模式、上下文加载、持久内存、Hooks、恢复 Subagent
+- [[Claude Code Subagent — 配置参考]] — 完整 frontmatter 字段、模型选择、工具限制、MCP 服务器、权限模式
+- [[Claude Code Subagent — 调用与上下文管理]] — 调用模式、上下文加载、持久内存、Hooks、恢复 Subagent
 
 ## Related concepts
 
-- [[concepts/Claude-Code-Skills/index|Claude Code Skills]] — Skill 可通过 `context: fork` 在 Subagent 中运行；Subagent 可通过 `skills` 字段预加载 Skills
+- [[Claude Code Skills]] — Skill 可通过 `context: fork` 在 Subagent 中运行；Subagent 可通过 `skills` 字段预加载 Skills
 - [[Agent-Runtime]] — Subagent 的执行环境属于 Runtime 层的一部分

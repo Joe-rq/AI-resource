@@ -9,7 +9,7 @@ tags: [harness, agent-runtime, claude-code, openai, langchain, orchestration, ve
 
 # 摘要
 
-> **本文与 [[summaries/12-harness-engineering-survey]] 的主题重叠分工**：本文偏向**单 Agent 视角的 12 组件架构拆解 + 7 个关键设计决策**（TAO 循环、上下文腐烂、Anthropic/OpenAI/LangChain 框架对比、脚手架隐喻、Harness 厚度等具体工程实现），适合需要从零设计一个生产级 Agent Harness 的读者；12- 则偏向**跨厂商、跨时间的行业综述**（14 篇工程文章 + Claude Code v2.1.88 源码对账，揭示"补偿面在膨胀与迁移"的演化规律），适合需要把握 Harness Engineering 整体生态与趋势的读者。两文在"harness 不是商品层"这一核心判断上重合，但切入角度互补。
+> **本文与 [[Harness Engineering 综述：14 篇工程文章里的 15 个月]] 的主题重叠分工**：本文偏向**单 Agent 视角的 12 组件架构拆解 + 7 个关键设计决策**（TAO 循环、上下文腐烂、Anthropic/OpenAI/LangChain 框架对比、脚手架隐喻、Harness 厚度等具体工程实现），适合需要从零设计一个生产级 Agent Harness 的读者；12- 则偏向**跨厂商、跨时间的行业综述**（14 篇工程文章 + Claude Code v2.1.88 源码对账，揭示"补偿面在膨胀与迁移"的演化规律），适合需要把握 Harness Engineering 整体生态与趋势的读者。两文在"harness 不是商品层"这一核心判断上重合，但切入角度互补。
 
 ## 核心论点
 
@@ -358,11 +358,11 @@ Harness 不是已解决的问题或商品层。**这是艰苦工程的所在**�
 
 ## 与现有 wiki 概念的关联
 
-- **编排循环 = TAO 循环** — 与 [[concepts/Agent-Runtime|Agent Runtime]]的"四个组件"（Prompt/工具/上下文/错误）框架同构，但 12 组件是更细的实现分解
-- **事件时间线 / 状态管理 / 错误处理** — 与 [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]的"事件时间线"在状态管理层面同构；本文是单次 session 内、治理协议是跨 session 长期
-- **子智能体编排** — 与 [[concepts/Claude-Code-Subagent/index|Claude Code Subagent]] 的 Fork/Teammate/Worktree 三模式精确对应
-- **验证循环** — 与 [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]]在目标层同构——都是"对单个输出加验证层"
-- **Anthropic 98.4% 基础设施、1.6% AI 决策** — 与 [[entities/Dive-into-Claude-Code]] 的"minimal scaffolding + maximal operational harness"原则一致
+- **编排循环 = TAO 循环** — 与 [[Agent Runtime]]的"四个组件"（Prompt/工具/上下文/错误）框架同构，但 12 组件是更细的实现分解
+- **事件时间线 / 状态管理 / 错误处理** — 与 [[Agent Harness 治理协议]]的"事件时间线"在状态管理层面同构；本文是单次 session 内、治理协议是跨 session 长期
+- **子智能体编排** — 与 [[Claude Code Subagent]] 的 Fork/Teammate/Worktree 三模式精确对应
+- **验证循环** — 与 [[Worker Verifier 对抗循环]]在目标层同构——都是"对单个输出加验证层"
+- **Anthropic 98.4% 基础设施、1.6% AI 决策** — 与 [[Dive into Claude Code（论文）]] 的"minimal scaffolding + maximal operational harness"原则一致
 - **OpenAI Codex 11% 跳到第 5** — 验证了 Agent Runtime 中"harness 决定 75% 失败修复"的判断
 
 ## 关键引用
@@ -381,5 +381,5 @@ Harness 不是已解决的问题或商品层。**这是艰苦工程的所在**�
 - 原始来源：`D:\03resource\_Projects\work\harness-lab\context\references\2026-04-20-Agent Harness：让AI从聊天机器人变成真正的智能体.md`
 - 来源 URL：<https://blog.qiaomu.ai/2026-04-18-JgypqM>（乔木博客）
 - 原始发布：2026-04-20
-- 关联概念：[[concepts/Agent-Runtime|Agent Runtime]]、[[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]]、[[concepts/Claude-Code-Subagent/index|Claude Code Subagent]]、[[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]]、[[concepts/Multi-Agent-协作模式|Multi-Agent 协作模式]]
-- 关联实体：[[entities/Dive-into-Claude-Code]]（98.4% 基础设施数据）
+- 关联概念：[[Agent Runtime]]、[[Agent Harness 治理协议]]、[[Claude Code Subagent]]、[[Worker Verifier 对抗循环]]、[[Multi-Agent 协作模式]]
+- 关联实体：[[Dive into Claude Code（论文）]]（98.4% 基础设施数据）

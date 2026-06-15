@@ -29,10 +29,10 @@ NVIDIA 的 Agent 开发与部署工具包，以自身 GPU/CUDA 生态为基础�
 
 ## Related concepts
 
-- [[concepts/Agent-Runtime]] — OpenShell 是 Agent Runtime 的安全运行时实现
-- [[concepts/Agent-Secure-Runtime]] — Agent 安全运行时的设计模式
-- [[concepts/Multi-Agent-协作模式]] — Sub Agents 体现 Orchestrator/Specialist 模式
+- [[Agent Runtime]] — OpenShell 是 Agent Runtime 的安全运行时实现
+- [[Agent Secure Runtime]] — Agent 安全运行时的设计模式
+- [[Multi-Agent 协作模式]] — Sub Agents 体现 Orchestrator/Specialist 模式
 
 ## Sources
 
-- [[summaries/raw/articles/nvidia-agent-toolkit.md]] — (2026-05-19) 架构图分析
+- [[NVIDIA Agent Toolkit 架构]] — (2026-05-19) 架构图分析

@@ -21,7 +21,7 @@ tags: [evaluation, macro-evals, openai-cookbook, bertopic, hdbscan, agenttrace, 
 
 这是 OpenAI Cookbook 第一篇把**评估方法论本身**抬升到 agentic system 设计层的官方示例。它用一个**电动车订单处理多 Agent 系统**作案例（定价 / 合规 / 供应 / 工厂路由 / 排期 / 客户沟通 / 放行审查），1000 次合成运行 → 992 个 trace bundle 可分析，演示从原始 trace 到 macro pattern 的完整流水线。
 
-> 与 [[concepts/Worker-Verifier-对抗循环|Worker/Verifier 对抗循环]] 的关系：Verifier 是**单次运行内**的对抗验证；macro eval 是**跨多次运行**的群体诊断——两者正交互补。
+> 与 [[Worker Verifier 对抗循环]] 的关系：Verifier 是**单次运行内**的对抗验证；macro eval 是**跨多次运行**的群体诊断——两者正交互补。
 
 ## 双层评估架构
 
@@ -51,7 +51,7 @@ case_type → run_outcome → eval_finding → behavior_pattern
 业务场景  → 运行结局   → 局部症状   → 群体模式
 ```
 
-这条链是宏观评估的**心智模型骨架**。详见 [[concepts/Agent-Macro-Evaluation]]。
+这条链是宏观评估的**心智模型骨架**。详见 [[Agent Macro Evaluation]]。
 
 ## 案例数据规模
 
@@ -181,20 +181,20 @@ flowchart TB
 
 | 本文概念 | 对应 Wiki |
 |---------|----------|
-| 宏观评估方法论 | [[concepts/Agent-Macro-Evaluation]]——本次 ingest 同步创建的 concept 页 |
-| 跨 trace 群体分析 | [[concepts/Worker-Verifier-对抗循环]]——单运行 vs 群体级的正交互补 |
-| Multi-agent 编排模式 | [[concepts/Multi-Agent-协作模式]]——Orchestrator + Specialist 的运行轨迹是 macro eval 的输入 |
-| 事件流 + immutable audit | [[entities/ESAA]]——Event Sourcing 提供 macro eval 所需的完整 trace |
-| 双层评估的元反思视角 | [[concepts/Meta-Reflection-Techniques]]——4 象限"反馈"象限的工程化实现 |
-| 自动续航 + 自检评审 | [[concepts/Autonomous-AI-System]]——12 技巧中"自检评审组"在群体规模的对应 |
-| 失效模式（agentic laziness/bias/drift） | [[summaries/12-a-harness-for-every-task-dynamic-workflows]]——三种失效模式正是宏观评估能发现的 behavior_pattern 候选 |
-| 治理协议 | [[concepts/Agent-Harness-治理协议]]——事件时间线为 macro eval 提供原料，macro eval 的发现可反向更新概念节点 |
+| 宏观评估方法论 | [[Agent Macro Evaluation]]——本次 ingest 同步创建的 concept 页 |
+| 跨 trace 群体分析 | [[Worker Verifier 对抗循环]]——单运行 vs 群体级的正交互补 |
+| Multi-agent 编排模式 | [[Multi-Agent 协作模式]]——Orchestrator + Specialist 的运行轨迹是 macro eval 的输入 |
+| 事件流 + immutable audit | [[ESAA]]——Event Sourcing 提供 macro eval 所需的完整 trace |
+| 双层评估的元反思视角 | [[Meta Reflection Techniques]]——4 象限"反馈"象限的工程化实现 |
+| 自动续航 + 自检评审 | [[Autonomous AI System]]——12 技巧中"自检评审组"在群体规模的对应 |
+| 失效模式（agentic laziness/bias/drift） | [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]]——三种失效模式正是宏观评估能发现的 behavior_pattern 候选 |
+| 治理协议 | [[Agent Harness 治理协议]]——事件时间线为 macro eval 提供原料，macro eval 的发现可反向更新概念节点 |
 
 ## 关键洞察
 
 1. **从评分到诊断**：传统评估给单次输出打分（micro-eval），宏观评估给系统反复出现的行为模式排序——这是**评估文化的转向**。
 
-2. **聚类只能发现文档保留的信息**：`doc_structured_summary` 的字段选择决定能发现什么模式。这是宏观评估工程化的最大设计点，类似 [[concepts/Agent-Harness-治理协议|治理协议]] 中的事件时间线压缩。
+2. **聚类只能发现文档保留的信息**：`doc_structured_summary` 的字段选择决定能发现什么模式。这是宏观评估工程化的最大设计点，类似 [[Agent Harness 治理协议]] 中的事件时间线压缩。
 
 3. **嫌疑分 ≠ 因果证明**：`suspect_score` 是启发式排序，不能直接归因。诊断结果需要回到代表 trace 做人类判断。
 
@@ -230,5 +230,5 @@ flowchart TB
 - `suspect_score` 的 `0.4 / 0.3 / 0.2 / 0.1` 权重是 OpenAI 经验值，在其他 agent 系统上是否需要重新校准？
 - BERTopic 风格 vs 直接 LLM 做主题归纳，在 agent trace 场景下哪种更稳定？前者可解释性强，后者语义敏感度高
 - 宏观评估能否反向**自动生成新的底层评估 rubric**？即从 `behavior_pattern` 反推应该新增哪些 micro-eval 维度（self-extending eval）
-- `behavior_pattern` 与 wow-harness v3 [[concepts/Agent-Harness-治理协议|事件时间线]] 的 concept node 演化结合，能否实现"系统级自我反思循环"？
+- `behavior_pattern` 与 wow-harness v3 [[Agent Harness 治理协议]] 的 concept node 演化结合，能否实现"系统级自我反思循环"？
 - 1000 次合成运行 vs 真实生产数据，宏观评估发现的模式可迁移性如何？合成数据的 case_type 分布偏倚会传递到 behavior_pattern

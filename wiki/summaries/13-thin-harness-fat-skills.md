@@ -32,7 +32,7 @@ AI 编码 agent 的 10x–1000x 生产力差距**不来自模型智能**（2x �
 
 这不是 prompt engineering。这是**以 markdown 为编程语言、以人类判断为运行时的软件设计**。markdown 比刚性源码更完美地封装能力，因为它用模型已经在思考的语言描述过程、判断与上下文。
 
-参见 [[concepts/Claude-Code-Skills/index|Claude Code Skills]]。
+参见 [[Claude Code Skills]]。
 
 ### 2. Harness
 
@@ -48,7 +48,7 @@ AI 编码 agent 的 10x–1000x 生产力差距**不来自模型智能**（2x �
 
 > 正解是**目的性强、又快又窄**的工具。一个 100ms 完成单次浏览器操作的 Playwright CLI，比 15 秒的 "screenshot→find→click→wait→read" Chrome MCP 快 75x。**软件不再需要"端庄"。只构建你真正需要的东西，别的都不要。**
 
-参见 [[concepts/Agent-Runtime|Agent Runtime]]。
+参见 [[Agent Runtime]]。
 
 ### 3. Resolver
 
@@ -207,7 +207,7 @@ When two attendees in same group
 
 ## 关键判断
 
-1. **套具即产品** — 98.4% 的 Claude Code 代码是基础设施、1.6% 是 AI 决策逻辑（参 [[entities/Dive-into-Claude-Code]]）；模型之外的所有工程都在为"对的上下文在对的时刻送达"服务
+1. **套具即产品** — 98.4% 的 Claude Code 代码是基础设施、1.6% 是 AI 决策逻辑（参 [[Dive into Claude Code（论文）]]）；模型之外的所有工程都在为"对的上下文在对的时刻送达"服务
 2. **Skill 是一种方法调用** — 同过程 + 不同参数 = 全新能力；这是 markdown 作为编程语言的表达力
 3. **Latent vs. Deterministic 边界** — 把错的工作放到错的一侧是 agent 设计最常见错误；判断/综合放 latent，组合优化/SQL/算术放 deterministic
 4. **Diarization 不可替代** — 没有 SQL、没有 RAG 能产出"一页判断"；只有模型能读尽、持矛盾、注意到变化
@@ -216,12 +216,12 @@ When two attendees in same group
 
 ## 与现有 wiki 概念的关联
 
-- [[concepts/Claude-Code-Skills/index|Claude Code Skills]] — 本文是 skill-as-method-call 与 fat skills 哲学的源头
-- [[concepts/Agent-Runtime|Agent Runtime]] — harness = runtime；本文定义了"瘦"runtime 的四个职责
-- [[concepts/Agent-Harness-治理协议|Agent Harness 治理协议]] — thin harness 哲学与治理协议（事件时间线、概念演化）互补：前者管"一次 session 的形状"，后者管"跨 session 的一致性"
-- [[entities/Dive-into-Claude-Code|Dive into Claude Code]] — 98.4% 基础设施数据印证"套具比模型重要"
-- [[entities/wow-harness|wow-harness]] — 自动扩张任务图 + 事件驱动 agent spawn 是 harness 内的"扩张"机制，与本文"瘦 harness"在"如何不膨胀"上互补
-- [[summaries/10-claude-code-dynamic-workflows|10-claude-code-dynamic-workflows]] — dynamic workflow 是 fat skills 的一种运行时形态
+- [[Claude Code Skills]] — 本文是 skill-as-method-call 与 fat skills 哲学的源头
+- [[Agent Runtime]] — harness = runtime；本文定义了"瘦"runtime 的四个职责
+- [[Agent Harness 治理协议]] — thin harness 哲学与治理协议（事件时间线、概念演化）互补：前者管"一次 session 的形状"，后者管"跨 session 的一致性"
+- [[Dive into Claude Code（论文）]] — 98.4% 基础设施数据印证"套具比模型重要"
+- [[wow-harness]] — 自动扩张任务图 + 事件驱动 agent spawn 是 harness 内的"扩张"机制，与本文"瘦 harness"在"如何不膨胀"上互补
+- [[Claude Code 动态工作流（Dynamic Workflows）]] — dynamic workflow 是 fat skills 的一种运行时形态
 
 ## 待解决问题
 
