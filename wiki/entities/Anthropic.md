@@ -4,9 +4,9 @@ type: entity
 created: 2026-06-15
 updated: 2026-06-15
 sources:
-  - raw/articles/2026-05-19-anthropic-multi-agent-research-system.md
-  - raw/articles/2026-05-19-anthropic-managed-agents-api.md
-  - raw/articles/2026-05-19-claude-code-agent-teams.md
+  - raw/articles/2026-05-18-anthropic-multi-agent-research-system.md
+  - raw/articles/2026-05-18-anthropic-managed-agents-api.md
+  - raw/articles/2026-05-18-claude-code-agent-teams.md
 tags:
   - company
   - agent-platform
