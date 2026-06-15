@@ -3,6 +3,7 @@ title: "新加坡外长的 AI 第二大脑"
 type: summary
 created: 2026-05-22
 updated: 2026-05-22
+sources: ["raw/articles/2026-05-17-nanoclaws-second-brain.md"]
 source_url: https://www.anduril.tw/second-brain/
 source_type: article
 date: 2026-05-17

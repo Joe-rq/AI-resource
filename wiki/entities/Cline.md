@@ -3,6 +3,9 @@ title: Cline
 type: entity
 created: 2026-06-15
 updated: 2026-06-15
+sources:
+  - "https://docs.cline.bot/cline-overview"
+  - "https://cline.bot/blog/introducing-cline-sdk-the-upgraded-agent-runtime"
 tags: [coding-agent, vscode-extension, agent-runtime, benchmark, open-source]
 ---
 
