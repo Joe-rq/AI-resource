@@ -88,12 +88,13 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Autonomous-AI-System — AI 自主系统 4 组 12 技巧（任务编排/实际开工/自检评审/自动续航；与 harness 视角互补）
 - Agent-Macro-Evaluation — Agent 宏观评估方法论（4 层标签 + BERTopic 风格聚类 + AgentTrace 风格诊断 + 3 个核心公式）
 - Forward-Deployed-Engineering — FDE 前置部署工程（四要素定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、AI 时代复兴原因）
+- Claude-Code-Dynamic-Workflows-Practical-Guide — Claude Code 动态工作流实践指南（场景选择决策树、命令速查、14 个推荐场景与最佳实践）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
 - NVIDIA-Agent-Toolkit — NVIDIA Agent 开发工具包
 - wow-harness — wow-harness v3 治理协议（事件溯源 + 概念演化 + 双层验证 + 自动扩张任务图）
-- Dive-into-Claude-Code — Claude Code 源码级逆向工程分析论文（5 设计价值、13 设计原则、7 组件结构、5 层子系统）
+- Dive-into-Claude-Code — Claude Code 源码级逆向工程分析论文（5 设计价值、13 设计原则、7 组件结构、5 层子系统）（标题：Dive into Claude Code（论文））
 - ESAA — ESAA: Event Sourcing for Autonomous Agents（Event Sourcing + CQRS、immutable audit trail、deterministic replay、两个 case study 验证）
 - NanoClaw — ~500行代码的轻量级 Agent 框架（Claude Agent SDK）
 - Nous-Research — 硅谷 AI 实验室，Hermes Agent（11万星）
