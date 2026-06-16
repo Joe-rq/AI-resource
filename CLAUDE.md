@@ -35,6 +35,55 @@ Every operation appends an entry to `log/YYYYMMDD.md`.
 
 > Legacy files (`log/20260519.md`, `log/20260521.md`) 保留旧格式，不追溯重写。新增条目一律使用上述模板。
 
+## Hooks
+
+Hooks are configured in `.claude/settings.json`. Three hook event types are used, each with a distinct role:
+
+| Event | Role | Trigger | Can Block? | Max Overhead |
+|-------|------|---------|------------|-------------|
+| **PreToolUse** | Safety valve | Before matched tool executes | Yes (`exit 1`) | <100ms |
+| **PostToolUse** | Quality gate | After matched tool completes | No (warn only) | <500ms |
+| **Stop** | Status awareness | Every tool call + end of turn | No (warn only) | <10ms |
+
+### Implemented hooks
+
+**PostToolUse (Write/Edit)** — Wiki quality checks after file modification:
+- Guard: `git diff --name-only | grep 'wiki/*.md'` — skip if no wiki changes
+- `scripts/lint_frontmatter.py` — validate YAML frontmatter (required fields, types, dates, legacy fields)
+- `scripts/lint_redundant_aliases.py` — detect `[[X|X]]` redundant aliases and path-based wikilinks
+- `scripts/lint_wikilinks.py` — detect orphan wikilinks pointing to non-existent pages
+
+**Stop (all)** — Lightweight environment checks:
+- Detect `.DS_Store` in staging area (single grep, <5ms)
+
+### Planned hooks (priority order)
+
+- **P0 — PreToolUse `Bash(git commit*)`**: Enforce conventional commit format (`feat:`/`fix:`/`docs:`/`chore:`/`refactor:`). Block non-conforming commits with `exit 1`.
+- **P1 — PostToolUse (Write/Edit)**: Check CLAUDE.md self-consistency — verify that pages listed under `### Concepts`/`### Entities`/`### Summaries` match actual `wiki/` files.
+- **P1 — PreToolUse (Write/Edit)**: Warn when writing to `raw/` directory — "raw/ is for source material. Consider using ingest.py instead." (warn only, `exit 0`)
+- **P2 — PostToolUse (Write/Edit)**: Validate log entry format in `log/*.md` — check for `## [operation] title` header and required fields (Source, New pages, Updated pages, Wikilink, Lint).
+- **P2 — PreToolUse `Bash(git push*)`**: Check CI status before push — `gh run list --limit 5 --status failure`.
+- **P3 — Stop (all)**: Session duration reminder (>30 min) and uncommitted change accumulation warning (>200 lines).
+
+### Hook vs Skill boundary
+
+| Layer | Trigger | Nature | Examples |
+|-------|---------|--------|----------|
+| **PreToolUse** | Auto (before tool) | Block/warn | Commit format, raw/ write warning, CI check |
+| **PostToolUse** | Auto (after Write/Edit) | Mechanical validation | Frontmatter, wikilinks, CLAUDE.md consistency |
+| **Stop** | Auto (every tool call) | Lightweight reminder | .DS_Store, session duration, change accumulation |
+| **Skill (`llm-wiki`)** | Manual | LLM reasoning | Semantic coherence, content quality, structural review |
+| **Skill (`42plugin-skill-reviewer`)** | Manual | LLM reasoning | Skill quality scoring |
+| **Script (audit/compile/ingest)** | Manual | LLM-driven or semi-auto | Audit backlog, content creation |
+
+### Design principles
+
+1. **Hooks do not replace Skills.** Hooks run deterministic shell checks; Skills need LLM reasoning.
+2. **Stop hooks must stay under 10ms.** They fire on every tool call — any latency multiplies across the session.
+3. **PreToolUse is the only place that can say "no".** Use `exit 1` to block; use `exit 0` to warn without blocking.
+4. **PostToolUse uses `git diff` as guard, not env vars.** Claude Code's hook context variables are not fully documented; `git diff` is deterministic and always correct.
+5. **Non-zero exit = warning, not blocking (PostToolUse/Stop).** Only PreToolUse `exit 1` actually prevents the operation.
+
 ## Naming conventions
 
 ### Pages
