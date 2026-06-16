@@ -133,16 +133,12 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 04-anthropic-multi-agent-research-system — Anthropic Orchestrator-Worker 架构
 - 05-anthropic-managed-agents-api — Anthropic 共享容器 + Session Thread 隔离
 - 06-claude-code-agent-teams — Claude Code Team Lead + Teammates
-- 14-building-skill-for-claude — Claude Code Skill 开发流程
 - 02-minimax-agent-team-tech-report — Mavis 详细技术报告
 - 14-building-skill-for-claude-zh — Skill 开发指南（中文）
 - project-overview — AI Resource 项目介绍
 - 21-fde-playbook-bob-mcgrew — Bob McGrew FDE 实战手册（Lightcone Podcast）
-- 22-alex-karp-palantir-ceo — Alex Karp 访谈精译（怪人秀、美国精神、反 SaaS、AIP、Rosita）
 - 23-colin-jarvis-openai-fde — OpenAI FDE 访谈录（Colin Jarvis：信任、产品、影响）
-- 24-fde-role-definition — FDE 角色定义与入门路径（Dex Sessions 圆桌）
 - 25-fde-future-roundtable — FDE 未来圆桌（OpenAI/Ramp/Nominal/Dataland）
-- 26-shyam-sankar-mobilize — Shyam Sankar《Mobilize》对谈（国防工业基础、FDE 哲学）
 - 27-what-we-talk-about-fde — 当我们谈论 FDE 时（中文深度分析：四要素定义、真假 FDE）
 
 ## Open research questions
@@ -227,3 +223,10 @@ Sources to ingest (priority order):
 - Tone: neutral, technical, research-focused
 - Depth: deep technical analysis with practical implications
 - Handling contradictions: state both positions, cite sources, add to Open Research Questions
+
+## Quality gates
+
+- After every ingest/compile: run `uv run python scripts/lint_wiki.py . && uv run python scripts/check_consistency.py .`. Zero issues before commit.
+- Before deleting any wiki page: run `grep -rl "页面标题" wiki/ --include="*.md"` to find and clean inbound wikilinks first.
+- Task completion requires state verification, not action reporting: "created the page" ≠ "page has sources and wikilinks".
+- After discovering one issue of a type, immediately scan for similar issues (e.g., empty sources, non-wiki wikilinks, wrong parent format).

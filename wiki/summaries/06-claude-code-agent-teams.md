@@ -35,6 +35,11 @@ Team Lead 协调 + Teammates 独立工作 + 共享任务队列 + 直接互相通
 - **调试竞争假设**：Teammates 并行测试不同理论，更快收敛
 - **跨层协调**：涉及前端、后端和测试的变更
 
+## 相关概念
+
+- [[Claude Code Subagent]] — Agent Teams 是 Subagent 的协作层扩展
+- [[Multi-Agent 协作模式]] — Orchestrator/Specialist 模式在 Claude Code 中的实现
+
 ## 限制
 
 - Session 恢复、任务协调、关闭行为的已知限制

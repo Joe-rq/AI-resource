@@ -219,6 +219,5 @@ FDE 是 Palantir 发明的**商业方法论**，不是 Agent 平台基础设施�
 - [[Palantir]] — FDE 模式的发明者和标杆
 - [[FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）]]
 - [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]]
-- [[FDE 角色定义、入门路径与实战经验（Dex Sessions 圆桌）]]
 - [[前沿部署工程的未来：OpenAI、Ramp、Nominal、Dataland 圆桌]]
 - [[当我们谈论 FDE 时，我们在谈论什么？]]

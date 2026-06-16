@@ -3,7 +3,8 @@ title: "LangChain"
 type: entity
 created: 2026-06-15
 updated: 2026-06-15
-sources: []
+sources:
+  - raw/refs/langchain-deep-agents.md  # pending: P2 research gap
 tags: [agent-framework, langchain, benchmark, open-source, orchestration]
 ---
 
@@ -22,7 +23,7 @@ LangChain 在本 wiki 中目前作为 **benchmark 数据点** 出现：[[Agent R
 
 ## Deep Agents
 
-LangChain 发布了 **Deep Agents** 基准测试，用于评估 multi-agent 系统在复杂任务上的表现。该基准目前列在项目 [[CLAUDE.md]] 的 Research Gaps 中，标注为"待收录"（Sources to ingest）。Deep Agents 的具体方法论、评估维度和结果数据尚未在本 wiki 中展开分析。
+LangChain 发布了 **Deep Agents** 基准测试，用于评估 multi-agent 系统在复杂任务上的表现。该基准目前列在项目 CLAUDE.md 的 Research Gaps 中，标注为"待收录"（Sources to ingest）。Deep Agents 的具体方法论、评估维度和结果数据尚未在本 wiki 中展开分析。
 
 ## 架构特点
 

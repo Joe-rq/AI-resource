@@ -5,7 +5,7 @@ created: 2026-05-21
 updated: 2026-05-21
 sources: ["raw/articles/2026-05-21-claude-code-sub-agents.md"]
 tags: [claude-code, subagent, configuration, frontmatter, tools, permissions]
-parent: "Claude Code Subagent"
+parent: wiki/concepts/Claude-Code-Subagent/index.md
 ---
 
 # 配置参考

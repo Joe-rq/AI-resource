@@ -24,8 +24,8 @@ Agent Memory 是指 AI Agent 在多轮对话和跨会话场景中保持上下文
 ## 子页面
 
 - [[Agent Memory Architecture|Architecture]] — 记忆系统的技术架构：向量检索、知识图谱、混合模式、更新循环
-- [[Forgetting & Compaction|Forgetting & Compaction]] — 遗忘机制与压缩策略：为什么需要遗忘、当前方法、开放问题
-- [[Self-Evolving Memory|Self-Evolving Memory]] — 自我进化型记忆：Hermes 与 NanoClaw 的实现路径对比
+- [[Forgetting & Compaction]] — 遗忘机制与压缩策略：为什么需要遗忘、当前方法、开放问题
+- [[Self-Evolving Memory]] — 自我进化型记忆：Hermes 与 NanoClaw 的实现路径对比
 
 ## 核心属性
 

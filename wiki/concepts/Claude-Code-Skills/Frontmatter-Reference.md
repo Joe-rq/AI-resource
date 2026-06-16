@@ -5,7 +5,7 @@ created: 2026-05-21
 updated: 2026-05-21
 sources: ["raw/articles/2026-05-21-claude-code-skills.md"]
 tags: [claude-code, skills, frontmatter, configuration]
-parent: "Claude Code Skills"
+parent: wiki/concepts/Claude-Code-Skills/index.md
 ---
 
 # Frontmatter 参考

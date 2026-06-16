@@ -1,3 +1,12 @@
+---
+title: Index — AI Resource Wiki
+type: index
+created: 2026-05-19
+updated: 2026-06-16
+sources: []
+tags: [index, navigation]
+---
+
 # Index — AI Resource Wiki
 
 > Agent 平台与基础设施层研究资料库。涵盖 Runtime、Multi-agent 架构、行业实践。
@@ -8,7 +17,7 @@
 ## Concepts
 
 ### Agent Platform
-- [[Agent Memory|Agent Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（folder-split: Architecture / Forgetting & Compaction / Self-Evolving Memory）
+- [[Agent Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（folder-split: Architecture / Forgetting & Compaction / Self-Evolving Memory）
 - [[Multi-Agent 协作模式]] — 四种核心协作模式：Orchestrator/Specialist、Worker/Verifier、Team Engine、自动扩张任务图
 - [[Worker Verifier 对抗循环]] — Worker/Verifier 对抗循环是 Mavis 的核心架构机制（收敛模型、死锁检测、升级与降级）
 - [[Agent Runtime]] — 单 Agent 执行环境，包含 Prompt/工具定义/上下文管理/错误处理
@@ -58,15 +67,13 @@
 
 ## Summaries (chronological)
 - 2026-06-15 — [[当我们谈论 FDE 时，我们在谈论什么？]] — 当我们谈论 FDE 时：四要素精确定义、Echo/Delta/Dev 三角循环、三种"穿新衣的旧角色"、AI 时代 FDE 复兴的结构性原因
-- 2026-06-15 — [[Shyam Sankar《Mobilize》对谈：美国工业基础、FDE 哲学与国防创新]] — Shyam Sankar《Mobilize》对谈：美国工业基础危机、FDE 哲学、"异端与英雄"创新史
 - 2026-06-15 — [[前沿部署工程的未来：OpenAI、Ramp、Nominal、Dataland 圆桌]] — FDE 未来圆桌：OpenAI/Ramp/Nominal/Dataland 四家公司如何定义和运作 FDE
-- 2026-06-15 — [[FDE 角色定义、入门路径与实战经验（Dex Sessions 圆桌）]] — FDE 角色定义与入门路径（Dex Sessions 圆桌）
 - 2026-06-15 — [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]] — OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）
-- 2026-06-15 — [[Alex Karp 访谈精译：怪人秀、美国精神、反 SaaS 哲学与 AIP 押注]] — Alex Karp 访谈精译：怪人秀、美国精神、反 SaaS 哲学与 AIP 押注
 - 2026-06-15 — [[FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）]] — FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）
 - 2026-06-13 — [[Macro Evals for Agentic Systems：从单次评分到群体行为模式]] — Macro Evals for Agentic Systems：从单次评分到群体行为模式（OpenAI Cookbook，1000 次合成 EV 订单运行 + Promptfoo + BERTopic 风格聚类 + AgentTrace 风格诊断）
 - 2026-06-11 — [[Loop Engineering：从 Prompt 到系统设计]] — Loop Engineering：从 Prompt 到系统设计（Addy Osmani，5 模块 + 1 记忆，Claude Code / Codex 通用 loop 架构）
 - 2026-06-04 — [[Agent Harness：让 AI 从聊天机器人变成真正的智能体（12 组件 + 7 决策）]] — Agent Harness 12 组件 + 7 决策（TAO 循环、上下文腐烂、脚手架隐喻、TerminalBench 30→5 名实证）
+- 2026-06-04 — [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]] — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）
 - 2026-06-04 — [[如何实现一个好的 AI 自主干活系统]] — 如何实现一个好的 AI 自主干活系统（阳志平）：12 技巧 × 4 组（任务编排/实际开工/自检评审/自动续航）+ 永不停摆 + 飞轮
 - 2026-06-04 — [[分布式 Harness：从 Agent 显形条件到智流网络]] — 分布式 Harness 哲学：Agent 显形条件 + 维度循环 + 智流网络（CGP/IEL、四层循环、四种显形条件）
 - 2026-06-04 — [[Hermes Agent 之后：AI 开发需要一层治理协议]] — wow-harness v3 治理协议设计者一手分享（事件时间线、概念演化、双层验证、自动扩张任务图、人机决策分层、上下文胶囊）

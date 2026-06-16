@@ -5,7 +5,7 @@ created: 2026-05-21
 updated: 2026-05-21
 sources: ["raw/articles/2026-05-21-claude-code-skills.md"]
 tags: [claude-code, skills, dynamic-context, subagent, fork, sharing]
-parent: "Claude Code Skills"
+parent: wiki/concepts/Claude-Code-Skills/index.md
 ---
 
 # 动态上下文与 Subagent 执行

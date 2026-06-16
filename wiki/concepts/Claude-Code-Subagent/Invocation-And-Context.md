@@ -5,7 +5,7 @@ created: 2026-05-21
 updated: 2026-05-21
 sources: ["raw/articles/2026-05-21-claude-code-sub-agents.md"]
 tags: [claude-code, subagent, invocation, context, memory, hooks, fork, resume]
-parent: "Claude Code Subagent"
+parent: wiki/concepts/Claude-Code-Subagent/index.md
 ---
 
 # 调用与上下文管理

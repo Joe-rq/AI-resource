@@ -119,7 +119,7 @@ Sequoia 的 Julien Bek 提出 Intelligence vs Judgement 框架：
 
 - **[[Thin Harness, Fat Skills]]**：四要素定义（工程能力 + 部署能力 + 产品思维 + 现场存在）与 skill 生态的分工有合理的对应——工程和部署能力对应 thin harness 提供的平台基础设施，产品思维和领域知识对应 fat skills 承载的内容。但"现场存在"在 Agent 语境中没有直接对应物——Agent 的"嵌入"是通过 API/工具集成实现的，与人类物理在场有本质区别。
 - **[[Agent Macro Evaluation]]**：真假 FDE 判断框架的六个维度（工作地点、交付物、反馈循环、时间尺度、代码深度、责任边界）为 Agent 部署效果评估提供了有价值的思考框架——Agent 系统是否真正融入工作流？是否产生生产级影响？这些问题的评估维度可以从 FDE 判断框架中获得启发。
-- **[[Claude Code Skills|Claude Code Skills]]**：AI-native FDE 用 AI Agent 处理部署、监控、告警等重复性工作，正是 skill 机制的核心应用场景。这是本文与 Agent 平台实践最直接的技术连接点。
+- **[[Claude Code Skills]]**：AI-native FDE 用 AI Agent 处理部署、监控、告警等重复性工作，正是 skill 机制的核心应用场景。这是本文与 Agent 平台实践最直接的技术连接点。
 - **[[Agent Harness 治理协议]]**：真假 FDE 中"对结果负责 vs 对交付物负责"的区分，对应治理协议的结果导向治理原则——Agent 治理不应以调用次数或响应时间为指标，而应以任务完成质量为核心。
 
 总体评估：本文对 FDE 的系统化定义和判断框架对 Agent 部署评估有启发价值，但核心内容仍是 FDE 方法论分析而非 Agent 技术。保留价值中等偏高。

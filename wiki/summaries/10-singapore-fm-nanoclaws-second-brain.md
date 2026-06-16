@@ -4,10 +4,6 @@ type: summary
 created: 2026-05-22
 updated: 2026-05-22
 sources: ["raw/articles/2026-05-17-nanoclaws-second-brain.md"]
-source_url: https://www.anduril.tw/second-brain/
-source_type: article
-date: 2026-05-17
-ingested: 2026-05-22
 tags: [agent-platform, edge-runtime, nanoclaw, vivian-balakrishnan]
 ---
 

@@ -40,3 +40,9 @@ tags: [multi-agent, session-thread, anthropic, managed-agents]
 | Anthropic Managed Agents | 共享容器 + Session Thread 隔离，持久化上下文 |
 | Anthropic Multi-Agent Research | Lead Agent + 并行 Subagent |
 | Mavis | Worker/Verifier 对抗 + Team Engine |
+
+## 相关概念
+
+- [[Anthropic]] — Anthropic 产品矩阵（Claude Code / Agent SDK / Managed Agents）
+- [[Agent Runtime]] — Managed Agents 的共享容器模型是 Runtime 层设计的一种实现
+- [[Claude Code Subagent]] — Claude Code Agent Teams 与 Managed Agents 的架构对比

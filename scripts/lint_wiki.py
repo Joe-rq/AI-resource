@@ -49,6 +49,13 @@ def load_pages(wiki_dir: Path) -> dict[str, Path]:
         pages[p.stem] = p
         rel = p.relative_to(wiki_dir)
         pages[rel.with_suffix("").as_posix()] = p
+        # 空格归一化 stem: "Agent-Runtime" -> "Agent Runtime"
+        pages[p.stem.replace("-", " ")] = p
+        # frontmatter title 索引
+        text = p.read_text(encoding="utf-8")
+        fm = parse_frontmatter(text)
+        if fm and "title" in fm:
+            pages[fm["title"]] = p
     return pages
 
 
@@ -159,12 +166,29 @@ def lint(root: str) -> int:
     # ── Pass 3: missing index entries ───────────────────────────────────────
     if index_path.exists():
         index_text = index_path.read_text(encoding="utf-8")
-        not_in_index = [
-            p for p in all_wiki_files
-            if p != index_path
-            and f"[[{p.stem}]]" not in index_text
-            and p.relative_to(wiki_path).with_suffix("").as_posix() not in index_text
-        ]
+        not_in_index = []
+        for p in all_wiki_files:
+            if p == index_path:
+                continue
+            stem = p.stem
+            rel_posix = p.relative_to(wiki_path).with_suffix("").as_posix()
+            if f"[[{stem}]]" in index_text:
+                continue
+            if rel_posix in index_text:
+                continue
+            # 空格归一化 stem
+            if f"[[{stem.replace('-', ' ')}]]" in index_text:
+                continue
+            # frontmatter title (also handle piped links like [[Title|Alias]])
+            fm = parse_frontmatter(p.read_text(encoding="utf-8"))
+            if fm and "title" in fm:
+                t = fm["title"]
+                if f"[[{t}]]" in index_text or f"[[{t}|" in index_text:
+                    continue
+            # folder-split sub-pages: skip if has parent field
+            if fm and "parent" in fm:
+                continue
+            not_in_index.append(p)
         if not_in_index:
             print(f"\n🟡 Pages missing from index.md ({len(not_in_index)}):")
             for p in not_in_index:

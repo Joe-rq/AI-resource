@@ -4,10 +4,6 @@ type: summary
 created: 2026-05-22
 updated: 2026-05-22
 sources: ["raw/articles/2026-05-02-hermes-agent-nous-research.md"]
-source_url: https://mp.weixin.qq.com/s/wX7pMuK1rizqjmJqwNbGBQ
-source_type: article
-date: 2026-05-02
-ingested: 2026-05-22
 tags: [hermes-agent, nous-research, long-term-memory, self-evolution]
 ---
 

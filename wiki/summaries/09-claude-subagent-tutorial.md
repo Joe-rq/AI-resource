@@ -60,3 +60,8 @@ Subagent 可以积累项目记忆——把发现的模式、踩过的坑、架�
 
 - `description` 写得太抽象（如"general purpose helper"），Claude 不知道何时调用
 - 试图让 Subagent 再派 Subagent（不支持递归）
+
+## 相关概念
+
+- [[Claude Code Subagent]] — Subagent 概念总览与配置参考
+- [[Claude Code Skills]] — Skill 与 Subagent 互补：要隔离用 Subagent，要复用用 Skill

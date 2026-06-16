@@ -42,6 +42,12 @@ tags: [agent-runtime, benchmark, harness, cline]
 - AWS 把 Runtime、Memory、Identity、Browser 列为 AgentCore 企业级模块
 - Cline 开源内部 Runtime SDK（Apache 2.0）
 
+## 相关概念
+
+- [[Agent Runtime]] — 本文的核心主题：Runtime 是 Agent 性能的决定性层
+- [[Cline]] — Runtime benchmark 关键实证来源（74.2% vs 69.4%）
+- [[LangChain]] — Harness profile 对比参考点（有无 harness 差 10-20pp）
+
 ## 结论
 
 行业重心正从"写 prompt"转向"维护控制面"。Agent runtime 不是可选的工程层，而是决定模型在 Agent 场景下能不能跑起来的关键层。

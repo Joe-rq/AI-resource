@@ -1,33 +1,39 @@
 ---
-title: "AI Resource 项目介绍"
+title: AI Resource 项目介绍
 type: summary
 created: 2026-05-19
-updated: 2026-05-19
+updated: 2026-06-16
 sources: ["README.md"]
-tags: [project, overview, agent-platform]
+tags: [project, meta]
 ---
 
-# 摘要
+# AI Resource Wiki 项目介绍
 
 ## 项目性质
 
-**AI 相关主题研究资料库**，以 Markdown 文档为主。
+**AI Resource** 是一个 Agent 平台与基础设施层研究知识库，以 Markdown wiki 形式组织。覆盖范围：
 
-## 目录结构
+- **Agent 平台与基础设施层** — Runtime / Multi-agent / Harness / 工具定义
+- **Claude Code Skill 开发** — SKILL.md 规范、动态工作流、Subagent 架构
+- **多 Agent 协作架构** — Orchestrator/Specialist、Worker/Verifier 对抗循环、Team Engine、自动扩张任务图
+- **Agent 治理协议** — 事件溯源、概念演化、双层验证、跨 session 一致性
+- **行业研究** — MiniMax、Anthropic、NVIDIA、OpenAI、Cline、LangChain 等公司的 Agent 平台实践
 
-| 主题 | 说明 | 文档数 |
-|------|------|--------|
-| `agent-platform/` | Agent 平台与基础设施：Runtime / Multi-agent / Harness / 工具定义 | 8 |
-| `claude-code-skills/` | Claude Code Skill 开发 | 3 |
+## 当前规模
 
-## 外部参考
+| 类别 | 页面数 | 说明 |
+|------|--------|------|
+| Concepts | 19 | 概念页，含 3 个 folder-split 主题（Agent Memory、Claude Code Subagent、Claude Code Skills） |
+| Entities | 12 | 公司与项目实体页 |
+| Summaries | ~30 | 源文章深度解读 |
 
-- [anthropics/claude-cookbooks](https://github.com/anthropics/claude-cookbooks) — Anthropic 官方 Cookbook，`managed_agents/` 下有 10+ 个多 Agent 示例
+## 核心概念
 
-## 当前研究方向
+- [[Agent Harness 治理协议]] — 跨 session 长期一致性治理框架
+- [[Worker Verifier 对抗循环]] — Multi-agent 核心协作机制
+- [[Thin Harness, Fat Skills]] — 架构原则：套具极薄、技能极胖
+- [[Forward-Deployed-Engineering]] — FDE 前置部署工程与 Agent 平台的结构性类比
 
-**Agent 平台与基础设施层** — 比模型层高一级、比应用层低一级的整个执行平台面。
+## 维护流程
 
-核心问题：
-- 单 AI 在长程任务上的结构性缺陷
-- 多 AI 协作的架构模式（Runtime、Worker/Verifier 对抗循环、Orchestrator/Specialist、Team Engine）
+本项目使用 llm-wiki skill 的五步操作流程：compile / ingest / query / lint / audit。每次操作记录在 `log/YYYYMMDD.md`。

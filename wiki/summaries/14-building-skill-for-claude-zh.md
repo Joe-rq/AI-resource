@@ -11,7 +11,7 @@ tags: [claude-code, skill, skill-md, guide-zh]
 
 ## 核心概念
 
-Skill 是一组打包的指令（文件夹形式），教 Claude 如何处理特定任务或工作流。
+Skill 是一组打包的指令（文件夹形式），教 Claude 如何处理特定任务或工作流。详见 [[Claude Code Skills]]。
 
 ## 适用场景
 
@@ -45,3 +45,9 @@ skill-name/
 ## 预期时间
 
 使用 skillcreator 构建并测试第一个可用技能约 **15-30 分钟**。
+
+## 相关概念
+
+- [[Claude Code Skills]] — Skills 扩展机制总览
+- [[Claude Code Subagent]] — Skill 可在 Subagent 中隔离运行，两者互补（Skill 复用流程，Subagent 隔离上下文）
+- [[Thin Harness, Fat Skills]] — 套具要瘦、技能要胖的设计哲学
