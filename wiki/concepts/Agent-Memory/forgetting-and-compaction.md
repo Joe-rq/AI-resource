@@ -2,7 +2,7 @@
 title: Forgetting & Compaction
 type: concept
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-16
 sources:
   - raw/articles/2026-05-02-hermes-agent-nous-research.md
   - raw/articles/2026-05-17-nanoclaws-second-brain.md
@@ -42,6 +42,31 @@ parent: wiki/concepts/Agent-Memory/index.md
 ## 压缩策略
 
 遗忘的补充手段是压缩——不删除，而是将多条相关记忆合并为更紧凑的表示：
+
+```mermaid
+flowchart TB
+    Raw["原始记忆条目<br/>（高保真 / 高冗余）"] --> Select{"选择策略"}
+
+    Select -->|"重要性评分 ≥ 阈值"| Keep["保留完整条目<br/>（高频 / 高价值）"]
+    Select -->|"重要性评分 < 阈值"| Compress["进入压缩管线"]
+
+    Compress --> Summarize["LLM 摘要压缩<br/>多条 → 一条摘要"]
+    Compress --> Cluster["嵌入聚类<br/>保留质心附近代表条目"]
+    Compress --> Manual["人工策展<br/>（Obsidian / 管理界面）"]
+
+    Summarize --> Archived["归档存储<br/>（低保真 / 低冗余）"]
+    Cluster --> Archived
+    Manual --> Archived
+
+    Keep --> Active["活跃记忆库<br/>（注入 LLM 上下文）"]
+    Archived -.->|"需要细节时回溯"| Raw
+
+    style Raw fill:#dbeafe,stroke:#3b82f6
+    style Keep fill:#dcfce7,stroke:#22c55e
+    style Active fill:#dcfce7,stroke:#22c55e
+    style Compress fill:#fef3c7,stroke:#f59e0b
+    style Archived fill:#fce7f3,stroke:#ec4899
+```
 
 - **摘要压缩**：用 LLM 将一组相关记忆总结为一条摘要，丢弃原始细节但保留核心信息
 - **嵌入聚类**：对向量空间中的记忆做聚类，每个簇保留质心附近的代表条目，其余归档

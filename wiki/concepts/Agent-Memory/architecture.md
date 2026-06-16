@@ -2,7 +2,7 @@
 title: Agent Memory Architecture
 type: concept
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-16
 sources:
   - raw/articles/2026-05-02-hermes-agent-nous-research.md
   - raw/articles/2026-05-17-nanoclaws-second-brain.md
@@ -27,7 +27,7 @@ Agent Memory 的架构层定义了记忆系统如何编码、存储、检索和�
 
 ## 知识图谱存储（Knowledge Graph）
 
-以实体-关系-实体的三元组形式存储记忆。新加坡外长的 NanoClaw 系统使用的 **Mnemon** 就是典型的图谱记忆实现——将联系人、话题、文件等作为节点，通过类型化边连接，天然支持多跳推理。
+以实体-关系-实体的三元组形式存储记忆。新加坡外长的 [[NanoClaw]] 系统使用的 **Mnemon** 就是典型的图谱记忆实现——将联系人、话题、文件等作为节点，通过类型化边连接，天然支持多跳推理。
 
 **优势**：结构化查询、关系推理、可解释性强。
 **局限**：构建和维护成本高，冷启动需要人工或 LLM 辅助抽取实体关系。
@@ -59,6 +59,6 @@ flowchart LR
 
 | 模式 | 代表实现 | 隐私 | 延迟 |
 |------|----------|------|------|
-| 本地嵌入 + 本地图谱 | NanoClaw (Ollama + Mnemon) | 最高 | 低 |
+| 本地嵌入 + 本地图谱 | [[NanoClaw]] (Ollama + Mnemon) | 最高 | 低 |
 | 云端嵌入 + 云端图谱 | 企业级 RAG 方案 | 取决于供应商 | 中 |
 | 本地嵌入 + 云端图谱 | 混合部署 | 中 | 中 |

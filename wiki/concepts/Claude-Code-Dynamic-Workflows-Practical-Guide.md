@@ -2,7 +2,7 @@
 title: "Claude Code Dynamic Workflows 实践指南"
 type: concept
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-06-16
 sources: ["raw/articles/2026-06-04-claude-code-dynamic-workflows.md"]
 tags: [claude-code, workflows, ultracode, deep-research, practical-guide, best-practices]
 ---
@@ -115,6 +115,14 @@ ultracode: 审计 src/ 目录下的认证问题，token 预算 10000，超出时
 4. **保持干净的 git 状态** — 工作流前提交代码
 5. **定期保存工作流** — 完成后按 `s` 保存，变成可复用的团队资产
 6. **搭配 Auto 权限模式** — 长时间无人值守时避免中断
+
+## Related Concepts
+
+- [[Agentic Laziness]] — 单 Agent 提前终止，三种结构性失效模式之一
+- [[Self-Preferential Bias]] — 单 Agent 偏好自己的结果，三种结构性失效模式之一
+- [[Goal Drift]] — 多轮 compaction 导致目标偏离，三种结构性失效模式之一
+- [[Tournament Mode]] — pairwise 比较 vs absolute scoring，六种编排模式之一
+- [[Quarantine Mode]] — 读不可信内容的 agent 与高权限 agent 的结构性隔离
 
 ## 与现有 wiki 概念的关联
 

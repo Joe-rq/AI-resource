@@ -2,7 +2,7 @@
 title: Palantir
 type: entity
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-16
 sources:
   - raw/articles/2025-09-08-fde-playbook-bob-mcgrew.md
   - raw/articles/2025-11-11-alex-karp-palantir-ceo.md
@@ -26,6 +26,43 @@ Palantir 自称"**反剧本公司（anti-playbook company）**"。其核心信�
 Alex Karp 的总结："我们花了二十年，才等到这一刻。FDE——所有人都觉得这套做法会毁掉公司；彻底的精英治理——大家都说你不该这么做；极低层级——几乎没人这么干过。"
 
 ## 核心产品矩阵
+
+```mermaid
+flowchart TB
+    subgraph Foundation["基础层：Ontology（本体论）"]
+        O["Object / Property / Media / Link<br/>四要素抽象"]
+    end
+
+    subgraph Products["产品层"]
+        G["Gotham<br/>国防/情报<br/>反恐/反扩散"]
+        F["Foundry<br/>商业/工业<br/>数据操作系统"]
+        AIP["AIP<br/>AI 平台<br/>LLM 编排层"]
+        M["Maven<br/>国防 AI<br/>五角大楼"]
+    end
+
+    subgraph Delivery["交付层"]
+        Apollo["Apollo<br/>持续部署<br/>云 / on-prem / 边缘"]
+    end
+
+    O --> G
+    O --> F
+    O --> AIP
+    O --> M
+    G --> Apollo
+    F --> Apollo
+    AIP --> Apollo
+    M --> Apollo
+
+    AIP -.->|"LLM 是 commodity<br/>Orchestration 是护城河"| O
+    F -.->|"数据基础"| AIP
+
+    style O fill:#fce7f3,stroke:#ec4899
+    style G fill:#dbeafe,stroke:#3b82f6
+    style F fill:#dcfce7,stroke:#22c55e
+    style AIP fill:#fef3c7,stroke:#f59e0b
+    style M fill:#e0e7ff,stroke:#6366f1
+    style Apollo fill:#f3f4f6,stroke:#6b7280
+```
 
 | 产品 | 领域 | 简介 |
 |------|------|------|

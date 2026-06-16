@@ -2,7 +2,7 @@
 title: "Agent Macro Evaluation"
 type: concept
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-06-16
 sources: ["raw/articles/2026-06-13-macro-evals-for-agentic-systems.md"]
 tags: [evaluation, macro-evals, agentic-systems, bertopic, hdbscan, umap, agenttrace, promptfoo, openai-cookbook]
 ---
@@ -217,6 +217,12 @@ suspect_score = 0.4 × proximity + 0.3 × frequency + 0.2 × bridge + 0.1 × rol
 - **聚类只能发现文档保留的信息**：`doc_structured_summary` 的设计决定了能发现什么模式；这是 macro eval 工程化的最大设计点。
 - **嫌疑分 ≠ 因果证明**：`suspect_score` 是排查排序的启发式，不能直接归因。
 - **跨工程与业务的共享地图**：`case_type → run_outcome → eval_finding → behavior_pattern` 流向图让工程团队和业务团队围绕同一张图讨论。
+
+## Related Concepts
+
+- [[Agent Harness 治理协议]] — 事件时间线 + 双层验证为宏观评估提供数据基础，`behavior_pattern` 与概念节点演化结合可实现系统级自我反思循环
+- [[Agent Runtime]] — 单 Agent 执行环境的 trace 是宏观评估的最小分析单元
+- [[Multi-Agent 协作模式]] — 多 Agent 协作产生的复杂 trace 是宏观评估的主要分析对象
 
 ## Open Research Questions
 

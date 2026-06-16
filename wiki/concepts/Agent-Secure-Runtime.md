@@ -113,6 +113,12 @@ Agent 命令的入口关卡。基于预定义规则决定 Agent 可以执行哪�
 - Privacy Router 如何处理上下文中的隐式敏感信息（如用户在 prompt 中无意透露的私人数据）？
 - 不同安全级别（开发/测试/生产）是否需要不同的护栏配置？
 
+## Related Concepts
+
+- [[Agent Runtime]] — Secure Runtime 是 Agent Runtime 的超集，增加了安全约束层
+- [[Quarantine Mode]] — 将安全边界从单 agent 内部前移到 agent 之间的结构隔离，是 Secure Runtime 在 multi-agent 场景下的自然延伸
+- [[NanoClaw]] — 容器化隔离的轻量级实现，展示了 Secure Runtime 在资源受限环境下的可行形态
+
 ## Sources
 
 - [[NVIDIA Agent Toolkit 架构]] — (2026-05-19) OpenShell 架构图分析

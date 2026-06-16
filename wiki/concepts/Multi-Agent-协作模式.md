@@ -2,7 +2,7 @@
 title: "Multi-Agent 协作模式"
 type: concept
 created: 2026-05-19
-updated: 2026-05-22
+updated: 2026-06-16
 sources: ["raw/articles/2026-05-19-minimax-agent-team-tech-report.md", "raw/articles/2026-05-18-anthropic-multi-agent-research-system.md", "raw/articles/2026-05-18-anthropic-managed-agents-api.md", "raw/articles/2026-05-18-claude-code-agent-teams.md", "raw/articles/2026-05-20-hermes-agent-harness"]
 tags: [multi-agent, orchestration, patterns, coordination]
 ---
@@ -87,3 +87,9 @@ flowchart LR
 - **Worker/Verifier**：需要严格质量控制的创作/代码场景
 - **Team Engine**：生产环境，需要确定性调度的场景
 - **自动扩张任务图**：长期项目，多 agent 并行协作，需要跨 session 一致性
+
+## Related Concepts
+
+- [[Worker Verifier 对抗循环]] — 四种核心模式之一：Worker 干活，Verifier 挑刺，自动打回重做
+- [[Agent Harness 治理协议]] — 自动扩张任务图的事件驱动机制与跨 session 一致性治理
+- [[Claude Code Subagent]] — Orchestrator/Specialist 模式在 Claude Code 中的工程实现

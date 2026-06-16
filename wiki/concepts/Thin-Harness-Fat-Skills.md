@@ -2,7 +2,7 @@
 title: "Thin Harness, Fat Skills"
 type: concept
 created: 2026-06-04
-updated: 2026-06-15
+updated: 2026-06-16
 sources: ["raw/articles/2026-04-18-thin-harness-fat-skills.md"]
 tags: [harness, skill, architecture, judgment, resolver, latent-deterministic, diarization]
 ---
@@ -134,6 +134,12 @@ flowchart LR
 - [[Dive into Claude Code（论文）]] — 98.4% 基础设施数据印证
 - [[Thin Harness, Fat Skills：套具要瘦，技能要胖]] — 全文摘要与 YC 案例
 - [[Claude Code 动态工作流（Dynamic Workflows）]] — dynamic workflow 是 fat skills 的运行时形态
+
+## Related Concepts
+
+- [[Claude Code Skills]] — Skill 文件格式与加载机制，是 Fat Skills 在 Claude Code 中的具体实现
+- [[Claude Code Subagent]] — Subagent 的独立上下文窗口使 Fat Skills 可以在隔离环境中运行
+- [[Agent Harness 治理协议]] — 跨 session 一致性治理，与本概念的"单 session 形状"互补
 
 ## 待解决问题
 

@@ -2,7 +2,7 @@
 title: "Meta Reflection Techniques"
 type: concept
 created: 2026-06-04
-updated: 2026-06-15
+updated: 2026-06-16
 sources: ["raw/articles/2026-03-17-meta-reflection-techniques.md"]
 tags: [meta-reflection, prompt-engineering, action-loop, harness, dev-loop, agent-quality]
 ---
@@ -166,6 +166,11 @@ Skill: action-loop
 2. **"AI 的情境 = 上下文"是连接 prompt engineering 与 multi-agent 架构的桥梁**——所有上下文设计技巧本质上都在工程化"情境"要素。
 3. **"看门狗 + 完整性 + 积累飞轮"是 AI 长时间自主干活的最小可用集**——把"AI 单次聪明"升级为"AI 跨 session 越来越聪明"。
 4. **"对齐 = 补全"是一个极具杠杆的认知重构**——把"对齐"从哲学概念降维到工程动作，让 10× 工作流有了可操作起点。
+
+## Related Concepts
+
+- [[Autonomous AI System]] — 阳志平 12 技巧中的"自检评审"在群体规模上的对应，与本概念的"看门狗"互补
+- [[Thin Harness, Fat Skills]] — 12 技巧可被编排为 Skill/Command/Agent，thin harness 是承载这些技巧的运行时
 
 ## 相关资源
 

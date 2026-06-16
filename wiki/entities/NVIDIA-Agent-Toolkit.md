@@ -2,7 +2,7 @@
 title: "NVIDIA Agent Toolkit"
 type: entity
 created: 2026-05-19
-updated: 2026-06-15
+updated: 2026-06-16
 sources: [raw/notes/nvidia-agent-toolkit.md, raw/articles/nvidia-agent-toolkit.md]
 tags: [nvidia, agent-platform, toolkit, security, gpu-accelerated]
 ---
@@ -27,6 +27,41 @@ NemoClaw 支持多种 Agent 工作流模式：ReAct Agent（推理-行动循环�
 ### OpenShell — 安全运行时
 
 OpenShell 是 Agent 的安全执行环境，在命令执行全链路上设置三层顺序检查点：
+
+```mermaid
+flowchart TB
+    subgraph Inputs["输入源"]
+        Dev["Dev Machine CLI"]
+        Hub["ClawHub Skills<br/>（不可信第三方）"]
+    end
+
+    subgraph OpenShell["OpenShell 安全运行时"]
+        SG["Sandbox Guardrail<br/>容器隔离 + 资源限制"]
+        PE["Policy Engine<br/>命令白名单 + RBAC"]
+        NG["Network Guardrail<br/>IP/域名过滤 + 速率限制"]
+        PR["Privacy Router<br/>PII 检测 + OSL 路由"]
+    end
+
+    subgraph Outputs["输出目标"]
+        LocalLLM["本地 Nemotron<br/>（高敏感数据）"]
+        CloudLLM["云端 Frontier Models<br/>Anthropic / Google / OpenAI / xAI"]
+        Resources["资源层<br/>FS / Web / IoT"]
+    end
+
+    Dev --> PE
+    Hub --> SG
+    SG --> PE
+    PE --> NG
+    NG --> PR
+    NG --> Resources
+    PR -->|"OSL: LOW/MEDIUM"| CloudLLM
+    PR -->|"OSL: HIGH"| LocalLLM
+
+    style SG fill:#fee2e2,stroke:#dc2626
+    style PE fill:#dbeafe,stroke:#3b82f6
+    style NG fill:#fef3c7,stroke:#f59e0b
+    style PR fill:#fce7f3,stroke:#ec4899
+```
 
 1. **Policy Engine**（策略引擎）— 命令入口的第一道关卡。基于预定义规则控制 Agent 的执行权限，包括：可执行命令白名单/黑名单、文件系统访问范围限制（读/写/删除权限按路径粒度的 RBAC）、进程创建与网络绑定的权限控制。Policy Engine 在命令进入操作系统之前完成拦截，防止 Agent 越权执行。
 
