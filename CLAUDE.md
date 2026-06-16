@@ -84,6 +84,39 @@ Hooks are configured in `.claude/settings.json`. Three hook event types are used
 4. **PostToolUse uses `git diff` as guard, not env vars.** Claude Code's hook context variables are not fully documented; `git diff` is deterministic and always correct.
 5. **Non-zero exit = warning, not blocking (PostToolUse/Stop).** Only PreToolUse `exit 1` actually prevents the operation.
 
+### PreToolUse vs PostToolUse: when to block vs when to warn
+
+A recurring design question is whether a check belongs in PreToolUse (block before write) or PostToolUse (warn after write). The decision matrix:
+
+| Factor | Favors PreToolUse (block) | Favors PostToolUse (warn) |
+|--------|--------------------------|--------------------------|
+| **Severity** | Would cause CI failure, data loss, or broken links | Cosmetic, recoverable, or non-blocking |
+| **False positive risk** | Near-zero — the check is deterministic and unambiguous | Some risk — blocking would be too aggressive |
+| **Context availability** | All needed info is in the tool arguments (reliably available) | Need to inspect actual file state on disk |
+| **Fix cost** | Hard to fix later (e.g., bad commit message) | Easy to fix in a follow-up edit |
+
+**Examples from this project:**
+
+| Check | Placement | Reason |
+|-------|-----------|--------|
+| Redundant `[[X\|X]]` alias | PostToolUse (current) | PreToolUse would be ideal (block before write) but hook context for Write/Edit content is not reliably documented. PostToolUse via `git diff` is the pragmatic choice. |
+| Path-based wikilinks | PostToolUse (current) | Same rationale — would benefit from PreToolUse blocking but constrained by context availability. |
+| Legacy frontmatter fields | PostToolUse (current) | Correct placement — legacy fields are harmless redundancy. Blocking writes over them would be too aggressive. |
+| Empty `sources` field | PostToolUse (current) | Correct placement — `type: index` pages legitimately have empty sources. Blocking would cause false positives. |
+| Commit message format | PreToolUse (planned P0) | Correct placement — commit messages are hard to fix after the fact, and the check (conventional commit regex) has near-zero false positive risk. |
+| `.DS_Store` in staging | Stop (current) | Correct placement — needs to run after any `git add`, not tied to a specific tool. Must be lightweight (<5ms). |
+
+**When to choose PreToolUse:**
+- The check is unambiguous with near-zero false positives
+- Fixing the problem after the fact is expensive or impossible (e.g., pushed commits)
+- The tool arguments reliably contain the data needed for the check
+
+**When to choose PostToolUse:**
+- The check needs to inspect actual file state on disk
+- False positives are possible and blocking would be disruptive
+- The problem is cosmetic or easily fixed in a follow-up edit
+- Hook context for the tool is not reliably documented
+
 ## Naming conventions
 
 ### Pages
