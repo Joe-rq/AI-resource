@@ -2,7 +2,7 @@
 title: "Quarantine Mode"
 type: concept
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-16
 sources: ["raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md"]
 tags: [dynamic-workflows, security, prompt-injection, agent-isolation]
 ---
@@ -41,6 +41,34 @@ flowchart LR
 ```
 
 Reader Agent 的工具集被限定为只读（Read, Grep, WebFetch 等），**无法执行任何修改操作**。即使不可信内容中嵌入了恶意指令（如 prompt injection 尝试），Reader Agent 也无力触发高危动作。Writer Agent 只接收 Reader 产出的结构化输出（如 JSON 分类结果），不接触原始输入，从而切断了 injection 攻击链。
+
+## 隔离时序
+
+```mermaid
+sequenceDiagram
+    participant U as 不可信外部输入<br/>（用户工单/网页）
+    participant R as Reader Agent<br/>（只读工具集）
+    participant S as 结构化中间层<br/>（JSON Schema）
+    participant W as Writer Agent<br/>（读写工具集）
+    participant T as 目标系统<br/>（数据库/PR/通知）
+
+    U->>R: 原始内容（可能含恶意指令）
+    Note over R: 工具集: Read, Grep, WebFetch<br/>无法执行任何写操作
+    R->>S: 结构化提取结果<br/>（分类 + 摘要 + 优先级）
+    Note over S: 仅传结构化 JSON<br/>不传原始输入内容
+    S->>W: 结构化指令<br/>（如: "创建 PR, 标题: X, 内容: Y"）
+    Note over W: 工具集: Write, Edit, Bash<br/>从未接触原始不可信内容
+    W->>T: 执行高权限动作
+
+    rect rgb(254, 226, 226)
+        Note over R: 即使输入含恶意 prompt<br/>Reader 也无法执行写操作
+    end
+    rect rgb(219, 234, 254)
+        Note over W: Writer 只看结构化数据<br/>injection 攻击链在此切断
+    end
+```
+
+Reader 与 Writer 之间通过结构化 JSON 通信，原始不可信内容永不跨越隔离边界。这是"结构上做不到"的安全保证，而非"权限检查后放行"的信任模型。
 
 ## 为什么需要
 

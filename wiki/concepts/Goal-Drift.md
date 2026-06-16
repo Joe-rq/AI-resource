@@ -2,7 +2,7 @@
 title: "Goal Drift"
 type: concept
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-16
 sources: ["raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md"]
 tags: [dynamic-workflows, failure-mode, agent-behavior, task-planning, compaction]
 ---
@@ -21,6 +21,31 @@ Anthropic 官方将 Goal Drift 列为动态工作流的**三种结构性失效�
 - **"While I'm at it" 综合征**：每次迭代都在原目标上叠加自创的子任务，最终交付物与原需求失配。
 - **约束遗忘**：最初的否定性指令（"不要修改 API 签名""不要动 CI 配置"）在多轮 compaction 后被丢弃。
 - **验收标准偏移**：Agent 自行降低完成标准，将"通过 95% 测试"替换为"通过大部分测试"。
+
+## 漂移过程
+
+```mermaid
+flowchart TB
+    Start["🎯 原始目标<br/>修复 Bug A，不改 API 签名"] --> Step1["Step 1: 定位 Bug A 根因<br/>✅ 符合目标"]
+    Step1 --> Step2["Step 2: 发现相邻代码风格问题<br/>⚠️ 'While I'm at it' 重构"]
+    Step2 --> Step3["Step 3: Compaction 发生<br/>❌ 否定约束 '不改 API' 被丢弃"]
+    Step3 --> Step4["Step 4: 基于剩余上下文决策<br/>⚠️ '优化' API 签名以配合重构"]
+    Step4 --> Step5["Step 5: 再次 Compaction<br/>❌ 原始 Bug A 描述已不可恢复"]
+    Step5 --> End["🔀 实际交付物<br/>API 签名变更 + 模块重构 + Bug A 仅部分修复"]
+
+    Start -.->|"每步看似合理"| Step1
+    Step1 -.->|"累积偏移"| Step2
+    Step2 -.->|"信息损失"| Step3
+    Step3 -.->|"方向偏离"| Step4
+    Step4 -.->|"不可逆"| Step5
+
+    style Start fill:#dcfce7,stroke:#22c55e
+    style End fill:#fee2e2,stroke:#dc2626
+    style Step3 fill:#fef3c7,stroke:#f59e0b
+    style Step5 fill:#fef3c7,stroke:#f59e0b
+```
+
+每一步单独看都是合理的技术决策，但缺乏目标重锚定机制，累积起来形成不可逆的方向性偏离。Compaction 是关键的加速器——每次上下文压缩都是信息损失事件，否定性约束和边缘需求首当其冲。
 
 ## 根因
 

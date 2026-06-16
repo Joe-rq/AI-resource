@@ -2,7 +2,7 @@
 title: "Agent Secure Runtime"
 type: concept
 created: 2026-05-19
-updated: 2026-05-19
+updated: 2026-06-16
 sources: [raw/articles/nvidia-agent-toolkit.md]
 tags: [agent-runtime, security, sandbox, guardrail, privacy]
 ---
@@ -16,6 +16,44 @@ tags: [agent-runtime, security, sandbox, guardrail, privacy]
 核心问题：Agent 需要访问文件系统、网络、外部 API、甚至直接操控计算机（Computer Use），但这些能力也带来了数据泄露、越权操作、不可控行为等风险。Secure Runtime 通过多层护栏在"能力"和"安全"之间取得平衡。
 
 ## 三层安全架构
+
+```mermaid
+flowchart TB
+    subgraph Layer1["Layer 1: Policy Engine（策略引擎）"]
+        PE_Check["命令白名单/黑名单"]
+        PE_RBAC["路径粒度 RBAC<br/>（读/写/删除权限）"]
+        PE_Verify["来源验证<br/>（开发者指令 vs Agent 自主决策）"]
+    end
+
+    subgraph Layer2["Layer 2: Network Guardrail（网络护栏）"]
+        NG_Filter["出站 IP/域名白名单"]
+        NG_Rate["API 速率限制"]
+        NG_Audit["访问审计日志"]
+        NG_SSRF["内网敏感网段阻断"]
+    end
+
+    subgraph Layer3["Layer 3: Privacy Router（隐私路由）"]
+        PR_Detect["PII/敏感信息检测"]
+        PR_Desensitize["数据脱敏"]
+        PR_Route["路由决策<br/>低敏感 → 云端 LLM<br/>高敏感 → 本地模型/阻断"]
+    end
+
+    AgentCmd["Agent 命令"] --> Layer1
+    Layer1 -->|"通过"| Layer2
+    Layer2 -->|"通过"| Layer3
+    Layer3 -->|"通过"| External["外部模型/资源"]
+
+    Layer1 -.->|"拦截"| Block1["🚫 阻断"]
+    Layer2 -.->|"拦截"| Block2["🚫 阻断"]
+    Layer3 -.->|"拦截"| Block3["🚫 阻断/路由到本地"]
+
+    style Layer1 fill:#dbeafe,stroke:#3b82f6
+    style Layer2 fill:#fef3c7,stroke:#f59e0b
+    style Layer3 fill:#fce7f3,stroke:#ec4899
+    style External fill:#dcfce7,stroke:#22c55e
+```
+
+三层按顺序执行，每层是独立的检查点：Policy Engine 控制"能做什么"，Network Guardrail 控制"能访问什么"，Privacy Router 控制"能发送什么"。任何一层拦截都会阻断命令执行。
 
 以 [[NVIDIA Agent Toolkit]] 的 OpenShell 为例：
 

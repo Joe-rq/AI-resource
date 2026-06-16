@@ -26,3 +26,6 @@ Hermes 区别于传统 AI 无状态架构，具备跨会话长期记忆能力。
 
 - [[Agent Runtime]] — 长期记忆是当前 Runtime 的关键能力缺口
 - Memory Agent — Hermes 的长期记忆方向与 wiki 中 Memory Agents 分类相关
+- [[Agent Memory]] — Hermes 长期记忆 + 自我进化的架构参考
+- [[Nous Research]] — 开发 Hermes 的硅谷 AI 实验室
+- [[Agent Harness 治理协议]] — 自我进化系统需治理协议约束，否则在监管框架下难以合规

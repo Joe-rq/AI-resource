@@ -2,7 +2,7 @@
 title: "Tournament Mode"
 type: concept
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-16
 sources: ["raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md", "raw/articles/2026-06-04-claude-code-dynamic-workflows.md"]
 tags: [dynamic-workflows, evaluation, comparison, quality-assurance, tournament]
 ---
@@ -87,6 +87,24 @@ Tournament 的核心数学假设是**传递性**：若 A > B 且 B > C，则 A >
 - **多维度质量**：A 更快、B 更正确、C 更优雅——无法用单一尺度排序。
 - **评判不一致**：同一对候选在不同轮次被不同评判 agent 比较时，尺度不一致导致循环。
 - **非线性权衡**：当"好 20% 的正确性"和"好 50% 的速度"无法线性比较时。
+
+```mermaid
+flowchart TB
+    subgraph Transitive["✅ 传递性成立"]
+        T_A["A: 正确性 9/10<br/>速度 5/10"] --> T_B["B: 正确性 7/10<br/>速度 5/10"]
+        T_B --> T_C["C: 正确性 5/10<br/>速度 5/10"]
+        T_A -.->|"A > C ✓"| T_C
+    end
+
+    subgraph Cyclic["❌ 传递性崩溃（循环判断）"]
+        C_A["A: 正确性 9/10<br/>速度 3/10"] -->|"A > B<br/>（正确性碾压）"| C_B["B: 正确性 5/10<br/>速度 9/10"]
+        C_B -->|"B > C<br/>（速度碾压）"| C_C["C: 正确性 7/10<br/>速度 6/10"]
+        C_C -.->|"C > A<br/>（综合更好）"| C_A
+    end
+
+    style Transitive fill:#dcfce7,stroke:#22c55e
+    style Cyclic fill:#fee2e2,stroke:#dc2626
+```
 
 循环判断（A>B, B>C, 但 C>A）是 transitivity 崩溃的信号，此时应：
 1. 退回到循环赛，收集所有 pairwise 结果。

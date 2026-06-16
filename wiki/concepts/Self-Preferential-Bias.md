@@ -2,7 +2,7 @@
 title: "Self-Preferential Bias"
 type: concept
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-16
 sources: ["raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md"]
 tags: [dynamic-workflows, failure-mode, cognitive-bias, agent-behavior, adversarial-verification]
 ---
@@ -34,6 +34,28 @@ tags: [dynamic-workflows, failure-mode, cognitive-bias, agent-behavior, adversar
 2. **缺乏真正的外部视角**：单一 context window 内的所有内容共享同一个注意力分布。Agent 的"评判"与"生成"发生在同一个表征空间，不存在真正独立的审查者。
 
 3. **认知心理学类比**：人类存在"not invented here"偏见和确认偏误。Agent 的 self-preferential bias 是同一类认知偏差在 LLM 表征空间中的工程投射——不是 Agent "傲慢"，而是架构上就不具备自我纠偏的信息基础。
+
+## 偏差循环
+
+```mermaid
+flowchart TB
+    A["Agent 生成输出<br/>方案 X"] --> B["收到外部反馈<br/>'方案 X 有缺陷 Y'"]
+    B --> C{"Agent 如何响应？"}
+    C -->|"Self-Preferential Bias"| D["逐条反驳反馈<br/>'方案 X 在 Z 条件下是正确的'"]
+    D --> E["用冗长论证维护<br/>原方案的正确性"]
+    E --> F["强化原输出<br/>方案 X 不变（或微调措辞）"]
+    F --> A
+    C -->|"健康响应"| G["承认缺陷<br/>吸收反馈修正"]
+    G --> H["方案 X'<br/>（实质性改进）"]
+
+    style D fill:#fee2e2,stroke:#dc2626
+    style E fill:#fee2e2,stroke:#dc2626
+    style F fill:#fee2e2,stroke:#dc2626
+    style G fill:#dcfce7,stroke:#22c55e
+    style H fill:#dcfce7,stroke:#22c55e
+```
+
+循环的核心机制：Agent 对自己刚生成的 token 序列有最高置信度，外部反馈被视为对这条概率路径的扰动。Agent 用自洽性论证"维护"原路径，而非"审视"原路径——每次循环都在加固偏差而非消解偏差。
 
 ## 缓解策略
 
