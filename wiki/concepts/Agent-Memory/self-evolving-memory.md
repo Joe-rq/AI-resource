@@ -16,11 +16,11 @@ parent: wiki/concepts/Agent-Memory/index.md
 
 # Self-Evolving Memory
 
-自我进化型记忆（Self-Evolving Memory）是 Agent Memory 的最激进形态——Agent 不仅存储和检索记忆，还能从交互中自动提炼模式、生成可复用的技能，并将这些技能写回记忆系统供未来调用。这是 [[Nous Research]] 的 [[Hermes Agent|Hermes]] 和新加坡外长的 [[NanoClaw]] 系统的共同设计目标，但实现路径截然不同。
+自我进化型记忆（Self-Evolving Memory）是 Agent Memory 的最激进形态——Agent 不仅存储和检索记忆，还能从交互中自动提炼模式、生成可复用的技能，并将这些技能写回记忆系统供未来调用。这是 [[Nous Research]] 的 [[Nous Research|Hermes]] 和新加坡外长的 [[NanoClaw]] 系统的共同设计目标，但实现路径截然不同。
 
 ## Hermes：自动封装操作
 
-[[Hermes Agent|Hermes]] 的自我进化机制核心是 **execute → observe → extract pattern → write to memory** 循环：
+[[Nous Research|Hermes]] 的自我进化机制核心是 **execute → observe → extract pattern → write to memory** 循环：
 
 1. **Execute**：Agent 执行用户指令，完成任务
 2. **Observe**：监控执行过程，识别可复用的操作模式
@@ -37,7 +37,7 @@ Hermes 生成的技能文件是透明可查的——用户可以看到 Agent "�
 - Ollama 本地嵌入模型提供语义搜索，将新信息与已有记忆自动关联
 - Obsidian + iCloud 提供人类可读的记忆可视化界面，支持手动策展
 
-与 [[Hermes Agent|Hermes]] 的显式技能生成不同，[[NanoClaw]] 的演化是隐式的——图谱结构随使用自然生长，没有显式的"学到一个技能"的边界。
+与 [[Nous Research|Hermes]] 的显式技能生成不同，[[NanoClaw]] 的演化是隐式的——图谱结构随使用自然生长，没有显式的"学到一个技能"的边界。
 
 ## 对比
 
