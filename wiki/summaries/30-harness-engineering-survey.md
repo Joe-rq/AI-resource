@@ -2,7 +2,7 @@
 title: "Harness Engineering 综述：14 篇工程文章里的 15 个月"
 type: summary
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-18
 sources: ["raw/articles/2026-04-02-harness-engineering-survey.md"]
 tags: [harness, compensation-surface, claude-code, anthropic, openai, cursor, langchain, governance, bitter-lesson]
 ---
@@ -266,6 +266,7 @@ flowchart LR
 - **[[wow-harness]]** — v3 的事件时间线 = Harness 第一层的「JSON 物理锁 + Git 存档 + Context Reset」的工程化；v3 的双层验证 = Harness 第三层的 Generator-Evaluator 对抗
 - **[[Dive into Claude Code（论文）]]** — 论文识别的 5 层 compaction pipeline、append-only durable state、minimal scaffolding maximal harness 在本文的源码对账章节得到**全面验证**
 - **[[ESAA]]** — 学术层面：append-only log + boundary contracts + deterministic replay 与 Harness 的 JSON 物理锁 + 沙箱隔离 + Context Reset 同源
+- **[[Harness Engineering 14 步路线图：从单个 agent 到自我改进系统]]** — 0xMovez 入门操作手册视角：三层（harness/loop/system）切分 + 14 步 roadmap + `.claude/` 文件夹布局，本文的入门版补充
 
 ## 关键术语
 

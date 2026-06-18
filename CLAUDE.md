@@ -162,6 +162,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Agent-Harness-治理协议 — 跨 session、跨 agent 的长期一致性治理（事件溯源、概念演化、双层验证、自动扩张任务图、人机决策分层）
 - Multi-Agent-协作模式 — 四种核心协作模式
 - Worker-Verifier-对抗循环 — Mavis 核心架构机制
+- Agentic-Code-Review — agent 产码时代的评审经济学（blast radius 分层 / intent reconstruction / 异构多审稿 / human on the loop）
 - Agent-Memory — Agent 长期记忆（图谱结构、向量检索、自我进化）
 - Claude-Code-Subagent/index — Subagent：独立上下文工作者（内置类型、自定义定义、Fork 模式、持久内存、Hooks）
 - Claude-Code-Skills/index — Skills 扩展机制（SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制）
@@ -203,6 +204,9 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 13-thin-harness-fat-skills — Thin Harness, Fat Skills（5 定义 + 3 反模式 + 三层架构 + YC Startup School 实证）
 - 16-distributed-harness — 分布式 Harness 哲学（Agent = 显形 / 附着点 / CGP-IEL / 9 件工具组 / 智流网络）
 - 30-harness-engineering-survey — Harness Engineering 综述（14 篇文献 / 15 个月 / 三层结构 / 补偿面）
+- 31-addyosmani-agentic-code-review — Agentic Code Review（Addy Osmani：四倍代码一成价值 / blast radius 分层 / intent reconstruction / 异构多审稿 / human on the loop）
+- 32-harness-engineering-14-steps — Harness Engineering 14 步路线图（0xMovez：三层切分 + 14 步 roadmap + .claude/ 布局）
+- 33-zachlloyd-skill-self-improvement-loop — Skills 自我提升闭环（Zach Lloyd/Warp：inner/outer agent loop + GitHub issue triage 实例）
 - hermes-agent-harness-engineering — (stub) 已合并至 15-wow-harness-v3-governance
 - 17-ai-autonomous-system-tips — 阳志平 AI 自主系统 12 技巧（任务编排 / 实际开工 / 自检评审 / 自动续航）
 - 29-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）

@@ -2,7 +2,7 @@
 title: "Thin Harness, Fat Skills：套具要瘦，技能要胖"
 type: summary
 created: 2026-06-04
-updated: 2026-06-15
+updated: 2026-06-18
 sources: ["raw/articles/2026-04-18-thin-harness-fat-skills.md"]
 tags: [harness, skill, architecture, judgment, yegge, yc]
 ---
@@ -50,6 +50,8 @@ When attendee says "AI infrastructure"
 ```
 
 7 月活动 12% "OK" 评级 → 下次活动 4%（8pp 提升，**0 行代码改写**）。模式普适：retrieve → read → diarize → count → synthesize → survey → investigate → diarize → rewrite the skill。
+
+> Zach Lloyd（Warp）把这个机制命名为 **inner/outer agent loop**：inner loop 用 skill、outer loop 定时观察 inner loop 的运行表现并给 skill 做 diff。因为 skill 就是文件，"改 skill" = 改 markdown。详见 [[Skills 自我提升闭环：inner loop 用、outer loop 改]]。
 
 ## Skills 是永久升级
 

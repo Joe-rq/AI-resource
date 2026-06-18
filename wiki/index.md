@@ -2,7 +2,7 @@
 title: Index — AI Resource Wiki
 type: index
 created: 2026-05-19
-updated: 2026-06-16
+updated: 2026-06-18
 sources: []
 tags: [index, navigation]
 ---
@@ -20,6 +20,7 @@ tags: [index, navigation]
 - [[Agent Memory]] — Agent 长期记忆：图谱结构、向量检索、自我进化（folder-split: Architecture / Forgetting & Compaction / Self-Evolving Memory）
 - [[Multi-Agent 协作模式]] — 四种核心协作模式：Orchestrator/Specialist、Worker/Verifier、Team Engine、自动扩张任务图
 - [[Worker Verifier 对抗循环]] — Worker/Verifier 对抗循环是 Mavis 的核心架构机制（收敛模型、死锁检测、升级与降级）
+- [[Agentic Code Review]] — agent 产码时代的评审经济学：blast radius 分层 / intent reconstruction / 异构多审稿 / human on the loop
 - [[Agent Runtime]] — 单 Agent 执行环境，包含 Prompt/工具定义/上下文管理/错误处理
 - [[Agent Secure Runtime]] — Agent 安全运行时：三层安全检查（Policy/Network/Privacy）+ 沙箱隔离
 - [[Agent Harness 治理协议]] — 跨 session、跨 agent 的长期一致性治理（事件溯源、概念演化、双层验证、自动扩张任务图）
@@ -66,6 +67,9 @@ tags: [index, navigation]
 - [[LangChain]] — 开源 LLM 框架（chain-based composition + LangGraph），Agent Runtime benchmark 参考点
 
 ## Summaries (chronological)
+- 2026-06-18 — [[Agentic Code Review：评审成为软件工程最杠杆的技能]] — Agentic Code Review（Addy Osmani）：四倍代码一成价值、blast radius 分层、intent reconstruction、异构多审稿、human on the loop
+- 2026-06-18 — [[Harness Engineering 14 步路线图：从单个 agent 到自我改进系统]] — Harness Engineering 14 步路线图（0xMovez）：三层切分 + 14 步 roadmap + .claude/ 布局
+- 2026-06-18 — [[Skills 自我提升闭环：inner loop 用、outer loop 改]] — Skills 自我提升闭环（Zach Lloyd/Warp）：inner loop 用 skill、outer loop 定时改 skill，GitHub issue triage 实例
 - 2026-06-15 — [[当我们谈论 FDE 时，我们在谈论什么？]] — 当我们谈论 FDE 时：四要素精确定义、Echo/Delta/Dev 三角循环、三种"穿新衣的旧角色"、AI 时代 FDE 复兴的结构性原因
 - 2026-06-15 — [[前沿部署工程的未来：OpenAI、Ramp、Nominal、Dataland 圆桌]] — FDE 未来圆桌：OpenAI/Ramp/Nominal/Dataland 四家公司如何定义和运作 FDE
 - 2026-06-15 — [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]] — OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）
