@@ -45,6 +45,7 @@ tags: [index, navigation]
 
 ### Architecture Principles
 - [[Thin Harness, Fat Skills]] — Thin Harness, Fat Skills：套具极薄、技能极胖，90% 价值在 markdown 流程文件（skill-as-method-call、resolver、latent vs deterministic、diarization、self-rewriting skill）
+- [[AI Capability Overhang]] — AI 能力悬置：模型能力已存在但未被组织充分释放，FDE 的成因，与补偿面互为镜像
 
 ### Go-to-Market & Product Discovery
 - [[Forward-Deployed-Engineering]] — FDE 前置部署工程：四要素精确定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、与咨询的本质区别、AI 时代复兴的结构性原因
@@ -70,6 +71,7 @@ tags: [index, navigation]
 - 2026-06-18 — [[Agentic Code Review：评审成为软件工程最杠杆的技能]] — Agentic Code Review（Addy Osmani）：四倍代码一成价值、blast radius 分层、intent reconstruction、异构多审稿、human on the loop
 - 2026-06-18 — [[Harness Engineering 14 步路线图：从单个 agent 到自我改进系统]] — Harness Engineering 14 步路线图（0xMovez）：三层切分 + 14 步 roadmap + .claude/ 布局
 - 2026-06-18 — [[Skills 自我提升闭环：inner loop 用、outer loop 改]] — Skills 自我提升闭环（Zach Lloyd/Warp）：inner loop 用 skill、outer loop 定时改 skill，GitHub issue triage 实例
+- 2026-06-18 — [[FDE 深度分析 v4：AI 能力悬置时代的现场工程组织接口]] — FDE 深度分析 v4（黄奕彬）：capability overhang + 四断点 + 双向翻译器 + 三种资产 + DeployCo 组织化扩散 + 最小交付包/技术红线 + 中国语境
 - 2026-06-15 — [[当我们谈论 FDE 时，我们在谈论什么？]] — 当我们谈论 FDE 时：四要素精确定义、Echo/Delta/Dev 三角循环、三种"穿新衣的旧角色"、AI 时代 FDE 复兴的结构性原因
 - 2026-06-15 — [[前沿部署工程的未来：OpenAI、Ramp、Nominal、Dataland 圆桌]] — FDE 未来圆桌：OpenAI/Ramp/Nominal/Dataland 四家公司如何定义和运作 FDE
 - 2026-06-15 — [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]] — OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）

@@ -171,6 +171,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Autonomous-AI-System — AI 自主系统 4 组 12 技巧（任务编排/实际开工/自检评审/自动续航；与 harness 视角互补）
 - Agent-Macro-Evaluation — Agent 宏观评估方法论（4 层标签 + BERTopic 风格聚类 + AgentTrace 风格诊断 + 3 个核心公式）
 - Forward-Deployed-Engineering — FDE 前置部署工程（四要素定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、AI 时代复兴原因）
+- AI-Capability-Overhang — AI 能力悬置（模型能力已存在但未被组织释放；FDE 成因；与补偿面镜像）
 - Claude-Code-Dynamic-Workflows-Practical-Guide — Claude Code 动态工作流实践指南（场景选择决策树、命令速查、14 个推荐场景与最佳实践）
 - Agentic-Laziness — 智能体偷懒（Dynamic Workflows 失效模式之一：Agent 走捷径、过早宣布完成）
 - Self-Preferential-Bias — 自我偏好偏差（Dynamic Workflows 失效模式之一：坚持自己输出、拒绝有效反馈）
@@ -207,6 +208,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 31-addyosmani-agentic-code-review — Agentic Code Review（Addy Osmani：四倍代码一成价值 / blast radius 分层 / intent reconstruction / 异构多审稿 / human on the loop）
 - 32-harness-engineering-14-steps — Harness Engineering 14 步路线图（0xMovez：三层切分 + 14 步 roadmap + .claude/ 布局）
 - 33-zachlloyd-skill-self-improvement-loop — Skills 自我提升闭环（Zach Lloyd/Warp：inner/outer agent loop + GitHub issue triage 实例）
+- 34-fde-deep-analysis-v4 — FDE 深度分析 v4（黄奕彬：capability overhang + 四断点 + 双向翻译器 + 三种资产 + DeployCo + 最小交付包/技术红线 + 中国语境）
 - hermes-agent-harness-engineering — (stub) 已合并至 15-wow-harness-v3-governance
 - 17-ai-autonomous-system-tips — 阳志平 AI 自主系统 12 技巧（任务编排 / 实际开工 / 自检评审 / 自动续航）
 - 29-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）

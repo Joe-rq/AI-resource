@@ -2,7 +2,7 @@
 title: Forward-Deployed-Engineering
 type: concept
 created: 2026-06-15
-updated: 2026-06-15
+updated: 2026-06-18
 sources:
   - raw/articles/2025-09-08-fde-playbook-bob-mcgrew.md
   - raw/articles/2025-11-26-colin-jarvis-openai-fde.md
@@ -10,6 +10,7 @@ sources:
   - raw/articles/2026-05-28-fde-future-roundtable.md
   - raw/articles/2026-06-15-shyam-sankar-mobilize.md
   - raw/articles/2026-05-04-what-we-talk-about-fde.md
+  - raw/articles/2026-06-16-fde-ai-landing-deep-analysis.md
 tags:
   - fde
   - palantir
@@ -28,6 +29,8 @@ tags:
 FDE 是一个技术背景的工程师，驻场在客户那里，交付的不是"软件安装"而是**结果（Outcome）**。他拿着现有的产品，在产品团队的配合下，琢磨出怎么交付这个结果，怎么把用例做出来，怎么把软件以真正对客户起作用的方式交付。
 
 > **核心金句**：Shyam Sankar 的定义——"FDE 的工作是**把痛苦消化掉、把产品排泄出来**（metabolize pain, excrete product）。"
+
+> **另一本体定义**（黄奕彬 v4）：FDE 是**双向翻译器**——把客户工作流翻译成 AI 可交付系统，再把现场经验翻译回产品/平台。FDE 出现的根因是 [[AI Capability Overhang]]（模型能力已远超组织在用）。详见 [[FDE 深度分析 v4：AI 能力悬置时代的现场工程组织接口]]。
 
 ## 精确判定：四个要素
 
@@ -221,3 +224,5 @@ FDE 是 Palantir 发明的**商业方法论**，不是 Agent 平台基础设施�
 - [[OpenAI FDE 访谈录：信任、产品与影响（Colin Jarvis）]]
 - [[前沿部署工程的未来：OpenAI、Ramp、Nominal、Dataland 圆桌]]
 - [[当我们谈论 FDE 时，我们在谈论什么？]]
+- [[FDE 深度分析 v4：AI 能力悬置时代的现场工程组织接口]] — 系统性中文深度分析（capability overhang / 四断点 / 双向翻译器 / 最小交付包 / 中国语境）
+- [[AI Capability Overhang]] — FDE 为何在此时出现的原因
