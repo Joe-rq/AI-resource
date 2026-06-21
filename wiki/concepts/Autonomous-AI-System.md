@@ -2,8 +2,8 @@
 title: "Autonomous AI System"
 type: concept
 created: 2026-06-04
-updated: 2026-06-15
-sources: ["raw/articles/2026-06-02-ai-autonomous-system-tips.md"]
+updated: 2026-06-21
+sources: ["raw/articles/2026-06-02-ai-autonomous-system-tips.md", "raw/articles/2026-06-21-deli-auto-research-framework.md"]
 tags: [autonomous-ai-system, harness, runtime, watchdog, worktree, state-persistence, yang-zhiping]
 ---
 
@@ -69,6 +69,19 @@ AI 在开工前先自我分流：高确定性任务一句话确认就放手；�
 | 四·自动续航 | 11. 意外处理矩阵 | if-then 绕行；单条卡住就跳下一条 |
 | 四·自动续航 | 12. 状态持久化 | 状态文件 = 唯一真相源；交班时产出"人话"汇报 |
 
+## 长时间运行的工程深化：Deli_AutoResearch 交叉印证
+
+[[Deli_AutoResearch：长时间自主任务的协议框架（Victor Chen）]]（summary 35）从英文工程实践侧印证并深化了上面的"四·自动续航"组，核心增量：
+
+| 维度 | 阳志平（本页） | Deli 深化 |
+|------|---------------|-----------|
+| 看门狗 | 技巧 10：CronCreate + 定时读状态文件 | **三层互检**（L0 常驻 shell guard / L1 durable cron / L2 业务自报）——失效链推理：守护层的依赖必须比被守护对象更弱。详见 [[Heartbeat Watchdog]] |
+| 状态持久化 | 技巧 12：状态文件 = 唯一真相源 | append-only JSONL + **fresh session over resume**（resume 继承前序 session 的偏见，是认知循环的主因） |
+| 停滞对策 | 意外处理矩阵：单条卡住跳下一条（横向绕行） | stall 检测 + **pivot 结构非战术**（纵向改框架）；且"停滞 > 崩溃"是长跑首要敌人 |
+| 运行约束 | "永不停摆" | 配套硬约束：零交互（运行期绝不提问）、callback 报活（每轮首行更新 `last_seen`）、guardian/worker 分离（巡检对非己任务只读三权限） |
+
+共同的底层判断：**治理靠结构约束，不靠模型自觉。** 这与 [[Agent Harness 治理协议]]、[[wow-harness]]、[[ESAA]] 的 boundary contracts 一致——纪律要物理化，不能停在 prompt 层"建议自检"。Deli 的 validation 是作者**框架内自评**（4 篇 ICLR 调研自评 8.0–8.6、72h 连续运行零运维介入），为"持续运行时长"提供了一个具体可比样本（对照本页的 3h 稳定 / 9h / 36h+）。
+
 ## 与现有 wiki 概念的关联
 
 | Autonomous AI System 元素 | 对应 wiki 概念 |
@@ -82,6 +95,7 @@ AI 在开工前先自我分流：高确定性任务一句话确认就放手；�
 | 状态持久化、唯一真相源 | [[ESAA]] Event Sourcing + 当前状态视图 |
 | 意外处理矩阵、永不停摆 | [[wow-harness]] "为失败预设绕行路径" 处处可见 |
 | 沉淀自检 Skill / 评审教训制度化 | [[Thin Harness, Fat Skills]] 90% 价值在 markdown 流程文件 |
+| 三层看门狗 / fresh session / stall 检测 | [[Heartbeat Watchdog]]、[[Deli_AutoResearch：长时间自主任务的协议框架（Victor Chen）]]（"自动续航"的工程深化） |
 
 ## "harness" vs "Autonomous AI System" 视角对比
 
@@ -130,3 +144,4 @@ AI 在开工前先自我分流：高确定性任务一句话确认就放手；�
 - [[wow-harness]] — 治理协议工程实现参考
 - [[ESAA]] — 状态持久化的事件溯源学术化版本
 - [[如何实现一个好的 AI 自主干活系统]] — 原始来源
+- [[Heartbeat Watchdog]] — 看门狗的三层互检深化（Deli_AutoResearch）

@@ -169,6 +169,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Thin-Harness-Fat-Skills — 套具要瘦、技能要胖（5 定义 + 3 反模式 + 三层架构 + Self-rewriting skill 循环）
 - Meta-Reflection-Techniques — 阳志平 12 个元反思技巧（行动之环 × 4 象限：意图/实施/反馈/情境）
 - Autonomous-AI-System — AI 自主系统 4 组 12 技巧（任务编排/实际开工/自检评审/自动续航；与 harness 视角互补）
+- Heartbeat-Watchdog — 心跳看门狗三层互检（L0 常驻 shell guard / L1 durable cron / L2 业务自报）；独立守护层对治运行时脆弱与停滞（来源：Deli_AutoResearch）
 - Agent-Macro-Evaluation — Agent 宏观评估方法论（4 层标签 + BERTopic 风格聚类 + AgentTrace 风格诊断 + 3 个核心公式）
 - Forward-Deployed-Engineering — FDE 前置部署工程（四要素定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、AI 时代复兴原因）
 - AI-Capability-Overhang — AI 能力悬置（模型能力已存在但未被组织释放；FDE 成因；与补偿面镜像）
@@ -209,6 +210,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 32-harness-engineering-14-steps — Harness Engineering 14 步路线图（0xMovez：三层切分 + 14 步 roadmap + .claude/ 布局）
 - 33-zachlloyd-skill-self-improvement-loop — Skills 自我提升闭环（Zach Lloyd/Warp：inner/outer agent loop + GitHub issue triage 实例）
 - 34-fde-deep-analysis-v4 — FDE 深度分析 v4（黄奕彬：capability overhang + 四断点 + 双向翻译器 + 三种资产 + DeployCo + 最小交付包/技术红线 + 中国语境）
+- 35-deli-auto-research-framework — Deli_AutoResearch 协议框架（Victor Chen：3 失效模式 + 5 行为约束 + 三层心跳看门狗 + fresh session over resume + stall 检测/pivot 结构 + 4 subagent 调度模式 + 工程约束）
 - hermes-agent-harness-engineering — (stub) 已合并至 15-wow-harness-v3-governance
 - 17-ai-autonomous-system-tips — 阳志平 AI 自主系统 12 技巧（任务编排 / 实际开工 / 自检评审 / 自动续航）
 - 29-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）
@@ -254,6 +256,13 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - [ ] ESAA 论文的事件溯源 vs wow-harness v3 的事件时间线，在工程实现上有何具体差异？ — blocked by: none
 - [ ] ESAA 的 boundary contracts 在企业级 monorepo 场景下是否可扩展？CS2 仅 50 tasks / 86 events — blocked by: none
 
+### Long-Horizon Autonomy
+
+- [ ] 三层心跳看门狗在真实多租户/容器化部署中，L0 常驻 shell guard 的跨平台实现与资源开销如何量化？（对比 [[Agent Secure Runtime]] 沙箱隔离） — blocked by: none
+- [ ] 2h/4h 阈值与"连续 3 次 nudge"判据在不同任务复杂度、不同模型规模下如何重新校准？能否用 [[Agent Macro Evaluation]] 的运行模式聚类自动发现最优阈值？ — blocked by: none
+- [ ] Guardian/Worker 的三权限边界（liveness-check / restart / nudge）能否形式化为 [[ESAA]] boundary contracts 那样的 schema 级硬约束，而非靠 prompt 纪律？ — blocked by: none
+- [ ] L1"依赖一个活着的交互 session"在现代 headless/CI 部署中是否成立？纯后台场景下 L0 是否足以单独兜底？ — blocked by: none
+
 ### Memory
 
 - [ ] Hermes 的自我進化機制在醫療監管框架下的合規路徑是什麼？ — blocked by: none
@@ -285,11 +294,12 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 | Dynamic Workflows | 3 | 0 | 3 |
 | Evaluation | 3 | 0 | 3 |
 | Governance | 4 | 0 | 4 |
+| Long-Horizon Autonomy | 4 | 0 | 4 |
 | Memory | 2 | 1 | 1 |
 | Multi-Agent | 2 | 0 | 2 |
 | Runtime | 2 | 0 | 2 |
 | Security | 3 | 0 | 3 |
-| **Total** | **22** | **1** | **21** |
+| **Total** | **26** | **1** | **25** |
 
 ## Research gaps
 

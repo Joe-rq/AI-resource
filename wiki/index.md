@@ -2,7 +2,7 @@
 title: Index — AI Resource Wiki
 type: index
 created: 2026-05-19
-updated: 2026-06-18
+updated: 2026-06-21
 sources: []
 tags: [index, navigation]
 ---
@@ -42,6 +42,7 @@ tags: [index, navigation]
 
 ### Autonomous Systems
 - [[Autonomous AI System]] — AI 自主干活系统（阳志平）：人在离场后持续运行的 12 个工程化技巧 + 永不停摆 + 飞轮式自我演化
+- [[Heartbeat Watchdog]] — 心跳看门狗三层互检（L0 常驻 shell guard / L1 durable cron / L2 业务自报）：独立守护层对治运行时脆弱与停滞
 
 ### Architecture Principles
 - [[Thin Harness, Fat Skills]] — Thin Harness, Fat Skills：套具极薄、技能极胖，90% 价值在 markdown 流程文件（skill-as-method-call、resolver、latent vs deterministic、diarization、self-rewriting skill）
@@ -68,6 +69,7 @@ tags: [index, navigation]
 - [[LangChain]] — 开源 LLM 框架（chain-based composition + LangGraph），Agent Runtime benchmark 参考点
 
 ## Summaries (chronological)
+- 2026-06-21 — [[Deli_AutoResearch：长时间自主任务的协议框架（Victor Chen）]] — Deli_AutoResearch 协议框架（Victor Chen）：长时间自主任务 3 失效模式（认知循环/停滞/运行时脆弱）+ 5 行为约束 + 三层心跳看门狗 + fresh session over resume + stall 检测/pivot 结构
 - 2026-06-18 — [[Agentic Code Review：评审成为软件工程最杠杆的技能]] — Agentic Code Review（Addy Osmani）：四倍代码一成价值、blast radius 分层、intent reconstruction、异构多审稿、human on the loop
 - 2026-06-18 — [[Harness Engineering 14 步路线图：从单个 agent 到自我改进系统]] — Harness Engineering 14 步路线图（0xMovez）：三层切分 + 14 步 roadmap + .claude/ 布局
 - 2026-06-18 — [[Skills 自我提升闭环：inner loop 用、outer loop 改]] — Skills 自我提升闭环（Zach Lloyd/Warp）：inner loop 用 skill、outer loop 定时改 skill，GitHub issue triage 实例
