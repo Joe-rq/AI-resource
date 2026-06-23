@@ -2,7 +2,7 @@
 title: Index — AI Resource Wiki
 type: index
 created: 2026-05-19
-updated: 2026-06-21
+updated: 2026-06-23
 sources: []
 tags: [index, navigation]
 ---
@@ -47,12 +47,14 @@ tags: [index, navigation]
 ### Architecture Principles
 - [[Thin Harness, Fat Skills]] — Thin Harness, Fat Skills：套具极薄、技能极胖，90% 价值在 markdown 流程文件（skill-as-method-call、resolver、latent vs deterministic、diarization、self-rewriting skill）
 - [[AI Capability Overhang]] — AI 能力悬置：模型能力已存在但未被组织充分释放，FDE 的成因，与补偿面互为镜像
+- [[Stateless Reducer]] — 无状态归约器：agent = 纯函数 (state,event)→(new state, side-effect descriptors)，LLM 成为唯一非确定节点，pause/resume/replay/time-travel 同源，第五种确定性范式
 
 ### Go-to-Market & Product Discovery
 - [[Forward-Deployed-Engineering]] — FDE 前置部署工程：四要素精确定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、与咨询的本质区别、AI 时代复兴的结构性原因
 
 ### Evaluation
 - [[Agent Macro Evaluation]] — Agent 宏观评估方法论：4 层标签（case_type → run_outcome → eval_finding → behavior_pattern）+ BERTopic 风格聚类 + AgentTrace 风格诊断 + 三个核心公式（impact_score / lift / suspect_score）
+- [[Agent Reliability vs Capability]] — capability≠reliability 背离：pass@k、RDC/VAF/GDS/MOP 四指标、MOP paradox（frontier model meltdown 更高）、memory scaffolds 普遍损害长程 reliability
 
 ## Entities
 - [[MiniMax Mavis]] — MiniMax 的 Agent 产品，MiniMax as a Jarvis
@@ -69,6 +71,7 @@ tags: [index, navigation]
 - [[LangChain]] — 开源 LLM 框架（chain-based composition + LangGraph），Agent Runtime benchmark 参考点
 
 ## Summaries (chronological)
+- 2026-06-23 — [[12-Factor Agents]] — 12-Factor Agents（HumanLayer/Dex Horthy）：好 agent = 大部分确定性软件 + LLM 撒关键点；12 条按五主题；接缝在 selection↔invocation 间；workflow vs agent 术语张力
 - 2026-06-21 — [[Deli_AutoResearch：长时间自主任务的协议框架（Victor Chen）]] — Deli_AutoResearch 协议框架（Victor Chen）：长时间自主任务 3 失效模式（认知循环/停滞/运行时脆弱）+ 5 行为约束 + 三层心跳看门狗 + fresh session over resume + stall 检测/pivot 结构
 - 2026-06-18 — [[Agentic Code Review：评审成为软件工程最杠杆的技能]] — Agentic Code Review（Addy Osmani）：四倍代码一成价值、blast radius 分层、intent reconstruction、异构多审稿、human on the loop
 - 2026-06-18 — [[Harness Engineering 14 步路线图：从单个 agent 到自我改进系统]] — Harness Engineering 14 步路线图（0xMovez）：三层切分 + 14 步 roadmap + .claude/ 布局

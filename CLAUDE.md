@@ -179,6 +179,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Goal-Drift — 目标漂移（Dynamic Workflows 失效模式之一：逐步偏离原始目标而不自知）
 - Quarantine-Mode — 隔离模式（Dynamic Workflows 安全模式：读未受信内容 agent 与高权限动作 agent 结构隔离）
 - Tournament-Mode — 锦标赛模式（Dynamic Workflows 评估模式：pairwise 比较与 transitivity 假设）
+- Stateless-Reducer — 无状态归约器（agent = 纯函数 (state,event)→(new state, side-effect descriptors)；LLM 成为唯一非确定节点；pause/resume/replay/time-travel 同源；第五种确定性范式）
+- Agent-Reliability-vs-Capability — 可靠性与能力背离（capability 问能不能做到一次，reliability 问能不能次次做到；pass@k、RDC/VAF/GDS/MOP 四指标；MOP paradox；memory scaffolds 普遍损害长程 reliability）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
@@ -195,6 +197,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - LangChain — 开源 LLM 框架（chain-based composition + LangGraph），Agent Runtime benchmark 参考点
 
 ### Summaries
+- 36-12-factor-agents — 12-Factor Agents（HumanLayer/Dex Horthy：好 agent = 大部分确定性软件 + LLM 撒关键点；12 条按五主题；接缝在 selection↔invocation 间；workflow vs agent 术语张力）
 - 12-a-harness-for-every-task-dynamic-workflows — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）
 - 20-macro-evals-for-agentic-systems — OpenAI Cookbook 宏观评估教程（EV 订单 multi-agent + 1000 次合成运行 + Promptfoo + BERTopic + AgentTrace）
 - 28-claude-code-dynamic-workflows — Claude Code 动态工作流官方中文功能文档（v2.1.154+ / ultracode / /deep-research / 触发与运行管理）
@@ -286,6 +289,13 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - [ ] `suspect_score = 0.4·proximity + 0.3·frequency + 0.2·bridge + 0.1·role` 的权重是 OpenAI 经验值，能否在其他 agent 系统上重新校准的方法论 — blocked by: none
 - [ ] 宏观评估发现的 `behavior_pattern` 与 wow-harness v3 概念节点演化结合，能否实现"系统级自我反思循环"？ — blocked by: none
 
+### Reliability
+
+- [ ] pass@k 与 reliability decay curve (RDC) 在企业内部 agent（非开源模型 benchmark）上如何低成本采集？生产 trace 能否复用为 RDC 数据源，而非另跑 23k episodes？ — blocked by: none
+- [ ] MOP paradox（frontier model meltdown rate 更高）是否随模型代际持续，还是会被 reasoning 模型的显式规划缓解？贴边扩张的"边"能否用 MOP 提前探测？ — blocked by: none
+- [ ] memory scaffolds 普遍损害长程 reliability 的结论，在不同记忆架构（[[Agent-Memory]] 图谱 vs naive episodic）上是否分化？遗忘机制能否把"损害"转正？ — blocked by: [[Agent-Memory]] folder-split sub-pages
+- [ ] Stateless reducer 的可重放性能否量化对冲 reliability decay 的收益？即：reducer + 外移确定性，能把 RDC 斜率压到多少？ — blocked by: none
+
 ### Summary
 
 | Domain | Count | Blocked | Unblocked |
@@ -294,12 +304,13 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 | Dynamic Workflows | 3 | 0 | 3 |
 | Evaluation | 3 | 0 | 3 |
 | Governance | 4 | 0 | 4 |
+| Reliability | 4 | 1 | 3 |
 | Long-Horizon Autonomy | 4 | 0 | 4 |
 | Memory | 2 | 1 | 1 |
 | Multi-Agent | 2 | 0 | 2 |
 | Runtime | 2 | 0 | 2 |
 | Security | 3 | 0 | 3 |
-| **Total** | **26** | **1** | **25** |
+| **Total** | **30** | **2** | **28** |
 
 ## Research gaps
 
