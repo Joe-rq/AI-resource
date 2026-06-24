@@ -181,6 +181,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Tournament-Mode — 锦标赛模式（Dynamic Workflows 评估模式：pairwise 比较与 transitivity 假设）
 - Stateless-Reducer — 无状态归约器（agent = 纯函数 (state,event)→(new state, side-effect descriptors)；LLM 成为唯一非确定节点；pause/resume/replay/time-travel 同源；第五种确定性范式）
 - Agent-Reliability-vs-Capability — 可靠性与能力背离（capability 问能不能做到一次，reliability 问能不能次次做到；pass@k、RDC/VAF/GDS/MOP 四指标；MOP paradox；memory scaffolds 普遍损害长程 reliability）
+- Harness-Cybernetics — Harness 控制论（前馈 Guides/反馈 Sensors 对偶 + Computational/Inferential 2×2 + steering loop；inner/outer harness；cybernetic governor；Ashby's Law；把 Quarantine/Agentic-Code-Review/Worker-Verifier 归位）
+- Context-Engineering — 上下文工程（prompt engineering 的演进；write/select/compress/isolate 四策略；context 四失败模式 Poisoning/Distraction/Confusion/Clash；KV 命中率切入）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
@@ -276,6 +278,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - [ ] 分布式 Harness 附着点 vs 独立上下文窗口与现有 Worker/Verifier 概念有何同构/包含关系? — blocked by: none
 - [ ] CGP/IEL 9 件工具组成熟度评估: 哪些工程化已就绪, 哪些仍 PoC? — blocked by: none
 - [ ] 四层维护存储 vs 事件时间线: 分布式 Harness 存储抽象是否可由 wow-harness v3 事件时间线统一表达? — blocked by: none
+- [ ] [[Harness Cybernetics]] 的 feedforward/feedback 对偶能否形式化为可度量的"harness 覆盖率"（Ashby's Law 的操作化）？常见失败模式 × {前馈预防, 反馈自纠正} 的覆盖矩阵如何系统化构建？ — blocked by: none
+- [ ] inner harness 商品化（Claude Code/Codex/Open Code 趋同）的速率与 outer harness 工程价值累积的拐点在哪？哪些 outer harness 组件（session persistence / feedforward / feedback / multi-surface dispatch）会随后被 inner harness 吸收？ — blocked by: none
 
 ### Dynamic Workflows
 
@@ -300,7 +304,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 
 | Domain | Count | Blocked | Unblocked |
 |--------|-------|---------|-----------|
-| Architecture | 3 | 0 | 3 |
+| Architecture | 5 | 0 | 5 |
 | Dynamic Workflows | 3 | 0 | 3 |
 | Evaluation | 3 | 0 | 3 |
 | Governance | 4 | 0 | 4 |
@@ -310,7 +314,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 | Multi-Agent | 2 | 0 | 2 |
 | Runtime | 2 | 0 | 2 |
 | Security | 3 | 0 | 3 |
-| **Total** | **30** | **2** | **28** |
+| **Total** | **32** | **2** | **30** |
 
 ## Research gaps
 

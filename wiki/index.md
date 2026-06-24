@@ -48,6 +48,8 @@ tags: [index, navigation]
 - [[Thin Harness, Fat Skills]] — Thin Harness, Fat Skills：套具极薄、技能极胖，90% 价值在 markdown 流程文件（skill-as-method-call、resolver、latent vs deterministic、diarization、self-rewriting skill）
 - [[AI Capability Overhang]] — AI 能力悬置：模型能力已存在但未被组织充分释放，FDE 的成因，与补偿面互为镜像
 - [[Stateless Reducer]] — 无状态归约器：agent = 纯函数 (state,event)→(new state, side-effect descriptors)，LLM 成为唯一非确定节点，pause/resume/replay/time-travel 同源，第五种确定性范式
+- [[Harness Cybernetics]] — Harness 控制论：前馈 Guides/反馈 Sensors 对偶 + Computational/Inferential 2×2 + steering loop；inner/outer harness；cybernetic governor；Ashby's Law
+- [[Context Engineering]] — 上下文工程：prompt engineering 的演进，write/select/compress/isolate 四策略，context 四失败模式，KV 命中率切入
 
 ### Go-to-Market & Product Discovery
 - [[Forward-Deployed-Engineering]] — FDE 前置部署工程：四要素精确定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、与咨询的本质区别、AI 时代复兴的结构性原因
