@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPT_REF_RE = re.compile(r"scripts/[A-Za-z0-9_-]+\.py")
-DEFAULT_SCAN = ["CLAUDE.md", ".claude/settings.json"]
+DEFAULT_SCAN = ["CLAUDE.md", ".claude/settings.json", ".claude/skills/llm-wiki/SKILL.md"]
 
 
 def referenced_scripts(files: list[str]) -> dict[str, set[str]]:

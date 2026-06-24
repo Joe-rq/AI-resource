@@ -167,6 +167,7 @@ Every action on the wiki is one of these five. Each appends an entry to the curr
 Add a new source. **One source typically touches 5–15 wiki pages.**
 
 **Steps**:
+**Before touching files** — open a rollback checkpoint: `uv run python scripts/ingest_checkpoint.py begin <slug>` (creates `pre-ingest/<slug>` tag + appends to `log/ingest-events.jsonl`). Lets you undo a bad ingest instead of hand-rolling back edits.
 1. Save source to the right subfolder:
    - web article → `raw/articles/<slug>.md`
    - paper → `raw/papers/<slug>.md` (extracted text for big PDFs)
@@ -178,6 +179,7 @@ Add a new source. **One source typically touches 5–15 wiki pages.**
 5. Create or update entity pages in `wiki/entities/` for any new people / tools / papers / organizations referenced.
 6. Update `wiki/index.md` so the new pages appear under the right category.
 7. Log: `## [HH:MM] ingest | <slug> — <one-line description> (touched N pages)`
+**After logging** — close the checkpoint: `uv run python scripts/ingest_checkpoint.py end <slug>`. If the ingest went wrong, roll back to the pre-ingest state with `uv run python scripts/ingest_checkpoint.py rollback <slug> --force` (restores `wiki/ log/ docs/`; it lists any untracked new files to delete manually). See `docs/wiki-governance-roadmap.md` #4.
 
 ### 3. `query`
 

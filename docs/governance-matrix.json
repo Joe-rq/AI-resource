@@ -41,7 +41,7 @@
       "id": "ingest-irreversible",
       "desc": "ingest 不可逆，出错只能手动擦屁股",
       "controls": [
-        {"name": "ingest_checkpoint.py（reducer wrapper；待在 llm-wiki SKILL.md 接入 begin/end）", "status": "implemented"}
+        {"name": "ingest_checkpoint.py（reducer wrapper；已接入 llm-wiki SKILL.md ingest 步骤）", "status": "implemented"}
       ]
     },
     {
