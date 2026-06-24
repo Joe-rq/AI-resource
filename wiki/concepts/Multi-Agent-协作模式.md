@@ -93,3 +93,4 @@ flowchart LR
 - [[Worker Verifier 对抗循环]] — 四种核心模式之一：Worker 干活，Verifier 挑刺，自动打回重做
 - [[Agent Harness 治理协议]] — 自动扩张任务图的事件驱动机制与跨 session 一致性治理
 - [[Claude Code Subagent]] — Orchestrator/Specialist 模式在 Claude Code 中的工程实现
+- [[单 AI 的四个结构性缺陷]] — 单 AI 的四个结构性缺陷（无记忆/无协作/无治理等）正是多 agent 协作的核心动机

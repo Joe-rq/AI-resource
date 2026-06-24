@@ -131,3 +131,4 @@ wow-harness v3 的双层验证与 Worker/Verifier 的本质区别在于：验证
 
 - [[Multi-Agent 协作模式]] -- 多 Agent 协作的整体模式图谱
 - [[Agent Harness 治理协议]] -- 双层验证的另一种实现方式
+- [[MiniMax Mavis 技术报告]] -- Worker/Verifier 对抗循环 + Team Engine 状态机的一手技术报告来源

@@ -4,3 +4,5 @@
 {"event": "end", "slug": "nashsu-llm-wiki", "ts": "2026-06-24T22:14:46"}
 {"event": "begin", "slug": "graph-analysis", "tag": "pre-ingest/graph-analysis", "head": "2848d64d5bc942f9abb45ec4f8f23dd9106972c9", "ts": "2026-06-24T22:24:42"}
 {"event": "end", "slug": "graph-analysis", "ts": "2026-06-24T22:29:07"}
+{"event": "begin", "slug": "backlinks", "tag": "pre-ingest/backlinks", "head": "6686cff0046e63147a629b8f6752011dda850218", "ts": "2026-06-24T22:51:34"}
+{"event": "end", "slug": "backlinks", "ts": "2026-06-24T23:04:29"}
