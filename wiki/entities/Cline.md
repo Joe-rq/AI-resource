@@ -68,4 +68,4 @@ This data is a primary empirical foundation for the [[Agent Runtime]] concept: t
 - "Introducing Cline SDK: the upgraded agent runtime" (Cline Blog, 2026-05-13): https://cline.bot/blog/introducing-cline-sdk-the-upgraded-agent-runtime
 - "The architecture that gets AI coding tools approved" (Cline Blog, 2026-01-27): https://cline.bot/blog/the-architecture-that-gets-ai-coding-tools-approved
 - Cline GitHub: https://github.com/cline/cline
-- Cline benchmark data cited in [[Agent Runtime]] and [[08 - Agent Runtime 主战场]]
+- Cline benchmark data cited in Agent Runtime and [[08 - Agent Runtime 主战场]]

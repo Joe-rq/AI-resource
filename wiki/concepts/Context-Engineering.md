@@ -127,11 +127,11 @@ context injection（注入 repo state、recent diffs、task constraints）是 [[
 
 | 关联 | 说明 |
 |---|---|
-| [[12-Factor Agents]] | Factor 3（own your context window）是 context engineering 的方法论化；Factor 4（tools as structured outputs）兼顾 KV 命中率 |
-| [[Harness Cybernetics]] | Select/Write 是 feedforward 的信息填充；context 四失败模式是 feedback sensor 要检测的退化 |
-| [[Agent Memory]] | Write 策略的载体；长程 reliability 要求遗忘机制（见 [[Agent Reliability vs Capability]]：memory scaffolds 普遍损害长程 reliability） |
+| 12-Factor Agents | Factor 3（own your context window）是 context engineering 的方法论化；Factor 4（tools as structured outputs）兼顾 KV 命中率 |
+| Harness Cybernetics | Select/Write 是 feedforward 的信息填充；context 四失败模式是 feedback sensor 要检测的退化 |
+| Agent Memory | Write 策略的载体；长程 reliability 要求遗忘机制（见 Agent Reliability vs Capability：memory scaffolds 普遍损害长程 reliability） |
 | [[Claude Code Subagent]] | Isolate 策略的实例（独立 context window 避免主上下文污染） |
-| [[Agent Reliability vs Capability]] | context 四失败模式是 reliability decay 的微观机制 |
+| Agent Reliability vs Capability | context 四失败模式是 reliability decay 的微观机制 |
 | [[Stateless Reducer]] | reducer 的 context 全进 log → Compress/Write 策略可重放 |
 
 ## 落地含义
@@ -140,4 +140,4 @@ context injection（注入 repo state、recent diffs、task constraints）是 [[
 - **Isolate 优先于 Compress**：子 agent 隔离比压缩更彻底地解决 Context Distraction/Clash
 - **95% 触发自动压缩**：Claude Code 实践，避免硬溢出
 - **维持前缀缓存**：别动态增删工具，用 logit masking；定期 tool result clearing
-- **写 context 像写代码**：context 是 harness 的一等公民，版本化、测试、迭代（呼应 [[12-Factor Agents]] Factor 2/3）
+- **写 context 像写代码**：context 是 harness 的一等公民，版本化、测试、迭代（呼应 12-Factor Agents Factor 2/3）

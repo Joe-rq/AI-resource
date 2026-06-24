@@ -87,7 +87,7 @@ tags: [evaluation, reliability, capability, pass-at-k, long-horizon, variance, m
 | 关联 | 说明 |
 |---|---|
 | 事后诊断 vs 事前度量 | [[Agent Macro Evaluation]] 是运行后群体聚类找 behavior_pattern；本文是事前 reliability 维度度量找 decay curve。两者正交互补 |
-| 80% 墙的本质 | [[12-Factor Agents]] 的 80% 墙 = capability 到 80% 后 reliability 接管，pass@1 失明 |
+| 80% 墙的本质 | 12-Factor Agents 的 80% 墙 = capability 到 80% 后 reliability 接管，pass@1 失明 |
 | 记忆的代价 | memory scaffolds 普遍有害 → 直接关联 [[Agent Memory]] 的"遗忘机制"open question |
 | 长程自主性 | 衰减超线性 → 长任务必须靠 [[Stateless Reducer]] 的可重放 + 接缝外移，不能靠模型硬扛 |
 | Worker/Verifier | [[Worker Verifier 对抗循环]] 是单步降 VAF 的机制；本文给出为何长程必须叠加它 |

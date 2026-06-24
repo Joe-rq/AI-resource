@@ -89,7 +89,7 @@ flowchart LR
 ## Related concepts
 
 - [[Worker Verifier 对抗循环]] — 对抗验证的架构实现，是 self-preferential bias 的结构性解法
-- [[Agentic Laziness]] — 同为 Dynamic Workflows 三种失效模式之一
+- Agentic Laziness — 同为 Dynamic Workflows 三种失效模式之一
 - [[Meta Reflection Techniques]] — "强制元反思"（技巧 1）在 prompt 层面补偿自我偏好
 - [[Claude Code Subagent]] — 独立 context window 是实现对抗验证的工程基础
 - Goal Drift — 第三种失效模式：compaction 导致约束丢失

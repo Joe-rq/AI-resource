@@ -152,8 +152,8 @@ v4 的第 11、13 节给出证据分级（方法论价值，wiki 此前没有这
 | v4 内容 | Wiki 对应 |
 |---------|----------|
 | AI 能力悬置 | [[AI Capability Overhang]]（本批次新建） |
-| 双向翻译器 / 三种资产 | [[Forward-Deployed-Engineering]] 四要素之上的更精确本体定义 |
-| 退化四路径 / 三条判断线 | [[Forward-Deployed-Engineering]] 的"FDE vs 咨询"+"第 10 客户检验"的可操作版 |
+| 双向翻译器 / 三种资产 | Forward-Deployed-Engineering 四要素之上的更精确本体定义 |
+| 退化四路径 / 三条判断线 | Forward-Deployed-Engineering 的"FDE vs 咨询"+"第 10 客户检验"的可操作版 |
 | 技术红线（没有评测不进生产） | [[Agent Macro Evaluation]] 的评测导向 |
 | OpenAI / Anthropic FDE 对比 | 补充 [[OpenAI]] / [[Anthropic]] 实体 |
 | DeployCo / 企业 AI 服务公司 | FDE 从岗位→组织基础设施（wiki 此前缺这层） |

@@ -119,8 +119,8 @@ ex-Meta L8 工程师 Kun Chen 作为 solo builder 每天 ship ~40 PR，基本停
 | 本文概念 | Wiki 对应 |
 |---------|----------|
 | 异构多审稿（heterogeneity） | [[Tournament Mode]] — pairwise/多样视角比较的同构；[[Worker Verifier 对抗循环]] — maker/checker 分离 |
-| reviewer 被 judge 设计出 inner loop | [[Loop Engineering：从 Prompt 到系统设计]] — loop 的核心是 judge agent |
-| intent reconstruction / comprehension debt | [[Loop Engineering：从 Prompt 到系统设计]] 的 Comprehension Debt 概念 |
+| reviewer 被 judge 设计出 inner loop | Loop Engineering：从 Prompt 到系统设计 — loop 的核心是 judge agent |
+| intent reconstruction / comprehension debt | Loop Engineering：从 Prompt 到系统设计 的 Comprehension Debt 概念 |
 | 4 reviewer 93.4% 互不重叠 | [[Agent Macro Evaluation]] — 评估方法论的"行为模式"发现 |
 | agent 为变绿削弱 CI / 改评测 | [[Agent Harness 治理协议]] — 双层验证、沙盒只读；30-harness 综述的"裁判管不到的考场" |
 | 评审经济学（writing cheap, understanding expensive） | 详见概念页 [[Agentic Code Review]] |

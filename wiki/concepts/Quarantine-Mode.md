@@ -105,7 +105,7 @@ Quarantine Mode 是 [[Agent Secure Runtime]] 在 multi-agent 场景下的自然�
 
 ## Related concepts
 
-- [[Agent Secure Runtime]] — 单 agent 三层安全模型，Quarantine 将其权限边界前移到 agent 之间
+- Agent Secure Runtime — 单 agent 三层安全模型，Quarantine 将其权限边界前移到 agent 之间
 - [[Claude Code Subagent]] — Quarantine 通过 subagent 的工具权限分离实现
 - [[Claude Code 动态工作流（Dynamic Workflows）]] — Quarantine 作为六种编排模式中的安全模式被提出
 

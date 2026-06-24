@@ -42,4 +42,4 @@ LangChain 的架构围绕以下设计决策：
 
 ## Sources
 
-> **注意**：LangChain 的原始文档、Deep Agents 基准测试报告等一手资料尚未收录进本 wiki。当前页面内容基于 [[Agent Runtime]] 中的引用数据点和对 LangChain 公开架构的概述性了解。完整收录后需更新 `sources` 字段并扩充 Deep Agents 相关内容。
+> **注意**：LangChain 的原始文档、Deep Agents 基准测试报告等一手资料尚未收录进本 wiki。当前页面内容基于 Agent Runtime 中的引用数据点和对 LangChain 公开架构的概述性了解。完整收录后需更新 `sources` 字段并扩充 Deep Agents 相关内容。

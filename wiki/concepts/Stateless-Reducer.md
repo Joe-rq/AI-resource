@@ -63,7 +63,7 @@ OpenAI Agents SDK 的 HITL 流程是 reducer 的具体实现：
 
 ## 为何是"第五种范式"
 
-[[12-Factor Agents]] 归纳四种对付接缝的范式：压概率空间 / Verifier 循环 / 统计签收 / 确定性外移。这四种都是"怎么对付接缝的失败"。
+12-Factor Agents 归纳四种对付接缝的范式：压概率空间 / Verifier 循环 / 统计签收 / 确定性外移。这四种都是"怎么对付接缝的失败"。
 
 reducer 是正交的另一维：**不是降低接缝失败率，而是让非确定性被隔离在一个可识别、可重放的唯一节点里**。状态全进 log → 可重放 → 可诊断 → 可续跑。它和四种范式叠加使用，不是替代。
 
@@ -88,7 +88,7 @@ reducer 的 durable log 就是 Event Sourcing 的 immutable event log：
 
 | 关联 | 说明 |
 |---|---|
-| [[12-Factor Agents]] | Factor 5（unify state）+ Factor 12（stateless reducer）是本概念的原始表述 |
+| 12-Factor Agents | Factor 5（unify state）+ Factor 12（stateless reducer）是本概念的原始表述 |
 | [[ESAA]] | Event Sourcing 是 reducer 的 durable log 的学术形式化；两者同构 |
 | [[Agent-Harness-治理协议]] | 事件时间线 + 双层验证 = reducer 在治理层的应用 |
 | [[Agent-Reliability-vs-Capability]] | reducer 的可重放性是对冲 reliability decay 的工程手段——长任务靠外移 + 重放，不靠模型硬扛 |
@@ -97,7 +97,7 @@ reducer 的 durable log 就是 Event Sourcing 的 immutable event log：
 
 ## 落地含义
 
-- **状态全部事件化**：current step、retry count、waiting status 都从事件序列推导，不另存执行状态（[[12-Factor Agents]] Factor 5）
+- **状态全部事件化**：current step、retry count、waiting status 都从事件序列推导，不另存执行状态（12-Factor Agents Factor 5）
 - **LLM 调用隔离**：让 `determine_next_step` 成为 reducer 里唯一非确定调用，其余确定性折叠可重放
 - **可重放 = 可诊断**：[[Agent Macro Evaluation]] 的 trace 分析、[[Agent-Reliability-vs-Capability]] 的 reliability 诊断都依赖 reducer 的可重放性
 - **慎用 hidden state**：cache、connection 等天然有状态的操作需单独处理，不能绕过 reducer

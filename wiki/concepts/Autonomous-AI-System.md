@@ -138,10 +138,10 @@ AI 在开工前先自我分流：高确定性任务一句话确认就放手；�
 ## Related concepts
 
 - [[Agent Runtime]] — Autonomous AI System 的运行时底座
-- [[Agent Harness 治理协议]] — 跨 session 长期一致性的治理层
+- Agent Harness 治理协议 — 跨 session 长期一致性的治理层
 - [[Meta Reflection Techniques]] — 元反思 = 让 AI 自主系统更聪明的飞轮核心
 - [[Thin Harness, Fat Skills]] — 12 技巧制度化为 Skill 文件的理论依据
-- [[wow-harness]] — 治理协议工程实现参考
-- [[ESAA]] — 状态持久化的事件溯源学术化版本
+- wow-harness — 治理协议工程实现参考
+- ESAA — 状态持久化的事件溯源学术化版本
 - [[如何实现一个好的 AI 自主干活系统]] — 原始来源
-- [[Heartbeat Watchdog]] — 看门狗的三层互检深化（Deli_AutoResearch）
+- Heartbeat Watchdog — 看门狗的三层互检深化（Deli_AutoResearch）

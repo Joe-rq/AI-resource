@@ -53,7 +53,7 @@ flowchart LR
 2. **fresh session 优于 resume** —— context 累积是认知循环的主因；每轮迭代用全新 context，状态经文件注入。
 3. **强制方向多样性** —— 每轮迭代前读取已尝试方向列表，新方向必须与历史全部不同。
 
-这与 [[Agent Harness 治理协议]]"无状态 session + 上下文胶囊"、[[wow-harness]] 的事件驱动完全一致，但 Deli 把"为什么不能 resume"讲得更直白：**resume 等于继承前一个 session 的偏见。**
+这与 Agent Harness 治理协议"无状态 session + 上下文胶囊"、[[wow-harness]] 的事件驱动完全一致，但 Deli 把"为什么不能 resume"讲得更直白：**resume 等于继承前一个 session 的偏见。**
 
 ## 状态文件系统
 
@@ -75,7 +75,7 @@ flowchart LR
 
 日志行格式：`{"ts","source","level":"info|warn|error|decision","event","detail"}`
 
-> 这套文件系统与 [[ESAA]] 的 append-only event store、[[Agent Harness 治理协议]] 的事件时间线同构——**append-only JSONL 作为唯一真相源**。`level=decision` 字段把"自主决策留痕"做成了机械步骤，呼应 [[Autonomous AI System]]"状态文件 = 唯一真相源；交班产出人话汇报"。
+> 这套文件系统与 [[ESAA]] 的 append-only event store、Agent Harness 治理协议 的事件时间线同构——**append-only JSONL 作为唯一真相源**。`level=decision` 字段把"自主决策留痕"做成了机械步骤，呼应 Autonomous AI System"状态文件 = 唯一真相源；交班产出人话汇报"。
 
 ## Stall 检测与 pivot
 
@@ -88,7 +88,7 @@ flowchart LR
 
 **"pivot 结构，不要 pivot 战术"**（来自实践）：当一个任务在某个框架内反复停滞，决定性的增益通常来自**修正环境/结构性约束本身**，而不是在现有框架里更使劲地调战术参数。停滞两次就该质疑环境，而不是朝一个方向更深的挖。
 
-> 与 [[Autonomous AI System]]"意外处理矩阵 + 永不停摆"互补：阳志平讲"单条卡住跳下一条"（横向绕行），Deli 讲"同一任务内改框架"（纵向 pivot）。两者合起来才是完整的停滞对策。
+> 与 Autonomous AI System"意外处理矩阵 + 永不停摆"互补：阳志平讲"单条卡住跳下一条"（横向绕行），Deli 讲"同一任务内改框架"（纵向 pivot）。两者合起来才是完整的停滞对策。
 
 ## 心跳看门狗（三层）
 
@@ -102,7 +102,7 @@ flowchart LR
 
 停滞阈值：进度超过 2h 无更新 **且** 最后输出是一个问题 → 判定停滞，启动 nudge 子 agent；连续 3 次 nudge 无进展 → 判定结构性卡死，停止 nudge 并以新方向重开。2h 阈值**故意**短于 4h 的 stuck-task 阈值——停滞是自愿停止，修起来便宜，值得更早抓。
 
-> 三层互检是对 [[Autonomous AI System]] 技巧 10（看门狗）的工程化深化：阳志平只提"CronCreate + 定时读状态文件"，Deli 给出了"为什么要三层、为什么 L0 不能依赖 session、为什么 L1 依赖一个活 session"的失效链推理。这是 Deli 对 wiki 最独有、最可独立复用的增量，故单独成概念页 [[Heartbeat Watchdog]]。
+> 三层互检是对 Autonomous AI System 技巧 10（看门狗）的工程化深化：阳志平只提"CronCreate + 定时读状态文件"，Deli 给出了"为什么要三层、为什么 L0 不能依赖 session、为什么 L1 依赖一个活 session"的失效链推理。这是 Deli 对 wiki 最独有、最可独立复用的增量，故单独成概念页 [[Heartbeat Watchdog]]。
 
 ## 四种 subagent 调度模式
 
@@ -115,7 +115,7 @@ flowchart LR
 
 子 agent 提示词应包含：背景、可验证交付物、工作目录、文件/行数上限、完成标准。
 
-> 模式 B（investigation / refutation / cross-domain 并行）与 [[Worker Verifier 对抗循环]]、[[Autonomous AI System]]"多视角对抗式自检"同源；模式 C 的"提交后立即轮询"是 [[Multi-Agent 协作模式]] 里长任务编排的具体落地。
+> 模式 B（investigation / refutation / cross-domain 并行）与 [[Worker Verifier 对抗循环]]、Autonomous AI System"多视角对抗式自检"同源；模式 C 的"提交后立即轮询"是 [[Multi-Agent 协作模式]] 里长任务编排的具体落地。
 
 ## 六条工程约束
 
@@ -128,7 +128,7 @@ flowchart LR
 5. 有多个候选方向时，**优先增加多样性**而非朝一个挖更深。
 6. 不可解的外部依赖失败必须升级（完整报告 + 通知 owner + 轮询回复）；**绝不静默放弃**。
 
-> 第 4 条"每 20 条机械验证引用"是对 LLM 捏造引用的对治——作者诚实承认"捏造源于 LLM 本身，框架把外部检查变成机械步骤，但**不消除错误源**"。第 6 条"绝不静默放弃"与 [[Autonomous AI System]]"永不停摆"形成张力：单条可绕行，但不可解的系统性失败必须上浮，不能假装没发生。
+> 第 4 条"每 20 条机械验证引用"是对 LLM 捏造引用的对治——作者诚实承认"捏造源于 LLM 本身，框架把外部检查变成机械步骤，但**不消除错误源**"。第 6 条"绝不静默放弃"与 Autonomous AI System"永不停摆"形成张力：单条可绕行，但不可解的系统性失败必须上浮，不能假装没发生。
 
 ## Validation 与诚实标注的 limits
 
@@ -147,20 +147,20 @@ flowchart LR
 3. 捏造引用和数据伪影源于 LLM 本身；框架把外部检查变成流程里的机械步骤，**不消除错误源**。
 4. 职责分离靠**协议约束**而非模型自觉；去掉约束，越界行为就回来。
 
-> 这种"哪些能当结论、哪些只是机械补救"的诚实标注，与 [[Agentic Code Review]] 评审里"证据自标"、[[FDE 深度分析 v4：AI 能力悬置时代的现场工程组织接口]] 的证据分级同属高质量分析的特征。"72h 零运维介入 + 6 次方向介入"这一数据点，为 [[Autonomous AI System]] 的"持续运行时长"衡量标准提供了一个具体可比样本（对照阳志平的 3h 稳定 / 9h / 36h+）。
+> 这种"哪些能当结论、哪些只是机械补救"的诚实标注，与 [[Agentic Code Review]] 评审里"证据自标"、[[FDE 深度分析 v4：AI 能力悬置时代的现场工程组织接口]] 的证据分级同属高质量分析的特征。"72h 零运维介入 + 6 次方向介入"这一数据点，为 Autonomous AI System 的"持续运行时长"衡量标准提供了一个具体可比样本（对照阳志平的 3h 稳定 / 9h / 36h+）。
 
 ## 与现有 Wiki 概念的关联
 
 | Deli 内容 | Wiki 对应 |
 |-----------|----------|
-| 零交互协议 | [[Autonomous AI System]]"人介入点前置"的激进版——运行期完全不交互，把所有介入压到开工前 |
-| Callback 报活 + 三层看门狗 | [[Heartbeat Watchdog]]（本批次新建）；补强 [[Autonomous AI System]] 技巧 10 |
-| 状态持久化到文件 + append-only JSONL | [[ESAA]] Event Sourcing、[[Agent Harness 治理协议]] 事件时间线 |
-| Fresh session over resume + 上下文胶囊 | [[Agent Harness 治理协议]] 无状态 session、[[wow-harness]] 上下文胶囊 |
-| Guardian/Worker 分离（巡检三权限） | [[Agent Harness 治理协议]] 双层验证（无写权限）、[[Worker Verifier 对抗循环]] 角色分离 |
-| 停滞 > 崩溃 | [[Agentic Laziness]]、[[Goal Drift]]（不同切面：长跑单 agent vs 多 agent 编排） |
-| 模式 B 并行（调查/反驳/跨域） | [[Worker Verifier 对抗循环]]、[[Autonomous AI System]] 多视角对抗自检 |
-| Pivot 结构非战术 | [[Autonomous AI System]] 意外处理矩阵（横向绕行）的纵向补充 |
+| 零交互协议 | Autonomous AI System"人介入点前置"的激进版——运行期完全不交互，把所有介入压到开工前 |
+| Callback 报活 + 三层看门狗 | Heartbeat Watchdog（本批次新建）；补强 Autonomous AI System 技巧 10 |
+| 状态持久化到文件 + append-only JSONL | [[ESAA]] Event Sourcing、Agent Harness 治理协议 事件时间线 |
+| Fresh session over resume + 上下文胶囊 | Agent Harness 治理协议 无状态 session、wow-harness 上下文胶囊 |
+| Guardian/Worker 分离（巡检三权限） | Agent Harness 治理协议 双层验证（无写权限）、Worker Verifier 对抗循环 角色分离 |
+| 停滞 > 崩溃 | Agentic Laziness、[[Goal Drift]]（不同切面：长跑单 agent vs 多 agent 编排） |
+| 模式 B 并行（调查/反驳/跨域） | Worker Verifier 对抗循环、Autonomous AI System 多视角对抗自检 |
+| Pivot 结构非战术 | Autonomous AI System 意外处理矩阵（横向绕行）的纵向补充 |
 | 引用每 20 条机械验证 | [[Agent Macro Evaluation]] 机械验证导向 |
 | 职责分离靠约束非自觉 | [[Dive into Claude Code（论文）]]"套具比模型重要"（98.4% 基础设施）|
 
@@ -189,10 +189,10 @@ flowchart LR
 
 ## Related
 
-- [[Heartbeat Watchdog]] — 三层看门狗的独立概念页（本批次新建）
-- [[Autonomous AI System]] — 同谱系的中文视角（阳志平 12 技巧），本 summary 大量交叉印证
-- [[Agent Harness 治理协议]] — 跨 session 治理层，Deli 是其"长时间运行续航"侧的工程化补充
-- [[ESAA]] — append-only event store 的学术版本
-- [[wow-harness]] — 治理协议的工程实现
-- [[Worker Verifier 对抗循环]] — 模式 B 并行探索的角色分离参照
-- [[Agentic Laziness]] / [[Goal Drift]] — 失效模式切面对照
+- Heartbeat Watchdog — 三层看门狗的独立概念页（本批次新建）
+- Autonomous AI System — 同谱系的中文视角（阳志平 12 技巧），本 summary 大量交叉印证
+- Agent Harness 治理协议 — 跨 session 治理层，Deli 是其"长时间运行续航"侧的工程化补充
+- ESAA — append-only event store 的学术版本
+- wow-harness — 治理协议的工程实现
+- Worker Verifier 对抗循环 — 模式 B 并行探索的角色分离参照
+- Agentic Laziness / [[Goal Drift]] — 失效模式切面对照

@@ -58,7 +58,7 @@ tags: [harness, cybernetics, feedforward, feedback, guides, sensors, control-loo
 | Outer harness 组件 | 作用 | 本仓库对应 |
 |---|---|---|
 | Session persistence | 睡眠/断网时保持 alive 且可恢复 | [[Stateless Reducer]] |
-| Feedforward controls | 执行前约束 action space | [[Quarantine Mode]]、CLAUDE.md |
+| Feedforward controls | 执行前约束 action space | Quarantine Mode、CLAUDE.md |
 | Feedback controls | 执行后/中观察与信号浮现 | [[Agentic Code Review]] |
 | Multi-surface dispatch | 不同 surface 访问同一 session | — |
 
@@ -124,7 +124,7 @@ Böckeler 指出 maintainability harness 的传感器并非万能：
 - Computational sensors 可靠抓**结构**问题（重复代码、圈复杂度、覆盖缺口、架构漂移、风格）
 - LLM 能部分处理**语义**问题（语义重复、冗余测试、暴力修复、过度工程）但贵且概率性
 - **高影响问题两者都不可靠抓**：误诊、过度工程、不必要功能、误解指令
-- **正确性超出任何传感器能力**——若人没先说清想要什么（intent reconstruction，见 [[Agentic Code Review]]）
+- **正确性超出任何传感器能力**——若人没先说清想要什么（intent reconstruction，见 Agentic Code Review）
 
 即：harness 控制论能压缩但不能消除 [[Agent Reliability vs Capability]] 的 reliability gap，尤其语义/意图层。
 
@@ -132,14 +132,14 @@ Böckeler 指出 maintainability harness 的传感器并非万能：
 
 | 本仓库概念 | 在控制论框架中的位置 |
 |---|---|
-| [[Quarantine Mode]] | Feedforward（行动前结构隔离） |
-| [[Agentic Code Review]] | Feedback（Inferential sensor + human-on-the-loop approval gate） |
-| [[Worker Verifier 对抗循环]] | Feedback（Verifier 优先 deterministic） |
+| Quarantine Mode | Feedforward（行动前结构隔离） |
+| Agentic Code Review | Feedback（Inferential sensor + human-on-the-loop approval gate） |
+| Worker Verifier 对抗循环 | Feedback（Verifier 优先 deterministic） |
 | [[Claude Code Skills]] | Feedforward（Inferential guide） |
 | [[Thin Harness, Fat Skills]] | steering loop 的实例（skill = 可迭代 harness） |
 | [[Stateless Reducer]] | outer harness 的 session persistence 底层 |
 | [[12-Factor Agents]] | own your outer harness 的方法论 |
-| [[Agent Reliability vs Capability]] | harness 控制论要压缩的 gap（但语义层有盲区） |
+| Agent Reliability vs Capability | harness 控制论要压缩的 gap（但语义层有盲区） |
 | [[Context Engineering]] | 与 feedforward 交叉——context injection 是 feedforward control |
 | 第一方印证 | Anthropic effective harnesses（initializer/coding 分工）+ OpenAI Codex harness（steer/execute、lint remediation）独立实证此框架 |
 

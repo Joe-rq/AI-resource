@@ -128,7 +128,7 @@ flowchart TD
 ## Related concepts
 
 - [[Agent Secure Runtime]] — Agent Runtime 的安全增强模式，增加沙箱和护栏层
-- [[Claude Code Subagent]] — Subagent 的执行环境属于 Runtime 层的一部分；独立上下文窗口缓解 compaction 压力
+- Claude Code Subagent — Subagent 的执行环境属于 Runtime 层的一部分；独立上下文窗口缓解 compaction 压力
 - [[Agent Harness 治理协议]] — Runtime 之上的治理层，解决跨 session 长期一致性
 - [[Dive into Claude Code（论文）]] — Claude Code 源码级逆向分析，98.4% 基础设施数据的来源
-- [[Meta Reflection Techniques]] — 元反思技巧，提供了 Entity 数量上限（≤4）等 Runtime 设计约束
+- Meta Reflection Techniques — 元反思技巧，提供了 Entity 数量上限（≤4）等 Runtime 设计约束

@@ -135,5 +135,5 @@ Shyam Sankar 的《Mobilize》系统阐述了 Palantir 背后的国防工业哲�
 
 ## 参考
 
-- [[Forward-Deployed-Engineering]] — FDE 模式的系统阐述
+- Forward-Deployed-Engineering — FDE 模式的系统阐述
 - [[FDE 实战手册：AI 初创公司的前置部署工程（Bob McGrew）]]

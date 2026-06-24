@@ -230,4 +230,4 @@ suspect_score = 0.4 × proximity + 0.3 × frequency + 0.2 × bridge + 0.1 × rol
 - BERTopic 风格 vs 直接用 LLM 做主题归纳，哪种在 agent trace 场景下更稳定？
 - `suspect_score` 的 `0.4 / 0.3 / 0.2 / 0.1` 权重在不同 agent 系统上是否需要重新校准？
 - 宏观评估能否反过来驱动**自动生成新的底层评估 rubric**（self-extending eval）？
-- 当 `behavior_pattern` 与 [[Agent Harness 治理协议]] 的 concept node 演化结合，能否实现"系统级自我反思循环"？
+- 当 `behavior_pattern` 与 Agent Harness 治理协议 的 concept node 演化结合，能否实现"系统级自我反思循环"？

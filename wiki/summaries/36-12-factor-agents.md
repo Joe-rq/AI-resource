@@ -119,8 +119,8 @@ tags: [12-factor-agents, humanlayer, harness, agent-engineering, deterministic, 
 
 | 关联 | 说明 |
 |---|---|
-| [[Stateless Reducer]] | Factor 12 的形式化概念页 |
-| [[Agent-Reliability-vs-Capability]] | 80% 墙与贴边扩张的学术级深化 |
+| Stateless Reducer | Factor 12 的形式化概念页 |
+| Agent-Reliability-vs-Capability | 80% 墙与贴边扩张的学术级深化 |
 | [[Thin-Harness-Fat-Skills]] | 同样反框架、主张自拥零件，立场接近 |
 | [[Agentic-Code-Review]] | 接缝处 human-on-the-loop = Factor 7/8 |
 | [[Agent-Harness-治理协议]] | 事件时间线 ≈ reducer 事件流 |

@@ -69,12 +69,12 @@ Anthropic 的 Agent 设计贯穿三条原则：
 - [[Claude Code Dynamic Workflows 实践指南]] — 按任务即时生成定制 harness
 - [[Anthropic Managed Agents API]] — Session Thread 隔离的托管 Agent 服务
 - [[Multi-Agent 协作模式]] — Orchestrator-Worker 等通用协作模式
-- [[Thin Harness, Fat Skills]] — 与 Anthropic minimal scaffolding 哲学同源
+- Thin Harness, Fat Skills — 与 Anthropic minimal scaffolding 哲学同源
 - [[Worker Verifier 对抗循环]] — 与 Anthropic 方案的对比参照（Mavis 方案）
 
 ## Sources
 
 - [[Anthropic 多 Agent 研究系统]] — (2026-05-19) Orchestrator-Worker 架构与 BrowseComp 基准数据
-- [[Anthropic Managed Agents API]] — (2026-05-19) Session Thread 隔离模型与模式对比
-- [[Claude Code Agent Teams]] — (2026-05-19) Team Lead + Teammates 架构与 token 消耗分析
+- Anthropic Managed Agents API — (2026-05-19) Session Thread 隔离模型与模式对比
+- Claude Code Agent Teams — (2026-05-19) Team Lead + Teammates 架构与 token 消耗分析
 - [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]] — (2026-06-05) Dynamic Workflows 三种失效模式与 6 种编排模式

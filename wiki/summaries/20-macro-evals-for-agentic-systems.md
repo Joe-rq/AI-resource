@@ -230,5 +230,5 @@ flowchart TB
 - `suspect_score` 的 `0.4 / 0.3 / 0.2 / 0.1` 权重是 OpenAI 经验值，在其他 agent 系统上是否需要重新校准？
 - BERTopic 风格 vs 直接 LLM 做主题归纳，在 agent trace 场景下哪种更稳定？前者可解释性强，后者语义敏感度高
 - 宏观评估能否反向**自动生成新的底层评估 rubric**？即从 `behavior_pattern` 反推应该新增哪些 micro-eval 维度（self-extending eval）
-- `behavior_pattern` 与 wow-harness v3 [[Agent Harness 治理协议]] 的 concept node 演化结合，能否实现"系统级自我反思循环"？
+- `behavior_pattern` 与 wow-harness v3 Agent Harness 治理协议 的 concept node 演化结合，能否实现"系统级自我反思循环"？
 - 1000 次合成运行 vs 真实生产数据，宏观评估发现的模式可迁移性如何？合成数据的 case_type 分布偏倚会传递到 behavior_pattern

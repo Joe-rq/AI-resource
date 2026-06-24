@@ -136,5 +136,5 @@ ultracode: 审计 src/ 目录下的认证问题，token 预算 10000，超出时
 - [[Thin Harness, Fat Skills]] — "harness on the fly" 的极致推论
 - [[Worker Verifier 对抗循环]] — 对抗验证模式的同构概念
 - [[Agent Secure Runtime]] — Quarantine 模式的权限隔离延伸
-- [[Tournament Mode]] — pairwise 比较 vs absolute scoring 的判断学说
+- Tournament Mode — pairwise 比较 vs absolute scoring 的判断学说
 - [[Quarantine Mode]] — 读不可信内容的 agent 与高权限 agent 的结构性隔离

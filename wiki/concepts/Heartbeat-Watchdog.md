@@ -91,9 +91,9 @@ flowchart TD
 |------|------|
 | 看门狗（基础形态） | [[Autonomous AI System]] 技巧 10（CronCreate + 定时读状态文件）——本页给出"为什么三层"的失效链深化 |
 | 事件时间线 / append-only | [[Agent Harness 治理协议]] 事件时间线、[[ESAA]] event store——`last_seen` 和巡检日志都是 append-only |
-| 角色分离 / 最小权限 | [[Worker Verifier 对抗循环]]、[[Agent Harness 治理协议]] 双层验证、[[wow-harness]] |
+| 角色分离 / 最小权限 | [[Worker Verifier 对抗循环]]、Agent Harness 治理协议 双层验证、[[wow-harness]] |
 | 看门狗摆脱人在回路 | [[Meta Reflection Techniques]] 技巧 7（看门狗模式：让 AI 自己定时启动反思） |
-| 永不停摆 / 单条绕行 | [[Autonomous AI System]] 意外处理矩阵——横向绕行 vs 本页的纵向自愈 |
+| 永不停摆 / 单条绕行 | Autonomous AI System 意外处理矩阵——横向绕行 vs 本页的纵向自愈 |
 | 停滞 > 崩溃 | [[Agentic Laziness]]——"过早宣布完成"是停滞的一种伪装形态 |
 | 工程实现参考 | [[wow-harness]] v3、[[Multi-Agent 协作模式]] |
 
@@ -101,16 +101,16 @@ flowchart TD
 
 - 三层架构在真实多租户/容器化部署中，L0 常驻 shell guard 的跨平台实现与资源开销如何量化？（对比 [[Agent Secure Runtime]] 沙箱隔离）
 - 2h/4h 阈值与"连续 3 次 nudge"判据是作者经验值，在不同任务复杂度、不同模型规模下如何重新校准？是否可用 [[Agent Macro Evaluation]] 的运行模式聚类自动发现最优阈值？
-- Guardian/Worker 的三权限边界（liveness-check / restart / nudge）能否形式化为 [[ESAA]] boundary contracts 那样的 schema 级硬约束，而非靠 prompt 纪律？
+- Guardian/Worker 的三权限边界（liveness-check / restart / nudge）能否形式化为 ESAA boundary contracts 那样的 schema 级硬约束，而非靠 prompt 纪律？
 - L1"依赖一个活着的交互 session"在现代 headless/CI 部署中是否成立？纯后台场景下 L0 是否足以单独兜底？
 
 ## Related concepts
 
 - [[Deli_AutoResearch：长时间自主任务的协议框架（Victor Chen）]] — 原始来源（summary 35）
-- [[Autonomous AI System]] — 同谱系中文视角，本概念是其"自动续航"组的工程化深化
-- [[Agent Harness 治理协议]] — 跨 session 治理层，看门狗是其"运行时脆弱"对策
-- [[ESAA]] — append-only event store + boundary contracts，巡检日志与最小权限的形式化版本
-- [[wow-harness]] — 治理协议工程实现
+- Autonomous AI System — 同谱系中文视角，本概念是其"自动续航"组的工程化深化
+- Agent Harness 治理协议 — 跨 session 治理层，看门狗是其"运行时脆弱"对策
+- ESAA — append-only event store + boundary contracts，巡检日志与最小权限的形式化版本
+- wow-harness — 治理协议工程实现
 - [[Worker Verifier 对抗循环]] — Guardian/Worker 分离的角色分离参照
 - [[Meta Reflection Techniques]] — 看门狗摆脱人在回路
 - [[Agentic Laziness]] — 停滞的伪装形态之一

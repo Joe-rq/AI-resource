@@ -122,6 +122,6 @@ flowchart TB
 
 - 原始来源：`raw/articles/2026-06-02-harness-for-every-task-dynamic-workflows.md`
 - 互补 summary：[[Claude Code 动态工作流（Dynamic Workflows）]] —— 产品功能文档
-- 上位概念：[[Thin Harness, Fat Skills]]、[[Multi-Agent 协作模式]]、[[Agent Runtime]]
-- 同构概念：[[Worker Verifier 对抗循环]]、[[Agent Secure Runtime]]、[[Agent Harness 治理协议]]
+- 上位概念：Thin Harness, Fat Skills、[[Multi-Agent 协作模式]]、[[Agent Runtime]]
+- 同构概念：Worker Verifier 对抗循环、Agent Secure Runtime、[[Agent Harness 治理协议]]
 - 子代理基础：[[Claude Code Subagent]]
