@@ -47,14 +47,18 @@ Hooks are configured in `.claude/settings.json`. Three hook event types are used
 
 ### Implemented hooks
 
-**PostToolUse (Write/Edit)** — Wiki quality checks after file modification:
-- Guard: `git diff --name-only | grep 'wiki/*.md'` — skip if no wiki changes
-- `scripts/lint_frontmatter.py` — validate YAML frontmatter (required fields, types, dates, legacy fields)
-- `scripts/lint_redundant_aliases.py` — detect `[[X|X]]` redundant aliases and path-based wikilinks
-- `scripts/lint_wikilinks.py` — detect orphan wikilinks pointing to non-existent pages
+> 2026-06-24 起，以下 hook 已在 `.claude/settings.json` 真正配置并生效。此前这些脚本仅存在于 `scripts/`、从未挂载，自动检查从未触发——重复链接等问题正是因此积累。落地时一并修正了两处失实：声称的 `scripts/lint_wikilinks.py` 并不存在（dead-link 检查现并入聚合脚本），且 guard 用 `git diff` 会漏 untracked 新建页面。
 
-**Stop (all)** — Lightweight environment checks:
-- Detect `.DS_Store` in staging area (single grep, <5ms)
+**PostToolUse (Edit|Write)** — Wiki 质量门，对变更文件（含 untracked 新建页面）跑聚合检查：
+- Guard: `git status --porcelain -- wiki/ | grep -q .` — 无 wiki 变更时 `|| true` 静默跳过。用 `git status` 而非 `git diff`，因为后者不显示 untracked 新文件（ingest 新建页面会被漏掉）
+- `scripts/lint_changed_wiki.py` — 单进程聚合 4 项检查（满足 <500ms 预算，复用既有函数）：
+  - frontmatter 合规 → `lint_frontmatter.validate_frontmatter`
+  - 冗余别名 `[[X|X]]` + 路径式 wikilink → `lint_redundant_aliases.check_file`
+  - dead wikilink（target 不存在）→ `lint_wiki.load_pages` + `extract_wikilinks`
+  - 同页同一 target 链接 >2 次 → `lint_overlinks.find_violations`（threshold=2）
+
+**Stop (.*)** — 轻量环境检查：
+- 检测 `.DS_Store` 进入暂存区（`git diff --cached --name-only | grep .DS_Store`，<5ms）
 
 ### Planned hooks (priority order)
 
@@ -81,7 +85,7 @@ Hooks are configured in `.claude/settings.json`. Three hook event types are used
 1. **Hooks do not replace Skills.** Hooks run deterministic shell checks; Skills need LLM reasoning.
 2. **Stop hooks must stay under 10ms.** They fire on every tool call — any latency multiplies across the session.
 3. **PreToolUse is the only place that can say "no".** Use `exit 1` to block; use `exit 0` to warn without blocking.
-4. **PostToolUse uses `git diff` as guard, not env vars.** Claude Code's hook context variables are not fully documented; `git diff` is deterministic and always correct.
+4. **PostToolUse uses git CLI as guard, not env vars.** Claude Code's hook context variables are not fully documented; git commands are deterministic. Prefer `git status --porcelain -- wiki/` over `git diff` — the latter omits untracked files, so newly created pages (the main ingest case) would slip past the guard.
 5. **Non-zero exit = warning, not blocking (PostToolUse/Stop).** Only PreToolUse `exit 1` actually prevents the operation.
 
 ### PreToolUse vs PostToolUse: when to block vs when to warn

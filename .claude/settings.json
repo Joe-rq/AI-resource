@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "comment": "Wiki quality gate on changed files (tracked + untracked). Warn-only — PostToolUse cannot block. Aggregated into one uv run to stay <500ms.",
+            "command": "git status --porcelain -- wiki/ | grep -q . && uv run python scripts/lint_changed_wiki.py || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "comment": "Block accidentally staging macOS .DS_Store. Warn-only.",
+            "command": "git diff --cached --name-only | grep -q '.DS_Store' && { echo '⚠️  .DS_Store in staging area — remove before commit'; exit 1; } || true"
+          }
+        ]
+      }
+    ]
+  }
+}
