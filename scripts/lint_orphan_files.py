@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ALLOWED_ROOT_FILES = {"CLAUDE.md", "README.md"}
+ALLOWED_ROOT_FILES = {"CLAUDE.md", "README.md", "purpose.md"}
 
 
 def find_orphans(root: Path = ROOT) -> list[str]:

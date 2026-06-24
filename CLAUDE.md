@@ -1,6 +1,6 @@
 # AI Resource Wiki Knowledge Base
 
-> Schema document — read at the start of every session together with `wiki/index.md`.
+> Schema document — read at the start of every session together with `wiki/index.md` and `purpose.md` (the why, not the how).
 > Update after every major compile, ingest batch, or structural change.
 
 ## Scope
@@ -201,6 +201,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Anthropic — Claude 模型族、Claude Code/Agent SDK/Managed Agents 产品矩阵、Orchestrator-Worker 架构
 - OpenAI — GPT 模型族、Codex CLI、Handoff 模式、宏观评估方法论（OpenAI Cookbook）
 - LangChain — 开源 LLM 框架（chain-based composition + LangGraph），Agent Runtime benchmark 参考点
+- nashsu LLM Wiki — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ### Summaries
 - 36-12-factor-agents — 12-Factor Agents（HumanLayer/Dex Horthy：好 agent = 大部分确定性软件 + LLM 撒关键点；12 条按五主题；接缝在 selection↔invocation 间；workflow vs agent 术语张力）

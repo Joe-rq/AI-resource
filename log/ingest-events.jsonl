@@ -1,2 +1,4 @@
 {"event": "begin", "slug": "test-cp", "tag": "pre-ingest/test-cp", "head": "7ee40cd777c99aa6e326701172ac3d9af2ddec16", "ts": "2026-06-24T21:46:09"}
 {"event": "rollback", "slug": "test-cp", "tag": "pre-ingest/test-cp", "ts": "2026-06-24T21:46:10"}
+{"event": "begin", "slug": "nashsu-llm-wiki", "tag": "pre-ingest/nashsu-llm-wiki", "head": "c30759c348a86b954ad56da3e75e97e3c82685e1", "ts": "2026-06-24T22:10:36"}
+{"event": "end", "slug": "nashsu-llm-wiki", "ts": "2026-06-24T22:14:46"}
