@@ -226,6 +226,8 @@ def lint(root: str) -> int:
                 continue
             if p.name == ".gitkeep":
                 continue
+            if p.suffix != ".md":  # event streams (.jsonl) live alongside YYYYMMDD logs
+                continue
             m = LOG_FILENAME_RE.match(p.name)
             if not m:
                 log_issues.append(f"   {p.relative_to(root_path)} — filename doesn't match YYYYMMDD.md")

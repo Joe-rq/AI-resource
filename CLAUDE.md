@@ -344,6 +344,8 @@ Sources to ingest (priority order):
 ## Quality gates
 
 - After every ingest/compile, run the **full gate suite** — all must pass before commit: `uv run python scripts/lint_wiki.py . && uv run python scripts/check_consistency.py . && uv run python scripts/lint_consistency.py && uv run python scripts/lint_orphan_files.py`. 其中 `lint_consistency` 验证 CLAUDE.md / settings.json 引用的脚本真实存在（防幽灵脚本），`lint_orphan_files` 检测根目录游离 .md（防空文件污染）。完整反哺 roadmap 见 `docs/wiki-governance-roadmap.md`。
+- 巡检工具（**不阻断 commit**，定期看健康）：`uv run python scripts/lint_coverage.py`（Ashby 覆盖矩阵 gap）+ `uv run python scripts/lint_concept_drift.py`（概念页删除 / 振荡信号）—— exit 1 是信息性（待办 / 待审），非错误。
+- ingest 可回滚（[[Stateless Reducer]]）：ingest 前后调 `uv run python scripts/ingest_checkpoint.py begin/end <slug>`，出错用 `rollback <slug> [--force]` 回滚到 `pre-ingest/<slug>` 点。事件流写入 `log/ingest-events.jsonl`。
 - Before deleting any wiki page: run `grep -rl "页面标题" wiki/ --include="*.md"` to find and clean inbound wikilinks first.
 - Task completion requires state verification, not action reporting: "created the page" ≠ "page has sources and wikilinks".
 - After discovering one issue of a type, immediately scan for similar issues (e.g., empty sources, non-wiki wikilinks, wrong parent format).

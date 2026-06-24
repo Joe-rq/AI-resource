@@ -63,5 +63,7 @@
 
 ## 状态
 
-- 本期（2026-06-24）：落地 #1、#2；#3-5 入 roadmap 待续
-- 更新约定：每落地一项，把矩阵对应行从 ❌ 改 ✅
+- 2026-06-24：**#1-5 全部落地**。Ashby 矩阵 7/7 failure mode 均有 implemented 控制（`lint_coverage.py` 验证 0 gap）
+- 巡检工具（`lint_coverage` / `lint_concept_drift`）报告信息性 exit 1，**不阻断 commit**——未覆盖项 / drift 是待办待审，不是错误
+- `ingest_checkpoint` 已就绪，**待在 llm-wiki SKILL.md 接入 begin/end** 才完整生效（当前需手动调用）
+- 更新约定：落地新控制后，更新 `docs/governance-matrix.json` 对应 status（`lint_coverage` 会自动反映）

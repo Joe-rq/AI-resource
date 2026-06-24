@@ -1,0 +1,55 @@
+{
+  "description": "Ashby 覆盖矩阵 — 每个失败模式至少需要 1 个 implemented 控制（Harness Cybernetics: Ashby's Law）。lint_coverage.py 报告违例。维护约定：落地新控制后把对应 status 改 implemented。",
+  "source_concept": "Harness Cybernetics",
+  "failure_modes": [
+    {
+      "id": "rule-violation",
+      "desc": "机械规则违反积累（如重复 wikilink >2 次）",
+      "controls": [
+        {"name": "lint_overlinks.py + PostToolUse hook", "status": "implemented"}
+      ]
+    },
+    {
+      "id": "doc-reality-drift",
+      "desc": "文档与现实脱节（幽灵脚本 / 虚假 hook 声明）",
+      "controls": [
+        {"name": "lint_consistency.py", "status": "implemented"}
+      ]
+    },
+    {
+      "id": "env-pollution",
+      "desc": "环境污染 / 游离文件（如 0 字节空文件）",
+      "controls": [
+        {"name": "lint_orphan_files.py", "status": "implemented"}
+      ]
+    },
+    {
+      "id": "tool-blindspot",
+      "desc": "工具假设盲区（如 guard 漏 untracked）",
+      "controls": [
+        {"name": "测试驱动验证（每个防护造 fixture 验检出）", "status": "implemented"}
+      ]
+    },
+    {
+      "id": "coverage-meta",
+      "desc": "覆盖盲区本身（元）— 矩阵腐烂",
+      "controls": [
+        {"name": "本矩阵 + lint_coverage.py（自指）", "status": "implemented"}
+      ]
+    },
+    {
+      "id": "ingest-irreversible",
+      "desc": "ingest 不可逆，出错只能手动擦屁股",
+      "controls": [
+        {"name": "ingest_checkpoint.py（reducer wrapper；待在 llm-wiki SKILL.md 接入 begin/end）", "status": "implemented"}
+      ]
+    },
+    {
+      "id": "concept-oscillation",
+      "desc": "概念振荡 / 死概念堆积",
+      "controls": [
+        {"name": "lint_concept_drift.py（检测+人工确认）", "status": "implemented"}
+      ]
+    }
+  ]
+}
