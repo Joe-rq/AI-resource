@@ -47,7 +47,7 @@ Hooks are configured in `.claude/settings.json`. Three hook event types are used
 
 ### Implemented hooks
 
-> 2026-06-24 起，以下 hook 已在 `.claude/settings.json` 真正配置并生效。此前这些脚本仅存在于 `scripts/`、从未挂载，自动检查从未触发——重复链接等问题正是因此积累。落地时一并修正了两处失实：声称的 `scripts/lint_wikilinks.py` 并不存在（dead-link 检查现并入聚合脚本），且 guard 用 `git diff` 会漏 untracked 新建页面。
+> 2026-06-24 起，以下 hook 已在 `.claude/settings.json` 真正配置并生效。此前这些脚本仅存在于 `scripts/`、从未挂载，自动检查从未触发——重复链接等问题正是因此积累。落地时一并修正了两处失实：声称的 `lint_wikilinks.py` 脚本并不存在（dead-link 检查现并入聚合脚本），且 guard 用 `git diff` 会漏 untracked 新建页面。
 
 **PostToolUse (Edit|Write)** — Wiki 质量门，对变更文件（含 untracked 新建页面）跑聚合检查：
 - Guard: `git status --porcelain -- wiki/ | grep -q .` — 无 wiki 变更时 `|| true` 静默跳过。用 `git status` 而非 `git diff`，因为后者不显示 untracked 新文件（ingest 新建页面会被漏掉）
@@ -343,7 +343,7 @@ Sources to ingest (priority order):
 
 ## Quality gates
 
-- After every ingest/compile: run `uv run python scripts/lint_wiki.py . && uv run python scripts/check_consistency.py .`. Zero issues before commit.
+- After every ingest/compile, run the **full gate suite** — all must pass before commit: `uv run python scripts/lint_wiki.py . && uv run python scripts/check_consistency.py . && uv run python scripts/lint_consistency.py && uv run python scripts/lint_orphan_files.py`. 其中 `lint_consistency` 验证 CLAUDE.md / settings.json 引用的脚本真实存在（防幽灵脚本），`lint_orphan_files` 检测根目录游离 .md（防空文件污染）。完整反哺 roadmap 见 `docs/wiki-governance-roadmap.md`。
 - Before deleting any wiki page: run `grep -rl "页面标题" wiki/ --include="*.md"` to find and clean inbound wikilinks first.
 - Task completion requires state verification, not action reporting: "created the page" ≠ "page has sources and wikilinks".
 - After discovering one issue of a type, immediately scan for similar issues (e.g., empty sources, non-wiki wikilinks, wrong parent format).
