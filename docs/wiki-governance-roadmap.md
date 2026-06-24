@@ -67,3 +67,4 @@
 - 巡检工具（`lint_coverage` / `lint_concept_drift`）报告信息性 exit 1，**不阻断 commit**——未覆盖项 / drift 是待办待审，不是错误
 - `ingest_checkpoint` 已就绪，**待在 llm-wiki SKILL.md 接入 begin/end** 才完整生效（当前需手动调用）
 - 更新约定：落地新控制后，更新 `docs/governance-matrix.json` 对应 status（`lint_coverage` 会自动反映）
+- **2026-06-24（续）·图谱化 wikilink**：`scripts/lint_graph.py` 落地——连通分量（BFS）+ degree≤1 孤岛 + Tarjan 桥节点（articulation point）+ hub。来自 [[nashsu LLM Wiki]] 的"知识图谱洞察"参考点，补 `lint_orphan`（文件维度）的图谱维度。纯 stdlib，连通分量近似社区检测（发现断裂的知识岛，非 Louvain 密集子群）。
