@@ -2,10 +2,11 @@
 title: Agent Memory
 type: concept
 created: 2026-05-22
-updated: 2026-06-15
+updated: 2026-06-26
 sources:
   - raw/articles/2026-05-02-hermes-agent-nous-research.md
   - raw/articles/2026-05-17-nanoclaws-second-brain.md
+  - raw/articles/2026-06-24-agent-memory-architecture-wquguru.md
 tags:
   - agent-memory
   - long-term-memory
@@ -45,5 +46,6 @@ Agent Memory 是指 AI Agent 在多轮对话和跨会话场景中保持上下文
 
 ## Sources
 
+- [[Agent Memory 架构全景：从规则文件、会话检索到反思与技能沉淀]] — 截至 2026 年中，Agent Memory 四层架构与治理原则的系统梳理
 - [[Hermes Agent：Nous Research 的开源 Agent 框架]] — Hermes 自我进化型记忆系统
 - [[新加坡外长的 AI 第二大脑]] — Mnemon 图谱记忆 + 边缘部署案例

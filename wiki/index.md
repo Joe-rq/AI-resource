@@ -2,7 +2,7 @@
 title: Index — AI Resource Wiki
 type: index
 created: 2026-05-19
-updated: 2026-06-23
+updated: 2026-06-26
 sources: []
 tags: [index, navigation]
 ---
@@ -74,6 +74,7 @@ tags: [index, navigation]
 - [[nashsu LLM Wiki]] — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ## Summaries (chronological)
+- 2026-06-24 — [[Agent Memory 架构全景：从规则文件、会话检索到反思与技能沉淀]] — Agent Memory 四层架构：规则记忆、常驻画像、历史召回、反思与技能沉淀；证据链治理与 memory 的持久化风险
 - 2026-06-23 — [[12-Factor Agents]] — 12-Factor Agents（HumanLayer/Dex Horthy）：好 agent = 大部分确定性软件 + LLM 撒关键点；12 条按五主题；接缝在 selection↔invocation 间；workflow vs agent 术语张力
 - 2026-06-21 — [[Deli_AutoResearch：长时间自主任务的协议框架（Victor Chen）]] — Deli_AutoResearch 协议框架（Victor Chen）：长时间自主任务 3 失效模式（认知循环/停滞/运行时脆弱）+ 5 行为约束 + 三层心跳看门狗 + fresh session over resume + stall 检测/pivot 结构
 - 2026-06-18 — [[Agentic Code Review：评审成为软件工程最杠杆的技能]] — Agentic Code Review（Addy Osmani）：四倍代码一成价值、blast radius 分层、intent reconstruction、异构多审稿、human on the loop

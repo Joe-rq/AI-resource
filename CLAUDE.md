@@ -204,6 +204,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - nashsu LLM Wiki — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ### Summaries
+- 37-agent-memory-architecture-wquguru — Agent Memory 架构全景（WquGuru：规则记忆 / 常驻画像 / 历史召回 / 反思与技能沉淀；证据链治理与 memory 持久化风险）
 - 36-12-factor-agents — 12-Factor Agents（HumanLayer/Dex Horthy：好 agent = 大部分确定性软件 + LLM 撒关键点；12 条按五主题；接缝在 selection↔invocation 间；workflow vs agent 术语张力）
 - 12-a-harness-for-every-task-dynamic-workflows — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）
 - 20-macro-evals-for-agentic-systems — OpenAI Cookbook 宏观评估教程（EV 订单 multi-agent + 1000 次合成运行 + Promptfoo + BERTopic + AgentTrace）
