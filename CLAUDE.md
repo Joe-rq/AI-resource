@@ -222,6 +222,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 33-zachlloyd-skill-self-improvement-loop — Skills 自我提升闭环（Zach Lloyd/Warp：inner/outer agent loop + GitHub issue triage 实例）
 - 34-fde-deep-analysis-v4 — FDE 深度分析 v4（黄奕彬：capability overhang + 四断点 + 双向翻译器 + 三种资产 + DeployCo + 最小交付包/技术红线 + 中国语境）
 - 35-deli-auto-research-framework — Deli_AutoResearch 协议框架（Victor Chen：3 失效模式 + 5 行为约束 + 三层心跳看门狗 + fresh session over resume + stall 检测/pivot 结构 + 4 subagent 调度模式 + 工程约束）
+- 38-deli-auto-research-self-play-story — Deli AutoResearch 第四篇论文诞生记：285B 自博弈实验、V12 主动降分、V16 理论加固
+- 39-deli-auto-research-series-overview — Deli AutoResearch 四论文系列总览与生产统计（4 篇综述 / 265 页 / 1,155 条引用 / 8.6 系列最高评审分）
 - hermes-agent-harness-engineering — (stub) 已合并至 15-wow-harness-v3-governance
 - 17-ai-autonomous-system-tips — 阳志平 AI 自主系统 12 技巧（任务编排 / 实际开工 / 自检评审 / 自动续航）
 - 29-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）

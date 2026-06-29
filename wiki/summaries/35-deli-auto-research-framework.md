@@ -2,8 +2,8 @@
 title: "Deli_AutoResearch：长时间自主任务的协议框架（Victor Chen）"
 type: summary
 created: 2026-06-21
-updated: 2026-06-21
-sources: ["raw/articles/2026-06-21-deli-auto-research-framework.md"]
+updated: 2026-06-26
+sources: ["raw/articles/2026-06-21-deli-auto-research-framework.md", "raw/articles/2026-06-26-deli-auto-research-self-play-story.md", "raw/articles/2026-06-26-deli-auto-research-series-overview.md"]
 tags: [autonomous, long-horizon, zero-interaction, heartbeat-watchdog, stall-detection, guardian-worker, fresh-session, orchestrator, anti-loop, deli, victor-chen]
 ---
 
@@ -189,10 +189,12 @@ flowchart LR
 
 ## Related
 
-- Heartbeat Watchdog — 三层看门狗的独立概念页（本批次新建）
-- Autonomous AI System — 同谱系的中文视角（阳志平 12 技巧），本 summary 大量交叉印证
-- Agent Harness 治理协议 — 跨 session 治理层，Deli 是其"长时间运行续航"侧的工程化补充
-- ESAA — append-only event store 的学术版本
-- wow-harness — 治理协议的工程实现
-- Worker Verifier 对抗循环 — 模式 B 并行探索的角色分离参照
-- Agentic Laziness / [[Goal Drift]] — 失效模式切面对照
+- [[Deli AutoResearch 四论文系列总览与生产统计]] — 四篇论文的完整页数、引用、评审分数、生产统计与文献流水线
+- [[Deli AutoResearch 第四篇论文诞生记：285B 自博弈实验与诚实的自我评审]] — Paper #4 16 轮评审、V12 主动降分、285B GRPO 实验与 V16 理论加固的详细故事
+- [[Heartbeat Watchdog]] — 三层看门狗的独立概念页（本批次新建）
+- [[Autonomous AI System]] — 同谱系的中文视角（阳志平 12 技巧），本 summary 大量交叉印证
+- [[Agent Harness 治理协议]] — 跨 session 治理层，Deli 是其"长时间运行续航"侧的工程化补充
+- [[ESAA]] — append-only event store 的学术版本
+- [[wow-harness]] — 治理协议的工程实现
+- [[Worker Verifier 对抗循环]] — 模式 B 并行探索的角色分离参照
+- [[Agentic Laziness]] / [[Goal Drift]] — 失效模式切面对照
