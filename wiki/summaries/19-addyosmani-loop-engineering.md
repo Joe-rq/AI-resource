@@ -159,6 +159,7 @@ Loop 自己运行时，很容易停止有主见、接受 loop 给的一切。设
 | 自主运行 + 人工确认门 | [[Autonomous AI System]] — 阳志平 12 技巧 × 4 组（任务编排/实际开工/自检评审/自动续航） |
 | Claude Code 5 层 compaction | [[Dive into Claude Code（论文）]] — 论文识别的 5 层 compaction pipeline 在 loop 长期运行中的触发频率 |
 | Memory 必须落盘 | [[ESAA]] — Event Sourcing + CQRS，immutable audit trail，跨会话 deterministic replay |
+| Loop 类型学（何时用哪种） | [[Claude Code Loops]] — Claude Code 官方四分类法（Turn-based/Goal-based/Time-based/Proactive），本文 5 模块是跨类型的通用积木 |
 
 ---
 

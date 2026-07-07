@@ -178,6 +178,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Forward-Deployed-Engineering — FDE 前置部署工程（四要素定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、AI 时代复兴原因）
 - AI-Capability-Overhang — AI 能力悬置（模型能力已存在但未被组织释放；FDE 成因；与补偿面镜像）
 - Claude-Code-Dynamic-Workflows-Practical-Guide — Claude Code 动态工作流实践指南（场景选择决策树、命令速查、14 个推荐场景与最佳实践）
+- Claude-Code-Loops — Claude Code 官方 loop 四分类法（Turn-based/Goal-based/Time-based/Proactive），按 trigger/stop/primitive/task 四维度
 - Agentic-Laziness — 智能体偷懒（Dynamic Workflows 失效模式之一：Agent 走捷径、过早宣布完成）
 - Self-Preferential-Bias — 自我偏好偏差（Dynamic Workflows 失效模式之一：坚持自己输出、拒绝有效反馈）
 - Goal-Drift — 目标漂移（Dynamic Workflows 失效模式之一：逐步偏离原始目标而不自知）
@@ -224,6 +225,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 35-deli-auto-research-framework — Deli_AutoResearch 协议框架（Victor Chen：3 失效模式 + 5 行为约束 + 三层心跳看门狗 + fresh session over resume + stall 检测/pivot 结构 + 4 subagent 调度模式 + 工程约束）
 - 38-deli-auto-research-self-play-story — Deli AutoResearch 第四篇论文诞生记：285B 自博弈实验、V12 主动降分、V16 理论加固
 - 39-deli-auto-research-series-overview — Deli AutoResearch 四论文系列总览与生产统计（4 篇综述 / 265 页 / 1,155 条引用 / 8.6 系列最高评审分）
+- 40-claude-code-loops-getting-started — Getting started with loops（Claude Code 官方 loop 分类法：Turn-based/Goal-based/Time-based/Proactive + 维护代码质量 + 管理 token 用量）
 - hermes-agent-harness-engineering — (stub) 已合并至 15-wow-harness-v3-governance
 - 17-ai-autonomous-system-tips — 阳志平 AI 自主系统 12 技巧（任务编排 / 实际开工 / 自检评审 / 自动续航）
 - 29-meta-reflection-techniques — 阳志平 12 个元反思技巧（4 象限 × 行动之环）

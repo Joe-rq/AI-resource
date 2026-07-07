@@ -123,6 +123,7 @@ ultracode: 审计 src/ 目录下的认证问题，token 预算 10000，超出时
 - [[Goal Drift]] — 多轮 compaction 导致目标偏离，三种结构性失效模式之一
 - [[Tournament Mode]] — pairwise 比较 vs absolute scoring，六种编排模式之一
 - [[Quarantine Mode]] — 读不可信内容的 agent 与高权限 agent 的结构性隔离
+- [[Claude Code Loops]] — Claude Code 官方 loop 四分类法，本文"结合 /goal 和 /loop"进阶技巧的类型学基础
 
 ## 与现有 wiki 概念的关联
 

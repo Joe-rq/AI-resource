@@ -29,6 +29,7 @@ tags: [index, navigation]
 - [[Claude Code Subagent]] — Subagent：独立上下文工作者，内置类型、自定义定义、Fork 模式、持久内存、Hooks
 - [[Claude Code Skills]] — Skills 扩展机制：SKILL.md 定义、动态上下文注入、Subagent 中运行、调用控制
 - [[Claude Code Dynamic Workflows 实践指南]] — 场景选择决策树、命令速查、14 个推荐场景与最佳实践
+- [[Claude Code Loops]] — 官方 loop 四分类法（Turn-based/Goal-based/Time-based/Proactive），按 trigger/stop/primitive/task 四维度
 
 ### Dynamic Workflows — 失效模式与安全模式
 - [[Agentic Laziness]] — 智能体偷懒：走捷径、跳过验证、过早宣布完成
@@ -74,6 +75,7 @@ tags: [index, navigation]
 - [[nashsu LLM Wiki]] — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ## Summaries (chronological)
+- 2026-07-07 — [[Getting started with loops（Claude Code 官方 loop 分类法）]] — Claude Code 团队官方 loop 四分类法（Turn-based/Goal-based/Time-based/Proactive）+ 维护代码质量 + 管理 token 用量
 - 2026-06-26 — [[Deli AutoResearch 四论文系列总览与生产统计]] — Deli AutoResearch 项目四篇综述（自主研究 Agent / 持续学习 / 长程决策 / 自博弈）的页数、引用、评审分数与生产统计
 - 2026-06-26 — [[Deli AutoResearch 第四篇论文诞生记：285B 自博弈实验与诚实的自我评审]] — Paper #4（Self-Play）16 轮评审、285B GRPO 实验、V12 主动降分与 V16 理论加固的故事
 - 2026-06-24 — [[Agent Memory 架构全景：从规则文件、会话检索到反思与技能沉淀]] — Agent Memory 四层架构：规则记忆、常驻画像、历史召回、反思与技能沉淀；证据链治理与 memory 的持久化风险

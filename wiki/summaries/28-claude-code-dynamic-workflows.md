@@ -152,6 +152,7 @@ Claude 将结构化数据直接传给脚本，无需解析。省略 `args` 时�
 - **质量模式**（对抗审查、多角度草稿、交叉检查）— 与 [[Worker Verifier 对抗循环]]在目标层同构：把"对单个输出的信任"换成"对多视角加权后的信任"。对抗审查直接针对 [[Self-Preferential Bias]]——Agent 偏向自己产出的结构性失效模式
 - **隔离运行时 + 中间结果不污染主上下文** — 进一步推进了 [[Claude Code Subagent]] 的"独立上下文窗口"思想
 - **保存为命令 + 跨项目复用** — 与 [[Claude Code Skills]] 的"可复用指令包"在分发模型上互补：Skills 是指令包、工作流是脚本
+- **loop 类型学定位** — Dynamic Workflows 是 [[Claude Code Loops]] 四分类中 Proactive loop 的核心编排原语
 
 ## 关键观察
 
