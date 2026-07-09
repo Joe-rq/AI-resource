@@ -314,6 +314,13 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - [ ] memory scaffolds 普遍损害长程 reliability 的结论，在不同记忆架构（[[Agent-Memory]] 图谱 vs naive episodic）上是否分化？遗忘机制能否把"损害"转正？ — blocked by: [[Agent-Memory]] folder-split sub-pages
 - [ ] Stateless reducer 的可重放性能否量化对冲 reliability decay 的收益？即：reducer + 外移确定性，能把 RDC 斜率压到多少？ — blocked by: none
 
+### Multi-Model Collaboration
+
+- [ ] 异构性的量化度量：如何衡量一组模型的"盲点不重叠度"？[[Agentic Code Review]] 的 93.4% 互不重叠是审查层数据，生成层缺类似度量——而异构性是 [[Multi-Model Ensemble]] 收益的前提条件。 — blocked by: none
+- [ ] [[Multi-Model Ensemble]] / [[LLM Debate]] 的增益扣除算力后还剩多少？2604.02460（Data Processing Inequality）的等 token 预算公平比较框架，能否泛化为 ensemble 研究的标准协议？ — blocked by: none
+- [ ] [[Multi-Model Ensemble]] 与 [[Harness Cybernetics]] 的对偶：聚合是前馈、辩论是反馈——能否形式化为可度量的"harness 覆盖率"（Ashby's Law 操作化）？ — blocked by: none
+- [ ] Calibrated MAD 的 split-conformal certificate 能否工程化为 [[Agent Harness 治理协议]] 的双层验证，对治 diversity collapse 制造的"借来的自信"？ — blocked by: none
+
 ### Summary
 
 | Domain | Count | Blocked | Unblocked |
@@ -326,9 +333,10 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 | Long-Horizon Autonomy | 4 | 0 | 4 |
 | Memory | 2 | 1 | 1 |
 | Multi-Agent | 2 | 0 | 2 |
+| Multi-Model Collaboration | 4 | 0 | 4 |
 | Runtime | 2 | 0 | 2 |
 | Security | 3 | 0 | 3 |
-| **Total** | **32** | **2** | **30** |
+| **Total** | **36** | **2** | **34** |
 
 ## Research gaps
 
