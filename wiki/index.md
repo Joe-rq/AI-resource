@@ -21,6 +21,8 @@ tags: [index, navigation]
 - [[Multi-Agent 协作模式]] — 四种核心协作模式：Orchestrator/Specialist、Worker/Verifier、Team Engine、自动扩张任务图
 - [[Worker Verifier 对抗循环]] — Worker/Verifier 对抗循环是 Mavis 的核心架构机制（收敛模型、死锁检测、升级与降级）
 - [[Agentic Code Review]] — agent 产码时代的评审经济学：blast radius 分层 / intent reconstruction / 异构多审稿 / human on the loop
+- [[Multi-Model Ensemble]] — 多模型协作四架构谱系（采样投票/分层聚合/随机轮替/多轮辩论）+ 收益三条件（异构性×任务难度×算力公平）
+- [[LLM Debate]] — 多模型辩论：society of minds + 四大失效模式（bias reinforcement / diversity collapse / 弱拖垮强 / 算力混淆）
 - [[Agent Runtime]] — 单 Agent 执行环境，包含 Prompt/工具定义/上下文管理/错误处理
 - [[Agent Secure Runtime]] — Agent 安全运行时：三层安全检查（Policy/Network/Privacy）+ 沙箱隔离
 - [[Agent Harness 治理协议]] — 跨 session、跨 agent 的长期一致性治理（事件溯源、概念演化、双层验证、自动扩张任务图）
@@ -75,6 +77,8 @@ tags: [index, navigation]
 - [[nashsu LLM Wiki]] — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ## Summaries (chronological)
+- 2026-07-09 — [[多模型协作如何超过单强模型：正面证据综述]] — 多模型协作 > 单强模型正面证据（MoA 65.1%>GPT-4o / Blending 3×6-13B>175B ChatGPT / More Agents / Du Debate / Self-Consistency）
+- 2026-07-09 — [[LLM Debate 失效模式：多 Agent 协作何时翻车（2025 综述）]] — 多 Agent 协作失效模式（Stop Overvaluing MAD 等 6 篇 2025 反面综述；heterogeneity×difficulty×architecture×算力公平）
 - 2026-07-07 — [[Getting started with loops（Claude Code 官方 loop 分类法）]] — Claude Code 团队官方 loop 四分类法（Turn-based/Goal-based/Time-based/Proactive）+ 维护代码质量 + 管理 token 用量
 - 2026-06-26 — [[Deli AutoResearch 四论文系列总览与生产统计]] — Deli AutoResearch 项目四篇综述（自主研究 Agent / 持续学习 / 长程决策 / 自博弈）的页数、引用、评审分数与生产统计
 - 2026-06-26 — [[Deli AutoResearch 第四篇论文诞生记：285B 自博弈实验与诚实的自我评审]] — Paper #4（Self-Play）16 轮评审、285B GRPO 实验、V12 主动降分与 V16 理论加固的故事

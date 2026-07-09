@@ -93,6 +93,8 @@ flowchart LR
 - [[Meta Reflection Techniques]] — "强制元反思"（技巧 1）在 prompt 层面补偿自我偏好
 - [[Claude Code Subagent]] — 独立 context window 是实现对抗验证的工程基础
 - Goal Drift — 第三种失效模式：compaction 导致约束丢失
+- [[LLM Debate]] — bias reinforcement 把 self-preferential bias 从"单模型自审"扩展到"同质多模型互审"
+- [[Multi-Model Ensemble]] — 多模型协作谱系；同质 ensemble 无法纠偏的根因
 
 ## Open questions
 

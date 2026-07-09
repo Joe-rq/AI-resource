@@ -91,6 +91,7 @@ tags: [evaluation, reliability, capability, pass-at-k, long-horizon, variance, m
 | 记忆的代价 | memory scaffolds 普遍有害 → 直接关联 [[Agent Memory]] 的"遗忘机制"open question |
 | 长程自主性 | 衰减超线性 → 长任务必须靠 [[Stateless Reducer]] 的可重放 + 接缝外移，不能靠模型硬扛 |
 | Worker/Verifier | [[Worker Verifier 对抗循环]] 是单步降 VAF 的机制；本文给出为何长程必须叠加它 |
+| 多模型协作 | [[Multi-Model Ensemble]] 的多采样投票本质是 pass@k 的 reliability 机制；[[LLM Debate]] 的"算力混淆增益"正是 reliability 度量陷阱 |
 
 ## 落地含义
 

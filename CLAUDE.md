@@ -188,6 +188,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Agent-Reliability-vs-Capability — 可靠性与能力背离（capability 问能不能做到一次，reliability 问能不能次次做到；pass@k、RDC/VAF/GDS/MOP 四指标；MOP paradox；memory scaffolds 普遍损害长程 reliability）
 - Harness-Cybernetics — Harness 控制论（前馈 Guides/反馈 Sensors 对偶 + Computational/Inferential 2×2 + steering loop；inner/outer harness；cybernetic governor；Ashby's Law；把 Quarantine/Agentic-Code-Review/Worker-Verifier 归位）
 - Context-Engineering — 上下文工程（prompt engineering 的演进；write/select/compress/isolate 四策略；context 四失败模式 Poisoning/Distraction/Confusion/Clash；KV 命中率切入）
+- Multi-Model-Ensemble — 多模型协作（四架构谱系：采样投票/分层聚合/随机轮替/多轮辩论；收益三条件：异构性×任务难度×算力公平；可靠性 vs 能力；回答"多弱模型能否超过单强模型"）
+- LLM-Debate — 多模型辩论（society of minds；四大失效模式：bias reinforcement/diversity collapse/弱拖垮强/算力混淆；异构是 universal antidote；[[Multi-Model-Ensemble]] 四架构之一）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
@@ -245,6 +247,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 23-colin-jarvis-openai-fde — OpenAI FDE 访谈录（Colin Jarvis：信任、产品、影响）
 - 25-fde-future-roundtable — FDE 未来圆桌（OpenAI/Ramp/Nominal/Dataland）
 - 27-what-we-talk-about-fde — 当我们谈论 FDE 时（中文深度分析：四要素定义、真假 FDE）
+- 41-multi-model-ensemble-beats-gpt4 — 多模型协作如何超过单强模型：正面证据综述（MoA 65.1%>GPT-4o 57.5% / Blending 3×6-13B>175B ChatGPT / More Agents / Du Debate / Self-Consistency 五篇）
+- 42-llm-debate-failure-modes — LLM Debate 失效模式：多 Agent 协作何时翻车（Stop Overvaluing MAD / Revisiting MAD / When Consensus≠Correctness / Bias Reinforcement / Single-Agent>MAS / Talk Isn't Cheap 六篇 2025 反面综述）
 
 ## Open research questions
 

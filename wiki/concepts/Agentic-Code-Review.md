@@ -95,3 +95,4 @@ flowchart TD
 - [[Loop Engineering：从 Prompt 到系统设计]] — loop 的核心是 judge agent，reviewer 正被设计出 inner loop；Comprehension Debt 概念
 - [[Agent Macro Evaluation]] — 群体行为模式发现的方法论可服务于 review 策略调优
 - [[Agent Harness 治理协议]] — 沙盒只读、双层验证应对"agent 改评测/削弱 CI"
+- [[Multi-Model Ensemble]] — "异构才是补丁"在验证层的对应；生成层的多模型协作谱系（[[LLM Debate]] 失效模式实证"异构是 universal antidote"）

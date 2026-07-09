@@ -126,6 +126,8 @@ flowchart TB
 - [[A harness for every task: Anthropic 官方 Dynamic Workflows 深度解读]] — 首次在 wiki 中记录 pairwise-vs-absolute 判断学说
 - [[Agent Macro Evaluation]] — 宏观评估方法论中的 pairwise 比较与 Tournament 共享"相对判断优于绝对量纲"的哲学
 - [[Worker Verifier 对抗循环]] — 同为质量保障机制，但 Worker/Verifier 是合作验证，Tournament 是竞争择优
+- [[LLM Debate]] — 同级竞争的两种形态：Tournament 择优（judge 选最好一份），Debate 融合（收敛共同答案）
+- [[Multi-Model Ensemble]] — Tournament 是其四架构之外的"同级择优"对照
 
 ## 待研究问题
 

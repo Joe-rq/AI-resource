@@ -8,3 +8,5 @@
 {"event": "end", "slug": "backlinks", "ts": "2026-06-24T23:04:29"}
 {"event": "begin", "slug": "40-claude-code-loops-getting-started", "tag": "pre-ingest/40-claude-code-loops-getting-started", "head": "c9dfeb292f2d57809986b2dff0d9efcb830b4807", "ts": "2026-07-07T16:54:57"}
 {"event": "end", "slug": "40-claude-code-loops-getting-started", "ts": "2026-07-07T17:00:56"}
+{"event": "begin", "slug": "multi-model-vs-strong", "tag": "pre-ingest/multi-model-vs-strong", "head": "1f081fc276ccf58667c3e3ac825f05bd6599609f", "ts": "2026-07-09T22:31:44"}
+{"event": "end", "slug": "multi-model-vs-strong", "ts": "2026-07-09T22:44:36"}
