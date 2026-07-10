@@ -1,0 +1,41 @@
+name: Wiki Quality Gate
+
+# 把本地 commit 前的 quality gate 上云。脚本均为 Python 标准库，零第三方依赖，
+# 故用 uv run（与 CLAUDE.md gate 命令字面一致，CI 失败可本地精确复现）。
+# 巡检脚本（lint_coverage / lint_concept_drift / lint_graph）为信息性、exit 1 非错误，
+# 不纳入 blocking gate，本地定期手动运行。
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'wiki/**'
+      - 'raw/**'
+      - 'scripts/**'
+      - 'CLAUDE.md'
+      - '.github/workflows/**'
+  pull_request:
+    branches: [master]
+  workflow_dispatch: {}
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: lint_wiki（dead links / orphan pages / index.md / log shape）
+        run: uv run python scripts/lint_wiki.py .
+
+      - name: check_consistency（CLAUDE.md ↔ index.md ↔ disk 三方一致）
+        run: uv run python scripts/check_consistency.py .
+
+      - name: lint_consistency（引用脚本真实存在，防幽灵脚本）
+        run: uv run python scripts/lint_consistency.py
+
+      - name: lint_orphan_files（项目根无游离 .md）
+        run: uv run python scripts/lint_orphan_files.py
