@@ -10,3 +10,7 @@
 {"event": "end", "slug": "40-claude-code-loops-getting-started", "ts": "2026-07-07T17:00:56"}
 {"event": "begin", "slug": "multi-model-vs-strong", "tag": "pre-ingest/multi-model-vs-strong", "head": "1f081fc276ccf58667c3e3ac825f05bd6599609f", "ts": "2026-07-09T22:31:44"}
 {"event": "end", "slug": "multi-model-vs-strong", "ts": "2026-07-09T22:44:36"}
+{"event": "begin", "slug": "field-guide-to-fable-finding-unknowns", "tag": "pre-ingest/field-guide-to-fable-finding-unknowns", "head": "2df66aebfd1ca359e4de7c7dabc0f897e2230ecb", "ts": "2026-07-14T17:36:50"}
+{"event": "end", "slug": "field-guide-to-fable-finding-unknowns", "ts": "2026-07-14T17:41:41"}
+{"event": "begin", "slug": "prewalk-trajectory-handoff", "tag": "pre-ingest/prewalk-trajectory-handoff", "head": "2df66aebfd1ca359e4de7c7dabc0f897e2230ecb", "ts": "2026-07-24T17:54:18"}
+{"event": "end", "slug": "prewalk-trajectory-handoff", "ts": "2026-07-24T18:01:25"}

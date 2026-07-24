@@ -190,6 +190,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Context-Engineering — 上下文工程（prompt engineering 的演进；write/select/compress/isolate 四策略；context 四失败模式 Poisoning/Distraction/Confusion/Clash；KV 命中率切入）
 - Multi-Model-Ensemble — 多模型协作（四架构谱系：采样投票/分层聚合/随机轮替/多轮辩论；收益三条件：异构性×任务难度×算力公平；可靠性 vs 能力；回答"多弱模型能否超过单强模型"）
 - LLM-Debate — 多模型辩论（society of minds；四大失效模式：bias reinforcement/diversity collapse/弱拖垮强/算力混淆；异构是 universal antidote；[[Multi-Model-Ensemble]] 四架构之一）
+- Finding-Your-Unknowns — 四象限 Unknowns 框架（Known/Unknown × Knowns/Unknowns；减少并规划未知即 agentic coding 技能；blind spot pass / brainstorm / interview / reference / quiz 工具箱）
+- Trajectory-Handoff — 轨迹交接（/prewalk）：传 context window 不传 plan document（明信片）；swap on first edit + prune planning instruction；O(reads) 成本模型（edits 仅 9%）；prefill 原理（autoregression 本质，token-level 被禁但 turns-level 合规）；cheating 暴跌（绝望→作弊）；与 Multi-Model-Ensemble 正交（接力 vs 聚合）
 
 ### Entities
 - MiniMax-Mavis — MiniMax 的 Agent 产品
@@ -249,6 +251,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 27-what-we-talk-about-fde — 当我们谈论 FDE 时（中文深度分析：四要素定义、真假 FDE）
 - 41-multi-model-ensemble-beats-gpt4 — 多模型协作如何超过单强模型：正面证据综述（MoA 65.1%>GPT-4o 57.5% / Blending 3×6-13B>175B ChatGPT / More Agents / Du Debate / Self-Consistency 五篇）
 - 42-llm-debate-failure-modes — LLM Debate 失效模式：多 Agent 协作何时翻车（Stop Overvaluing MAD / Revisiting MAD / When Consensus≠Correctness / Bias Reinforcement / Single-Agent>MAS / Talk Isn't Cheap 六篇 2025 反面综述）
+- 43-field-guide-to-fable-finding-unknowns — A Field Guide to Fable: Finding Your Unknowns（Thariq Shihipar/Anthropic 官方：四象限 Unknowns + blind spot pass / brainstorm / interview / reference / implementation notes / quiz + Fable 发布视频案例）
+- 44-prewalk-trajectory-handoff — /prewalk: Hand off a trajectory, not a fairytale（stencil.so/omp：/plan 悖论贵 14% + O(reads) 成本模型 + /prewalk 三步 swap on first edit + SWE-Bench Pro 92–97% pass @ 53–61% cost + cheating 暴跌 44/72/13% + prefill 原理）
 
 ## Open research questions
 
@@ -320,6 +324,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - [ ] [[Multi-Model Ensemble]] / [[LLM Debate]] 的增益扣除算力后还剩多少？2604.02460（Data Processing Inequality）的等 token 预算公平比较框架，能否泛化为 ensemble 研究的标准协议？ — blocked by: none
 - [ ] [[Multi-Model Ensemble]] 与 [[Harness Cybernetics]] 的对偶：聚合是前馈、辩论是反馈——能否形式化为可度量的"harness 覆盖率"（Ashby's Law 操作化）？ — blocked by: none
 - [ ] Calibrated MAD 的 split-conformal certificate 能否工程化为 [[Agent Harness 治理协议]] 的双层验证，对治 diversity collapse 制造的"借来的自信"？ — blocked by: none
+- [ ] [[Trajectory Handoff]]（/prewalk）作为多模型协作的第五种维度（接力交接 vs [[Multi-Model Ensemble]] 的同级聚合），first-edit gate 阈值与"绝望→cheating 暴跌"因果链在不同任务类型 / 模型规模上如何复现与校准？ — blocked by: none
 
 ### Summary
 
@@ -333,10 +338,10 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 | Long-Horizon Autonomy | 4 | 0 | 4 |
 | Memory | 2 | 1 | 1 |
 | Multi-Agent | 2 | 0 | 2 |
-| Multi-Model Collaboration | 4 | 0 | 4 |
+| Multi-Model Collaboration | 5 | 0 | 5 |
 | Runtime | 2 | 0 | 2 |
 | Security | 3 | 0 | 3 |
-| **Total** | **36** | **2** | **34** |
+| **Total** | **37** | **2** | **35** |
 
 ## Research gaps
 
