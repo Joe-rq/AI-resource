@@ -2,8 +2,8 @@
 title: "Thin Harness, Fat Skills"
 type: concept
 created: 2026-06-04
-updated: 2026-06-16
-sources: ["raw/articles/2026-04-18-thin-harness-fat-skills.md"]
+updated: 2026-09-02
+sources: ["raw/articles/2026-04-18-thin-harness-fat-skills.md", "raw/articles/45-steering-claude-code-instruction-mechanisms.md", "raw/articles/46-context-engineering-claude-5-generation.md"]
 tags: [harness, skill, architecture, judgment, resolver, latent-deterministic, diarization]
 ---
 
@@ -125,6 +125,14 @@ flowchart LR
 > "你不被允许做一次性工作。如果我让你做某件事，而它属于'还会再做一次'的类型，你必须先在 3–10 个样本上手动做一遍，给我看输出，我批准后**编纂成 skill 文件**。如果应该自动跑，挂到 cron 上。**测试：如果我必须第二次向你请求，你失败了。**"
 
 ——这是把人类判断沉淀为系统能力的不二法门。
+
+## 官方印证（2026-06/07，Anthropic Claude Code 博客）
+
+本概念的三个主张已获得 Anthropic 官方一手印证：
+
+1. **"20,000 行 CLAUDE.md" 反模式 → 官方迁移协议**（[[Steering Claude Code: Seven Instruction Mechanisms]]）："every time X do Y"→hook；"never do X"→确定性强制（PreToolUse exit 2 / managed settings），**明令禁止用指令当 guardrail**；30 行程序→skill；API 规则→`paths:` scope。CLAUDE.md 官方红线：<200 行、指定 owner、像代码一样 review。
+2. **Rightsizing 工具化**：`/doctor` 命令自动 rightsizing skills 与 CLAUDE.md——"瘦"从建议变成产品能力。
+3. ** thinner 甚至可以更薄**：Claude 5 代模型删除 80%+ system prompt 无评估损失（[[The New Rules of Context Engineering for Claude 5 Generation Models]]）——模型判断力上升时，旧 guardrail 从最佳实践退化为 overconstraint。见 [[Context Engineering]]。
 
 ## 关联
 

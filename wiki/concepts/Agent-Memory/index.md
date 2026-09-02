@@ -2,11 +2,12 @@
 title: Agent Memory
 type: concept
 created: 2026-05-22
-updated: 2026-06-26
+updated: 2026-09-02
 sources:
   - raw/articles/2026-05-02-hermes-agent-nous-research.md
   - raw/articles/2026-05-17-nanoclaws-second-brain.md
   - raw/articles/2026-06-24-agent-memory-architecture-wquguru.md
+  - raw/articles/46-context-engineering-claude-5-generation.md
 tags:
   - agent-memory
   - long-term-memory
@@ -43,6 +44,7 @@ Agent Memory 是指 AI Agent 在多轮对话和跨会话场景中保持上下文
 - [[NanoClaw]] — Mnemon 图谱记忆 + Ollama 嵌入的本地实现
 - [[Nous Research]] — Hermes 的自我进化是记忆演化的极端形式
 - [[Multi-Agent 协作模式]] — 跨 Agent 信息传递依赖共享记忆基础设施
+- [[Context Engineering]] — Claude Code 的 auto-memory（2026-07 官方）：弃用 `#` 手动写入 CLAUDE.md，模型自动持久化与工作相关的记忆——"记忆写入决策"从用户侧移到 agent 侧的最新一线证据；记忆的身份隔离边界（Claude Tag per-channel memory）见 [[Quarantine Mode]]
 
 ## Sources
 

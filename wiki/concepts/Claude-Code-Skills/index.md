@@ -2,8 +2,8 @@
 title: "Claude Code Skills"
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
-sources: ["raw/articles/2026-05-21-claude-code-skills.md"]
+updated: 2026-09-02
+sources: ["raw/articles/2026-05-21-claude-code-skills.md", "raw/articles/45-steering-claude-code-instruction-mechanisms.md"]
 tags: [claude-code, skills, SKILL.md, context-injection, subagent, workflow]
 ---
 
@@ -42,6 +42,8 @@ flowchart LR
 | 触发方式 | 自动 | 用户 `/skill-name` 或 Claude 自动 |
 
 **判断标准**：如果 CLAUDE.md 的某部分已经演变成"程序"而非"事实"，就该抽成 Skill。
+
+**Compaction 行为（官方确认，2026-06）**：session start 只加载 name+description，body 按调用加载。压缩时已调用 skills 按**共享 token 预算**重注入——超出预算时**最旧先丢**。因此一个 session 里连续调用大量 skill 时，早先调用的 skill 正文可能已被挤出上下文。完整七机制选型框架见 [[Steering Claude Code: Seven Instruction Mechanisms]]。
 
 ## Skill 与 Subagent 的区别
 

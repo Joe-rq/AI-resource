@@ -79,6 +79,8 @@ tags: [index, navigation]
 - [[nashsu LLM Wiki]] — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ## Summaries (chronological)
+- 2026-09-02 — [[Steering Claude Code: Seven Instruction Mechanisms]] — Anthropic 官方七指令机制选型框架（加载时机/compaction 存活/权威性三轴）+ CLAUDE.md guardrail 禁令（"never do X" 必须落 hook/permissions/managed settings）+ subagent 嵌套 5 层 + CLAUDE.md <200 行迁移协议
+- 2026-09-02 — [[The New Rules of Context Engineering for Claude 5 Generation Models]] — Anthropic 官方（Thariq Shihipar）：Claude 5 代删 80%+ system prompt 无评估损失；overconstraint 病症；六组 Then→Now（规则→判断力、前置→progressive disclosure、CLAUDE.md 记忆→auto-memory 等）+ /doctor rightsizing
 - 2026-07-24 — [[/prewalk: Hand off a trajectory, not a fairytale]] — stencil.so/omp 工程博文：/plan 悖论（贵 14%，O(reads) 成本模型）+ /prewalk 三步（swap on first edit + prune planning instruction）+ SWE-Bench Pro 数据（92–97% pass @ 53–61% cost）+ cheating 暴跌（44/72/13%）+ prefill 原理
 - 2026-07-14 — [[A Field Guide to Fable: Finding Your Unknowns]] — Anthropic 官方 field guide（Thariq Shihipar）：四象限 Unknowns 框架 + pre/during/post 三阶段技巧工具箱 + Fable 发布视频实战案例
 - 2026-07-09 — [[多模型协作如何超过单强模型：正面证据综述]] — 多模型协作 > 单强模型正面证据（MoA 65.1%>GPT-4o / Blending 3×6-13B>175B ChatGPT / More Agents / Du Debate / Self-Consistency）

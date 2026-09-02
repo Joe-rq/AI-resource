@@ -209,6 +209,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - nashsu LLM Wiki — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ### Summaries
+- 45-steering-claude-code-instruction-mechanisms — Steering Claude Code 七指令机制（Anthropic 官方：加载时机/compaction 存活/权威性三轴选型框架；"never do X" 禁用指令当 guardrail → PreToolUse exit 2 / managed settings；subagent 嵌套 5 层；CLAUDE.md <200 行 + owner 迁移协议）
+- 46-context-engineering-claude-5-generation — Claude 5 代模型 context engineering 新规则（Thariq Shihipar：删 80%+ system prompt 无评估损失；overconstraint 病症；六组 Then→Now；/doctor rightsizing；auto-memory 取代 # 手动记忆）
 - 37-agent-memory-architecture-wquguru — Agent Memory 架构全景（WquGuru：规则记忆 / 常驻画像 / 历史召回 / 反思与技能沉淀；证据链治理与 memory 持久化风险）
 - 36-12-factor-agents — 12-Factor Agents（HumanLayer/Dex Horthy：好 agent = 大部分确定性软件 + LLM 撒关键点；12 条按五主题；接缝在 selection↔invocation 间；workflow vs agent 术语张力）
 - 12-a-harness-for-every-task-dynamic-workflows — Anthropic 官方动态工作流深度解读（3 失效模式 + 6 编排模式 + 10 用例 + Quarantine 安全模式）

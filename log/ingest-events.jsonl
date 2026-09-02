@@ -14,3 +14,7 @@
 {"event": "end", "slug": "field-guide-to-fable-finding-unknowns", "ts": "2026-07-14T17:41:41"}
 {"event": "begin", "slug": "prewalk-trajectory-handoff", "tag": "pre-ingest/prewalk-trajectory-handoff", "head": "2df66aebfd1ca359e4de7c7dabc0f897e2230ecb", "ts": "2026-07-24T17:54:18"}
 {"event": "end", "slug": "prewalk-trajectory-handoff", "ts": "2026-07-24T18:01:25"}
+{"event": "begin", "slug": "45-steering-claude-code-instruction-mechanisms", "tag": "pre-ingest/45-steering-claude-code-instruction-mechanisms", "head": "5a0c2bfe078b8cf45270400be72239928766398b", "ts": "2026-09-02T09:19:59"}
+{"event": "begin", "slug": "46-context-engineering-claude-5-generation", "tag": "pre-ingest/46-context-engineering-claude-5-generation", "head": "5a0c2bfe078b8cf45270400be72239928766398b", "ts": "2026-09-02T09:20:11"}
+{"event": "end", "slug": "45-steering-claude-code-instruction-mechanisms", "ts": "2026-09-02T09:27:55"}
+{"event": "end", "slug": "46-context-engineering-claude-5-generation", "ts": "2026-09-02T09:27:55"}

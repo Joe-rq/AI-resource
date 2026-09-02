@@ -2,8 +2,8 @@
 title: "Context Engineering"
 type: concept
 created: 2026-06-24
-updated: 2026-06-24
-sources: ["raw/articles/2026-06-24-langchain-context-engineering.md", "raw/articles/2026-06-23-karpathy-context-engineering.md", "raw/articles/2026-06-24-bockeler-harness-engineering.md", "raw/articles/2026-06-24-anthropic-effective-context-engineering.md", "raw/articles/2026-06-24-google-adk-context-stack.md", "raw/articles/2026-06-24-openai-harness-engineering-codex.md"]
+updated: 2026-09-02
+sources: ["raw/articles/2026-06-24-langchain-context-engineering.md", "raw/articles/2026-06-23-karpathy-context-engineering.md", "raw/articles/2026-06-24-bockeler-harness-engineering.md", "raw/articles/2026-06-24-anthropic-effective-context-engineering.md", "raw/articles/2026-06-24-google-adk-context-stack.md", "raw/articles/2026-06-24-openai-harness-engineering-codex.md", "raw/articles/46-context-engineering-claude-5-generation.md"]
 tags: [context-engineering, prompt-engineering, context-window, write-select-compress-isolate, kv-cache, context-failure-modes, langchain, karpathy, anthropic, google-adk, openai, context-rot, compiled-view, just-in-time]
 ---
 
@@ -106,6 +106,14 @@ OpenAI *Harness engineering*（2026-05）从实战给出 context 工程的四条
 | 系统地基 | Google | compiled view、四层 tiered model、processors pipeline |
 | 操作策略 | LangChain | write/select/compress/isolate 四策略 |
 | 操作信条 | OpenAI | map-not-manual、四反模式 |
+
+## Anthropic 2026-07：Claude 5 代模型的新规则（模型代际实证）
+
+Anthropic 官方（Thariq Shihipar，[[The New Rules of Context Engineering for Claude 5 Generation Models]]）：对 Claude 5 代模型（Opus 5 / Fable 5）**删除 Claude Code system prompt 的 80%+，编码评估无可测量损失**。核心病症是 **overconstraint**——system prompt、skills、CLAUDE.md 与用户请求互相冲突，模型被迫费力调和（= Context Clash 的官方自认实例）。本篇给 progressive disclosure 补上了**模型代际维度**：上下文策略不是静态最佳实践，而是随模型判断力增长需要持续解约束的动态平衡。
+
+六组 Then→Now：规则→判断力（"match surrounding code"取代注释禁令）；示例→接口设计（工具枚举自解释，示例反而收窄探索空间）；全部前置→progressive disclosure（验证/评审移入独立 skills、工具 deferred loading 需 ToolSearch 取全定义、CLAUDE.md 应为按需加载的文件树）；重复强调→只写 tool description；CLAUDE.md 记忆→auto-memory；简单 markdown spec→rich references（测试套件/HTML artifact/rubric + verifier agents）。配套 `/doctor` 命令自动 rightsizing（见 [[Thin Harness, Fat Skills]]）。
+
+对 memory scaffolds 损害长程 reliability（[[Agent Reliability vs Capability]]）的启示：Anthropic 的方向是**削减 scaffolds、归还判断力**——与"更多记忆结构"路线构成设计张力。
 
 ## 与 KV Cache 命中率（scope 边界内的切入）
 

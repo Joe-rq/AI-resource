@@ -2,8 +2,8 @@
 title: "Claude Code Subagent"
 type: concept
 created: 2026-05-21
-updated: 2026-05-21
-sources: ["raw/articles/2026-05-21-claude-code-sub-agents.md", "raw/articles/2026-05-21-claude-subagent-tutorial-zh.md", "raw/articles/2026-05-18-claude-code-agent-teams.md"]
+updated: 2026-09-02
+sources: ["raw/articles/2026-05-21-claude-code-sub-agents.md", "raw/articles/2026-05-21-claude-subagent-tutorial-zh.md", "raw/articles/2026-05-18-claude-code-agent-teams.md", "raw/articles/45-steering-claude-code-instruction-mechanisms.md"]
 tags: [claude-code, subagent, context-isolation, agent-definition, parallel-execution, fork]
 ---
 
@@ -131,8 +131,9 @@ Fork 的第一个请求重用父级的 prompt cache，比生成新 subagent 更�
 
 ## 限制
 
-- **不支持递归** — Subagent 不能再派 Subagent。需要嵌套委托时，使用 Skills 或从主对话串多个 Subagent。
+- ~~**不支持递归** — Subagent 不能再派 Subagent~~（**已过时**：2026-06-18 官方博客确认 subagent **可嵌套最多 5 层**；dynamic workflows 可编排数十至数百个后台 agent——编排计划与中间结果存于 script 变量而非主 context，规模扩张不损指令保真。见 [[Steering Claude Code: Seven Instruction Mechanisms]]）
 - **单会话** — Subagent 在单个会话中工作。并行运行多个独立会话请使用 background agents；会话间通信用 agent teams。
+- **加载时序（官方确认，2026-06）** — name、description、tool list 在 session start 加载，body 仅在经 Agent 工具调用时加载，且**从不进入父对话**——回到主会话的只有 final message + 元数据。
 
 ## 详细文档
 
