@@ -209,6 +209,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - nashsu LLM Wiki — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ### Summaries
+- 47-building-verification-loops-claude-code — Building Verification Loops（Anthropic 官方/Delba de Oliveira：agentic loop 三阶段；六种内置验证含 Managed Agents rubric grader 自动回流返工；standalone/embedded/chained/on-every-PR 四种调用模式；chaining 增加 token 消耗警告）
+- 48-codex-as-a-platform-open-agent-harness — Codex as a Platform（OpenAI：开源 harness 平台化，可复用部分是 agent loop；app-server client protocol；ARC-AGI-3 retained reasoning + compaction 13.3→38.3% @ 1/6 token；Relay + GitHub/JetBrains/Cisco/报税采用；界面锚定而非通用聊天框）
 - 45-steering-claude-code-instruction-mechanisms — Steering Claude Code 七指令机制（Anthropic 官方：加载时机/compaction 存活/权威性三轴选型框架；"never do X" 禁用指令当 guardrail → PreToolUse exit 2 / managed settings；subagent 嵌套 5 层；CLAUDE.md <200 行 + owner 迁移协议）
 - 46-context-engineering-claude-5-generation — Claude 5 代模型 context engineering 新规则（Thariq Shihipar：删 80%+ system prompt 无评估损失；overconstraint 病症；六组 Then→Now；/doctor rightsizing；auto-memory 取代 # 手动记忆）
 - 37-agent-memory-architecture-wquguru — Agent Memory 架构全景（WquGuru：规则记忆 / 常驻画像 / 历史召回 / 反思与技能沉淀；证据链治理与 memory 持久化风险）

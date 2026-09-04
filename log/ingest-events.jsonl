@@ -18,3 +18,7 @@
 {"event": "begin", "slug": "46-context-engineering-claude-5-generation", "tag": "pre-ingest/46-context-engineering-claude-5-generation", "head": "5a0c2bfe078b8cf45270400be72239928766398b", "ts": "2026-09-02T09:20:11"}
 {"event": "end", "slug": "45-steering-claude-code-instruction-mechanisms", "ts": "2026-09-02T09:27:55"}
 {"event": "end", "slug": "46-context-engineering-claude-5-generation", "ts": "2026-09-02T09:27:55"}
+{"event": "begin", "slug": "47-building-verification-loops-claude-code", "tag": "pre-ingest/47-building-verification-loops-claude-code", "head": "a3d0898ae0450836a4805927fef0e60a1c92d385", "ts": "2026-09-04T21:58:06"}
+{"event": "begin", "slug": "48-codex-as-a-platform-open-agent-harness", "tag": "pre-ingest/48-codex-as-a-platform-open-agent-harness", "head": "a3d0898ae0450836a4805927fef0e60a1c92d385", "ts": "2026-09-04T21:58:06"}
+{"event": "end", "slug": "47-building-verification-loops-claude-code", "ts": "2026-09-04T22:02:04"}
+{"event": "end", "slug": "48-codex-as-a-platform-open-agent-harness", "ts": "2026-09-04T22:02:04"}

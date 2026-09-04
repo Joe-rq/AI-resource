@@ -2,8 +2,8 @@
 title: "Worker Verifier 对抗循环"
 type: concept
 created: 2026-05-19
-updated: 2026-06-15
-sources: ["raw/articles/2026-05-19-minimax-agent-team-tech-report.md", "raw/articles/2026-05-20-hermes-agent-harness"]
+updated: 2026-09-04
+sources: ["raw/articles/2026-05-19-minimax-agent-team-tech-report.md", "raw/articles/2026-05-20-hermes-agent-harness", "raw/articles/47-building-verification-loops-claude-code.md"]
 tags: [multi-agent, worker-verifier, adversarial, mavis, convergence, escalation, loop-engineering]
 ---
 
@@ -122,10 +122,13 @@ stateDiagram-v2
 | wow-harness v3 双层验证 | 交叉验证 | Schema 级限制（无写权限） | 物理拦截提交检查点 |
 | Anthropic Multi-Agent | Lead Agent 评审 | 无特殊限制 | 无物理拦截 |
 | Claude Code Agent Teams | Lead Agent 评审 Subagent 产出 | 无特殊限制 | 无物理拦截；Lead Agent 可要求重做但 Subagent 无强制义务 |
+| Claude Code verification loops（Managed Agents rubric grader，2026-07） | 独立 grader agent 按 rubric 验证产出 | 托管服务（beta） | **失败自动回流返工**（产品内置闭环） |
 | OpenAI Handoff | 接力式——每棒不回头 | 无 | 无验证环节；上一棒输出即为下一棒输入 |
 | Superpowers 强制 TDD | prompt 层面约束 | 无 | 无物理拦截，agent 可"合理化"跳过 |
 
 wow-harness v3 的双层验证与 Worker/Verifier 的本质区别在于：验证 agent 的工具列表里**没有写权限**（schema 级限制，不是提示词约束），且自检通过物理检查点拦截而非 prompt 建议。详见 [[Agent Harness 治理协议]]。
+
+**产品层实现（2026-07）**：Anthropic *Building verification loops* 把这一模式产品化——Managed Agents (beta) 的 rubric grader agent 验证失败自动回流返工，加上 `/verify` skill、Code Review 托管多 agent 评审（`@claude` 评论闭环）、spec validation 等六种内置验证机制。见 [[Building Verification Loops in Claude Code]]。
 
 ## Related concepts
 

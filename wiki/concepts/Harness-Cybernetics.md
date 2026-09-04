@@ -2,8 +2,8 @@
 title: "Harness Cybernetics"
 type: concept
 created: 2026-06-24
-updated: 2026-06-24
-sources: ["raw/articles/2026-06-24-bockeler-harness-engineering.md", "raw/articles/2026-06-24-outer-harness-inner-harness.md", "raw/articles/2026-06-24-anthropic-effective-harnesses-long-running.md", "raw/articles/2026-06-24-openai-harness-engineering-codex.md"]
+updated: 2026-09-04
+sources: ["raw/articles/2026-06-24-bockeler-harness-engineering.md", "raw/articles/2026-06-24-outer-harness-inner-harness.md", "raw/articles/2026-06-24-anthropic-effective-harnesses-long-running.md", "raw/articles/2026-06-24-openai-harness-engineering-codex.md", "raw/articles/48-codex-as-a-platform-open-agent-harness.md", "raw/articles/47-building-verification-loops-claude-code.md"]
 tags: [harness, cybernetics, feedforward, feedback, guides, sensors, control-loop, inner-outer-harness, ashbys-law, bockeler, deterministic-feedback, anthropic, openai, initializer-agent]
 ---
 
@@ -110,6 +110,11 @@ OpenAI *Harness engineering: leveraging Codex*（Ryan Lopopolo, 2026-05）记录
 ### 印证要点
 
 三篇文章（Böckeler 分析框架 + Anthropic/OpenAI 第一方实证）收敛到同一结论：**好 harness = feedforward（约束 action space）+ deterministic feedback（验证实际发生）+ steering loop（人迭代 harness 本身）**。Inferential feedback（LLM judge）是补充而非主力——优先级低于 deterministic。
+
+### 2026 下半年续证：harness 商品化拐点与反馈 Sensors 官方清单
+
+- **OpenAI *Codex as a platform*（2026-08-19）**：把 Codex 开源 harness 平台化（app-server + client protocol：threads/turns/events/approvals），明确"可复用的部分是 agent loop"。附最硬的 harness 设计物质性数据：ARC-AGI-3 上 retained reasoning + context compaction 把 GPT-5.6 Sol 从 **13.3% → 38.3%，输出 token 降 6 倍**——harness 不是包装纸，是性能变量。这是 "inner harness 正在商品化" 论断的一手实证（见 [[Codex as a Platform: Build on the Open Agent Harness]]）。
+- **Anthropic *Building verification loops*（2026-07-22）**：给出 feedback Sensors 的官方清单——六种内置验证机制（/verify skill、toolchain 信号、托管 Code Review、GitHub Actions、spec validation、Managed Agents rubric grader 回流返工）+ 四种调用模式（standalone/embedded/chained/on-every-PR），并警告 chaining 增加 token 消耗（见 [[Building Verification Loops in Claude Code]]）。与 [[Steering Claude Code: Seven Instruction Mechanisms]]（前馈 Guides 选型）构成前馈/反馈两侧的官方配套。
 
 ## Ashby's Law（必要多样性定律）
 

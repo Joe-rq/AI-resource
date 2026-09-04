@@ -79,6 +79,8 @@ tags: [index, navigation]
 - [[nashsu LLM Wiki]] — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ## Summaries (chronological)
+- 2026-09-04 — [[Building Verification Loops in Claude Code]] — Anthropic 官方（Delba de Oliveira）：agentic loop 三阶段 + verification loop 定义 + 六种内置验证机制（含 Managed Agents rubric grader 回流返工 = Worker-Verifier 产品实现）+ 四种调用模式 + chaining token 警告
+- 2026-09-04 — [[Codex as a Platform: Build on the Open Agent Harness]] — OpenAI Developers：开源 Codex harness 平台化（app-server client protocol）+ ARC-AGI-3 compaction 数据（13.3→38.3%、6× token）+ Relay 示例 + 真实采用（GitHub/JetBrains/Cisco/报税 7000 单）
 - 2026-09-02 — [[Steering Claude Code: Seven Instruction Mechanisms]] — Anthropic 官方七指令机制选型框架（加载时机/compaction 存活/权威性三轴）+ CLAUDE.md guardrail 禁令（"never do X" 必须落 hook/permissions/managed settings）+ subagent 嵌套 5 层 + CLAUDE.md <200 行迁移协议
 - 2026-09-02 — [[The New Rules of Context Engineering for Claude 5 Generation Models]] — Anthropic 官方（Thariq Shihipar）：Claude 5 代删 80%+ system prompt 无评估损失；overconstraint 病症；六组 Then→Now（规则→判断力、前置→progressive disclosure、CLAUDE.md 记忆→auto-memory 等）+ /doctor rightsizing
 - 2026-07-24 — [[/prewalk: Hand off a trajectory, not a fairytale]] — stencil.so/omp 工程博文：/plan 悖论（贵 14%，O(reads) 成本模型）+ /prewalk 三步（swap on first edit + prune planning instruction）+ SWE-Bench Pro 数据（92–97% pass @ 53–61% cost）+ cheating 暴跌（44/72/13%）+ prefill 原理

@@ -2,8 +2,8 @@
 title: "Agentic Code Review"
 type: concept
 created: 2026-06-18
-updated: 2026-06-18
-sources: ["raw/articles/2026-06-16-addyosmani-agentic-code-review.md"]
+updated: 2026-09-04
+sources: ["raw/articles/2026-06-16-addyosmani-agentic-code-review.md", "raw/articles/47-building-verification-loops-claude-code.md"]
 tags: [code-review, agent, blast-radius, intent-reconstruction, verification, human-on-the-loop, compensation-surface]
 ---
 
@@ -96,3 +96,4 @@ flowchart TD
 - [[Agent Macro Evaluation]] — 群体行为模式发现的方法论可服务于 review 策略调优
 - [[Agent Harness 治理协议]] — 沙盒只读、双层验证应对"agent 改评测/削弱 CI"
 - [[Multi-Model Ensemble]] — "异构才是补丁"在验证层的对应；生成层的多模型协作谱系（[[LLM Debate]] 失效模式实证"异构是 universal antidote"）
+- [[Building Verification Loops in Claude Code]] — Anthropic 官方把评审编入 agentic loop 的 verify 阶段；其 chaining 增加 token 消耗的警告是评审经济学的一手佐证（增益必须扣除算力）

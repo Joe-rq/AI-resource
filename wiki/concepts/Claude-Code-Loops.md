@@ -2,8 +2,8 @@
 title: "Claude Code Loops"
 type: concept
 created: 2026-07-07
-updated: 2026-07-07
-sources: ["raw/articles/2026-07-07-claude-devs-getting-started-with-loops.md"]
+updated: 2026-09-04
+sources: ["raw/articles/2026-07-07-claude-devs-getting-started-with-loops.md", "raw/articles/47-building-verification-loops-claude-code.md"]
 tags: [claude-code, loops, agentic-loop, goal, schedule, dynamic-workflows, token-usage, verification]
 ---
 
@@ -121,3 +121,4 @@ flowchart LR
 - [[Heartbeat Watchdog]] — Time-based / Proactive loop 长期运行的独立守护层
 - [[Autonomous AI System]] — Proactive loop = 阳志平"自动续航"组的 Claude Code 实现
 - [[Thin Harness, Fat Skills]] — verification skill 即 skill-as-method-call
+- [[Building Verification Loops in Claude Code]] — 2026-07 官方深化：agentic loop 三阶段中的 verify 阶段展开为六种内置验证机制 + standalone/embedded/chained/on-every-PR 四种调用模式

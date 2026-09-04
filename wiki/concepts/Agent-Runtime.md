@@ -2,8 +2,8 @@
 title: "Agent Runtime"
 type: concept
 created: 2026-05-19
-updated: 2026-06-15
-sources: ["raw/articles/2026-05-19-agent-runtime-battlefield.md", "raw/notes/nvidia-agent-toolkit.md"]
+updated: 2026-09-04
+sources: ["raw/articles/2026-05-19-agent-runtime-battlefield.md", "raw/notes/nvidia-agent-toolkit.md", "raw/articles/48-codex-as-a-platform-open-agent-harness.md"]
 tags: [agent-runtime, harness, prompt, tool-definition]
 ---
 
@@ -71,6 +71,8 @@ Cline 把 provider 逻辑隔离在 `@cline/llms` 层，agent loop 本身不感�
 ## 上下文压缩策略
 
 Compaction 不是一个简单的"满了就删"操作，而是一个涉及 cache 经济性、信息价值和任务阶段感知的多维决策。以下流程图展示了完整的 compaction 决策逻辑：
+
+**最硬的量化实证（OpenAI，2026-08）**：ARC-AGI-3 上仅两个 harness 设置——**retained reasoning + context compaction**——就把 GPT-5.6 Sol 从 **13.3% 提到 38.3%，同时输出 token 降 6 倍**。compaction 不是防御性操作，是性能变量本身（见 [[Codex as a Platform: Build on the Open Agent Harness]]）。
 
 ```mermaid
 flowchart TD
