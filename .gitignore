@@ -4,3 +4,4 @@ _output/
 .audit/wiki-quality-*.md
 .obsidian/
 .claude/dev-launch.review.md
+_tmp/

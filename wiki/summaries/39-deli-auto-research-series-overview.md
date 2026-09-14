@@ -1,11 +1,9 @@
 ---
 title: "Deli AutoResearch 四论文系列总览与生产统计"
 type: summary
-sources: ["https://victorchen96.github.io/auto_research/paper.html"]
-source_url: https://victorchen96.github.io/auto_research/paper.html
-source_type: article
-date: 2026-06-26
-ingested: 2026-06-26
+created: 2026-06-26
+updated: 2026-09-14
+sources: ["raw/articles/2026-06-26-deli-auto-research-series-overview.md"]
 tags: [deli-autoresearch, victor-chen, autonomous-research, survey, continual-learning, long-horizon, self-play, metrics]
 ---
 
