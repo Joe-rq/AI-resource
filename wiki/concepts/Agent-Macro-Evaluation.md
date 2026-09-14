@@ -223,6 +223,8 @@ suspect_score = 0.4 × proximity + 0.3 × frequency + 0.2 × bridge + 0.1 × rol
 - [[Agent Harness 治理协议]] — 事件时间线 + 双层验证为宏观评估提供数据基础，`behavior_pattern` 与概念节点演化结合可实现系统级自我反思循环
 - [[Agent Runtime]] — 单 Agent 执行环境的 trace 是宏观评估的最小分析单元
 - [[Multi-Agent 协作模式]] — 多 Agent 协作产生的复杂 trace 是宏观评估的主要分析对象
+- [[Eval-Driven Development]] — Madhuguru 视角的核心方法论（4 类 ladder + failure modes taxonomy + jobs-to-be-done 粒度）；与本概念**视角互补**：本概念是**算法自动聚类** + AgentTrace 诊断，EDD 是**人类命名分类** + step-level eval；两种范式正交互补
+- [[Agent Evaluation Methodology]] — Anthropic 元方法论（8 个核心抽象 + 3 类 grader + 4 类 agent 范式 + 8 步 0→1 roadmap + swiss cheese model）；与本概念**层级互补**：AEM 是机制层（如何构造 eval），本概念是诊断层（如何分析已收集的 trace 数据）
 
 ## Open Research Questions
 
