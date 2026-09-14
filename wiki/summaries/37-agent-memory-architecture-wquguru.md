@@ -1,6 +1,7 @@
 ---
 title: "Agent Memory 架构全景：从规则文件、会话检索到反思与技能沉淀"
 type: summary
+sources: ["https://x.com/wquguru/article/2069641926752780384"]
 source_url: https://x.com/wquguru/article/2069641926752780384
 source_type: article
 date: 2026-06-24

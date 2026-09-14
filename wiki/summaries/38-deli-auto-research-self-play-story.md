@@ -1,6 +1,7 @@
 ---
 title: "Deli AutoResearch 第四篇论文诞生记：285B 自博弈实验与诚实的自我评审"
 type: summary
+sources: ["https://victorchen96.github.io/blog_self_play_story.html"]
 source_url: https://victorchen96.github.io/blog_self_play_story.html
 source_type: article
 date: 2026-06-26

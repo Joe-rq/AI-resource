@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 _output/
+.audit/wiki-quality-*.md
+.obsidian/
+.claude/dev-launch.review.md

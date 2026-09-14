@@ -1,6 +1,7 @@
 ---
 title: "Deli AutoResearch 四论文系列总览与生产统计"
 type: summary
+sources: ["https://victorchen96.github.io/auto_research/paper.html"]
 source_url: https://victorchen96.github.io/auto_research/paper.html
 source_type: article
 date: 2026-06-26

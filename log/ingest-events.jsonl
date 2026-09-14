@@ -22,3 +22,5 @@
 {"event": "begin", "slug": "48-codex-as-a-platform-open-agent-harness", "tag": "pre-ingest/48-codex-as-a-platform-open-agent-harness", "head": "a3d0898ae0450836a4805927fef0e60a1c92d385", "ts": "2026-09-04T21:58:06"}
 {"event": "end", "slug": "47-building-verification-loops-claude-code", "ts": "2026-09-04T22:02:04"}
 {"event": "end", "slug": "48-codex-as-a-platform-open-agent-harness", "ts": "2026-09-04T22:02:04"}
+{"event": "begin", "slug": "agent-evals-batch-2026-09-14", "tag": "pre-ingest/agent-evals-batch-2026-09-14", "head": "b11b73644444c6a2452e3ac59040103e84991d95", "ts": "2026-09-14T11:16:13"}
+{"event": "end", "slug": "agent-evals-batch-2026-09-14", "ts": "2026-09-14T11:26:37"}
