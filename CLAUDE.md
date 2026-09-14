@@ -175,6 +175,8 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - Autonomous-AI-System — AI 自主系统 4 组 12 技巧（任务编排/实际开工/自检评审/自动续航；与 harness 视角互补）
 - Heartbeat-Watchdog — 心跳看门狗三层互检（L0 常驻 shell guard / L1 durable cron / L2 业务自报）；独立守护层对治运行时脆弱与停滞（来源：Deli_AutoResearch）
 - Agent-Macro-Evaluation — Agent 宏观评估方法论（4 层标签 + BERTopic 风格聚类 + AgentTrace 风格诊断 + 3 个核心公式）
+- Agent-Evaluation-Methodology — Agent 评估元方法论（Anthropic 官方：8 个核心抽象 task/trial/grader/transcript/outcome/harness/suite + 3 类 grader + 4 类 agent 范式 coding/conversational/research/computer-use + pass@k vs pass^k + 8 步 0→1 roadmap + swiss cheese model）
+- Eval-Driven-Development — Eval-driven development（Madhuguru 系列：阶梯化策略 hill-climb/regression/smoke/launch + failure modes taxonomy + discriminatory property + jobs-to-be-done 粒度 + eval roadmap evolution + step-level evaluation）
 - Forward-Deployed-Engineering — FDE 前置部署工程（四要素定义、Echo/Delta/Dev 三角循环、碎石路→柏油路飞轮、AI 时代复兴原因）
 - AI-Capability-Overhang — AI 能力悬置（模型能力已存在但未被组织释放；FDE 成因；与补偿面镜像）
 - Claude-Code-Dynamic-Workflows-Practical-Guide — Claude Code 动态工作流实践指南（场景选择决策树、命令速查、14 个推荐场景与最佳实践）
@@ -257,6 +259,9 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - 42-llm-debate-failure-modes — LLM Debate 失效模式：多 Agent 协作何时翻车（Stop Overvaluing MAD / Revisiting MAD / When Consensus≠Correctness / Bias Reinforcement / Single-Agent>MAS / Talk Isn't Cheap 六篇 2025 反面综述）
 - 43-field-guide-to-fable-finding-unknowns — A Field Guide to Fable: Finding Your Unknowns（Thariq Shihipar/Anthropic 官方：四象限 Unknowns + blind spot pass / brainstorm / interview / reference / implementation notes / quiz + Fable 发布视频案例）
 - 44-prewalk-trajectory-handoff — /prewalk: Hand off a trajectory, not a fairytale（stencil.so/omp：/plan 悖论贵 14% + O(reads) 成本模型 + /prewalk 三步 swap on first edit + SWE-Bench Pro 92–97% pass @ 53–61% cost + cheating 暴跌 44/72/13% + prefill 原理）
+- 49-andrew-ng-skills-map — Andrew Ng AI Engineering Skills Map 五封信（四大顶层技能 AI Applications / Software Engineering / Using Coding Agents / Shaping the Build + 各 4-6 个子技能；Using coding agents 演化最快；spec-driven 视角与 harness-driven 互补）
+- 50-madhuguru-build-great-evals — Madhu Guru "How to build great evals" 日更 10 篇（eval ladder hill-climb/regression/smoke/launch + failure modes taxonomy + Goldilocks principle jobs-to-be-done 粒度 + discriminatory property + eval roadmap evolution + measure steps not just results）
+- 51-anthropic-demystifying-agent-evals — Anthropic 官方 Demystifying evals for AI Agents（Mikaela Grace 等：8 个核心抽象 task/trial/grader/transcript/outcome/harness/suite + 3 类 grader code/model/human + 4 类 agent 范式 coding/conversational/research/computer-use + pass@k vs pass^k + 8 步 0→1 roadmap + swiss cheese model + Opus 4.5 CORE-Bench 42→95% 失真案例）
 
 ## Open research questions
 
@@ -314,6 +319,11 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 - [ ] 宏观评估的 `MACRO_EVALS_DISCOVERY_MIN_CLUSTER_SIZE` 超参数在不同任务规模下如何确定最优值？粒度过粗丢失小众重要模式，过细噪声爆炸 — blocked by: none
 - [ ] `suspect_score = 0.4·proximity + 0.3·frequency + 0.2·bridge + 0.1·role` 的权重是 OpenAI 经验值，能否在其他 agent 系统上重新校准的方法论 — blocked by: none
 - [ ] 宏观评估发现的 `behavior_pattern` 与 wow-harness v3 概念节点演化结合，能否实现"系统级自我反思循环"？ — blocked by: none
+- [ ] Capability vs Regression 二分法是否存在第三类（Stability eval）？同一 task 多次 trial 的结果分布度量；pass^k vs pass@k 的稳定度第三维 — 概念页已建立（[[Agent Evaluation Methodology]]），待定量研究
+- [ ] Eval ladder（hill-climb/regression/smoke/launch）与 failure mode taxonomy 能否形式化为 schema？类似 [[ESAA]] boundary contracts，从 prompt 纪律升级为 schema 级硬约束 — 概念页已建立（[[Eval-Driven Development]], [[Agent Evaluation Methodology]]），待形式化研究
+- [ ] Step-level transcript 的 eval 成本如何平衡？trajectory 每步独立 eval 成本爆炸；与 [[Multi Model Ensemble]] "增益扣算力"研究问题同源；[[Trajectory Handoff]] 同月同论点 — 概念页已建立（[[Eval-Driven Development]], [[Agent Evaluation Methodology]]），待成本建模
+- [ ] Eval-driven（Anthropic）与 spec-driven（Andrew Ng）的统一？前者把 spec 编码为 eval；后者强调 spec 写下来；两者边界与融合条件未明 — 概念页已建立（[[Andrew Ng AI Engineering Skills Map (5 篇)|Andrew Ng Skills Map]], [[Eval-Driven Development]]），待框架统一
+- [ ] Eval 饱和后的自动化检测与升级？Madhuguru Part 8 末提出但未答；与 [[Agent Reliability vs Capability]] 的"reliability 探测" 同源 — 概念页已建立（[[Eval-Driven Development]]），待自动化研究
 
 ### Reliability
 
@@ -336,7 +346,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 |--------|-------|---------|-----------|
 | Architecture | 5 | 0 | 5 |
 | Dynamic Workflows | 3 | 0 | 3 |
-| Evaluation | 3 | 0 | 3 |
+| Evaluation | 8 | 0 | 8 |
 | Governance | 4 | 0 | 4 |
 | Reliability | 4 | 1 | 3 |
 | Long-Horizon Autonomy | 4 | 0 | 4 |
@@ -345,7 +355,7 @@ parent: <path-to-index>  # 可选 — folder-split 子页指向 index 页
 | Multi-Model Collaboration | 5 | 0 | 5 |
 | Runtime | 2 | 0 | 2 |
 | Security | 3 | 0 | 3 |
-| **Total** | **37** | **2** | **35** |
+| **Total** | **42** | **2** | **40** |
 
 ## Research gaps
 
@@ -356,6 +366,9 @@ Sources to ingest (priority order):
 - [x] ESAA 论文 (Event Sourcing for Autonomous Agents, arxiv 2602.23193) 原文
 - [x] "Dive into Claude Code" 论文 (arxiv 2604.14228) 原文
 - [x] OpenAI Cookbook — Macro Evals for Agentic Systems (2026-05-19)
+- [x] Anthropic Engineering — Demystifying evals for AI agents (2026-01-09)
+- [ ] **P3 — Andrew Ng AI Engineering Skills Map 系列五封信** — 2026-08-14 ~ 09-11 连载；已 ingest 为 summary `49-andrew-ng-skills-map`；剩余 hooks："Using coding agents" 演化最快 + spec-driven 视角与 harness-driven 互补，需后续 follow-up
+- [ ] **P3 — Madhu Guru "How to build great evals" 10 篇系列** — 2026-08-17 ~ 09-10 X 推文日更；已 ingest 为 summary `50-madhuguru-build-great-evals`；剩余 hooks：eval 饱和应对 + measure steps 方法论需后续 follow-up
 
 ## Audit backlog
 

@@ -62,6 +62,8 @@ tags: [index, navigation]
 ### Evaluation
 - [[Agent Macro Evaluation]] — Agent 宏观评估方法论：4 层标签（case_type → run_outcome → eval_finding → behavior_pattern）+ BERTopic 风格聚类 + AgentTrace 风格诊断 + 三个核心公式（impact_score / lift / suspect_score）
 - [[Agent Reliability vs Capability]] — capability≠reliability 背离：pass@k、RDC/VAF/GDS/MOP 四指标、MOP paradox（frontier model meltdown 更高）、memory scaffolds 普遍损害长程 reliability
+- [[Agent Evaluation Methodology]] — Anthropic 官方元方法论：8 个核心抽象（task/trial/grader/transcript/outcome/harness/suite）+ 3 类 grader（code/model/human）+ 4 类 agent 范式（coding/conversational/research/computer-use）+ pass@k vs pass^k + 8 步 0→1 roadmap + swiss cheese model
+- [[Eval-Driven Development]] — Madhuguru 系列：阶梯化策略（hill-climb/regression/smoke/launch）+ failure modes taxonomy + discriminatory property + jobs-to-be-done 粒度 + eval roadmap evolution + step-level evaluation
 
 ## Entities
 - [[MiniMax Mavis]] — MiniMax 的 Agent 产品，MiniMax as a Jarvis
@@ -79,6 +81,9 @@ tags: [index, navigation]
 - [[nashsu LLM Wiki]] — Karpathy LLM Wiki pattern 的产品化实现（Tauri 桌面应用 + 知识图谱 + MCP），本 wiki 的同 pattern 异途参照
 
 ## Summaries (chronological)
+- 2026-09-14 — [[Andrew Ng AI Engineering Skills Map (5 篇)]] — Andrew Ng 五封信：四大顶层技能（AI Applications / Software Engineering / Using Coding Agents / Shaping the Build）+ 各 4-6 个子技能；自评"Using coding agents"演化最快；spec-driven 视角与 harness-driven 互补
+- 2026-09-14 — [[How to Build Great Evals（Madhu Guru 10 篇系列）]] — Madhu Guru 日更 10 篇：eval ladder（hill-climb/regression/smoke/launch）+ failure modes taxonomy + Goldilocks principle（jobs-to-be-done 粒度）+ discriminatory property + eval roadmap evolution + measure steps not just results
+- 2026-09-14 — [[Demystifying Evals for AI Agents（Anthropic Engineering）]] — Anthropic 官方（Mikaela Grace 等）：元方法论（task/trial/grader/transcript/outcome/harness 8 抽象）+ 3 类 grader + 4 类 agent 范式 + pass@k vs pass^k + 8 步 0→1 roadmap + swiss cheese model + Opus 4.5 CORE-Bench 42→95% 失真案例
 - 2026-09-04 — [[Building Verification Loops in Claude Code]] — Anthropic 官方（Delba de Oliveira）：agentic loop 三阶段 + verification loop 定义 + 六种内置验证机制（含 Managed Agents rubric grader 回流返工 = Worker-Verifier 产品实现）+ 四种调用模式 + chaining token 警告
 - 2026-09-04 — [[Codex as a Platform: Build on the Open Agent Harness]] — OpenAI Developers：开源 Codex harness 平台化（app-server client protocol）+ ARC-AGI-3 compaction 数据（13.3→38.3%、6× token）+ Relay 示例 + 真实采用（GitHub/JetBrains/Cisco/报税 7000 单）
 - 2026-09-02 — [[Steering Claude Code: Seven Instruction Mechanisms]] — Anthropic 官方七指令机制选型框架（加载时机/compaction 存活/权威性三轴）+ CLAUDE.md guardrail 禁令（"never do X" 必须落 hook/permissions/managed settings）+ subagent 嵌套 5 层 + CLAUDE.md <200 行迁移协议
